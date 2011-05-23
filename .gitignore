@@ -1,0 +1,18 @@
+/*
+/.*
+
+# White list
+!/.bashrc
+!/.vim
+!/.vimrc
+!/.gvimrc
+
+!/.gitignore
+!/.gitconfig
+!/.gitmodules
+!/.gitattributes
+
+# Black list
+/.vim/.netrwhist
+/.vim/sessions
+.DS_Store
