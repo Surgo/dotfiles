@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/pep8"]
 	path = .vim/bundle/pep8
 	url = git://github.com/vim-scripts/pep8.git
+[submodule ".vim/bundle/virtualenv"]
+	path = .vim/bundle/virtualenv
+	url = git://github.com/jmcantrell/vim-virtualenv.git

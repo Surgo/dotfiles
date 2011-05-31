@@ -1,15 +1,18 @@
 .. -*- restructuredtext -*-
 
+My dotfiles
+===========
+
 Install
-=======
+-------
 
     1. Clone a repository.
     2. Create symbolic link for pathogen::
 
            ln -s ~/.vim/bundle/pathogen/autoload/pathogen.vim ~/.vim/autoload/
 
-Add vim plugins from github.
-============================
+Add vim plugins (from github)
+-----------------------------
 
     1. Add a submodule to budle directory::
 
