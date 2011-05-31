@@ -1,6 +1,7 @@
 # virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 source `which virtualenvwrapper.sh`
+export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
 
 # Completion git & mercurial

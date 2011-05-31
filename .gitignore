@@ -6,6 +6,7 @@
 !/.vim
 !/.vimrc
 !/.gvimrc
+!/.ipython
 !/README.rest
 
 !/.gitignore
