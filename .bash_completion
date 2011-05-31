@@ -1,0 +1,9 @@
+# Completion git & mercurial
+export BASH_COMPLETION_DIR=/opt/local/etc/bash_completion.d
+    . $BASH_COMPLETION_DIR/git
+    . $BASH_COMPLETION_DIR/mercurial
+
+# Local settings
+if [ -f ~/.bash_completion_local ]; then
+    . ~/.bash_completion_local
+fi

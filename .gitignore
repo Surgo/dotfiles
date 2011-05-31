@@ -3,6 +3,8 @@
 
 # White list
 !/.bashrc
+!/.bash_aliases
+!/.bash_completion
 !/.vim
 !/.vimrc
 !/.gvimrc

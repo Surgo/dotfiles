@@ -1,28 +1,42 @@
-# virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-source `which virtualenvwrapper.sh`
+# Fist of all
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc 
+fi
+
+# Add my scripts
+PATH=~/bin:$PATH
+
+export HISTCONTROL=ignoreboth  # (ignoredups and ignorespace)
+
+# Vim is THE editor!
+export VISUAL=vim
+export EDITOR=vim
+
+# For Python (virtualenv and pip)
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
-
-# Completion git & mercurial
-export BASH_COMPLETION_DIR=/opt/local/etc/bash_completion.d
-    . $BASH_COMPLETION_DIR/git
-    . $BASH_COMPLETION_DIR/mercurial
-
-# View git & mercurial brach
-# prompt command
-hg_branch() {
-  hg branch 2> /dev/null | awk '{print "(hg:" $1 ")"}'
-}
-git_branch() {
-  __git_ps1 '(git:%s)'
-}
-# setting for prompt
-if [ -f $BASH_COMPLETION_DIR/git ]; then
-  source $BASH_COMPLETION_DIR/git
-  echo "git-completion enabled..."
-  PS1="\[\033[0;37m\][\[\033[0;32m\]\t \[\033[1;36m\]\u\[\033[0;37m\]@\h \$(git_branch)\$(hg_branch) \[\033[0;32m\]\w\[\033[0;37m\]]\n\$ "
-else
-  PS1="\[\033[0;37m\][\[\033[0;32m\]\t \[\033[1;36m\]\u\[\033[0;37m\]@\h \[\033[0;32m\]\w\[\033[0;37m\]]\n\$ "
+export WORKON_HOME=$HOME/.virtualenvs
+if which virtualenvwrapper.sh > /dev/null 2>&1; then
+    if [ ! -e $WORKON_HOME ]; then
+        mkdir $WORKON_HOME
+    fi
+    export VIRTUALENVWRAPPER_LOG_DIR="$WORKON_HOME"
+    export VIRTUALENVWRAPPER_HOOK_DIR="$WORKON_HOME"
+    export PIP_VIRTUALENV_BASE="$WORKON_HOME"
+    source `which virtualenvwrapper.sh`
 fi
-export PS1
+
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# Completion
+if [ -f ~/.bash_completion ]; then
+    . ~/.bash_completion
+fi
+
+# Local settings
+if [ -f ~/.bashrc_local ]; then
+    . ~/.bashrc_local 
+fi
