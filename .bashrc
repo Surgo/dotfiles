@@ -1,3 +1,8 @@
+# virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+source `which virtualenvwrapper.sh`
+export PIP_RESPECT_VIRTUALENV=true
+
 # Completion git & mercurial
 export BASH_COMPLETION_DIR=/opt/local/etc/bash_completion.d
     . $BASH_COMPLETION_DIR/git
