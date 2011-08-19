@@ -144,7 +144,7 @@ if has('syntax')
   syntax enable
   function! ZenkakuSpace()
     highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
-    silent! match ZenkakuSpace /„ÄÄ/
+    silent! match ZenkakuSpace /Å@/
   endfunction
   augroup ZenkakuSpace
     autocmd!
@@ -168,6 +168,12 @@ let Grep_Skip_Files = '*.bak *~'
 ""let g:qb_hotkey=';;'
 ""DumpBuf
 let dumbbuf_hotkey = ';;'
+""unite.vim
+if has('mac')
+    nnoremap <silent> :: :<C-u>Unite file_mru<CR>
+else
+    nnoremap <silent> ;; :<C-u>Unite file_mru<CR>
+endif
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
 filetype plugin indent on
