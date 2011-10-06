@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/virtualenv"]
 	path = .vim/bundle/virtualenv
 	url = git://github.com/jmcantrell/vim-virtualenv.git
+[submodule ".vim/bundle/indent_guide"]
+	path = .vim/bundle/indent_guide
+	url = git://github.com/vim-scripts/Indent-Guides.git
