@@ -52,4 +52,10 @@ if has("gui_win32")
   set guifont=VL_Gothic_Regular:h16
   set guifontwide=VL_Gothic_Regular:h16
 endif
+
 colorscheme oceandeep
+
+"Plugin settings
+""Indent guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
