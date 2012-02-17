@@ -6,5 +6,7 @@
     safecrlf = true
 	editor = /usr/bin/vim
 [tig "bind"]
-  generic = g move-first-line
-  generic = G move-last-line
+    generic = g move-first-line
+    generic = G move-last-line
+    generic = ^F move-page-down
+    generic = ^B move-page-up
