@@ -3,7 +3,7 @@
     email = surgo.jp@gmail.com
 [core]
     autocrlf = true
-    safecrlf = true
+    safecrlf = warn
     editor = /usr/bin/vim
 [tig "bind"]
     generic = g move-first-line
