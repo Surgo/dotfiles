@@ -1,6 +1,6 @@
 # Fist of all
 if [ -f /etc/bashrc ]; then
-    . /etc/bashrc 
+    . /etc/bashrc
 fi
 
 # Add my scripts
@@ -20,8 +20,7 @@ if which virtualenvwrapper.sh > /dev/null 2>&1; then
     if [ ! -e $WORKON_HOME ]; then
         mkdir $WORKON_HOME
     fi
-    export VIRTUALENVWRAPPER_LOG_DIR="$WORKON_HOME"
-    export VIRTUALENVWRAPPER_HOOK_DIR="$WORKON_HOME"
+    export VIRTUALENVWRAPPER_PYTHON="$(which python)"
     export PIP_VIRTUALENV_BASE="$WORKON_HOME"
     source `which virtualenvwrapper.sh`
 fi
@@ -38,5 +37,5 @@ fi
 
 # Local settings
 if [ -f ~/.bashrc_local ]; then
-    . ~/.bashrc_local 
+    . ~/.bashrc_local
 fi
