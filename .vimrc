@@ -101,7 +101,7 @@ set wildmenu
 set wildchar=<Tab>
 set wildmode=list:full
 set history=1000
-set complete+=k 
+set complete+=k
 ""Omni completion
 imap <C-space> <C-x><C-o>
 ""Omni completion <tab>
@@ -172,11 +172,7 @@ let Grep_Skip_Files = '*.bak *~'
 ""DumpBuf
 let dumbbuf_hotkey = ';;'
 ""unite.vim
-if has('mac')
-    nnoremap <silent> :: :<C-u>Unite file_mru<CR>
-else
-    nnoremap <silent> ;; :<C-u>Unite file_mru<CR>
-endif
+nnoremap <silent> :: :<C-u>Unite file_mru<CR>
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
 filetype plugin indent on
