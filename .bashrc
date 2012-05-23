@@ -15,6 +15,7 @@ export EDITOR=vim
 # For Python (virtualenv and pip)
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
+export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export WORKON_HOME=$HOME/.virtualenvs
 if which virtualenvwrapper.sh > /dev/null 2>&1; then
     if [ ! -e $WORKON_HOME ]; then
