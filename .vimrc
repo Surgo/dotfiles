@@ -6,7 +6,7 @@ set autoread
 set hidden
 
 filetype off
-scriptencoding utf-8
+scriptencoding 'utf-8'
 
 if &encoding !=# 'utf-8'
   set encoding=japan
@@ -41,10 +41,9 @@ nnoremap l <Right>
 nnoremap <Down> gj
 nnoremap <Up> gk
 "" :<->;
-if has('mac')
-  noremap ; :
-  noremap : ;
-endif
+noremap ; :
+noremap : ;
+
 ""Move window
 nnoremap <C-j> :<C-w>j
 nnoremap <C-k> :<C-k>j

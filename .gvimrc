@@ -1,56 +1,43 @@
 "Display
 set title
+"Disable toolbar
+set guioptions-=t
+set guioptions-=T
+"Disable menubar
+set guioptions-=m
+"Disable rightside scrollbar
+set guioptions-=r
+set guioptions-=R
+"Disable leftside scrollbar
+set guioptions-=l
+set guioptions-=L
+"Disable bottom scrollbar
+set guioptions-=b
+
+set guifont=VL\ Gothic\ 15
 
 "Font
 if has('mac')
-  set guifont=Osaka-Mono:h16
-endif
-if has('gui_macvim')
   "Disable IME
   set imdisable
-  "Disable toolbar
-  set guioptions-=t
-  set guioptions-=T
-  "Disable menubar
-  set guioptions-=m
-  "Disable rightside scrollbar
-  set guioptions-=r
-  set guioptions-=R
-  "Disable leftside scrollbar
-  set guioptions-=l
-  set guioptions-=L
-  "Disable bottom scrollbar
-  set guioptions-=b
   "Fullscreen
   set fuoptions=maxvert,maxhorz
   autocmd GUIEnter * set fullscreen
   "Transparency
   set transparency=10
+  "Font
   set guifont=Osaka-Mono:h18
-endif
-if has('win32')
+elseif has("unix") " For linux machines (Ubuntu
+  set guifont VL\ Gothic\ 14
+elseif has('win32') || has('win64')
+  "Fullscreen
+  autocmd GUIEnter * :simalt ~x
+  "Transparency
+  set transparency=225
+  "Font
   set guifont=VL_Gothic_Regular:h16
   set guifontwide=VL_Gothic_Regular:h16
   set printfont=VL_Gothic_Regular:h11
-endif
-if has("gui_win32")
-  "Disable toolbar
-  set guioptions-=t
-  set guioptions-=T
-  "Disable menubar
-  set guioptions-=m
-  "Disable rightside scrollbar
-  set guioptions-=r
-  set guioptions-=R
-  "Disable leftside scrollbar
-  set guioptions-=l
-  set guioptions-=L
-  "Disable bottom scrollbar
-  set guioptions-=b
-  "Fullscreen
-  autocmd GUIEnter * :simalt ~x
-  set guifont=VL_Gothic_Regular:h16
-  set guifontwide=VL_Gothic_Regular:h16
 endif
 
 colorscheme oceandeep
