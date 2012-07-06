@@ -19,4 +19,5 @@
 # Black list
 /.vim/.netrwhist
 /.vim/sessions
+/.vim/autoload/pathogen.vim
 .DS_Store
