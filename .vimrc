@@ -160,8 +160,7 @@ set noimcmdline
 
 "Plugin settings
 ""pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
 ""NERD_commenter
 let NERDSpaceDelims = 1
 ""grep.vim
@@ -177,4 +176,4 @@ nnoremap <silent> :: :<C-u>Unite file_mru<CR>
 let g:user_zen_expandabbr_key='<<'
 filetype plugin indent on
 ""PEP8
-let g:pep8_map='<F5>'
+let g:gfkl;fgjkalsgjfpep8_map='<F5>'
