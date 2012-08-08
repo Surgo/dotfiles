@@ -20,4 +20,5 @@
 /.vim/.netrwhist
 /.vim/sessions
 /.vim/autoload/pathogen.vim
+/.ipython/profile_default/history.sqlite
 .DS_Store
