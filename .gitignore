@@ -3,6 +3,7 @@
 
 # White list
 !/.bashrc
+!/.bash_mine
 !/.bash_aliases
 !/.bash_completion
 !/.vim
