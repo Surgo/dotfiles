@@ -6,12 +6,16 @@ set autoread
 set hidden
 
 filetype off
+syntax off
 scriptencoding 'utf-8'
 
 if &encoding !=# 'utf-8'
   set encoding=japan
   set fileencoding=japan
 endif
+
+""pathogen
+call pathogen#infect()
 
 ""Windows
 if has('win32')
@@ -158,8 +162,6 @@ set noimdisable
 set noimcmdline
 
 "Plugin settings
-""pathogen
-call pathogen#infect()
 ""NERD_commenter
 let NERDSpaceDelims = 1
 ""grep.vim

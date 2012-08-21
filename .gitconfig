@@ -2,8 +2,9 @@
     name = Kosei Kitahara
     email = surgo.jp@gmail.com
 [core]
-    autocrlf = true
+    autocrlf = input
     safecrlf = warn
+    eol = lf
     editor = /usr/bin/vim
 [tig "bind"]
     generic = g move-first-line
