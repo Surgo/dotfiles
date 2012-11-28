@@ -22,4 +22,5 @@
 /.vim/sessions
 /.vim/autoload/pathogen.vim
 /.ipython/profile_default/history.sqlite
+/.ipython/profile_default/db
 .DS_Store
