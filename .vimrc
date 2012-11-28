@@ -14,9 +14,6 @@ if &encoding !=# 'utf-8'
   set fileencoding=japan
 endif
 
-""pathogen
-call pathogen#infect()
-
 ""Windows
 if has('win32')
   "let $LANG='ja_JP.UTF-8'
@@ -162,6 +159,8 @@ set noimdisable
 set noimcmdline
 
 "Plugin settings
+""pathogen
+call pathogen#infect()
 ""NERD_commenter
 let NERDSpaceDelims = 1
 ""grep.vim
@@ -175,6 +174,8 @@ let dumbbuf_hotkey = ';;'
 nnoremap <silent> :: :<C-u>Unite file_mru<CR>
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
-filetype plugin indent on
 ""PEP8
 let g:pep8_map='<F5>'
+
+syntax on
+filetype plugin indent on
