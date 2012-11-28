@@ -15,7 +15,7 @@ if &encoding !=# 'utf-8'
 endif
 
 ""Windows
-if has('win32')
+if has('win32') || has('win64')
   "let $LANG='ja_JP.UTF-8'
   set shellslash
   set runtimepath+=$HOME/.vim,$HOME/.vim/after
@@ -154,9 +154,18 @@ if has('syntax')
     autocmd VimEnter,BufEnter * call ZenkakuSpace()
   augroup END
 endif
-""IME OFF
+""IME off
 set noimdisable
 set noimcmdline
+set iminsert=0
+set imsearch=0
+inoremap :set iminsert=0
+"Disable IME in normal mode
+augroup InsModeAu
+  autocmd!
+  autocmd InsertEnter,CmdwinEnter * set noimdisable
+  autocmd InsertLeave,CmdwinLeave * set imdisable
+augroup END
 
 "Plugin settings
 ""pathogen
