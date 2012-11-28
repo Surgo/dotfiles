@@ -170,6 +170,8 @@ augroup END
 "Plugin settings
 ""pathogen
 call pathogen#infect()
+""NERD_tree
+nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 ""NERD_commenter
 let NERDSpaceDelims = 1
 ""grep.vim
@@ -180,7 +182,7 @@ let Grep_Skip_Files = '*.bak *~'
 ""DumpBuf
 let dumbbuf_hotkey = ';;'
 ""unite.vim
-nnoremap <silent> :: :<C-u>Unite file_mru<CR>
+nnoremap <silent> <C-h> :<C-u>Unite file_mru<CR>
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
 ""PEP8
