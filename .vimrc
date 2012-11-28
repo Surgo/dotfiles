@@ -66,6 +66,8 @@ set showmode
 set laststatus=2
 set modelines=0
 set cmdheight=2
+"Status line
+set statusline=%<%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %F%=%{fugitive#statusline()}[%l,%c%V]\ %P
 
 "Display
 set number
@@ -147,7 +149,7 @@ if has('syntax')
   syntax enable
   function! ZenkakuSpace()
     highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
-    silent! match ZenkakuSpace /@/
+    silent! match ZenkakuSpace /ã€€/
   endfunction
   augroup ZenkakuSpace
     autocmd!
@@ -187,6 +189,8 @@ nnoremap <silent> <C-h> :<C-u>Unite file_mru<CR>
 let g:user_zen_expandabbr_key='<<'
 ""PEP8
 let g:pep8_map='<F5>'
+""pyflakes
+let pyflakes_use_quickfix = 0
 
 syntax on
 filetype plugin indent on
