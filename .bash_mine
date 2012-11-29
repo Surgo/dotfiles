@@ -13,6 +13,4 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/apps
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-source /usr/local/bin/virtualenvwrapper_lazy.sh
-
-
+source /usr/local/bin/virtualenvwrapper.sh
