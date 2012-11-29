@@ -31,9 +31,9 @@
 [submodule ".vim/bundle/vimfiler"]
 	path = .vim/bundle/vimfiler
 	url = git://github.com/Shougo/vimfiler.git
-[submodule ".vim\\bundle\\pyflakes"]
-	path = .vim\\bundle\\pyflakes
-	url = git@github.com:mitechie/pyflakes-pathogen.git
-[submodule ".vim\\bundle\\fugitive"]
-	path = .vim\\bundle\\fugitive
-	url = git@github.com:tpope/vim-fugitive.git
+[submodule ".vim/bundle/pyflakes"]
+	path = .vim/bundle/pyflakes
+	url = git://github.com/mitechie/pyflakes-pathogen.git
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
