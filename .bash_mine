@@ -5,12 +5,17 @@ PATH=~/bin:$PATH
 export VISUAL=vim
 export EDITOR=vim
 
+# Using local git (not Xcode)
+export GIT_HOME=/usr/local/git
+PATH=${GIT_HOME}/bin:${PATH};export PATH
+MANPATH=${GIT_HOME}/share/man:${MANPATH};export MANPATH
+
 # For Python (virtualenv and pip)
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/apps
+export PROJECT_HOME=/repos/
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-source /usr/local/bin/virtualenvwrapper.sh
+source $VIRTUALENVWRAPPER_SCRIPT
