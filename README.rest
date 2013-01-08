@@ -6,14 +6,27 @@ My dotfiles
 Install
 -------
 
-    1. Clone a repository.
-    2. Create symbolic link for pathogen::
+#. Clone a repository.
+#. Install submodules.::
 
-           ln -s ~/.vim/bundle/pathogen/autoload/pathogen.vim ~/.vim/autoload/
+    git submodule update --init
 
-Add vim plugins (from github)
------------------------------
+#. Create symbolic link to pathogen.::
 
-    1. Add a submodule to budle directory::
+    ln -s ~/.vim/bundle/pathogen/autoload/pathogen.vim ~/.vim/autoload/
 
-            git submodule add git://github.com/<plugin>.git .vim/bundle/<plugin>
+
+Add vim plugins (from git repository)
+-------------------------------------
+
+Add a submodule to budle directory::
+
+    git submodule add git://github.com/<plugin>.git .vim/bundle/<plugin>
+
+Update vim plugins
+------------------
+
+Checkout and pull all submodules.::
+
+    git submodule update --init
+    git submodule foreach 'git checkout master; git pull origin master'
