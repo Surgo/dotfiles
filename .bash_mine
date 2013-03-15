@@ -5,8 +5,11 @@ PATH=~/bin:$PATH
 export VISUAL=vim
 export EDITOR=vim
 
+# Using MacPorts bin
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
 # Using local git (not Xcode)
-export GIT_HOME=/usr/local/git
+export GIT_HOME=/opt/local
 PATH=${GIT_HOME}/bin:${PATH};export PATH
 MANPATH=${GIT_HOME}/share/man:${MANPATH};export MANPATH
 
