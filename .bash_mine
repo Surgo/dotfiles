@@ -5,20 +5,34 @@ PATH=~/bin:$PATH
 export VISUAL=vim
 export EDITOR=vim
 
-# Using MacPorts bin
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-# Using local git (not Xcode)
-export GIT_HOME=/opt/local
-PATH=${GIT_HOME}/bin:${PATH};export PATH
-MANPATH=${GIT_HOME}/share/man:${MANPATH};export MANPATH
-
 # For Python (virtualenv and pip)
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=/repos/
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_SCRIPT=`which virtualenvwrapper.sh`
 source $VIRTUALENVWRAPPER_SCRIPT
+
+# For Ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# For Node.js
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
+
+case "$OSTYPE" in
+# For BSD / Mac
+darwin*)
+# Using MacPorts bin
+    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+# Using local git (not Xcode)
+    export GIT_HOME=/opt/local
+    PATH=${GIT_HOME}/bin:${PATH};export PATH
+    MANPATH=${GIT_HOME}/share/man:${MANPATH};export MANPATH
+;;
+# For Linux
+linux*)
+;;
+esac

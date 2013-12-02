@@ -1,7 +1,15 @@
+case "$OSTYPE" in
+# For BSD / Mac
+darwin*)
 # Completion git & mercurial
-export BASH_COMPLETION_DIR=/opt/local/etc/bash_completion.d
-    . $BASH_COMPLETION_DIR/git
-    . $BASH_COMPLETION_DIR/mercurial
+    export BASH_COMPLETION_DIR=/opt/local/etc/bash_completion.d
+        . $BASH_COMPLETION_DIR/git
+        . $BASH_COMPLETION_DIR/mercurial
+;;
+# For Linux
+linux*)
+;;
+esac
 
 # Local settings
 if [ -f ~/.bash_completion_local ]; then
