@@ -1,0 +1,2 @@
+# For Python (virtualenv and pip)
+export PROJECT_HOME=/path/to/repos/
