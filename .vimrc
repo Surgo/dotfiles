@@ -139,7 +139,7 @@ set imsearch=0
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 "Multi bytes
-set fileencodings=iso-2022-jp,utf-8,cp932,euc-jp,default,latin
+set fileencodings=utf-8,cp932,euc-jp,default,latin
 set fileformats=unix,dos,mac
 if exists('&ambiwidth')
   set ambiwidth=double
