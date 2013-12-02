@@ -11,3 +11,5 @@
     generic = G move-last-line
     generic = ^F move-page-down
     generic = ^B move-page-ug
+[credential]
+	helper = osxkeychain
