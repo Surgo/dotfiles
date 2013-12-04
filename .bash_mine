@@ -5,6 +5,9 @@ PATH=~/bin:$PATH
 export VISUAL=vim
 export EDITOR=vim
 
+# Complete sudo
+complete -cf sudo
+
 # For Python (virtualenv and pip)
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
@@ -24,10 +27,11 @@ export PATH="$HOME/.nodebrew/current/bin:$PATH"
 case "$OSTYPE" in
 # For BSD / Mac
 darwin*)
-# Using MacPorts bin
+    # Using MacPorts bin
     export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-# Using local git (not Xcode)
+    # Using Homebrew
+    export PATH=/usr/local/bin:$PATH
+    # Using local git (not Xcode)
     export GIT_HOME=/opt/local
     PATH=${GIT_HOME}/bin:${PATH};export PATH
     MANPATH=${GIT_HOME}/share/man:${MANPATH};export MANPATH
