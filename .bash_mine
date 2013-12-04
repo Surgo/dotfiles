@@ -1,12 +1,22 @@
+# Setup Path
+case "$OSTYPE" in
+# For BSD / Mac
+darwin*)
+    # Using MacPorts bin
+    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+    # Using Homebrew
+    export PATH=/usr/local/bin:$PATH
+;;
+# For Linux
+linux*)
+;;
+esac
 # Add my scripts
 PATH=~/bin:$PATH
 
 # Vim THE editor!
 export VISUAL=vim
 export EDITOR=vim
-
-# Complete sudo
-complete -cf sudo
 
 # For Python (virtualenv and pip)
 export PIP_REQUIRE_VIRTUALENV=true
@@ -18,25 +28,12 @@ export VIRTUALENVWRAPPER_SCRIPT=`which virtualenvwrapper.sh`
 source $VIRTUALENVWRAPPER_SCRIPT
 
 # For Ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -s ${HOME}/.rbenv ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
 
 # For Node.js
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
-
-case "$OSTYPE" in
-# For BSD / Mac
-darwin*)
-    # Using MacPorts bin
-    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-    # Using Homebrew
-    export PATH=/usr/local/bin:$PATH
-    # Using local git (not Xcode)
-    export GIT_HOME=/opt/local
-    PATH=${GIT_HOME}/bin:${PATH};export PATH
-    MANPATH=${GIT_HOME}/share/man:${MANPATH};export MANPATH
-;;
-# For Linux
-linux*)
-;;
-esac
+if [ -s ${HOME}/.nodebrew ]; then
+    export PATH="$HOME/.nodebrew/current/bin:$PATH"
+fi

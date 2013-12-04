@@ -4,6 +4,7 @@
 # White list
 !/.bashrc
 !/.bashrc_local.template
+!/.bash_profile
 !/.bash_mine
 !/.bash_aliases
 !/.bash_completion
