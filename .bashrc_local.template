@@ -1,2 +1,5 @@
 # For Python (virtualenv and pip)
 export PROJECT_HOME=/path/to/repos/
+
+# For Homebrew
+export HOMEBREW_GITHUB_API_TOKEN=sometoken
