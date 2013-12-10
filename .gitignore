@@ -2,6 +2,8 @@
 /.*
 
 # White list
+!/.zshrc
+!/.oh-my-zsh
 !/.bashrc
 !/.bashrc_local.template
 !/.bash_profile
