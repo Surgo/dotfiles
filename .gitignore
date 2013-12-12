@@ -10,6 +10,7 @@
 !/.bash_mine
 !/.bash_aliases
 !/.bash_completion
+!/.tmux.conf
 !/.vim
 !/.vimrc
 !/.gvimrc
