@@ -100,11 +100,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # My configurations.
-if [ -f ~/.bash_mine ]; then
-    . ~/.bash_mine
+if [ -f ~/.sh_mine ]; then
+    . ~/.sh_mine
 fi
 
 # Local settings
-if [ -f ~/.bashrc_local ]; then
-    . ~/.bashrc_local
+if [ -f ~/.sh_local ]; then
+    . ~/.sh_local
 fi
