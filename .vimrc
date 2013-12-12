@@ -56,7 +56,9 @@ map <F3> <ESC>:bn<CR>
 map <F4> <ESC>:bw<CR>
 
 "Mouse
-set mouse=a
+if has("mouse")
+  set mouse=a
+endif
 set guioptions+=a
 set ttymouse=xterm2
 
