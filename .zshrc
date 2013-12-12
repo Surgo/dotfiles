@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(sudo tmux common-aliases colorize) # OS common
+plugins=(sudo tmux colorize) # OS common
 plugins=($plugins osx brew) # For Mac OSX
 plugins=($plugins vagrant fabric docker) # For dev tools
 plugins=($plugins jira github) # For dev service
