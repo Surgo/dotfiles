@@ -57,6 +57,9 @@ plugins=($plugins go golang) # For Go
 
 source $ZSH/oh-my-zsh.sh
 
+if [ -f /usr/local/share/zsh-completions ]; then
+  fpath=(/usr/local/share/zsh-completions $fpath)
+fi
 # My configurations.
 if [ -f ~/.sh_mine ]; then
   . ~/.sh_mine
