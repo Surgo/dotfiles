@@ -4,12 +4,20 @@
 [core]
     autocrlf = input
     safecrlf = warn
-    eol = lf
     editor = vim
+[branch]
+    autosetuprebase = always
+[merge]
+    tool = vimdiff
+    ff = false
+[pull]
+    rebase = true
+[push]
+    default = upstream
 [tig "bind"]
     generic = g move-first-line
     generic = G move-last-line
     generic = ^F move-page-down
     generic = ^B move-page-ug
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
