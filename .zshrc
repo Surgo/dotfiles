@@ -42,6 +42,19 @@ ZSH_THEME="robbyrussell"
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
 
+# My configurations.
+if [ -f /usr/local/share/zsh-completions ]; then
+  fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+# My configurations.
+if [ -f ~/.sh_mine ]; then
+  . ~/.sh_mine
+fi
+# Local settings
+if [ -f ~/.sh_local ]; then
+  . ~/.sh_local
+fi
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -56,18 +69,6 @@ plugins=($plugins python pep8 pip virtualenvwrapper django) # For Python
 plugins=($plugins go golang) # For Go
 
 source $ZSH/oh-my-zsh.sh
-
-if [ -f /usr/local/share/zsh-completions ]; then
-  fpath=(/usr/local/share/zsh-completions $fpath)
-fi
-# My configurations.
-if [ -f ~/.sh_mine ]; then
-  . ~/.sh_mine
-fi
-# Local settings
-if [ -f ~/.sh_local ]; then
-  . ~/.sh_local
-fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
