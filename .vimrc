@@ -25,7 +25,8 @@ endif
 set ttyfast
 
 "Clipboard
-set clipboard=unnamed
+set clipboard+=unnamed
+set clipboard+=autoselect
 
 "Keyboards
 set backspace=indent,eol,start
