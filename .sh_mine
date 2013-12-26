@@ -29,7 +29,8 @@ export VIRTUALENVWRAPPER_SCRIPT=`which virtualenvwrapper.sh`
 source $VIRTUALENVWRAPPER_SCRIPT
 
 # For Ruby
-if [ -s ${HOME}/.rbenv ]; then
+if [ -d /usr/local/var/rbenv ]; then
+    export RBENV_ROOT=/usr/local/var/rbenv
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
