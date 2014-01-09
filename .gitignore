@@ -4,19 +4,19 @@
 # White list
 !/.zshrc
 !/.oh-my-zsh
+!/.zsh_completion
 !/.bashrc
-!/.bashrc_local.template
 !/.bash_profile
-!/.bash_mine
 !/.bash_aliases
 !/.bash_completion
+!/.sh_mine
+!/.sh_local.template
 !/.tmux.conf
 !/.vim
 !/.vimrc
 !/.gvimrc
 !/.ipython
 !/README.rest
-
 !/.gitignore
 !/.gitconfig
 !/.gitmodules

@@ -75,3 +75,8 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# My completion
+if [ -f ~/.zsh_completion ]; then
+  . ~/.zsh_completion
+fi
