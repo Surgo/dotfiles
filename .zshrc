@@ -68,6 +68,11 @@ plugins=($plugins mercurial) # For Mercurial
 plugins=($plugins python pep8 pip virtualenvwrapper django) # For Python
 plugins=($plugins go golang) # For Go
 
+# Use brew helpfiles
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/helpfiles
+
 source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
