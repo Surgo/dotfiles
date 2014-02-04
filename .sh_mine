@@ -19,6 +19,9 @@ PATH=~/bin:$PATH
 export VISUAL=vim
 export EDITOR=vim
 
+# For Android
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
 # For Python (virtualenv and pip)
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
