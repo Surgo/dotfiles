@@ -98,7 +98,7 @@ set cindent
 set expandtab
 
 set tabstop=4
-set softtabstop=0
+set softtabstop=4
 set shiftwidth=4
 
 "Completion
@@ -139,7 +139,7 @@ set hlsearch
 set iminsert=0
 set imsearch=0
 ""Cancelling highlight
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
+nnoremap <ESC><ESC> :nohlsearch<CR>
 
 "Multi bytes
 set fileencodings=utf-8,cp932,euc-jp,default,latin
