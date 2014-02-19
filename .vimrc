@@ -70,8 +70,9 @@ set laststatus=2
 set modelines=0
 set cmdheight=2
 "Status line
-set statusline=%<%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %F%=%{fugitive#statusline()}[%l,%c%V]\ %P
-
+if has("statusline") && exists('*fugitive#statusline')
+  set statusline=%<%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %F%=%{fugitive#statusline()}[%l,%c%V]\ %P
+endif
 "Display
 set number
 set ruler
@@ -176,6 +177,9 @@ augroup END
 ""pathogen
 call pathogen#infect()
 ""NERD_tree
+autocmd VimEnter * if !argc() | NERDTree | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:NERDTreeShowHidden=0
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 ""NERD_commenter
 let NERDSpaceDelims = 1
@@ -185,9 +189,50 @@ let Grep_Skip_Files = '*.bak *~'
 ""QuickBuf
 ""let g:qb_hotkey=';;'
 ""DumpBuf
-let dumbbuf_hotkey = ';;'
+""let dumbbuf_hotkey = ''
 ""unite.vim
-nnoremap <silent> <C-h> :<C-u>Unite file_mru<CR>
+autocmd FileType unite nnoremap <silent> <buffer> ;q :q<CR>
+autocmd FileType unite inoremap <silent> <buffer> ;q <ESC>:q<CR>
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()
+  imap <silent><buffer> <C-k> <C-p>
+  imap <silent><buffer> <C-j> <C-n>
+endfunction
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#custom#source('line_migemo', 'matchers', 'matcher_migemo')
+call unite#custom#source('file_rec', 'sorters', 'sorter_reverse')
+call unite#custom#source('buffer,file_rec,file_rec/async', 'matchers',
+  \ ['converter_tail', 'matcher_fuzzy'])
+call unite#custom#source('file_mru', 'matchers',
+  \ ['matcher_project_files', 'matcher_hide_hidden_files'])
+call unite#custom#source('file', 'matchers',
+  \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
+call unite#custom#source('file_rec/async,file_mru', 'converters',
+  \ ['converter_file_directory'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+let g:unite_enable_start_insert = 1
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+let g:unite_source_grep_max_candidates = 200
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts =
+    \ '--line-numbers --nocolor --nogroup --hidden ' .
+    \ '--ignore ''.hg'' ' .
+    \ '--ignore ''.svn'' ' .
+    \ '--ignore ''.git'' ' .
+    \ '--ignore ''.bzr'''
+  let g:unite_source_grep_recursive_opt = ''
+endif
+nnoremap <silent> ;g :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> ;cg :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+nnoremap <silent> ;; :<C-u>Unite<Space>buffer_tab -bufenter-name=search-buffer<CR>
+nnoremap <silent> ;<Space> :<C-u>Unite<Space>-no-split buffer file_mru file_rec:! file_rec/async:! -buffer-name=files<CR>
+nnoremap <silent> ;la :<C-u>:Unite<Space>file_rec/async -buffer-name=files<CR>
+nnoremap <silent> ;l :<C-u>Unite<Space>file -buffer-name=files file<CR>
+nnoremap <silent> ;h :<C-u>Unite<Space>file_mru<CR>
+nnoremap <silent> ;n :<C-u>Unite<Space>file/new<CR>
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
 ""PEP8
