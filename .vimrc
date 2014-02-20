@@ -227,7 +227,7 @@ if executable('ag')
 endif
 nnoremap <silent> ;g :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> ;cg :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-nnoremap <silent> ;; :<C-u>Unite<Space>buffer_tab -bufenter-name=search-buffer<CR>
+nnoremap <silent> ;; :<C-u>Unite<Space>buffer_tab -buffer-name=search-buffer<CR>
 nnoremap <silent> ;<Space> :<C-u>Unite<Space>-no-split buffer file_mru file_rec:! file_rec/async:! -buffer-name=files<CR>
 nnoremap <silent> ;la :<C-u>:Unite<Space>file_rec/async -buffer-name=files<CR>
 nnoremap <silent> ;l :<C-u>Unite<Space>file -buffer-name=files file<CR>
