@@ -5,15 +5,34 @@
     autocrlf = input
     safecrlf = warn
     editor = vim
+    tespace = space-before-tab, indent-with-non-tab, trailing-space
+    trustctime = false
+[color]
+    ui = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
 [branch]
     autosetuprebase = always
 [merge]
     tool = vimdiff
+    log = true
     ff = false
 [pull]
     rebase = true
 [push]
-    default = upstream
+    default = matching
+    # default = upstream
 [tig "bind"]
     generic = g move-first-line
     generic = G move-last-line
@@ -21,3 +40,63 @@
     generic = ^B move-page-ug
 [credential]
     helper = osxkeychain
+[alias]
+    # commit
+    c = commit
+    ci = commit -a
+    cam = commit -a --amend
+    # checkout
+    co = checkout
+    cb = checkout -b
+    ct = checkout --track
+    cm = checkout master
+    cd = checkout develop
+    go = checkout -B
+    # branch
+    br = branch
+    ba = branch -a
+    bm = branch --merged
+    bn = branch --no-merged
+    bo = branch -r
+    cleanup = !"git branch --merged | grep -v \\* | xargs -I % git branch -d %"
+    cl = !"git cleanup"
+    # log
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    ls = log --stat
+    lp = log -p
+    wc = whatchanged
+    graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+    lg = !git graph
+    # reset
+    r = reset HEAD
+    rh = "!r() { git reset HEAD~$1; }; r"
+    rs = "!r() { git reset --soft HEAD~$1; }; r"
+    rh = "!r() { git reset --hard HEAD~$1; }; r"
+    # rebase
+    rb = "!r() { git rebase -i HEAD~$1; }; r"
+    # diff
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+    di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+    dw = diff --word-diff --color-words
+    dc = diff --cached
+    ds = diff --staged
+    dh = "!r() { git diff HEAD~$1; }; r"
+    # grep
+    g = grep
+    gr = grep
+    gn = grep -n
+    sm = submodule
+    # View the current working tree status using the short format
+    s = status -s
+    st = status -uno
+    # pull
+    p = !"git pull; git submodule foreach 'git checkout master; git pull origin master'"
+    # verbose
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+    # find
+    fb = "!f() { git branch -a --contains $1; }; f"
+    ft = "!f() { git describe --always --contains $1; }; f"
+    fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+    fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
