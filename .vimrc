@@ -88,9 +88,14 @@ augroup cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
 augroup END
-:hi clear CursorLine
-:hi CursorLine gui=underline
+"" Color
+highlight clear CursorLine
+highlight CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
+highlight DiffAdd    ctermfg=1 ctermbg=none
+highlight DiffChange ctermfg=3 ctermbg=none
+highlight DiffDelete ctermfg=4 ctermbg=none
+highlight DiffText   ctermfg=8 ctermbg=none
 
 "Indent
 set autoindent
