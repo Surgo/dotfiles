@@ -70,7 +70,6 @@
     r = reset HEAD
     rh = "!r() { git reset HEAD~$1; }; r"
     rs = "!r() { git reset --soft HEAD~$1; }; r"
-    rh = "!r() { git reset --hard HEAD~$1; }; r"
     # rebase
     rb = "!r() { git rebase -i HEAD~$1; }; r"
     # diff
