@@ -42,3 +42,8 @@ fi
 if [ -s ${HOME}/.nodebrew ]; then
     export PATH="$HOME/.nodebrew/current/bin:$PATH"
 fi
+
+# For MacTex
+if [ -d /usr/texbin ]; then
+  export PATH="/usr/texbin:$PATH"
+fi
