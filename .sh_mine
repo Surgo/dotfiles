@@ -31,6 +31,10 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=`which virtualenvwrapper.sh`
 source $VIRTUALENVWRAPPER_SCRIPT
 
+# For Go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 # For Ruby
 if [ -d /usr/local/var/rbenv ]; then
     export RBENV_ROOT=/usr/local/var/rbenv
