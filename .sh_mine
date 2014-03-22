@@ -2,10 +2,10 @@
 case "$OSTYPE" in
 # For BSD / Mac
 darwin*)
-    # Using MacPorts bin
-    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-    # Using Homebrew
-    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+  # Using MacPorts bin
+  # export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+  # Using Homebrew
+  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 ;;
 # For Linux
 linux*)
@@ -20,7 +20,9 @@ export VISUAL=vim
 export EDITOR=vim
 
 # For Android
-export ANDROID_HOME=/usr/local/opt/android-sdk
+if [ -d /usr/local/opt/android-sdk ]; then
+  export ANDROID_HOME=/usr/local/opt/android-sdk
+fi
 
 # For Python (virtualenv and pip)
 export PIP_REQUIRE_VIRTUALENV=true
@@ -34,17 +36,20 @@ source $VIRTUALENVWRAPPER_SCRIPT
 # For Go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+if [ -d /usr/local/Cellar/go ]; then
+  export PATH=$PATH:/usr/local/Cellar/go/1.2.1/libexec/bin
+fi
 
 # For Ruby
 if [ -d /usr/local/var/rbenv ]; then
-    export RBENV_ROOT=/usr/local/var/rbenv
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
+  export RBENV_ROOT=/usr/local/var/rbenv
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init - --no-rehash)"
 fi
 
 # For Node.js
 if [ -s ${HOME}/.nodebrew ]; then
-    export PATH="$HOME/.nodebrew/current/bin:$PATH"
+  export PATH="$HOME/.nodebrew/current/bin:$PATH"
 fi
 
 # For MacTex
