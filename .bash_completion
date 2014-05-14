@@ -1,5 +1,9 @@
 # Complete sudo
 complete -cf sudo
+# Complete aws_cli
+if [ -f `command -v aws_completer` ]; then
+  complete -C aws_completer aws
+fi
 
 case "$OSTYPE" in
 # For BSD / Mac
