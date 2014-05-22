@@ -4,6 +4,9 @@
 [submodule ".vim/bundle/ag"]
 	path = .vim/bundle/ag
 	url = git@github.com:rking/ag.vim.git
+[submodule ".vim/bundle/emmet"]
+	path = .vim/bundle/emmet
+	url = git@github.com:mattn/emmet-vim.git
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
@@ -52,6 +55,6 @@
 [submodule ".vim/bundle/virtualenv"]
 	path = .vim/bundle/virtualenv
 	url = git://github.com/jmcantrell/vim-virtualenv.git
-[submodule ".vim/bundle/zencoding"]
-	path = .vim/bundle/zencoding
-	url = git://github.com/mattn/zencoding-vim.git
+[submodule ".vim/bundle/emmet"]
+	path = .vim/bundle/emmet
+	url = git@github.com:mattn/emmet-vim.git
