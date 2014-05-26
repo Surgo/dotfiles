@@ -33,11 +33,6 @@
     rebase = true
 [push]
     default = current
-[tig "bind"]
-    generic = g move-first-line
-    generic = G move-last-line
-    generic = ^F move-page-down
-    generic = ^B move-page-ug
 [credential]
     helper = osxkeychain
 [alias]

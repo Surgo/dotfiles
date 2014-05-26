@@ -21,6 +21,7 @@
 !/.gitconfig
 !/.gitmodules
 !/.gitattributes
+!/.tigrc
 
 # Black list
 /.vim/.netrwhist

@@ -1,0 +1,10 @@
+set main-view = id:yes,color date:default author:full commit-title:graph=yes,refs=yes
+set blame-view = id:yes,color date:default author:full line-number:yes,interval=10 text
+set tree-view = id:no date:default author:full line-number:no,interval=5 mode file-size:units file-name
+set grep-view = file-name:yes line-number:yes,interval=1 text
+
+bind generic G none
+bind generic g move-first-line
+bind generic G move-last-line
+bind generic <C-F> move-page-down
+bind generic <C-B> move-page-up
