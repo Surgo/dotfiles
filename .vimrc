@@ -229,6 +229,8 @@ if executable('ag')
     \ '--ignore ''.git'' ' .
     \ '--ignore ''.bzr'''
   let g:unite_source_grep_recursive_opt = ''
+  "" Ag
+  let g:aghighlight = 1
 endif
 nnoremap <silent> ;g :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> ;cg :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR><C-R><C-W>
@@ -244,6 +246,16 @@ let g:user_zen_expandabbr_key='<<'
 let g:pep8_map='<F5>'
 ""pyflakes
 let pyflakes_use_quickfix = 0
+""Go
+let g:acp_enableAtStartup = 0
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>t <Plug>(go-test)
+au FileType go nmap gd <Plug>(go-def-tab)
 
 syntax on
 filetype plugin indent on
