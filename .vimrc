@@ -242,10 +242,8 @@ nnoremap <silent> ;h :<C-u>Unite<Space>file_mru<CR>
 nnoremap <silent> ;n :<C-u>Unite<Space>file/new<CR>
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
-""PEP8
-let g:pep8_map='<F5>'
-""pyflakes
-let pyflakes_use_quickfix = 0
+""Syntastic
+let g:syntastic_python_checkers = ['python', 'pyflakes', 'pep8']
 ""Go
 let g:acp_enableAtStartup = 0
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"

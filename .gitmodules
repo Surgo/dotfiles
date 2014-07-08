@@ -40,12 +40,12 @@
 [submodule ".vim/bundle/pep8"]
 	path = .vim/bundle/pep8
 	url = git://github.com/vim-scripts/pep8.git
-[submodule ".vim/bundle/pyflakes"]
-	path = .vim/bundle/pyflakes
-	url = git@github.com:kevinw/pyflakes-vim.git
 [submodule ".vim/bundle/SudoEdit"]
 	path = .vim/bundle/SudoEdit
 	url = git://github.com/chrisbra/SudoEdit.vim.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = git@github.com:scrooloose/syntastic.git
 [submodule ".vim/bundle/unite"]
 	path = .vim/bundle/unite
 	url = git://github.com/Shougo/unite.vim.git

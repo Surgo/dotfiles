@@ -50,6 +50,9 @@ if [ -d /usr/local/share/zsh/helpfiles ]; then
   HELPDIR=/usr/local/share/zsh/helpfiles
 fi
 
+# Load "Oh-My-ZSH!"
+source $ZSH/oh-my-zsh.sh
+
 # My configurations.
 if [ -f ~/.sh_mine ]; then
   . ~/.sh_mine
@@ -62,6 +65,3 @@ fi
 if [ -f ~/.zsh_completion ]; then
   . ~/.zsh_completion
 fi
-
-# Load "Oh-My-ZSH!"
-source $ZSH/oh-my-zsh.sh
