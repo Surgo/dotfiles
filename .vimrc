@@ -89,13 +89,13 @@ augroup cch
   autocmd WinEnter,BufRead * set cursorline
 augroup END
 "" Color
-highlight clear CursorLine
-highlight CursorLine gui=underline
-highlight CursorLine ctermbg=black guibg=black
-highlight DiffAdd    ctermfg=1 ctermbg=none
-highlight DiffChange ctermfg=3 ctermbg=none
-highlight DiffDelete ctermfg=4 ctermbg=none
-highlight DiffText   ctermfg=8 ctermbg=none
+"highlight clear CursorLine
+"highlight CursorLine gui=underline
+"highlight CursorLine ctermbg=black guibg=black
+"highlight DiffAdd    ctermfg=1 ctermbg=none
+"highlight DiffChange ctermfg=3 ctermbg=none
+"highlight DiffDelete ctermfg=4 ctermbg=none
+"highlight DiffText   ctermfg=8 ctermbg=none
 
 "Indent
 set autoindent
@@ -243,17 +243,25 @@ nnoremap <silent> ;n :<C-u>Unite<Space>file/new<CR>
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
 ""Syntastic
-let g:syntastic_python_checkers = ['python', 'pyflakes', 'pep8']
+let g:syntastic_python_checkers = ['flake8', 'python']
 ""Go
 let g:acp_enableAtStartup = 0
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>r <Plug>(go-run)
 au FileType go nmap <Leader>b <Plug>(go-build)
 au FileType go nmap <Leader>t <Plug>(go-test)
 au FileType go nmap gd <Plug>(go-def-tab)
+""Theme: solarized
+if has('mac')
+  set background=dark
+  if !has("gui_running")
+    let g:solarized_termtrans = 1
+    let g:solarized_termcolors = 16
+  endif
+  colorscheme solarized
+endif
 
 syntax on
 filetype plugin indent on
