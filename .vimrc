@@ -244,6 +244,7 @@ nnoremap <silent> ;n :<C-u>Unite<Space>file/new<CR>
 let g:user_zen_expandabbr_key='<<'
 ""Syntastic
 let g:syntastic_python_checkers = ['flake8', 'python']
+let g:syntastic_python_flake8_args = '--ignore=E501'
 ""Go
 let g:acp_enableAtStartup = 0
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
