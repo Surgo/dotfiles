@@ -40,6 +40,9 @@
 [submodule ".vim/bundle/pep8"]
 	path = .vim/bundle/pep8
 	url = git://github.com/vim-scripts/pep8.git
+[submodule ".vim/bundle/solarized"]
+	path = .vim/bundle/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/SudoEdit"]
 	path = .vim/bundle/SudoEdit
 	url = git://github.com/chrisbra/SudoEdit.vim.git
@@ -58,6 +61,3 @@
 [submodule ".vim/bundle/virtualenv"]
 	path = .vim/bundle/virtualenv
 	url = git://github.com/jmcantrell/vim-virtualenv.git
-[submodule ".vim/bundle/solarized"]
-	path = .vim/bundle/solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
