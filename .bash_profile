@@ -4,6 +4,10 @@
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
+# Setup path
+if [ -f ~/.sh_path ]; then
+    . ~/.sh_path
+fi
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return

@@ -1,17 +1,3 @@
-# Setup Path
-case "$OSTYPE" in
-# For BSD / Mac
-darwin*)
-  # Using MacPorts bin
-  # export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-  # Using Homebrew
-  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-;;
-# For Linux
-linux*)
-;;
-esac
-
 # Add my scripts
 PATH=~/bin:$PATH
 
