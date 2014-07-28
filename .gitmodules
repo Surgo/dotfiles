@@ -25,6 +25,7 @@
 [submodule ".vim/bundle/neomru"]
 	path = .vim/bundle/neomru
 	url = git@github.com:Shougo/neomru.vim.git
+	ignore = dirty
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
@@ -46,6 +47,7 @@
 [submodule ".vim/bundle/SudoEdit"]
 	path = .vim/bundle/SudoEdit
 	url = git://github.com/chrisbra/SudoEdit.vim.git
+	ignore = dirty
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
