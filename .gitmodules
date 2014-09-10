@@ -4,6 +4,9 @@
 [submodule ".vim/bundle/ag"]
 	path = .vim/bundle/ag
 	url = git@github.com:rking/ag.vim.git
+[submodule ".vim/bundle/colorizer"]
+	path = .vim/bundle/colorizer
+	url = git@github.com:lilydjwg/colorizer.git
 [submodule ".vim/bundle/emmet"]
 	path = .vim/bundle/emmet
 	url = git@github.com:mattn/emmet-vim.git
