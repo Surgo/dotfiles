@@ -7,6 +7,9 @@
 [submodule ".vim/bundle/colorizer"]
 	path = .vim/bundle/colorizer
 	url = git@github.com:lilydjwg/colorizer.git
+[submodule ".vim/bundle/editorconfig"]
+	path = .vim/bundle/editorconfig
+	url = git@github.com:editorconfig/editorconfig-vim.git
 [submodule ".vim/bundle/emmet"]
 	path = .vim/bundle/emmet
 	url = git@github.com:mattn/emmet-vim.git
