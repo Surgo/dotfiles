@@ -54,6 +54,9 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
+[submodule ".vim/bundle/tabpagebuffer"]
+	path = .vim/bundle/tabpagebuffer
+	url = git@github.com:Shougo/tabpagebuffer.vim.git
 [submodule ".vim/bundle/unite"]
 	path = .vim/bundle/unite
 	url = git://github.com/Shougo/unite.vim.git
