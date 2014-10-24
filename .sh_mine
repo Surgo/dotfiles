@@ -40,6 +40,12 @@ fi
 if [ -s ${HOME}/.nodebrew ]; then
   export PATH="$HOME/.nodebrew/current/bin:$PATH"
 fi
+if [ -d /usr/local/lib/node ]; then
+  export NODE_PATH="/usr/local/lib/node"
+fi
+if [ -d /usr/local/share/npm/bin ]; then
+  export PATH="/usr/local/share/npm/bin:$PATH"
+fi
 
 # For MacTex
 if [ -d /usr/texbin ]; then
