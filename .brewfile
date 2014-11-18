@@ -1,0 +1,42 @@
+# Install and setup brew
+# xcode-select --install
+# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# brew install rcmdnk/file/brew-file
+
+# Install cask packages
+install caskroom/cask/brew-cask
+cask install appcleaner
+cask install android-studio-bundle
+cask install cheatsheet
+cask install divvy
+cask install dropbox
+// brew cask install google-chrome (1password is not working)
+cask install google-drive
+cask install google-japanese-ime
+cask install hands-off
+cask install iterm2
+cask install skype
+cask install slack
+
+# Install Homebrew packages
+install editorconfig
+install git
+install go
+install jpeg
+install libpng
+install libsass
+install libtool
+install lua
+install mercurial
+install node
+install openssl
+install python
+install python3
+install reattach-to-user-namespace
+install the_silver_searcher
+install tig
+install tmux
+install vim
+install wget
+install zsh
+install zsh-completions

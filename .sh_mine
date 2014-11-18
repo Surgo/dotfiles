@@ -1,6 +1,9 @@
 # Add my scripts
 PATH=~/bin:$PATH
 
+# For .brewfile
+export HOMEBREW_BREWFILE=~/.brewfile
+
 # Vim THE editor!
 export VISUAL=vim
 export EDITOR=vim
