@@ -58,6 +58,20 @@ fi
 # Load "Oh-My-ZSH!"
 source $ZSH/oh-my-zsh.sh
 
+function get_vcs_prompt_info {
+  if [ $(in_hg) ]; then
+    echo $(hg_prompt_info)
+  else
+    echo $(git_prompt_info)
+  fi
+}
+
+# Override robbyrussell PROMPT
+PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(get_vcs_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+ZSH_THEME_HG_PROMPT_PREFIX="hg:(%{$fg[red]%}"
+ZSH_THEME_HG_PROMPT_SUFFIX=$ZSH_THEME_GIT_PROMPT_SUFFIX
+ZSH_THEME_HG_PROMPT_DIRTY=$ZSH_THEME_GIT_PROMPT_DIRTY
+ZSH_THEME_HG_PROMPT_CLEAN=$ZSH_THEME_GIT_PROMPT_CLEAN
 # My configurations.
 if [ -f ~/.sh_mine ]; then
   . ~/.sh_mine
