@@ -69,3 +69,6 @@
 [submodule ".vim/bundle/virtualenv"]
 	path = .vim/bundle/virtualenv
 	url = git://github.com/jmcantrell/vim-virtualenv.git
+[submodule ".tmux.conf.d/colors-solarized"]
+	path = .tmux.conf.d/colors-solarized
+	url = git@github.com:seebi/tmux-colors-solarized.git

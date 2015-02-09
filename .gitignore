@@ -12,10 +12,13 @@
 !/.sh_mine
 !/.sh_local.template
 !/.tmux.conf
+!/.tmux-osx.conf
+!/.tmux.conf.d
 !/.vim
 !/.vimrc
 !/.gvimrc
 !/.ipython
+!/.iterm.donf.d
 !/README.rest
 !/.gitignore
 !/.gitconfig
