@@ -5,38 +5,48 @@
 
 # Install cask packages
 install caskroom/cask/brew-cask
+tap caskroom/versions
+
+cask install android-studio
 cask install appcleaner
-cask install android-studio-bundle
 cask install cheatsheet
 cask install divvy
 cask install dropbox
 // brew cask install google-chrome (1password is not working)
-cask install google-drive
 cask install google-japanese-ime
-cask install hands-off
 cask install iterm2
-cask install skype
+cask install java
 cask install slack
 
 # Install Homebrew packages
 install editorconfig
+install gdbm
 install git
 install go
+install icu4c
 install jpeg
+install libevent
 install libpng
 install libsass
 install libtool
 install lua
+install mcrypt
 install mercurial
+install mhash
+install mysql --client-only
 install node
 install openssl
+install pcre
 install python
 install python3
+install readline
 install reattach-to-user-namespace
+install sqlite
 install the_silver_searcher
 install tig
 install tmux
 install vim
 install wget
+install xz
 install zsh
 install zsh-completions
