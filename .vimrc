@@ -132,9 +132,8 @@ endfunction
 inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
 ""Spacing after commma
 inoremap , ,<Space>
-"" Remove commma when close.
+"" Remove blank when close.
 autocmd BufWritePre * :%s/\s\+$//ge
-"autocmd BufWritePre * :%s/\t/  /ge
 
 "Search
 set wrapscan
