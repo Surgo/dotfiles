@@ -70,6 +70,9 @@
 	path = .vim/bundle/virtualenv
 	url = git://github.com/jmcantrell/vim-virtualenv.git
 	ignore = dirty
-[submodule ".tmux.conf.d/colors-solarized"]
-	path = .tmux.conf.d/colors-solarized
+[submodule ".tmux.conf.d/themes/colors-solarized"]
+	path = .tmux.conf.d/themes/colors-solarized
 	url = git@github.com:seebi/tmux-colors-solarized.git
+[submodule ".tmux.conf.d/plugins/tpm"]
+	path = .tmux.conf.d/plugins/tpm
+	url = git@github.com:tmux-plugins/tpm.git
