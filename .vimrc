@@ -68,7 +68,7 @@ set showcmd
 set showmode
 set laststatus=2
 set modelines=0
-set cmdheight=2
+set cmdheight=1
 "Status line
 if has("statusline") && exists('*fugitive#statusline')
   set statusline=%<%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %F%=%{fugitive#statusline()}[%l,%c%V]\ %P

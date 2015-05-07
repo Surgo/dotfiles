@@ -66,6 +66,10 @@
 [submodule ".vim/bundle/vimproc"]
 	path = .vim/bundle/vimproc
 	url = git@github.com:Shougo/vimproc.vim.git
+[submodule ".vim/bundle/virtualenv"]
+	path = .vim/bundle/virtualenv
+	url = git@github.com:Coacher/vim-virtualenv.git
+	ignore = dirty
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = git@github.com:tmux-plugins/tpm.git
