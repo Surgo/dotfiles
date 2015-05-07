@@ -33,6 +33,9 @@ if [ -d $HOME/go ]; then
 fi
 
 # For Ruby
+if [ -d /usr/local/opt/ruby/bin ]; then
+  export PATH=/usr/local/opt/ruby/bin:$PATH
+fi
 if [ -d /usr/local/var/rbenv ]; then
   export RBENV_ROOT=/usr/local/var/rbenv
   export PATH="$HOME/.rbenv/bin:$PATH"
