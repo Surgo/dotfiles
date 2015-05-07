@@ -69,10 +69,6 @@ set showmode
 set laststatus=2
 set modelines=0
 set cmdheight=1
-"Status line
-if has("statusline") && exists('*fugitive#statusline')
-  set statusline=%<%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %F%=%{fugitive#statusline()}[%l,%c%V]\ %P
-endif
 "Display
 set number
 set ruler
@@ -253,6 +249,17 @@ au FileType go nmap <Leader>r <Plug>(go-run)
 au FileType go nmap <Leader>b <Plug>(go-build)
 au FileType go nmap <Leader>t <Plug>(go-test)
 au FileType go nmap gd <Plug>(go-def-tab)
+""Airline
+let g:unite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
+" vim-powerline symbols
+let g:airline_left_sep          = ''
+let g:airline_left_alt_sep      = ''
+let g:airline_right_sep         = ''
+let g:airline_right_alt_sep     = ''
+let g:airline_branch_prefix     = ''
+let g:airline_readonly_symbol   = ''
+let g:airline_linecolumn_prefix = ''
 ""Theme: solarized
 if has('mac')
   set background=dark
@@ -261,6 +268,7 @@ if has('mac')
     let g:solarized_termcolors = 256
   endif
   colorscheme solarized
+  let g:airline_theme='solarized'
 endif
 
 syntax on
