@@ -1,3 +1,5 @@
+export LANG=ja_JP.UTF-8
+
 ZSH=$HOME/.oh-my-zsh
 # Setup path
 if [ -f ~/.sh_path ]; then
