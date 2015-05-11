@@ -76,6 +76,12 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = git@github.com:tmux-plugins/tpm.git
+[submodule ".tmux/plugins/tmux-pain-control"]
+	path = .tmux/plugins/tmux-pain-control
+	url = git@github.com:tmux-plugins/tmux-pain-control.git
+[submodule ".tmux/plugins/tmux-yank"]
+	path = .tmux/plugins/tmux-yank
+	url = git@github.com:tmux-plugins/tmux-yank.git
 [submodule ".tmux/themes/colors-solarized"]
 	path = .tmux/themes/colors-solarized
 	url = git@github.com:seebi/tmux-colors-solarized.git
