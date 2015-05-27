@@ -253,13 +253,23 @@ au FileType go nmap gd <Plug>(go-def-tab)
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 " vim-powerline symbols
-let g:airline_left_sep          = ''
-let g:airline_left_alt_sep      = ''
-let g:airline_right_sep         = ''
-let g:airline_right_alt_sep     = ''
-let g:airline_branch_prefix     = ''
-let g:airline_readonly_symbol   = ''
-let g:airline_linecolumn_prefix = ''
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+
 ""Theme: solarized
 if has('mac')
   set background=dark
@@ -270,6 +280,5 @@ if has('mac')
   colorscheme solarized
   let g:airline_theme = 'solarized'
 endif
-g:gitgutter_max_signs = 1024
 syntax on
 filetype plugin indent on
