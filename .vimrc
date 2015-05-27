@@ -268,8 +268,8 @@ if has('mac')
     let g:solarized_termcolors = 256
   endif
   colorscheme solarized
-  let g:airline_theme='solarized'
+  let g:airline_theme = 'solarized'
 endif
-
+g:gitgutter_max_signs = 1024
 syntax on
 filetype plugin indent on
