@@ -52,6 +52,7 @@ fi
 if [ -d /usr/local/share/npm/bin ]; then
   export PATH="/usr/local/share/npm/bin:$PATH"
 fi
+export PATH="./node_modules/.bin:$PATH"
 
 # For MacTex
 if [ -d /usr/texbin ]; then
