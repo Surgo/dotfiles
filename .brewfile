@@ -4,15 +4,6 @@
 # brew install rcmdnk/file/brew-file
 
 # Install cask packages
-install caskroom/cask/brew-cask
-tap caskroom/versions
-
-cask install android-studio
-cask install appcleaner
-cask install cheatsheet
-cask install divvy
-cask install dropbox
-// brew cask install google-chrome (1password is not working)
 cask install google-japanese-ime
 cask install iterm2
 cask install java
