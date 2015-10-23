@@ -9,8 +9,8 @@ export VISUAL=vim
 export EDITOR=vim
 
 # For Android
-if [ -d /usr/local/opt/android-sdk ]; then
-  export ANDROID_HOME=/usr/local/opt/android-sdk
+if [ -d /opt/homebrew/gcopt/android-sdk ]; then
+  export ANDROID_HOME=/opt/homebrew/gcopt/android-sdk
 fi
 
 # For Python (virtualenv and pip)
@@ -25,8 +25,8 @@ export VIRTUALENVWRAPPER_SCRIPT=`which virtualenvwrapper.sh`
 source $VIRTUALENVWRAPPER_SCRIPT
 
 # For Go
-# if [ -d /usr/local/Cellar/go ]; then
-  # export GOROOT=/usr/local/Cellar/go/1.2.1
+# if [ -d /opt/homebrew/gcCellar/go ]; then
+  # export GOROOT=/opt/homebrew/gcCellar/go/1.2.1
   # export PATH=$PATH:$GOROOT/libexec/bin
 # fi
 if [ -d $HOME/go ]; then
@@ -35,11 +35,11 @@ if [ -d $HOME/go ]; then
 fi
 
 # For Ruby
-if [ -d /usr/local/opt/ruby/bin ]; then
-  export PATH=/usr/local/opt/ruby/bin:$PATH
+if [ -d /opt/homebrew/gcopt/ruby/bin ]; then
+  export PATH=/opt/homebrew/gcopt/ruby/bin:$PATH
 fi
-if [ -d /usr/local/var/rbenv ]; then
-  export RBENV_ROOT=/usr/local/var/rbenv
+if [ -d /opt/homebrew/gcvar/rbenv ]; then
+  export RBENV_ROOT=/opt/homebrew/gcvar/rbenv
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init - --no-rehash)"
 fi
@@ -48,11 +48,11 @@ fi
 if [ -s ${HOME}/.nodebrew ]; then
   export PATH="$HOME/.nodebrew/current/bin:$PATH"
 fi
-if [ -d /usr/local/lib/node ]; then
-  export NODE_PATH="/usr/local/lib/node"
+if [ -d /opt/homebrew/gclib/node ]; then
+  export NODE_PATH="/opt/homebrew/gclib/node"
 fi
-if [ -d /usr/local/share/npm/bin ]; then
-  export PATH="/usr/local/share/npm/bin:$PATH"
+if [ -d /opt/homebrew/gcshare/npm/bin ]; then
+  export PATH="/opt/homebrew/gcshare/npm/bin:$PATH"
 fi
 export PATH="./node_modules/.bin:$PATH"
 

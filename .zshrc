@@ -21,11 +21,11 @@ DISABLE_AUTO_UPDATE="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Completion files
-if [ -f /usr/local/share/zsh/functions ]; then
-  fpath=(/usr/local/share/zsh/functions $fpath);
+if [ -f /opt/homebrew/gcshare/zsh/functions ]; then
+  fpath=(/opt/homebrew/gcshare/zsh/functions $fpath);
 fi
-if [ -f /usr/local/share/zsh-completions ]; then
-  fpath=(/usr/local/share/zsh-completions $fpath);
+if [ -f /opt/homebrew/gcshare/zsh-completions ]; then
+  fpath=(/opt/homebrew/gcshare/zsh-completions $fpath);
 fi
 
 # Congifure plugins
@@ -51,10 +51,10 @@ plugins=($plugins python pep8 pip virtualenvwrapper django) # For Python
 plugins=($plugins go) # For Go
 
 # Use brew helpfiles
-if [ -d /usr/local/share/zsh/helpfiles ]; then
+if [ -d /opt/homebrew/gcshare/zsh/helpfiles ]; then
   unalias run-help
   autoload run-help
-  HELPDIR=/usr/local/share/zsh/helpfiles
+  HELPDIR=/opt/homebrew/gcshare/zsh/helpfiles
 fi
 
 # Load "Oh-My-ZSH!"
