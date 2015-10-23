@@ -1,5 +1,10 @@
 export LANG=ja_JP.UTF-8
 
+# Completion files
+if [ -f /opt/homebrew/share/zsh-completions ]; then
+  fpath=(/opt/homebrew/share/zsh-completions $fpath)
+fi
+
 ZSH=$HOME/.oh-my-zsh
 # Setup path
 if [ -f ~/.sh_path ]; then
@@ -19,14 +24,6 @@ DISABLE_AUTO_UPDATE="true"
 # COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
-
-# Completion files
-if [ -f /opt/homebrew/gcshare/zsh/functions ]; then
-  fpath=(/opt/homebrew/gcshare/zsh/functions $fpath);
-fi
-if [ -f /opt/homebrew/gcshare/zsh-completions ]; then
-  fpath=(/opt/homebrew/gcshare/zsh-completions $fpath);
-fi
 
 # Congifure plugins
 ZSH_TMUX_AUTOSTART=true
