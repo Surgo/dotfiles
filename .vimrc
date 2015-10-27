@@ -225,7 +225,7 @@ if executable('ag')
     \ '--ignore ''.bzr'''
   let g:unite_source_grep_recursive_opt = ''
   "" Ag
-  let g:aghighlight = 1
+  let g:ag_highlight = 1
 endif
 nnoremap <silent> ;g :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> ;cg :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR><C-R><C-W>
