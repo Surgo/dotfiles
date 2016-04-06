@@ -11,18 +11,13 @@ cask install slack
 
 # Install Homebrew packages
 install editorconfig
-install gdbm
 install git
 install go
-install icu4c
 install jpeg
-install libevent
 install libpng
 install libsass
 install libtool
-install lua
 install mcrypt
-install mercurial
 install mhash
 install mysql --client-only
 install node
@@ -36,7 +31,7 @@ install sqlite
 install the_silver_searcher
 install tig
 install tmux
-install vim
+install vim --with-python3 --with-lua
 install wget
 install xz
 install zsh
