@@ -10,6 +10,10 @@
 	path = .vim/bundle/airline
 	url = git@github.com:bling/vim-airline.git
 	ignore = dirty
+[submodule ".vim/bundle/airline-themes"]
+	path = .vim/bundle/airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
+	ignore = dirty
 [submodule ".vim/bundle/colorizer"]
 	path = .vim/bundle/colorizer
 	url = git@github.com:lilydjwg/colorizer.git

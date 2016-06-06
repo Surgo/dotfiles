@@ -28,6 +28,8 @@
 !/.brewfile
 
 # Black list
+/.vim/.vim
+/.vim/init.vim
 /.vim/.netrwhist
 /.vim/sessions
 /.vim/autoload/pathogen.vim
