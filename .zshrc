@@ -83,3 +83,5 @@ fi
 if [ -f ~/.zsh_completion ]; then
   . ~/.zsh_completion
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
