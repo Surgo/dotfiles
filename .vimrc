@@ -26,7 +26,7 @@ set ttyfast
 
 "Clipboard
 set clipboard+=unnamed
-set clipboard+=autoselect
+set clipboard+=unnamedplus
 
 "Keyboards
 set backspace=indent,eol,start
@@ -60,8 +60,10 @@ map <F4> <ESC>:bw<CR>
 if has("mouse")
   set mouse=a
 endif
+if !has("nvim")
+  set ttymouse=xterm2
+endif
 set guioptions+=a
-set ttymouse=xterm2
 
 "Status
 set showcmd
