@@ -3,22 +3,20 @@
 # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 # brew install rcmdnk/file/brew-file
 
-# tap repositories and their packages
-
+# Install cask packages
 tap caskroom/cask
 cask appcleaner
 cask cheatsheet
 cask divvy
 cask docker
 cask dropbox
+# cask firefoxdeveloperedition-ja
 cask google-japanese-ime
 # cask googleappengine
 cask iterm2
 cask slack
 
-# tap caskroom/versions
-# cask firefoxdeveloperedition-ja
-
+# Install brew packages
 tap homebrew/core
 brew editorconfig
 brew gibo
@@ -43,6 +41,7 @@ brew wget
 brew zsh-completions
 brew zsh
 
+# Install NeoVim
 tap neovim/neovim
 brew neovim
 
