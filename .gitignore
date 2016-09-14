@@ -21,6 +21,7 @@
 !/.iterm2.conf.d
 !/README.rest
 !/.gitignore
+!/.gitignore_global
 !/.gitconfig
 !/.gitmodules
 !/.gitattributes
