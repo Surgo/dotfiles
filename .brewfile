@@ -7,6 +7,7 @@
 
 tap caskroom/cask
 cask appcleaner
+cask caffeine
 cask cheatsheet
 cask divvy
 cask docker
@@ -47,10 +48,9 @@ brew neovim
 # App Store applications
 appstore 443987910 1Password
 appstore 405843582 Alfred
-appstore 411246225 Caffeine
 appstore 445189367 PopClip
 appstore 948415170 Pushbullet
 appstore 880001334 Reeder
 appstore 409789998 Twitter
 appstore 412485838 Witch
-appstore 497799835 Xcode
+# appstore 497799835 Xcode
