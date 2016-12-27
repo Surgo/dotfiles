@@ -30,7 +30,7 @@ brew openssl
 brew pypy
 brew python
 brew python3
-brew reattach-to-user-namespace
+brew reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste
 brew sl
 brew the_silver_searcher
 brew tig
