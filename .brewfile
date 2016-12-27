@@ -11,7 +11,7 @@ cask caffeine
 cask cheatsheet
 cask divvy
 cask docker
-cask dropbox
+# cask dropbox  # Install manually
 cask google-japanese-ime
 cask iterm2
 cask java
