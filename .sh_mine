@@ -60,3 +60,8 @@ export PATH="./node_modules/.bin:$PATH"
 if [ -d /usr/texbin ]; then
   export PATH="/usr/texbin:$PATH"
 fi
+
+# added by travis gem
+if [ -f ~/.travis/travis.sh ]; then
+  source ~/.travis/travis.sh
+fi
