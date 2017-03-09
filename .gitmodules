@@ -94,9 +94,9 @@
 	path = .vim/bundle/vimproc
 	url = git@github.com:Shougo/vimproc.vim.git
 	ignore = dirty
-[submodule ".tmux/plugins/tpm"]
-	path = .tmux/plugins/tpm
-	url = git@github.com:tmux-plugins/tpm.git
+[submodule ".vim/bundle/wakatime"]
+	path = .vim/bundle/wakatime
+	url = git://github.com/wakatime/vim-wakatime.git
 	ignore = dirty
 [submodule ".tmux/plugins/tmux-pain-control"]
 	path = .tmux/plugins/tmux-pain-control
@@ -105,6 +105,10 @@
 [submodule ".tmux/plugins/tmux-yank"]
 	path = .tmux/plugins/tmux-yank
 	url = git@github.com:tmux-plugins/tmux-yank.git
+	ignore = dirty
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = git@github.com:tmux-plugins/tpm.git
 	ignore = dirty
 [submodule ".tmux/themes/colors-solarized"]
 	path = .tmux/themes/colors-solarized
