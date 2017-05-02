@@ -101,9 +101,18 @@
 [submodule ".tmux/plugins/tmux-battery"]
 	path = .tmux/plugins/tmux-battery
 	url = git@github.com:tmux-plugins/tmux-battery.git
+	ignore = dirty
+[submodule ".tmux/plugins/tmux-cpu"]
+	path = .tmux/plugins/tmux-cpu
+	url = git@github.com:tmux-plugins/tmux-cpu.git
+	ignore = dirty
 [submodule ".tmux/plugins/tmux-pain-control"]
 	path = .tmux/plugins/tmux-pain-control
 	url = git@github.com:tmux-plugins/tmux-pain-control.git
+	ignore = dirty
+[submodule ".tmux/plugins/tmux-sessionist"]
+	path = .tmux/plugins/tmux-sessionist
+	url = git@github.com:tmux-plugins/tmux-sessionist.git
 	ignore = dirty
 [submodule ".tmux/plugins/tmux-yank"]
 	path = .tmux/plugins/tmux-yank
