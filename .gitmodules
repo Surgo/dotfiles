@@ -98,6 +98,9 @@
 	path = .vim/bundle/wakatime
 	url = git://github.com/wakatime/vim-wakatime.git
 	ignore = dirty
+[submodule ".tmux/plugins/tmux-battery"]
+	path = .tmux/plugins/tmux-battery
+	url = git@github.com:tmux-plugins/tmux-battery.git
 [submodule ".tmux/plugins/tmux-pain-control"]
 	path = .tmux/plugins/tmux-pain-control
 	url = git@github.com:tmux-plugins/tmux-pain-control.git
