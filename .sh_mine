@@ -60,7 +60,9 @@ export PATH="./node_modules/.bin:$PATH"
 if [ -d /usr/texbin ]; then
   export PATH="/usr/texbin:$PATH"
 fi
-
+if [ -d /opt/homebrew/opt/gettext/bin ]; then
+  export PATH="/opt/homebrew/opt/gettext/bin:$PATH"
+fi
 # added by travis gem
 if [ -f ~/.travis/travis.sh ]; then
   source ~/.travis/travis.sh
