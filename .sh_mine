@@ -13,13 +13,15 @@ if [ -d /opt/homebrew/gcopt/android-sdk ]; then
   export ANDROID_HOME=/opt/homebrew/gcopt/android-sdk
 fi
 
-# For Python (virtualenv and pip)
+# For Python (virtualenv and pip
 export PYTHONDONTWRITEBYTECODE=1
-
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 
+if [ -f /opt/homebrew/bin/python3 ]; then
+  export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
+fi
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=`which virtualenvwrapper.sh`
 source $VIRTUALENVWRAPPER_SCRIPT

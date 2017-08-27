@@ -44,7 +44,7 @@ plugins=($plugins jira github) # For dev service
 plugins=($plugins redis-cli supervisor) # For maint servers
 plugins=($plugins git gitignore gitfast git-flow git-hubflow) # For Git
 plugins=($plugins mercurial) # For Mercurial
-plugins=($plugins python pep8 pip virtualenvwrapper django) # For Python
+plugins=($plugins python pep8 pip django) # For Python
 plugins=($plugins go) # For Go
 
 # Use brew helpfiles
