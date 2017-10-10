@@ -31,8 +31,8 @@ source $VIRTUALENVWRAPPER_SCRIPT
   # export GOROOT=/opt/homebrew/gcCellar/go/1.2.1
   # export PATH=$PATH:$GOROOT/libexec/bin
 # fi
-if [ -d $HOME/go ]; then
-  export GOPATH=$HOME/go
+export GOPATH=$HOME/.go
+if [ -d $HOME/.go ]; then
   export PATH=$PATH:$GOPATH/bin
 fi
 
