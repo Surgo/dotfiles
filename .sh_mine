@@ -69,3 +69,5 @@ fi
 if [ -f ~/.travis/travis.sh ]; then
   source ~/.travis/travis.sh
 fi
+
+export GPG_TTY=$(tty)

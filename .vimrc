@@ -240,8 +240,8 @@ nnoremap <silent> ;n :<C-u>Unite<Space>file/new<CR>
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
 ""Syntastic
-let g:syntastic_python_checkers = ['flake8', 'python']
-let g:syntastic_python_flake8_args = '--ignore=E501'
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = '--ignore=E121,E501'
 let g:syntastic_javascript_checkers = ['eslint']
 
 ""Go

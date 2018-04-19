@@ -1,6 +1,7 @@
 [user]
     name = Kosei Kitahara
     email = surgo.jp@gmail.com
+    signingkey = D18883191F02241B
 [core]
     autocrlf = input
     safecrlf = warn
@@ -62,3 +63,7 @@
     clean = git lfs clean %f
     smudge = git lfs smudge %f
     required = true
+[commit]
+    gpgsign = true
+[gpg]
+	program = gpg
