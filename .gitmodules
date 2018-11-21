@@ -98,6 +98,10 @@
 	path = .vim/bundle/wakatime
 	url = git://github.com/wakatime/vim-wakatime.git
 	ignore = dirty
+[submodule ".vim/bundle/yats"]
+	path = .vim/bundle/yats
+	url = git@github.com:HerringtonDarkholme/yats.vim.git
+	ignore = dirty
 [submodule ".tmux/plugins/tmux-battery"]
 	path = .tmux/plugins/tmux-battery
 	url = git@github.com:tmux-plugins/tmux-battery.git
