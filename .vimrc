@@ -245,6 +245,12 @@ let g:user_zen_expandabbr_key='<<'
 
 ""ALE
 let g:ale_completion_enabled = 1
+let g:ale_sign_error = '**'
+let g:ale_sign_warning = '!!'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_info_str = 'I'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %s'
 let g:ale_javascript_prettier_use_local_config = 1
 """ https://github.com/w0rp/ale/issues/925
 let g:ale_linters = {
@@ -252,14 +258,16 @@ let g:ale_linters = {
 \ 'javascript': ['eslint'],
 \ 'json': ['jsonlint'],
 \ 'scss': ['stylelint'],
+\ 'sql': ['sqlint'],
 \ 'python': ['flake8'],
 \ 'typescript': ['tslint', 'tsserver', 'typecheck']
 \ }
 let g:ale_fixers = {
 \ 'css': ['stylelint'],
 \ 'javascript': ['prettier-eslint'],
-\ 'typescript': ['prettier'],
+\ 'python': ['autopep8'],
 \ 'scss': ['stylelint'],
+\ 'typescript': ['prettier']
 \ }
 
 ""Go
@@ -291,6 +299,7 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
+let g:airline#extensions#ale#enabled = 1
 
 ""Theme: solarized
 if has('mac')
