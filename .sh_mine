@@ -1,5 +1,8 @@
 # Add my scripts
 PATH=~/bin:$PATH
+if [ -d /opt/homebrew/bin ]; then
+  export PATH=$PATH:/opt/homebrew/bin
+fi
 
 # For .brewfile
 export HOMEBREW_BREWFILE=~/.brewfile
@@ -25,6 +28,13 @@ fi
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=`which virtualenvwrapper.sh`
 source $VIRTUALENVWRAPPER_SCRIPT
+
+if [ -d /opt/homebrew/opt/openssl ]; then
+  # https://github.com/pycurl/pycurl/issues/526
+  export PYCURL_SSL_LIBRARY=openssl
+  export LDFLAGS=-L/opt/homebrew/opt/openssl/lib
+  export CPPFLAGS=-I/opt/homebrew/opt/openssl/include
+fi
 
 # For Go
 # if [ -d /opt/homebrew/gcCellar/go ]; then
