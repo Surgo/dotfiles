@@ -82,10 +82,6 @@
 	path = .vim/bundle/SudoEdit
 	url = git://github.com/chrisbra/SudoEdit.vim.git
 	ignore = dirty
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = git@github.com:scrooloose/syntastic.git
-	ignore = dirty
 [submodule ".vim/bundle/tabpagebuffer"]
 	path = .vim/bundle/tabpagebuffer
 	url = git@github.com:Shougo/tabpagebuffer.vim.git
