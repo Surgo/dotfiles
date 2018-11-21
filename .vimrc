@@ -243,6 +243,25 @@ nnoremap <silent> ;n :<C-u>Unite<Space>file/new<CR>
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
 
+""ALE
+let g:ale_completion_enabled = 1
+let g:ale_javascript_prettier_use_local_config = 1
+""" https://github.com/w0rp/ale/issues/925
+let g:ale_linters = {
+\ 'css': ['stylelint'],
+\ 'javascript': ['eslint'],
+\ 'json': ['jsonlint'],
+\ 'scss': ['stylelint'],
+\ 'python': ['flake8'],
+\ 'typescript': ['tslint', 'tsserver', 'typecheck']
+\ }
+let g:ale_fixers = {
+\ 'css': ['stylelint'],
+\ 'javascript': ['prettier-eslint'],
+\ 'typescript': ['prettier'],
+\ 'scss': ['stylelint'],
+\ }
+
 ""Go
 let g:acp_enableAtStartup = 0
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
