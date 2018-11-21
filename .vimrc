@@ -243,19 +243,6 @@ nnoremap <silent> ;n :<C-u>Unite<Space>file/new<CR>
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
 
-""TypeScript
-""" LSP
-if executable('typescript-language-server')
-  au User lsp_setup call lsp#register_server({
-    \ 'name': 'typescript-language-server',
-    \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-    \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
-    \ 'whitelist': ['typescript', 'javascript', 'javascript.jsx']
-    \ })
-endif
-let g:lsp_async_completion = 1
-autocmd FileType typescript setlocal omnifunc=lsp#complete
-
 ""Go
 let g:acp_enableAtStartup = 0
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
