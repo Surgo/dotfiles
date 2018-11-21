@@ -183,11 +183,13 @@ autocmd VimEnter * if !argc() | NERDTree | endif
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let g:NERDTreeShowHidden=0
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
+
 ""NERD_commenter
 let NERDSpaceDelims = 1
 ""grep.vim
 let Grep_Skip_Dirs = '.svn .git .hg'
 let Grep_Skip_Files = '*.bak *~'
+
 ""QuickBuf
 ""let g:qb_hotkey=';;'
 ""DumpBuf
@@ -237,12 +239,27 @@ nnoremap <silent> ;la :<C-u>:Unite<Space>file_rec/async -buffer-name=files<CR>
 nnoremap <silent> ;l :<C-u>Unite<Space>file -buffer-name=files file<CR>
 nnoremap <silent> ;h :<C-u>Unite<Space>file_mru<CR>
 nnoremap <silent> ;n :<C-u>Unite<Space>file/new<CR>
+
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
+
 ""Syntastic
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--ignore=E121,E501'
 let g:syntastic_javascript_checkers = ['eslint']
+
+""TypeScript
+""" LSP
+if executable('typescript-language-server')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'typescript-language-server',
+    \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+    \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
+    \ 'whitelist': ['typescript', 'javascript', 'javascript.jsx']
+    \ })
+endif
+let g:lsp_async_completion = 1
+autocmd FileType typescript setlocal omnifunc=lsp#complete
 
 ""Go
 let g:acp_enableAtStartup = 0
@@ -253,6 +270,7 @@ au FileType go nmap <Leader>r <Plug>(go-run)
 au FileType go nmap <Leader>b <Plug>(go-build)
 au FileType go nmap <Leader>t <Plug>(go-test)
 au FileType go nmap gd <Plug>(go-def-tab)
+
 ""Airline
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
@@ -272,7 +290,6 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-
 
 ""Theme: solarized
 if has('mac')
