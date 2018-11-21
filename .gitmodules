@@ -14,6 +14,10 @@
 	path = .vim/bundle/airline-themes
 	url = git@github.com:vim-airline/vim-airline-themes.git
 	ignore = dirty
+[submodule ".vim/bundle/async"]
+	path = .vim/bundle/async
+	url = git@github.com:prabirshrestha/async.vim.git
+	ignore = dirty
 [submodule ".vim/bundle/colorizer"]
 	path = .vim/bundle/colorizer
 	url = git@github.com:lilydjwg/colorizer.git
@@ -45,6 +49,10 @@
 [submodule ".vim/bundle/indent-guides"]
 	path = .vim/bundle/indent-guides
 	url = git@github.com:nathanaelkane/vim-indent-guides.git
+	ignore = dirty
+[submodule ".vim/bundle/lsp"]
+	path = .vim/bundle/lsp
+	url = git@github.com:prabirshrestha/vim-lsp.git
 	ignore = dirty
 [submodule ".vim/bundle/neomru"]
 	path = .vim/bundle/neomru
