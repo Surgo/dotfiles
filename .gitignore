@@ -26,14 +26,13 @@
 !/.zshrc
 !/.zsh_completion
 !/README.md
+!/Brewfile
 
 # Black list
 /.vim/.vim
-/.vim/init.vim
 /.vim/.netrwhist
-/.vim/sessions
 /.vim/autoload/pathogen.vim
-/.ipython/profile_default/history.sqlite
-/.ipython/profile_default/db
+/.vim/init.vim
+/.vim/sessions
 doc/tags
 doc/tags-ja
