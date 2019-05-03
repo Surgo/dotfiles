@@ -18,6 +18,7 @@
 !/.sh_mine
 !/.sh_local.template
 !/.tigrc
+!/.tmux
 !/.tmux.conf
 !/.tmux-osx.conf
 !/.tmux.conf.d
