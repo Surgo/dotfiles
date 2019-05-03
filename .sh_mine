@@ -1,83 +1,80 @@
 # Add my scripts
-PATH=~/bin:$PATH
-if [ -d /opt/homebrew/bin ]; then
-  export PATH=$PATH:/opt/homebrew/bin
-fi
+PATH=~/bin:"$PATH"
+BREW_PATH=/opt/homebrew
 
-# For .brewfile
-export HOMEBREW_BREWFILE=~/.brewfile
+if [ -d "$BREW_PATH"/bin ]; then
+  export PATH="$BREW_PATH"/bin:"$PATH"
+fi
 
 # Vim THE editor!
 export VISUAL=vim
 export EDITOR=vim
 
 # For Android
-if [ -d /opt/homebrew/gcopt/android-sdk ]; then
-  export ANDROID_HOME=/opt/homebrew/gcopt/android-sdk
+if [ -d "$BREW_PATH"/gcopt/android-sdk ]; then
+  export ANDROID_HOME="$BREW_PATH"/gcopt/android-sdk
 fi
 
 # For Python (virtualenv and pip
 export PYTHONDONTWRITEBYTECODE=1
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
-export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
+export PIP_DOWNLOAD_CACHE="$HOME"/.pip_download_cache
 
-if [ -f /opt/homebrew/bin/python3 ]; then
-  export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
+if [ -f "$BREW_PATH"/bin/python3 ]; then
+  export VIRTUALENVWRAPPER_PYTHON="$BREW_PATH"/bin/python3
 fi
-export WORKON_HOME=$HOME/.virtualenvs
+export WORKON_HOME="$HOME"/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=`which virtualenvwrapper.sh`
-source $VIRTUALENVWRAPPER_SCRIPT
+if [ -f "$VIRTUALENVWRAPPER_SCRIPT" ]; then
+  source "$VIRTUALENVWRAPPER_SCRIPT"
+fi
 
-if [ -d /opt/homebrew/opt/openssl ]; then
+if [ -d "$BREW_PATH"/opt/openssl ]; then
   # https://github.com/pycurl/pycurl/issues/526
   export PYCURL_SSL_LIBRARY=openssl
-  export LDFLAGS=-L/opt/homebrew/opt/openssl/lib
-  export CPPFLAGS=-I/opt/homebrew/opt/openssl/include
+  export LDFLAGS=-L"$BREW_PATH"/opt/openssl/lib
+  export CPPFLAGS=-I"$BREW_PATH"/opt/openssl/include
 fi
 
 # For Go
-# if [ -d /opt/homebrew/gcCellar/go ]; then
-  # export GOROOT=/opt/homebrew/gcCellar/go/1.2.1
-  # export PATH=$PATH:$GOROOT/libexec/bin
-# fi
-export GOPATH=$HOME/.go
-if [ -d $HOME/.go ]; then
-  export PATH=$PATH:$GOPATH/bin
+export GOPATH="$HOME"/.go
+if [ -d "$GOPATH" ]; then
+  export PATH="$GOPATH"/bin:"$PATH"
 fi
 
 # For Ruby
-if [ -d /opt/homebrew/gcopt/ruby/bin ]; then
-  export PATH=/opt/homebrew/gcopt/ruby/bin:$PATH
+if [ -d "$BREW_PATH"/gcopt/ruby/bin ]; then
+  export PATH="$BREW_PATH"/gcopt/ruby/bin:"$PATH"
 fi
-if [ -d /opt/homebrew/gcvar/rbenv ]; then
-  export RBENV_ROOT=/opt/homebrew/gcvar/rbenv
+if [ -d "$BREW_PATH"/gcvar/rbenv ]; then
+  export RBENV_ROOT="$BREW_PATH"/gcvar/rbenv
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init - --no-rehash)"
 fi
 
 # For Node.js
-if [ -s ${HOME}/.nodebrew ]; then
-  export PATH="$HOME/.nodebrew/current/bin:$PATH"
+if [ -s "$HOME"/.nodebrew ]; then
+  export PATH="$HOME"/.nodebrew/current/bin:"$PATH"
 fi
-if [ -d /opt/homebrew/gclib/node ]; then
-  export NODE_PATH="/opt/homebrew/gclib/node"
+if [ -d "$BREW_PATH"/gclib/node ]; then
+  export NODE_PATH="$BREW_PATH"/gclib/node
 fi
-if [ -d /opt/homebrew/gcshare/npm/bin ]; then
-  export PATH="/opt/homebrew/gcshare/npm/bin:$PATH"
+if [ -d "$BREW_PATH"/gcshare/npm/bin ]; then
+  export PATH="$BREW_PATH"/gcshare/npm/bin:"$PATH"
 fi
-export PATH="./node_modules/.bin:$PATH"
+export PATH=./node_modules/.bin:"$PATH"
 
 # For MacTex
 if [ -d /usr/texbin ]; then
-  export PATH="/usr/texbin:$PATH"
+  export PATH=/usr/texbin:"$PATH"
 fi
-if [ -d /opt/homebrew/opt/gettext/bin ]; then
-  export PATH="/opt/homebrew/opt/gettext/bin:$PATH"
+if [ -d "$BREW_PATH"/opt/gettext/bin ]; then
+  export PATH="$BREW_PATH"/opt/gettext/bin:"$PATH"
 fi
 # added by travis gem
 if [ -f ~/.travis/travis.sh ]; then
   source ~/.travis/travis.sh
 fi
 
-export GPG_TTY=$(tty)
+export GPG_TTY="$(tty)"
