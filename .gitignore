@@ -2,31 +2,30 @@
 /.*
 
 # White list
-!/.zshrc
-!/.oh-my-zsh
-!/.zsh_completion
 !/.bashrc
-!/.bash_profile
 !/.bash_aliases
 !/.bash_completion
+!/.bash_profile
+!/.bin
+!/.gitattributes
+!/.gitconfig
+!/.gitignore
+!/.gitignore_global
+!/.gitmodules
+!/.gvimrc
+!/.iterm2.conf.d
+!/.oh-my-zsh
 !/.sh_mine
 !/.sh_local.template
+!/.tigrc
 !/.tmux.conf
 !/.tmux-osx.conf
 !/.tmux.conf.d
 !/.vim
 !/.vimrc
-!/.gvimrc
-!/.ipython
-!/.iterm2.conf.d
-!/README.rest
-!/.gitignore
-!/.gitignore_global
-!/.gitconfig
-!/.gitmodules
-!/.gitattributes
-!/.tigrc
-!/.brewfile
+!/.zshrc
+!/.zsh_completion
+!/README.md
 
 # Black list
 /.vim/.vim
@@ -38,4 +37,3 @@
 /.ipython/profile_default/db
 doc/tags
 doc/tags-ja
-.DS_Store
