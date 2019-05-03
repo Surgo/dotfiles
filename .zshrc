@@ -1,19 +1,17 @@
 export LANG=ja_JP.UTF-8
+BREW_PATH=/opt/homebrew
+
+if [ -d "$BREW_PATH"/bin ]; then
+  export PATH="$BREW_PATH"/bin:"$PATH"
+fi
 
 # Completion files
-if [ -f /opt/homebrew/share/zsh-completions ]; then
-  fpath=(/opt/homebrew/share/zsh-completions $fpath)
+if [ -f "$BREW_PATH"/share/zsh-completions ]; then
+  fpath=("$BREW_PATH"/share/zsh-completions "$fpath")
 fi
 
-ZSH=$HOME/.oh-my-zsh
-# Setup path
-if [ -f ~/.sh_path ]; then
-    . ~/.sh_path
-fi
-
+ZSH="$HOME"/.oh-my-zsh
 ZSH_THEME="robbyrussell"
-alias zshconfig="vi ~/.zshrc"
-alias ohmyzsh="vi ~/.oh-my-zsh"
 
 # CASE_SENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
@@ -48,14 +46,14 @@ plugins=($plugins python pep8 pip django) # For Python
 plugins=($plugins go) # For Go
 
 # Use brew helpfiles
-if [ -d /opt/homebrew/gcshare/zsh/helpfiles ]; then
+if [ -d "$BREW_PATH"/gcshare/zsh/helpfiles ]; then
   unalias run-help
   autoload run-help
-  HELPDIR=/opt/homebrew/gcshare/zsh/helpfiles
+  HELPDIR="$BREW_PATH"/gcshare/zsh/helpfiles
 fi
 
 # Load "Oh-My-ZSH!"
-source $ZSH/oh-my-zsh.sh
+source "$ZSH"/oh-my-zsh.sh
 
 function get_vcs_prompt_info {
   if [ $(in_hg) ]; then
@@ -68,9 +66,9 @@ function get_vcs_prompt_info {
 # Override robbyrussell PROMPT
 PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(get_vcs_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 ZSH_THEME_HG_PROMPT_PREFIX="hg:(%{$fg[red]%}"
-ZSH_THEME_HG_PROMPT_SUFFIX=$ZSH_THEME_GIT_PROMPT_SUFFIX
-ZSH_THEME_HG_PROMPT_DIRTY=$ZSH_THEME_GIT_PROMPT_DIRTY
-ZSH_THEME_HG_PROMPT_CLEAN=$ZSH_THEME_GIT_PROMPT_CLEAN
+ZSH_THEME_HG_PROMPT_SUFFIX="$ZSH_THEME_GIT_PROMPT_SUFFIX"
+ZSH_THEME_HG_PROMPT_DIRTY="$ZSH_THEME_GIT_PROMPT_DIRTY"
+ZSH_THEME_HG_PROMPT_CLEAN="$ZSH_THEME_GIT_PROMPT_CLEAN"
 # My configurations.
 if [ -f ~/.sh_mine ]; then
   . ~/.sh_mine
