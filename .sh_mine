@@ -1,10 +1,4 @@
-# Add my scripts
-PATH=~/bin:"$PATH"
 BREW_PATH=/opt/homebrew
-
-if [ -d "$BREW_PATH"/bin ]; then
-  export PATH="$BREW_PATH"/bin:"$PATH"
-fi
 
 # Vim THE editor!
 export VISUAL=vim
@@ -20,15 +14,6 @@ export PYTHONDONTWRITEBYTECODE=1
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_DOWNLOAD_CACHE="$HOME"/.pip_download_cache
-
-if [ -f "$BREW_PATH"/bin/python3 ]; then
-  export VIRTUALENVWRAPPER_PYTHON="$BREW_PATH"/bin/python3
-fi
-export WORKON_HOME="$HOME"/.virtualenvs
-export VIRTUALENVWRAPPER_SCRIPT=`which virtualenvwrapper.sh`
-if [ -f "$VIRTUALENVWRAPPER_SCRIPT" ]; then
-  source "$VIRTUALENVWRAPPER_SCRIPT"
-fi
 
 if [ -d "$BREW_PATH"/opt/openssl ]; then
   # https://github.com/pycurl/pycurl/issues/526
