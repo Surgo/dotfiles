@@ -7,6 +7,7 @@ export PYTHONDONTWRITEBYTECODE=1
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_DOWNLOAD_CACHE="$HOME"/.pip_download_cache
+export PATH=./.venv/.bin:"$PATH"
 
 if [ -d "$BREW_PATH"/opt/openssl ]; then
   # https://github.com/pycurl/pycurl/issues/526
