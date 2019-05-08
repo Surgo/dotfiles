@@ -15,8 +15,9 @@
 !/.gvimrc
 !/.iterm2.conf.d
 !/.oh-my-zsh
-!/.sh_mine
 !/.sh_local.template
+!/.sh_mine
+!/.sh_path
 !/.tigrc
 !/.tmux
 !/.tmux.conf

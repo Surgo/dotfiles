@@ -1,13 +1,6 @@
-BREW_PATH=/opt/homebrew
-
 # Vim THE editor!
 export VISUAL=vim
 export EDITOR=vim
-
-# For Android
-if [ -d "$BREW_PATH"/gcopt/android-sdk ]; then
-  export ANDROID_HOME="$BREW_PATH"/gcopt/android-sdk
-fi
 
 # For Python (virtualenv and pip
 export PYTHONDONTWRITEBYTECODE=1
@@ -22,6 +15,14 @@ if [ -d "$BREW_PATH"/opt/openssl ]; then
   export CPPFLAGS=-I"$BREW_PATH"/opt/openssl/include
 fi
 
+# For MacTex
+if [ -d /usr/texbin ]; then
+  export PATH=/usr/texbin:"$PATH"
+fi
+if [ -d "$BREW_PATH"/opt/gettext/bin ]; then
+  export PATH="$BREW_PATH"/opt/gettext/bin:"$PATH"
+fi
+
 # For Go
 export GOPATH="$HOME"/.go
 if [ -d "$GOPATH" ]; then
@@ -29,11 +30,11 @@ if [ -d "$GOPATH" ]; then
 fi
 
 # For Ruby
-if [ -d "$BREW_PATH"/gcopt/ruby/bin ]; then
-  export PATH="$BREW_PATH"/gcopt/ruby/bin:"$PATH"
+if [ -d "$BREW_PATH"/opt/ruby/bin ]; then
+  export PATH="$BREW_PATH"/opt/ruby/bin:"$PATH"
 fi
-if [ -d "$BREW_PATH"/gcvar/rbenv ]; then
-  export RBENV_ROOT="$BREW_PATH"/gcvar/rbenv
+if [ -d "$BREW_PATH"/var/rbenv ]; then
+  export RBENV_ROOT="$BREW_PATH"/var/rbenv
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init - --no-rehash)"
 fi
@@ -42,22 +43,12 @@ fi
 if [ -s "$HOME"/.nodebrew ]; then
   export PATH="$HOME"/.nodebrew/current/bin:"$PATH"
 fi
-if [ -d "$BREW_PATH"/gclib/node ]; then
-  export NODE_PATH="$BREW_PATH"/gclib/node
-fi
-if [ -d "$BREW_PATH"/gcshare/npm/bin ]; then
-  export PATH="$BREW_PATH"/gcshare/npm/bin:"$PATH"
+if [ -d "$BREW_PATH"/lib/node_modules ]; then
+  export NODE_PATH="$BREW_PATH"/lib/node_modules
 fi
 export PATH=./node_modules/.bin:"$PATH"
 
-# For MacTex
-if [ -d /usr/texbin ]; then
-  export PATH=/usr/texbin:"$PATH"
-fi
-if [ -d "$BREW_PATH"/opt/gettext/bin ]; then
-  export PATH="$BREW_PATH"/opt/gettext/bin:"$PATH"
-fi
-# added by travis gem
+# Travis-CI
 if [ -f ~/.travis/travis.sh ]; then
   source ~/.travis/travis.sh
 fi
