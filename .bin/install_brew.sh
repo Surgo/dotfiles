@@ -6,8 +6,8 @@ mkdir -p /opt
 chown -R "$LOGNAME":staff /opt
 EOF
 
-cd /opt && mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+cd /opt && mkdir -p homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
 
 cd "$HOME"
-brew update
-brew bundle
+/opt/homebrew/bin/brew update
+/opt/homebrew/bin/brew bundle
