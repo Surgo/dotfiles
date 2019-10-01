@@ -1,9 +1,9 @@
-### https://raw.github.com/github/gitignore/5c5a1b536b6f9bf11515518f03d58addaf29f681/Global/Ansible.gitignore
+### https://raw.github.com/github/gitignore//Global/Ansible.gitignore
 
 *.retry
 
 
-### https://raw.github.com/github/gitignore/5c5a1b536b6f9bf11515518f03d58addaf29f681/Global/Backup.gitignore
+### https://raw.github.com/github/gitignore//Global/Backup.gitignore
 
 *.bak
 *.gho
@@ -12,7 +12,7 @@
 *.tmp
 
 
-### https://raw.github.com/github/gitignore/5c5a1b536b6f9bf11515518f03d58addaf29f681/Global/Dropbox.gitignore
+### https://raw.github.com/github/gitignore//Global/Dropbox.gitignore
 
 # Dropbox settings and caches
 .dropbox
@@ -20,13 +20,13 @@
 .dropbox.cache
 
 
-### https://raw.github.com/github/gitignore/5c5a1b536b6f9bf11515518f03d58addaf29f681/Global/GPG.gitignore
+### https://raw.github.com/github/gitignore//Global/GPG.gitignore
 
 secring.*
 
 
 
-### https://raw.github.com/github/gitignore/5c5a1b536b6f9bf11515518f03d58addaf29f681/Global/Linux.gitignore
+### https://raw.github.com/github/gitignore//Global/Linux.gitignore
 
 *~
 
@@ -43,7 +43,7 @@ secring.*
 .nfs*
 
 
-### https://raw.github.com/github/gitignore/5c5a1b536b6f9bf11515518f03d58addaf29f681/Global/macOS.gitignore
+### https://raw.github.com/github/gitignore//Global/macOS.gitignore
 
 # General
 .DS_Store
@@ -73,7 +73,7 @@ Temporary Items
 .apdisk
 
 
-### https://raw.github.com/github/gitignore/5c5a1b536b6f9bf11515518f03d58addaf29f681/Global/Mercurial.gitignore
+### https://raw.github.com/github/gitignore//Global/Mercurial.gitignore
 
 .hg/
 .hgignore
@@ -83,19 +83,20 @@ Temporary Items
 .hgtags
 
 
-### https://raw.github.com/github/gitignore/5c5a1b536b6f9bf11515518f03d58addaf29f681/Global/Vagrant.gitignore
+### https://raw.github.com/github/gitignore//Global/Vagrant.gitignore
 
 # General
 .vagrant/
 
 # Log files (if you are creating logs in debug mode, uncomment this)
-# *.logs
+# *.log
 
 
-### https://raw.github.com/github/gitignore/5c5a1b536b6f9bf11515518f03d58addaf29f681/Global/Vim.gitignore
+### https://raw.github.com/github/gitignore//Global/Vim.gitignore
 
 # Swap
 [._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
@@ -103,6 +104,7 @@ Temporary Items
 
 # Session
 Session.vim
+Sessionx.vim
 
 # Temporary
 .netrwhist
@@ -113,7 +115,7 @@ tags
 [._]*.un~
 
 
-### https://raw.github.com/github/gitignore/5c5a1b536b6f9bf11515518f03d58addaf29f681/Global/VirtualEnv.gitignore
+### https://raw.github.com/github/gitignore//Global/VirtualEnv.gitignore
 
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
@@ -129,10 +131,11 @@ pyvenv.cfg
 pip-selfcheck.json
 
 
-### https://raw.github.com/github/gitignore/5c5a1b536b6f9bf11515518f03d58addaf29f681/Global/Windows.gitignore
+### https://raw.github.com/github/gitignore//Global/Windows.gitignore
 
 # Windows thumbnail cache files
 Thumbs.db
+Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
 
@@ -156,7 +159,7 @@ $RECYCLE.BIN/
 *.lnk
 
 
-### https://raw.github.com/github/gitignore/5c5a1b536b6f9bf11515518f03d58addaf29f681/Global/Xcode.gitignore
+### https://raw.github.com/github/gitignore//Global/Xcode.gitignore
 
 # Xcode
 #
@@ -181,5 +184,8 @@ DerivedData/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
+
+## Gcc Patch
+/*.gcno
 
 
