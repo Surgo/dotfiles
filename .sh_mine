@@ -12,12 +12,15 @@ export PATH=./.venv/.bin:"$PATH"
 if [ -d "$BREW_PATH"/opt/openssl ]; then
   # https://github.com/pycurl/pycurl/issues/526
   export PYCURL_SSL_LIBRARY=openssl
-  export PATH="$BREW_PATH"/opt/openssl/bin:$PATH
+  export PATH="$BREW_PATH"/opt/openssl/bin:"$PATH"
   export LDFLAGS=-L"$BREW_PATH"/opt/openssl/lib
   export CPPFLAGS=-I"$BREW_PATH"/opt/openssl/include
   export PKG_CONFIG_PATH="$BREW_PATH"/opt/openssl/lib/pkgconfig
+  export LIBRARY_PATH="$BREW_PATH"/opt/openssl/lib:"$LIBRARY_PATH"
 fi
-
+if [ -d "$BREW_PATH"/opt/terraform@0.11 ]; then
+  export PATH="$BREW_PATH"/opt/terraform@0.11/bin:"$PATH"
+fi
 # For MacTex
 if [ -d /usr/texbin ]; then
   export PATH=/usr/texbin:"$PATH"
