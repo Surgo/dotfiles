@@ -52,6 +52,12 @@ fi
 if [ -d "$BREW_PATH"/lib/node_modules ]; then
   export NODE_PATH="$BREW_PATH"/lib/node_modules
 fi
+# For Node.js@10
+if [ -d "$BREW_PATH"/opt/node@10/bin ]; then
+  export NODE_PATH="$BREW_PATH"/opt/node@10/bin
+  export PATH="$BREW_PATH"/opt/node@10/bin:"$PATH"
+fi
+
 export PATH=./node_modules/.bin:"$PATH"
 
 # Travis-CI
