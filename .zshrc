@@ -1,4 +1,5 @@
 # Setup path
+BREW_PATH=/opt/homebrew
 if [ -f ~/.sh_path ]; then
   . ~/.sh_path
 fi
@@ -36,12 +37,12 @@ plugins=($plugins golang) # For Go
 source ${ZSH}/oh-my-zsh.sh
 
 # Completion files
-if [ -f ${BREW_PATH}/share/zsh-completions ]; then
+if [ -d ${BREW_PATH}/share/zsh-completions ]; then
   fpath=(${BREW_PATH}/share/zsh-completions ${fpath})
 fi
 
 # Help files
-if [[ ${BREW_PATH}/share/zsh/help ]]; then
+if [ -d ${BREW_PATH}/share/zsh/help ]; then
   HELPDIR=${BREW_PATH}/share/zsh/helpfiles
 fi
 

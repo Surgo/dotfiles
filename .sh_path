@@ -1,5 +1,3 @@
-export BREW_PATH=/opt/homebrew
-
 if [ -d ${BREW_PATH}/sbin ]; then
   export PATH="$BREW_PATH"/sbin:"$PATH"
 fi
