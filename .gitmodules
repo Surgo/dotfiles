@@ -126,3 +126,6 @@
 	path = .tmux/themes/colors-solarized
 	url = git@github.com:seebi/tmux-colors-solarized.git
 	ignore = dirty
+[submodule ".vim/bundle/NeoSolarized"]
+	path = .vim/bundle/NeoSolarized
+	url = https://github.com/overcache/NeoSolarized
