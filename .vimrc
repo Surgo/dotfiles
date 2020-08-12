@@ -87,6 +87,9 @@ augroup cch
   autocmd WinEnter,BufRead * set cursorline
 augroup END
 "" Color
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "highlight clear CursorLine
 "highlight CursorLine gui=underline
 "highlight CursorLine ctermbg=black guibg=black
@@ -304,12 +307,12 @@ let g:airline#extensions#ale#enabled = 1
 ""Theme: solarized
 if has('mac')
   set background=dark
-  if !has("gui_running")
-    let g:solarized_termtrans = 1
-    let g:solarized_termcolors = 256
-  endif
-  colorscheme solarized
+  let g:neosolarized_contrast = 'high'
+  let g:neosolarized_visibility = 'high'
+  let g:neosolarized_vertSplitBgTrans = 0
+  colorscheme NeoSolarized
   let g:airline_theme = 'solarized'
+  let g:gitgutter_override_sign_column_highlight = 0
 endif
 syntax on
 filetype plugin indent on
