@@ -26,10 +26,12 @@ case ${OSTYPE} in
   ;;
 esac
 plugins=($plugins tmux vagrant docker) # For dev tools
+plugins=($plugins ansible aws) # For ops
 plugins=($plugins redis-cli) # For maint servers
 plugins=($plugins git gitfast tig) # For Git
 plugins=($plugins mercurial) # For Mercurial
 plugins=($plugins python pep8 pip django virtualenv) # For Python
+plugins=($plugins node npm yarn) # For JavaScript
 plugins=($plugins golang) # For Go
 
 # Load "Oh-My-ZSH!"
