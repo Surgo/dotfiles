@@ -262,13 +262,13 @@ let g:ale_linters = {
 \ 'json': ['jsonlint'],
 \ 'scss': ['stylelint'],
 \ 'sql': ['sqlint'],
-\ 'python': ['flake8'],
+\ 'python': ['flake8', 'pylint'],
 \ 'typescript': ['tslint', 'tsserver', 'typecheck']
 \ }
 let g:ale_fixers = {
 \ 'css': ['stylelint'],
-\ 'javascript': ['prettier-eslint'],
-\ 'python': ['autopep8'],
+\ 'javascript': ['prettier', 'eslint'],
+\ 'python': ['autopep8', 'yapf'],
 \ 'scss': ['stylelint'],
 \ 'typescript': ['prettier']
 \ }

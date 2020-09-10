@@ -50,10 +50,16 @@
 	path = .vim/bundle/indent-guides
 	url = git@github.com:nathanaelkane/vim-indent-guides.git
 	ignore = dirty
+[submodule ".vim/bundle/language-server"]
+	path = .vim/bundle/language-server
+	url = git@github.com:iamcco/vim-language-server.git
 [submodule ".vim/bundle/neomru"]
 	path = .vim/bundle/neomru
 	url = git@github.com:Shougo/neomru.vim.git
 	ignore = dirty
+[submodule ".vim/bundle/NeoSolarized"]
+	path = .vim/bundle/NeoSolarized
+	url = git@github.com:overcache/NeoSolarized.git
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
@@ -90,6 +96,9 @@
 	path = .vim/bundle/vimproc
 	url = git@github.com:Shougo/vimproc.vim.git
 	ignore = dirty
+[submodule ".vim/bundle/vint"]
+	path = .vim/bundle/vint
+	url = git@github.com:Vimjas/vint.git
 [submodule ".vim/bundle/yats"]
 	path = .vim/bundle/yats
 	url = git@github.com:HerringtonDarkholme/yats.vim.git
@@ -122,6 +131,3 @@
 	path = .tmux/themes/colors-solarized
 	url = git@github.com:seebi/tmux-colors-solarized.git
 	ignore = dirty
-[submodule ".vim/bundle/NeoSolarized"]
-	path = .vim/bundle/NeoSolarized
-	url = https://github.com/overcache/NeoSolarized
