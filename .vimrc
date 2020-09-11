@@ -248,6 +248,7 @@ let g:user_zen_expandabbr_key='<<'
 
 ""ALE
 let g:ale_completion_enabled = 1
+let g:ale_python_flake8_change_directory = 'file'
 let g:ale_sign_error = '**'
 let g:ale_sign_warning = '!!'
 let g:ale_echo_msg_error_str = 'E'
@@ -262,7 +263,7 @@ let g:ale_linters = {
 \ 'json': ['jsonlint'],
 \ 'scss': ['stylelint'],
 \ 'sql': ['sqlint'],
-\ 'python': ['flake8', 'pylint'],
+\ 'python': ['flake8'],
 \ 'typescript': ['tslint', 'tsserver', 'typecheck']
 \ }
 let g:ale_fixers = {
