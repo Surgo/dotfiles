@@ -264,7 +264,7 @@ let g:ale_linters = {
 \ 'scss': ['stylelint'],
 \ 'sql': ['sqlint'],
 \ 'python': ['flake8'],
-\ 'typescript': ['tslint', 'tsserver', 'typecheck']
+\ 'typescript': ['eslint']
 \ }
 let g:ale_fixers = {
 \ 'css': ['stylelint'],
