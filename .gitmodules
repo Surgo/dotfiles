@@ -77,6 +77,10 @@
 	path = .vim/bundle/SudoEdit
 	url = git://github.com/chrisbra/SudoEdit.vim.git
 	ignore = dirty
+[submodule ".vim/bundle/shutup"]
+	path = .vim/bundle/shutup
+	url = git@github.com:heavenshell/vim-shutup.git
+	ignore = dirty
 [submodule ".vim/bundle/tabpagebuffer"]
 	path = .vim/bundle/tabpagebuffer
 	url = git@github.com:Shougo/tabpagebuffer.vim.git

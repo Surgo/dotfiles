@@ -273,7 +273,8 @@ let g:ale_fixers = {
 \ 'scss': ['stylelint'],
 \ 'typescript': ['prettier']
 \ }
-
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 ""Go
 let g:acp_enableAtStartup = 0
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -317,3 +318,29 @@ if has('mac')
 endif
 syntax on
 filetype plugin indent on
+
+""Shutup
+function s:ale_eslint_format(...)
+  if &ft !~ 'typescript'
+    return ''
+  endif
+  let value = a:000[0]
+  let position = a:000[1]
+  if position == 'upper' " Insert ignore into above current line.
+    return printf('// eslint-disable-next-line %s', value)
+  endif
+  " Insert ignore into same line
+  return printf(' // eslint-disable-line %s', value)
+endfunction
+function s:ale_py_format(...)
+  if &ft !~ 'python'
+    return ''
+  endif
+  let value = a:000[0]
+  return printf('  # noqa: %s', a:000[0])
+endfunction
+
+let g:shutup_patterns = {
+\ '[eslint].*(\zs.*\ze)': function('s:ale_eslint_format'),
+\ '(\zs.*\ze)': function('s:ale_py_format'),
+\ }
