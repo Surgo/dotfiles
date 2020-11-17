@@ -1,7 +1,7 @@
-if [ -d "/opt/homebrew/sbin" ]; then
-  export PATH="/opt/homebrew/sbin:$PATH"
+if [ -d "/opt/brew/sbin" ]; then
+  export PATH="/opt/brew/sbin:$PATH"
 fi
 
-if [ -d "/opt/homebrew/bin" ]; then
-  export PATH="/opt/homebrew/bin:$PATH"
+if [ -d "/opt/brew/bin" ]; then
+  export PATH="/opt/brew/bin:$PATH"
 fi
