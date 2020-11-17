@@ -6,10 +6,8 @@ cask "cheatsheet"
 cask "discord"
 cask "divvy"
 cask "docker"
-# cask "dropbox"  # Install manually
 cask "google-japanese-ime"
 cask "iterm2"
-cask "java"
 cask "keybase"
 cask "slack"
 
@@ -21,6 +19,7 @@ brew "git"
 brew "gnupg"
 brew "m-cli"
 brew "mas"
+brew "openjdk"
 brew "openssl"
 brew "pinentry-mac"  # For enter passphrase
 brew "python3"
