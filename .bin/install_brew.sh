@@ -6,8 +6,9 @@ mkdir -p /opt
 chown -R "$LOGNAME":staff /opt
 EOF
 
-cd /opt && mkdir -p homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+cd /opt || exit && mkdir -p homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
 
-cd "$HOME"
+cd "$HOME" || exit
+export PATH=/opt/homebrew/bin:"$PATH"
 /opt/homebrew/bin/brew update
 /opt/homebrew/bin/brew bundle

@@ -1,5 +1,5 @@
 # Tap repositories and install packages
-tap "caskroom/cask"
+tap "homebrew/cask"
 cask "appcleaner"
 cask "caffeine"
 cask "cheatsheet"
