@@ -38,6 +38,9 @@ fi
 if [ -s "$HOME/.nodebrew" ]; then
   export PATH="$HOME/.nodebrew/current/bin:$PATH"
 fi
+if [ -d "$HOME/.nodenv/bin" ]; then
+  export PATH="$HOME/.nodenv/bin:$PATH"
+fi
 if [ -d "$(brew --prefix)/lib/node_modules" ]; then
   export NODE_PATH="$(brew --prefix)/lib/node_modules"
 fi
