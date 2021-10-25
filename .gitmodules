@@ -1,6 +1,6 @@
-[submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh.git
+[submodule ".ohmyzsh"]
+	path = .ohmyzsh
+	url = git@github.com:ohmyzsh/ohmyzsh.git
 	ignore = dirty
 [submodule ".vim/bundle/ag"]
 	path = .vim/bundle/ag

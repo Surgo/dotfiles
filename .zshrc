@@ -5,7 +5,7 @@ fi
 
 LANG=ja_JP.UTF-8
 
-ZSH=${HOME}/.oh-my-zsh
+ZSH=${HOME}/.ohmyzsh
 ZSH_THEME="robbyrussell"
 
 DISABLE_AUTO_UPDATE="true"
@@ -25,12 +25,13 @@ case ${OSTYPE} in
     plugins=($plugins common-aliases compleat) # For Linux
   ;;
 esac
-plugins=($plugins tmux vagrant docker) # For dev tools
-plugins=($plugins ansible aws) # For ops
+plugins=($plugins ag docker docker-compose tmux) # For dev tools
+plugins=($plugins ansible aws terraform) # For ops
 plugins=($plugins redis-cli) # For maint servers
 plugins=($plugins git gitfast tig) # For Git
 plugins=($plugins mercurial) # For Mercurial
-plugins=($plugins python pep8 pip django virtualenv) # For Python
+plugins=($plugins autopep8 pep8 pip python virtualenv) # For Python
+plugins=($plugins bundler gem rake ruby) # For Ruby
 plugins=($plugins node npm yarn) # For JavaScript
 plugins=($plugins golang) # For Go
 
