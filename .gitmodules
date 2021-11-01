@@ -113,6 +113,10 @@
 	path = .tmux/plugins/tmux-pain-control
 	url = git@github.com:tmux-plugins/tmux-pain-control.git
 	ignore = dirty
+[submodule ".tmux/plugins/tmux-sensible"]
+	path = .tmux/plugins/tmux-sensible
+	url = git@github.com:tmux-plugins/tmux-sensible.git
+	ignore = dirty
 [submodule ".tmux/plugins/tmux-sessionist"]
 	path = .tmux/plugins/tmux-sessionist
 	url = git@github.com:tmux-plugins/tmux-sessionist.git
