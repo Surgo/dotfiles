@@ -19,7 +19,7 @@ ZSH_TMUX_AUTOCONNECT=true
 plugins=(sudo colorize) # OS common
 case ${OSTYPE} in
   darwin*)
-    plugins=($plugins osx brew) # For Mac OSX
+    plugins=($plugins macos brew) # For Mac OSX
   ;;
   linux*)
     plugins=($plugins common-aliases compleat) # For Linux
