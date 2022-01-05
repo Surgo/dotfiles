@@ -66,4 +66,4 @@
 [commit]
     gpgsign = true
 [gpg]
-	program = /opt/brew/bin/gpg
+    program = /usr/local/bin/gpg
