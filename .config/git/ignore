@@ -1,9 +1,9 @@
-### https://raw.github.com/github/gitignore//Global/Ansible.gitignore
+### https://raw.github.com/github/gitignore/752b7678db497edb377fa982ded0c70035393794/Global/Ansible.gitignore
 
 *.retry
 
 
-### https://raw.github.com/github/gitignore//Global/Backup.gitignore
+### https://raw.github.com/github/gitignore/752b7678db497edb377fa982ded0c70035393794/Global/Backup.gitignore
 
 *.bak
 *.gho
@@ -12,7 +12,7 @@
 *.tmp
 
 
-### https://raw.github.com/github/gitignore//Global/Dropbox.gitignore
+### https://raw.github.com/github/gitignore/752b7678db497edb377fa982ded0c70035393794/Global/Dropbox.gitignore
 
 # Dropbox settings and caches
 .dropbox
@@ -20,13 +20,13 @@
 .dropbox.cache
 
 
-### https://raw.github.com/github/gitignore//Global/GPG.gitignore
+### https://raw.github.com/github/gitignore/752b7678db497edb377fa982ded0c70035393794/Global/GPG.gitignore
 
 secring.*
 
 
 
-### https://raw.github.com/github/gitignore//Global/Linux.gitignore
+### https://raw.github.com/github/gitignore/752b7678db497edb377fa982ded0c70035393794/Global/Linux.gitignore
 
 *~
 
@@ -43,7 +43,7 @@ secring.*
 .nfs*
 
 
-### https://raw.github.com/github/gitignore//Global/macOS.gitignore
+### https://raw.github.com/github/gitignore/752b7678db497edb377fa982ded0c70035393794/Global/macOS.gitignore
 
 # General
 .DS_Store
@@ -73,7 +73,7 @@ Temporary Items
 .apdisk
 
 
-### https://raw.github.com/github/gitignore//Global/Mercurial.gitignore
+### https://raw.github.com/github/gitignore/752b7678db497edb377fa982ded0c70035393794/Global/Mercurial.gitignore
 
 .hg/
 .hgignore
@@ -83,7 +83,7 @@ Temporary Items
 .hgtags
 
 
-### https://raw.github.com/github/gitignore//Global/Vagrant.gitignore
+### https://raw.github.com/github/gitignore/752b7678db497edb377fa982ded0c70035393794/Global/Vagrant.gitignore
 
 # General
 .vagrant/
@@ -92,7 +92,7 @@ Temporary Items
 # *.log
 
 
-### https://raw.github.com/github/gitignore//Global/Vim.gitignore
+### https://raw.github.com/github/gitignore/752b7678db497edb377fa982ded0c70035393794/Global/Vim.gitignore
 
 # Swap
 [._]*.s[a-v][a-z]
@@ -115,7 +115,7 @@ tags
 [._]*.un~
 
 
-### https://raw.github.com/github/gitignore//Global/VirtualEnv.gitignore
+### https://raw.github.com/github/gitignore/752b7678db497edb377fa982ded0c70035393794/Global/VirtualEnv.gitignore
 
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
@@ -131,7 +131,7 @@ pyvenv.cfg
 pip-selfcheck.json
 
 
-### https://raw.github.com/github/gitignore//Global/Windows.gitignore
+### https://raw.github.com/github/gitignore/752b7678db497edb377fa982ded0c70035393794/Global/Windows.gitignore
 
 # Windows thumbnail cache files
 Thumbs.db
@@ -159,33 +159,13 @@ $RECYCLE.BIN/
 *.lnk
 
 
-### https://raw.github.com/github/gitignore//Global/Xcode.gitignore
-
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+### https://raw.github.com/github/gitignore/752b7678db497edb377fa982ded0c70035393794/Global/Xcode.gitignore
 
 ## User settings
 xcuserdata/
 
-## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
+## Xcode 8 and earlier
 *.xcscmblueprint
 *.xccheckout
-
-## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
-build/
-DerivedData/
-*.moved-aside
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-
-## Gcc Patch
-/*.gcno
 
 

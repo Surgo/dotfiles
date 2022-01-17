@@ -7,10 +7,9 @@
 !/.bash_completion
 !/.bash_profile
 !/.bin
-!/.gitattributes
-!/.gitconfig
+!/.config/gh
+!/.config/git
 !/.gitignore
-!/.gitignore_global
 !/.gitmodules
 !/.gvimrc
 !/.iterm2.conf.d
