@@ -19,10 +19,8 @@ brew "git"
 brew "gnupg"
 brew "m-cli"
 brew "mas"
-brew "openjdk"
 brew "openssl"
 brew "pinentry-mac"  # For enter passphrase
-brew "python3"
 brew "sl"
 brew "the_silver_searcher"
 brew "tig"
@@ -36,6 +34,4 @@ brew "zsh-completions"
 
 # App Store applications
 mas "1Password", id: 1333542190
-mas "TweetDeck", id: 485812721
-mas "Xcode", id: 497799835
 mas "Witch", id: 412485838
