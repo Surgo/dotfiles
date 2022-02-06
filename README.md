@@ -2,6 +2,12 @@
 
 ## Install
 
+1. Install command line tools for Xcode
+
+    ```console
+    xcode-select --install
+    ```
+
 1. Clone a repository
 
     ```console
@@ -14,12 +20,6 @@
 
     ```console
     git submodule update --init
-    ```
-
-1. Create symbolic link to pathogen
-
-    ```console
-    ln -s ~/.vim/bundle/pathogen/autoload/pathogen.vim ~/.vim/autoload/
     ```
 
 1. Bootstrap
@@ -42,13 +42,4 @@ Add a submodule to budle directory
 
 ```console
 git submodule add git://github.com/<plugin>.git .vim/bundle/<plugin>
-```
-
-### Update git submodules
-
-Checkout and pull all submodules.::
-
-```console
-git submodule update --init
-git submodule foreach 'git fetch; git reset --hard origin/master'
 ```

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 sudo -i bash << EOF
-echo "/opt/brew/bin/zsh" >> /etc/shells
+echo "/usr/local/bin/zsh" >> /etc/shells
 EOF
-chsh -s /opt/brew/bin/zsh
+chsh -s /usr/local/bin/zsh
