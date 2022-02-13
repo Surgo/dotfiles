@@ -193,55 +193,15 @@ let NERDSpaceDelims = 1
 let Grep_Skip_Dirs = '.svn .git .hg'
 let Grep_Skip_Files = '*.bak *~'
 
-""QuickBuf
-""let g:qb_hotkey=';;'
-""DumpBuf
-""let dumbbuf_hotkey = ''
-""unite.vim
-autocmd FileType unite nnoremap <silent> <buffer> ;q :q<CR>
-autocmd FileType unite inoremap <silent> <buffer> ;q <ESC>:q<CR>
-autocmd FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()
-  imap <silent><buffer> <C-k> <C-p>
-  imap <silent><buffer> <C-j> <C-n>
-endfunction
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#custom#source('line_migemo', 'matchers', 'matcher_migemo')
-call unite#custom#source('file_rec', 'sorters', 'sorter_reverse')
-call unite#custom#source('buffer,file_rec,file_rec/async', 'matchers',
-  \ ['converter_tail', 'matcher_fuzzy'])
-call unite#custom#source('file_mru', 'matchers',
-  \ ['matcher_project_files', 'matcher_hide_hidden_files'])
-call unite#custom#source('file', 'matchers',
-  \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
-call unite#custom#source('file_rec/async,file_mru', 'converters',
-  \ ['converter_file_directory'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-let g:unite_enable_start_insert = 1
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case = 1
-let g:unite_source_grep_max_candidates = 200
+""CtrlP
+nnoremap <silent> ;; :CtrlPBuffer<CR>
 if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts =
-    \ '--line-numbers --nocolor --nogroup --hidden ' .
-    \ '--ignore ''.hg'' ' .
-    \ '--ignore ''.svn'' ' .
-    \ '--ignore ''.git'' ' .
-    \ '--ignore ''.bzr'''
-  let g:unite_source_grep_recursive_opt = ''
-  "" Ag
-  let g:ag_highlight = 1
+  set grepprg=ag\ --vimgrep\ $*
+  set grepformat^=%f:%l:%c:%m
+
+  let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
+  let g:ctrlp_use_caching = 0
 endif
-nnoremap <silent> ;g :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR>
-nnoremap <silent> ;cg :<C-u>Unite<Space>grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-nnoremap <silent> ;; :<C-u>Unite<Space>buffer_tab -buffer-name=search-buffer<CR>
-nnoremap <silent> ;<Space> :<C-u>Unite<Space>-no-split buffer file_mru file_rec:! file_rec/async:! -buffer-name=files<CR>
-nnoremap <silent> ;la :<C-u>:Unite<Space>file_rec/async -buffer-name=files<CR>
-nnoremap <silent> ;l :<C-u>Unite<Space>file -buffer-name=files file<CR>
-nnoremap <silent> ;h :<C-u>Unite<Space>file_mru<CR>
-nnoremap <silent> ;n :<C-u>Unite<Space>file/new<CR>
 
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
@@ -264,12 +224,14 @@ let g:ale_linters = {
 \ 'scss': ['stylelint'],
 \ 'sql': ['sqlint'],
 \ 'python': ['flake8'],
+\ 'ruby': ['rubocop'],
 \ 'typescript': ['eslint']
 \ }
 let g:ale_fixers = {
 \ 'css': ['stylelint'],
 \ 'javascript': ['prettier', 'eslint'],
 \ 'python': ['autopep8', 'yapf'],
+\ 'ruby': ['rubocop'],
 \ 'scss': ['stylelint'],
 \ 'typescript': ['prettier']
 \ }
@@ -286,8 +248,6 @@ au FileType go nmap <Leader>t <Plug>(go-test)
 au FileType go nmap gd <Plug>(go-def-tab)
 
 ""Airline
-let g:unite_force_overwrite_statusline = 0
-let g:vimfiler_force_overwrite_statusline = 0
 " vim-powerline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
