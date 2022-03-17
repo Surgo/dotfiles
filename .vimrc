@@ -195,6 +195,7 @@ let Grep_Skip_Files = '*.bak *~'
 
 ""CtrlP
 nnoremap <silent> ;; :CtrlPBuffer<CR>
+nnoremap <silent> :: :CtrlP<CR>
 if executable('ag')
   set grepprg=ag\ --vimgrep\ $*
   set grepformat^=%f:%l:%c:%m
