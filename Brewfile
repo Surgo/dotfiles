@@ -32,6 +32,9 @@ brew "xz"
 brew "zsh"
 brew "zsh-completions"
 
+tap "homebrew/cask-fonts"
+cask "font-hack-nerd-font"
+
 # App Store applications
 mas "1Password", id: 1333542190
 mas "Witch", id: 412485838

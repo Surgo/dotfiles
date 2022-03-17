@@ -22,6 +22,10 @@
 	path = .vim/bundle/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
 	branch = master
+[submodule ".vim/bundle/devicons"]
+	path = .vim/bundle/devicons
+	url = git@github.com:ryanoasis/vim-devicons.git
+	branch = master
 [submodule ".vim/bundle/editorconfig"]
 	path = .vim/bundle/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
