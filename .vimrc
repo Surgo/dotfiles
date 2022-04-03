@@ -204,6 +204,9 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+""Terraform
+let g:terraform_fmt_on_save = 1
+
 ""Zencoding
 let g:user_zen_expandabbr_key='<<'
 

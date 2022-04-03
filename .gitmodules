@@ -74,6 +74,10 @@
 	path = .vim/bundle/shutup
 	url = git@github.com:heavenshell/vim-shutup.git
 	branch = master
+[submodule ".vim/bundle/terraform"]
+	path = .vim/bundle/terraform
+	url = git@github.com:hashivim/vim-terraform.git
+	branch = master
 [submodule ".vim/bundle/yats"]
 	path = .vim/bundle/yats
 	url = git@github.com:HerringtonDarkholme/yats.vim.git
