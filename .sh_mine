@@ -6,47 +6,17 @@ export EDITOR=vim
 export PYTHONDONTWRITEBYTECODE=1
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
-export PATH="./.venv/.bin:$PATH"
-
-if [ -d "$(brew --prefix)/opt/openssl" ]; then
+if [ -d "/usr/local/opt/openssl/bin" ]; then
   # https://github.com/pycurl/pycurl/issues/526
   export PYCURL_SSL_LIBRARY=openssl
-fi
-
-# For MacTex
-if [ -d /usr/texbin ]; then
-  export PATH="/usr/texbin:$PATH"
+  # https://gist.github.com/andrisasuke/91eccace11366e626d14c5c249054e20
+  export SWIG_FEATURES="-cpperraswarn -includeall -I/usr/local/opt/openssl/include"
 fi
 
 # For Go
 export GOPATH="$HOME/.go"
-if [ -d "$GOPATH" ]; then
-  export PATH="$(go env GOPATH)/bin:$PATH"
-fi
 
-# For Ruby
-if [ -d "$(brew --prefix)/opt/ruby/bin" ]; then
-  export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
-fi
-if [ -d "$(brew --prefix)/var/rbenv" ]; then
-  export RBENV_ROOT="$(brew --prefix)/var/rbenv"
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init - --no-rehash)"
-fi
-
-# For Node.js
-if [ -s "$HOME/.nodebrew" ]; then
-  export PATH="$HOME/.nodebrew/current/bin:$PATH"
-fi
-if [ -d "$HOME/.nodenv/bin" ]; then
-  export PATH="$HOME/.nodenv/bin:$PATH"
-fi
-if [ -d "$(brew --prefix)/lib/node_modules" ]; then
-  export NODE_PATH="$(brew --prefix)/lib/node_modules"
-fi
-export PATH="./node_modules/.bin:$PATH"
-
-# Travis-CI
+# For Travis-CI
 if [ -f ~/.travis/travis.sh ]; then
   source ~/.travis/travis.sh
 fi

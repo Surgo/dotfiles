@@ -1,0 +1,64 @@
+# Brew
+export PATH="${BREW_PREFIX}/sbin:${PATH}"
+# brew --prefix is too slow
+# https://github.com/Homebrew/brew/issues/3327
+export BREW_PREFIX="$(dirname $(dirname $(which brew)))"
+
+# OpenSSL
+if [ -d "${BREW_PREFIX}/opt/openssl/bin" ]; then
+  export PATH="${BREW_PREFIX}/opt/openssl/bin:${PATH}"
+fi
+if [ -d "${BREW_PREFIX}/opt/openssl/lib" ]; then
+  export LDFLAGS="-L${BREW_PREFIX}/opt/openssl/lib ${LDFLAGS}"
+fi
+if [ -d "${BREW_PREFIX}/opt/openssl/include" ]; then
+  export CFLAGS="-I${BREW_PREFIX}/opt/openssl/include ${CFLAGS}"
+  export CPPFLAGS="-I${BREW_PREFIX}/opt/openssl/include ${CPPFLAGS}"
+fi
+
+# MySQL client
+if [ -d "${BREW_PREFIX}/opt/mysql-client/bin" ]; then
+  export PATH="${BREW_PREFIX}/opt/mysql-client/bin:${PATH}"
+fi
+if [ -d "${BREW_PREFIX}/opt/mysql-client/lib" ]; then
+  export LDFLAGS="-L${BREW_PREFIX}/opt/mysql-client/lib ${LDFLAGS}"
+fi
+if [ -d "${BREW_PREFIX}/opt/mysql-client/include" ]; then
+  export CFLAGS="-I${BREW_PREFIX}/opt/mysql-client/include ${CFLAGS}"
+  export CPPFLAGS="-I${BREW_PREFIX}/opt/mysql-client/include ${CPPFLAGS}"
+fi
+
+# MacTex
+if [ -d /usr/texbin ]; then
+  export PATH="/usr/texbin:${PATH}"
+fi
+
+# Go
+if [ -f go ]; then
+  export PATH="$(go env GOPATH)/bin:${PATH}"
+fi
+
+# Python
+export PATH="./.venv/.bin:${PATH}"
+
+# Ruby
+if [ -d "${BREW_PREFIX}/opt/ruby/bin" ]; then
+  export PATH="${BREW_PREFIX}/opt/ruby/bin:${PATH}"
+fi
+if [ -d "${BREW_PREFIX}/opt/rbenv" ]; then
+  export RBENV_ROOT="${BREW_PREFIX}/opt/rbenv"
+  export PATH="${HOME}/.rbenv/bin:${PATH}"
+  eval "$(rbenv init - --no-rehash)"
+fi
+
+# Node.js
+if [ -s "${HOME}/.nodebrew" ]; then
+  export PATH="${HOME}/.nodebrew/current/bin:${PATH}"
+fi
+if [ -d "${HOME}/.nodenv/bin" ]; then
+  export PATH="${HOME}/.nodenv/bin:${PATH}"
+fi
+if [ -d "${BREW_PREFIX}/lib/node_modules" ]; then
+  export NODE_PATH="${BREW_PREFIX}/lib/node_modules"
+fi
+export PATH="./node_modules/.bin:${PATH}"

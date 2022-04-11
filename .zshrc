@@ -40,7 +40,7 @@ source ${ZSH}/oh-my-zsh.sh
 
 # Completion files
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:${FPATH}
+  FPATH=${BREW_PREFIX}/share/zsh-completions:${FPATH}
 
   autoload -Uz compinit
   compinit
@@ -48,7 +48,7 @@ fi
 
 # Help files
 if type brew &>/dev/null; then
-  HELPDIR=$(brew --prefix)/share/zsh/helpfiles
+  HELPDIR=${BREW_PREFIX}/share/zsh/helpfiles
 fi
 
 # Override robbyrussell PROMPT
