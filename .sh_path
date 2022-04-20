@@ -1,8 +1,8 @@
 # Brew
-export PATH="${BREW_PREFIX}/sbin:${PATH}"
 # brew --prefix is too slow
 # https://github.com/Homebrew/brew/issues/3327
 export BREW_PREFIX="$(dirname $(dirname $(which brew)))"
+export PATH="${BREW_PREFIX}/sbin:${PATH}"
 
 # OpenSSL
 if [ -d "${BREW_PREFIX}/opt/openssl/bin" ]; then
@@ -47,7 +47,7 @@ if [ -d "${BREW_PREFIX}/opt/ruby/bin" ]; then
 fi
 if [ -d "${BREW_PREFIX}/opt/rbenv" ]; then
   export RBENV_ROOT="${BREW_PREFIX}/opt/rbenv"
-  export PATH="${HOME}/.rbenv/bin:${PATH}"
+  export PATH="${HOME}/.rbenv/shims:${PATH}"
   eval "$(rbenv init - --no-rehash)"
 fi
 
