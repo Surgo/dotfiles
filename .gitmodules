@@ -34,10 +34,6 @@
 	path = .vim/bundle/emmet
 	url = git@github.com:mattn/emmet-vim.git
 	branch = master
-[submodule ".vim/bundle/fugitive"]
-	path = .vim/bundle/fugitive
-	url = git@github.com:tpope/vim-fugitive.git
-	branch = master
 [submodule ".vim/bundle/gitgutter"]
 	path = .vim/bundle/gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
