@@ -16,7 +16,7 @@
 	branch = master
 [submodule ".vim/bundle/clrzr"]
 	path = .vim/bundle/clrzr
-	url = https://github.com/BourgeoisBear/clrzr
+	url = git@github.com:BourgeoisBear/clrzr
 	branch = master
 [submodule ".vim/bundle/ctrlp"]
 	path = .vim/bundle/ctrlp
@@ -44,11 +44,15 @@
 	branch = master
 [submodule ".vim/bundle/indent-line"]
 	path = .vim/bundle/indent-line
-	url = https://github.com/Yggdroot/indentLine
+	url = git@github.com:Yggdroot/indentLine
 	branch = master
 [submodule ".vim/bundle/NeoSolarized"]
 	path = .vim/bundle/NeoSolarized
 	url = git@github.com:overcache/NeoSolarized.git
+	branch = master
+[submodule ".vim/bundle/nerdcommenter"]
+	path = .vim/bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
 	branch = master
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
