@@ -52,13 +52,10 @@ if [ -d "${BREW_PREFIX}/opt/rbenv" ]; then
 fi
 
 # Node.js
-if [ -s "${HOME}/.nodebrew" ]; then
-  export PATH="${HOME}/.nodebrew/current/bin:${PATH}"
-fi
-if [ -d "${HOME}/.nodenv/bin" ]; then
-  export PATH="${HOME}/.nodenv/bin:${PATH}"
-fi
 if [ -d "${BREW_PREFIX}/lib/node_modules" ]; then
   export NODE_PATH="${BREW_PREFIX}/lib/node_modules"
+fi
+if [ -f nodenv ]; then
+  eval "$(nodenv init -)"
 fi
 export PATH="./node_modules/.bin:${PATH}"
