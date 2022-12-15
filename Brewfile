@@ -1,5 +1,6 @@
 # Tap repositories and install packages
 tap "homebrew/cask"
+cask "1password"
 cask "appcleaner"
 cask "caffeine"
 cask "cheatsheet"
@@ -36,5 +37,4 @@ tap "homebrew/cask-fonts"
 cask "font-hack-nerd-font"
 
 # App Store applications
-mas "1Password", id: 1333542190
 mas "Witch", id: 412485838
