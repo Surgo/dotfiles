@@ -4,6 +4,11 @@
 export BREW_PREFIX="$(dirname $(dirname $(which brew)))"
 export PATH="${BREW_PREFIX}/sbin:${PATH}"
 
+# Curl
+if [ -d "${BREW_PREFIX}/opt/curl/bin" ]; then
+  export PATH="${BREW_PREFIX}/opt/curl/bin:$PATH"
+fi
+
 # OpenSSL
 if [ -d "${BREW_PREFIX}/opt/openssl/bin" ]; then
   export PATH="${BREW_PREFIX}/opt/openssl/bin:${PATH}"
@@ -59,3 +64,8 @@ if [ -f nodenv ]; then
   eval "$(nodenv init -)"
 fi
 export PATH="./node_modules/.bin:${PATH}"
+
+# Java
+if [ -d "${BREW_PREFIX}/opt/openjdk/bin" ]; then
+  export PATH="${BREW_PREFIX}/opt/openjdk/bin:$PATH"
+fi
