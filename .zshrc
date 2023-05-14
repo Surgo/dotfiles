@@ -26,7 +26,7 @@ case ${OSTYPE} in
   ;;
 esac
 plugins=($plugins ag docker docker-compose tmux) # For dev tools
-plugins=($plugins ansible aws terraform) # For ops
+plugins=($plugins ansible aws gcloud terraform) # For ops
 plugins=($plugins redis-cli) # For maint servers
 plugins=($plugins git gitfast tig) # For Git
 plugins=($plugins mercurial) # For Mercurial

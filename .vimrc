@@ -241,6 +241,7 @@ let g:ale_fixers = {
 \ }
 let g:ale_set_loclist = 1
 " let g:ale_set_quickfix = 1
+let g:ale_linters_explicit = 1
 ""Go
 let g:acp_enableAtStartup = 0
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
