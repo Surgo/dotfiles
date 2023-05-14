@@ -11,6 +11,7 @@ cask "google-japanese-ime"
 cask "iterm2"
 cask "keybase"
 cask "slack"
+cask "visual-studio-code"
 
 tap "homebrew/core"
 brew "curl"
