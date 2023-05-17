@@ -231,6 +231,11 @@ let g:ale_fixers = {
 let g:ale_set_loclist = 1
 " let g:ale_set_quickfix = 1
 let g:ale_linters_explicit = 1
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+""LSP
+autocmd FileType terraform setlocal omnifunc=lsp#complete
 
 ""Airline
 if !exists('g:airline_symbols')

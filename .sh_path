@@ -39,8 +39,13 @@ if [ -d /usr/texbin ]; then
 fi
 
 # Go
-if [ -f go ]; then
-  export PATH="$(go env GOPATH)/bin:${PATH}"
+if [ -x "$(command -v go)" ]; then
+  export GOPATH="$HOME/.go"
+  export GOBIN="$(go env GOPATH)/bin"
+  export PATH="$(go env GOROOT)/bin:$(go env GOPATH)/bin:${PATH}"
+fi
+if ! [ -d "${GOBIN}" ]; then
+  mkdir -p "${GOBIN}"
 fi
 
 # Python
