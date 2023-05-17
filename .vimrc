@@ -181,11 +181,6 @@ augroup END
 "Plugin settings
 ""pathogen
 call pathogen#infect()
-""NERD_tree
-autocmd VimEnter * if !argc() | NERDTree | endif
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let g:NERDTreeShowHidden=0
-nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 
 ""NERD_commenter
 let NERDSpaceDelims = 1
@@ -242,6 +237,7 @@ let g:ale_fixers = {
 let g:ale_set_loclist = 1
 " let g:ale_set_quickfix = 1
 let g:ale_linters_explicit = 1
+
 ""Go
 let g:acp_enableAtStartup = 0
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"

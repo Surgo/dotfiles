@@ -30,10 +30,6 @@
 	path = .vim/bundle/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
 	branch = master
-[submodule ".vim/bundle/emmet"]
-	path = .vim/bundle/emmet
-	url = git@github.com:mattn/emmet-vim.git
-	branch = master
 [submodule ".vim/bundle/gitgutter"]
 	path = .vim/bundle/gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
@@ -53,10 +49,6 @@
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = git@github.com:scrooloose/nerdcommenter.git
-	branch = master
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
 	branch = master
 [submodule ".vim/bundle/pathogen"]
 	path = .vim/bundle/pathogen
