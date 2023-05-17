@@ -182,12 +182,6 @@ augroup END
 ""pathogen
 call pathogen#infect()
 
-""NERD_commenter
-let NERDSpaceDelims = 1
-""grep.vim
-let Grep_Skip_Dirs = '.svn .git .hg'
-let Grep_Skip_Files = '*.bak *~'
-
 ""CtrlP
 nnoremap <silent> ;; :CtrlPBuffer<CR>
 nnoremap <silent> :: :CtrlP<CR>
@@ -237,16 +231,7 @@ let g:ale_fixers = {
 let g:ale_set_loclist = 1
 " let g:ale_set_quickfix = 1
 let g:ale_linters_explicit = 1
-
-""Go
-let g:acp_enableAtStartup = 0
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>r <Plug>(go-run)
-au FileType go nmap <Leader>b <Plug>(go-build)
-au FileType go nmap <Leader>t <Plug>(go-test)
-au FileType go nmap gd <Plug>(go-def-tab)
+let g:ale_completion_enabled = 1
 
 ""Airline
 if !exists('g:airline_symbols')

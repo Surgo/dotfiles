@@ -34,10 +34,6 @@
 	path = .vim/bundle/gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
 	branch = master
-[submodule ".vim/bundle/go"]
-	path = .vim/bundle/go
-	url = git@github.com:fatih/vim-go.git
-	branch = master
 [submodule ".vim/bundle/indent-line"]
 	path = .vim/bundle/indent-line
 	url = git@github.com:Yggdroot/indentLine
@@ -45,10 +41,6 @@
 [submodule ".vim/bundle/NeoSolarized"]
 	path = .vim/bundle/NeoSolarized
 	url = git@github.com:overcache/NeoSolarized.git
-	branch = master
-[submodule ".vim/bundle/nerdcommenter"]
-	path = .vim/bundle/nerdcommenter
-	url = git@github.com:scrooloose/nerdcommenter.git
 	branch = master
 [submodule ".vim/bundle/pathogen"]
 	path = .vim/bundle/pathogen
