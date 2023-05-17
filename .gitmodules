@@ -4,7 +4,7 @@
 	branch = master
 [submodule ".vim/bundle/airline"]
 	path = .vim/bundle/airline
-	url = git@github.com:bling/vim-airline.git
+	url = git@github.com:vim-airline/vim-airline.git
 	branch = master
 [submodule ".vim/bundle/airline-themes"]
 	path = .vim/bundle/airline-themes
@@ -12,11 +12,19 @@
 	branch = master
 [submodule ".vim/bundle/ale"]
 	path = .vim/bundle/ale
-	url = git@github.com:w0rp/ale.git
+	url = git@github.com:dense-analysis/ale.git
+	branch = master
+[submodule ".vim/bundle/asyncomplete"]
+	path = .vim/bundle/asyncomplete
+	url = git@github.com:prabirshrestha/asyncomplete.vim.git
+	branch = master
+[submodule ".vim/bundle/asyncomplete-lsp"]
+	path = .vim/bundle/asyncomplete-lsp
+	url = git@github.com:prabirshrestha/asyncomplete-lsp.vim.git
 	branch = master
 [submodule ".vim/bundle/clrzr"]
 	path = .vim/bundle/clrzr
-	url = git@github.com:BourgeoisBear/clrzr
+	url = git@github.com:BourgeoisBear/clrzr.git
 	branch = master
 [submodule ".vim/bundle/ctrlp"]
 	path = .vim/bundle/ctrlp
@@ -36,7 +44,15 @@
 	branch = master
 [submodule ".vim/bundle/indent-line"]
 	path = .vim/bundle/indent-line
-	url = git@github.com:Yggdroot/indentLine
+	url = git@github.com:Yggdroot/indentLine.git
+	branch = master
+[submodule ".vim/bundle/lsp"]
+	path = .vim/bundle/lsp
+	url = git@github.com:prabirshrestha/vim-lsp.git
+	branch = master
+[submodule ".vim/bundle/lsp-settings"]
+	path = .vim/bundle/lsp-settings
+	url = git@github.com:mattn/vim-lsp-settings.git
 	branch = master
 [submodule ".vim/bundle/NeoSolarized"]
 	path = .vim/bundle/NeoSolarized
@@ -46,6 +62,10 @@
 	path = .vim/bundle/pathogen
 	url = git@github.com:tpope/vim-pathogen.git
 	branch = master
+[submodule ".vim/bundle/ruby-lsp"]
+	path = .vim/bundle/ruby-lsp
+	url = git@github.com:Shopify/ruby-lsp.git
+	branch = main
 [submodule ".vim/bundle/shutup"]
 	path = .vim/bundle/shutup
 	url = git@github.com:heavenshell/vim-shutup.git
@@ -54,6 +74,10 @@
 	path = .vim/bundle/terraform
 	url = git@github.com:hashivim/vim-terraform.git
 	branch = master
+[submodule ".vim/bundle/terraform-ls"]
+	path = .vim/bundle/terraform-ls
+	url = git@github.com:hashicorp/terraform-ls.git
+	branch = main
 [submodule ".vim/bundle/yats"]
 	path = .vim/bundle/yats
 	url = git@github.com:HerringtonDarkholme/yats.vim.git

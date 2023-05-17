@@ -231,7 +231,6 @@ let g:ale_fixers = {
 let g:ale_set_loclist = 1
 " let g:ale_set_quickfix = 1
 let g:ale_linters_explicit = 1
-let g:ale_completion_enabled = 1
 
 ""Airline
 if !exists('g:airline_symbols')
