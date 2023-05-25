@@ -210,32 +210,75 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %s (%code%)'
 let g:ale_javascript_prettier_use_local_config = 1
 """ https://github.com/w0rp/ale/issues/925
-let g:ale_linters = {
-\ 'css': ['stylelint'],
-\ 'javascript': ['eslint'],
-\ 'json': ['jsonlint'],
-\ 'scss': ['stylelint'],
-\ 'sql': ['sqlint'],
-\ 'python': ['flake8'],
-\ 'ruby': ['rubocop'],
-\ 'typescript': ['eslint']
-\ }
-let g:ale_fixers = {
-\ 'css': ['stylelint'],
-\ 'javascript': ['prettier', 'eslint'],
-\ 'python': ['autopep8', 'yapf'],
-\ 'ruby': ['rubocop'],
-\ 'scss': ['stylelint'],
-\ 'typescript': ['prettier']
-\ }
+let g:ale_linters = {}
+let g:ale_linters['bash'] = ['shellcheck']
+let g:ale_linters['css'] = ['eslint', 'stylelint']
+let g:ale_linters['dockerfile'] = ['hadolint']
+let g:ale_linters['go'] = ['gopls']
+let g:ale_linters['html'] = ['eslint']
+let g:ale_linters['javascript'] = ['eslint']
+let g:ale_linters['json'] = ['jsonlint']
+let g:ale_linters['python'] = ['flake8']
+let g:ale_linters['ruby'] = ['rubocop']
+let g:ale_linters['scss'] = ['stylelint']
+let g:ale_linters['sql'] = ['sqlint']
+let g:ale_linters['terraform'] = ['terraform']
+let g:ale_linters['typescript'] = ['eslint']
+let g:ale_linters['yaml'] = ['yamllint']
+let g:ale_fixers = {}
+let g:ale_fixers['bash'] = ['shfmt']
+let g:ale_fixers['css'] = ['prettier', 'eslint']
+let g:ale_fixers['go'] = ['gofmt']
+let g:ale_fixers['html'] = ['prettier', 'eslint']
+let g:ale_fixers['javascript'] = ['prettier', 'eslint']
+let g:ale_fixers['json'] = ['prettier', 'eslint']
+let g:ale_fixers['python'] = ['autopep8', 'autoflake']
+let g:ale_fixers['ruby'] = ['rubocop']
+let g:ale_fixers['scss'] = ['prettier', 'stylelint']
+let g:ale_fixers['sql'] = ['sqlfmt']
+let g:ale_fixers['typescript'] = ['prettier', 'eslint']
+let g:ale_fixers['terraform'] = ['terraform']
+let g:ale_fixers['yaml'] = ['yamlfix']
 let g:ale_set_loclist = 1
 " let g:ale_set_quickfix = 1
 let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 ""LSP
-autocmd FileType terraform setlocal omnifunc=lsp#complete
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    "nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    "nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+" asyncomplete {{{
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_popup_delay = 200
 
 ""Airline
 if !exists('g:airline_symbols')
