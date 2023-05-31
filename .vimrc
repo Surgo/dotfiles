@@ -18,7 +18,7 @@ endif
 if has('win32') || has('win64')
   "let $LANG='ja_JP.UTF-8'
   set shellslash
-  set runtimepath+=$HOME/.vim,$HOME/.vim/after
+  set runtimepath+=$HOME/.vim
 endif
 
 "Terminal
@@ -114,23 +114,7 @@ set wildchar=<Tab>
 set wildmode=list:full
 set history=1000
 set complete+=k
-""Omni completion
-imap <C-space> <C-x><C-o>
-""Omni completion <tab>
-function! InsertTabWrapper()
-  if pumvisible()
-    return "\<C-n>"
-  endif
-  let col = col('.') - 1
-  if !col || getline('.')[col -1] !~ '\k\|<\|/'
-    return "\<Tab>"
-  elseif exists('&omnifunc') && &omnifunc == ''
-    return "\<C-n>"
-  else
-    return "\<C-x>\<C-o>"
-  endif
-endfunction
-inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
+
 ""Spacing after commma
 inoremap , ,<Space>
 "" Remove blank when close.
@@ -179,23 +163,18 @@ augroup InsModeAu
 augroup END
 
 "Plugin settings
-""CtrlP
-nnoremap <silent> ;; :CtrlPBuffer<CR>
-nnoremap <silent> :: :CtrlP<CR>
-if executable('ag')
-  set grepprg=ag\ --vimgrep\ $*
-  set grepformat^=%f:%l:%c:%m
-
-  let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
-  let g:ctrlp_use_caching = 0
+""Airline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
 endif
-
-""Terraform
-let g:terraform_fmt_on_save = 1
-
-""Zencoding
-let g:user_zen_expandabbr_key='<<'
-
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+""Theme: solarized
+if has('mac')
+  let g:airline_theme = 'solarized'
+  let g:airline_solarized_bg = 'dark'
+endif
 ""ALE
 let g:ale_completion_enabled = 1
 let g:ale_python_flake8_change_directory = 'file'
@@ -244,56 +223,59 @@ let g:ale_javascript_prettier_use_local_config = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-""LSP
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gs <plug>(lsp-document-symbol-search)
-    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
-    nmap <buffer> gr <plug>(lsp-references)
-    nmap <buffer> gi <plug>(lsp-implementation)
-    nmap <buffer> gt <plug>(lsp-type-definition)
-    nmap <buffer> <leader>rn <plug>(lsp-rename)
-    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-    nmap <buffer> K <plug>(lsp-hover)
-    "nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
-    "nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
-
-    let g:lsp_format_sync_timeout = 1000
-    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
-    " refer to doc to add more commands
-endfunction
-
-augroup lsp_install
-    au!
-    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
-
-" asyncomplete {{{
+""asyncomplete
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_popup_delay = 200
 
-""Airline
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+""CtrlP
+nnoremap <silent> ;; :CtrlPBuffer<CR>
+nnoremap <silent> :: :CtrlP<CR>
+if executable('ag')
+  set grepprg=ag\ --vimgrep\ $*
+  set grepformat^=%f:%l:%c:%m
+
+  let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
+  let g:ctrlp_use_caching = 0
 endif
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-""Theme: solarized
+
+""gitgutter
 if has('mac')
-  set background=dark
-  colorscheme solarized8
-  let g:airline_theme = 'solarized'
-  let g:airline_solarized_bg = 'dark'
   let g:gitgutter_override_sign_column_highlight = 0
 endif
-syntax on
-filetype plugin indent on
+
+""indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+""LSP
+function! s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  setlocal signcolumn=yes
+  if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+  nmap <buffer> gd <plug>(lsp-definition)
+  nmap <buffer> gs <plug>(lsp-document-symbol-search)
+  nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+  nmap <buffer> gr <plug>(lsp-references)
+  nmap <buffer> gi <plug>(lsp-implementation)
+  nmap <buffer> gt <plug>(lsp-type-definition)
+  nmap <buffer> <leader>rn <plug>(lsp-rename)
+  nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+  nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+  nmap <buffer> K <plug>(lsp-hover)
+  "nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+  "nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+  let g:lsp_format_sync_timeout = 1000
+  autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+  " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+  au!
+  " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
 ""Shutup
 function s:ale_eslint_format(...)
@@ -320,3 +302,15 @@ let g:shutup_patterns = {
 \ '[eslint].*(\zs.*\ze)': function('s:ale_eslint_format'),
 \ '(\zs.*\ze)': function('s:ale_py_format'),
 \ }
+
+""Terraform
+let g:terraform_fmt_on_save = 1
+
+"Colors
+""solarized8
+if has('mac')
+  set background=dark
+  colorscheme solarized8
+endif
+syntax on
+filetype plugin indent on
