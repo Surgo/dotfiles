@@ -2,82 +2,6 @@
 	path = .ohmyzsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
 	branch = master
-[submodule ".vim/bundle/airline"]
-	path = .vim/bundle/airline
-	url = git@github.com:vim-airline/vim-airline.git
-	branch = master
-[submodule ".vim/bundle/airline-themes"]
-	path = .vim/bundle/airline-themes
-	url = git@github.com:vim-airline/vim-airline-themes.git
-	branch = master
-[submodule ".vim/bundle/ale"]
-	path = .vim/bundle/ale
-	url = git@github.com:dense-analysis/ale.git
-	branch = master
-[submodule ".vim/bundle/asyncomplete"]
-	path = .vim/bundle/asyncomplete
-	url = git@github.com:prabirshrestha/asyncomplete.vim.git
-	branch = master
-[submodule ".vim/bundle/asyncomplete-lsp"]
-	path = .vim/bundle/asyncomplete-lsp
-	url = git@github.com:prabirshrestha/asyncomplete-lsp.vim.git
-	branch = master
-[submodule ".vim/bundle/clrzr"]
-	path = .vim/bundle/clrzr
-	url = git@github.com:BourgeoisBear/clrzr.git
-	branch = master
-[submodule ".vim/bundle/ctrlp"]
-	path = .vim/bundle/ctrlp
-	url = git@github.com:ctrlpvim/ctrlp.vim.git
-	branch = master
-[submodule ".vim/bundle/devicons"]
-	path = .vim/bundle/devicons
-	url = git@github.com:ryanoasis/vim-devicons.git
-	branch = master
-[submodule ".vim/bundle/editorconfig"]
-	path = .vim/bundle/editorconfig
-	url = git@github.com:editorconfig/editorconfig-vim.git
-	branch = master
-[submodule ".vim/bundle/gitgutter"]
-	path = .vim/bundle/gitgutter
-	url = git@github.com:airblade/vim-gitgutter.git
-	branch = master
-[submodule ".vim/bundle/indent-line"]
-	path = .vim/bundle/indent-line
-	url = git@github.com:Yggdroot/indentLine.git
-	branch = master
-[submodule ".vim/bundle/lsp"]
-	path = .vim/bundle/lsp
-	url = git@github.com:prabirshrestha/vim-lsp.git
-	branch = master
-[submodule ".vim/bundle/lsp-ale"]
-	path = .vim/bundle/lsp-ale
-	url = git@github.com:rhysd/vim-lsp-ale.git
-	branch = master
-[submodule ".vim/bundle/lsp-settings"]
-	path = .vim/bundle/lsp-settings
-	url = git@github.com:mattn/vim-lsp-settings.git
-	branch = master
-[submodule ".vim/bundle/NeoSolarized"]
-	path = .vim/bundle/NeoSolarized
-	url = git@github.com:overcache/NeoSolarized.git
-	branch = master
-[submodule ".vim/bundle/pathogen"]
-	path = .vim/bundle/pathogen
-	url = git@github.com:tpope/vim-pathogen.git
-	branch = master
-[submodule ".vim/bundle/shutup"]
-	path = .vim/bundle/shutup
-	url = git@github.com:heavenshell/vim-shutup.git
-	branch = master
-[submodule ".vim/bundle/terraform"]
-	path = .vim/bundle/terraform
-	url = git@github.com:hashivim/vim-terraform.git
-	branch = master
-[submodule ".vim/bundle/yats"]
-	path = .vim/bundle/yats
-	url = git@github.com:HerringtonDarkholme/yats.vim.git
-	branch = master
 [submodule ".tmux/plugins/tmux-battery"]
 	path = .tmux/plugins/tmux-battery
 	url = git@github.com:tmux-plugins/tmux-battery.git
@@ -109,4 +33,76 @@
 [submodule ".tmux/themes/colors-solarized"]
 	path = .tmux/themes/colors-solarized
 	url = git@github.com:seebi/tmux-colors-solarized.git
+	branch = master
+[submodule ".vim/pack/colors/start/solarized8"]
+	path = .vim/pack/colors/start/solarized8
+	url = git@github.com:lifepillar/vim-solarized8.git
+	branch = master
+[submodule ".vim/pack/plugins/start/airline"]
+	path = .vim/pack/plugins/start/airline
+	url = git@github.com:vim-airline/vim-airline.git
+	branch = master
+[submodule ".vim/pack/plugins/start/airline-themes"]
+	path = .vim/pack/plugins/start/airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
+	branch = master
+[submodule ".vim/pack/plugins/start/ale"]
+	path = .vim/pack/plugins/start/ale
+	url = git@github.com:dense-analysis/ale.git
+	branch = master
+[submodule ".vim/pack/plugins/start/asyncomplete"]
+	path = .vim/pack/plugins/start/asyncomplete
+	url = git@github.com:prabirshrestha/asyncomplete.vim.git
+	branch = master
+[submodule ".vim/pack/plugins/start/asyncomplete-lsp"]
+	path = .vim/pack/plugins/start/asyncomplete-lsp
+	url = git@github.com:prabirshrestha/asyncomplete-lsp.vim.git
+	branch = master
+[submodule ".vim/pack/plugins/start/clrzr"]
+	path = .vim/pack/plugins/start/clrzr
+	url = git@github.com:BourgeoisBear/clrzr.git
+	branch = master
+[submodule ".vim/pack/plugins/start/ctrlp"]
+	path = .vim/pack/plugins/start/ctrlp
+	url = git@github.com:ctrlpvim/ctrlp.vim.git
+	branch = master
+[submodule ".vim/pack/plugins/start/devicons"]
+	path = .vim/pack/plugins/start/devicons
+	url = git@github.com:ryanoasis/vim-devicons.git
+	branch = master
+[submodule ".vim/pack/plugins/start/editorconfig"]
+	path = .vim/pack/plugins/start/editorconfig
+	url = git@github.com:editorconfig/editorconfig-vim.git
+	branch = master
+[submodule ".vim/pack/plugins/start/gitgutter"]
+	path = .vim/pack/plugins/start/gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
+	branch = master
+[submodule ".vim/pack/plugins/start/indent-guides"]
+	path = .vim/pack/plugins/start/indent-guides
+	url = git@github.com:preservim/vim-indent-guides.git
+	branch = master
+[submodule ".vim/pack/plugins/start/lsp"]
+	path = .vim/pack/plugins/start/lsp
+	url = git@github.com:prabirshrestha/vim-lsp.git
+	branch = master
+[submodule ".vim/pack/plugins/start/lsp-ale"]
+	path = .vim/pack/plugins/start/lsp-ale
+	url = git@github.com:rhysd/vim-lsp-ale.git
+	branch = master
+[submodule ".vim/pack/plugins/start/lsp-settings"]
+	path = .vim/pack/plugins/start/lsp-settings
+	url = git@github.com:mattn/vim-lsp-settings.git
+	branch = master
+[submodule ".vim/pack/syntax/opt/shutup"]
+	path = .vim/pack/syntax/opt/shutup
+	url = git@github.com:heavenshell/vim-shutup.git
+	branch = master
+[submodule ".vim/pack/syntax/opt/terraform"]
+	path = .vim/pack/syntax/opt/terraform
+	url = git@github.com:hashivim/vim-terraform.git
+	branch = master
+[submodule ".vim/pack/syntax/opt/yats"]
+	path = .vim/pack/syntax/opt/yats
+	url = git@github.com:HerringtonDarkholme/yats.vim.git
 	branch = master

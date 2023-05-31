@@ -179,9 +179,6 @@ augroup InsModeAu
 augroup END
 
 "Plugin settings
-""pathogen
-call pathogen#infect()
-
 ""CtrlP
 nnoremap <silent> ;; :CtrlPBuffer<CR>
 nnoremap <silent> :: :CtrlP<CR>
@@ -290,10 +287,7 @@ let g:airline#extensions#ale#enabled = 1
 ""Theme: solarized
 if has('mac')
   set background=dark
-  let g:neosolarized_contrast = 'high'
-  let g:neosolarized_visibility = 'high'
-  let g:neosolarized_vertSplitBgTrans = 0
-  colorscheme NeoSolarized
+  colorscheme solarized8
   let g:airline_theme = 'solarized'
   let g:airline_solarized_bg = 'dark'
   let g:gitgutter_override_sign_column_highlight = 0
