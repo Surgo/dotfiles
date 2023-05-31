@@ -1,5 +1,4 @@
 # Lazy dotfiles
-
 ## Install
 
 1. Install command line tools for Xcode
@@ -13,7 +12,7 @@
     ```console
     git init
     git remote add origin git@github.com:Surgo/dotfiles.git
-    git pull origin master
+    git pull origin main
     ```
 
 1. Install submodules
@@ -36,10 +35,16 @@
     ./.bin/update.sh
     ```
 
-### Add git submodules
-
-Add a submodule to budle directory
+## Vim plugins
+### directory strucutre
 
 ```console
-git submodule add git://github.com/<plugin>.git .vim/bundle/<plugin>
+$ tree ~/.vim/pack -d -L 2
+"${HOME}"/.vim/pack
+├── colors
+│   └── start
+├── plugins
+│   └── start
+└── syntax
+    └── opt
 ```
