@@ -66,6 +66,10 @@
 	path = .vim/pack/plugins/start/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
 	branch = master
+[submodule ".vim/pack/plugins/start/dispatch"]
+	path = .vim/pack/plugins/start/dispatch
+	url = git@github.com:tpope/vim-dispatch.git
+	branch = master
 [submodule ".vim/pack/plugins/start/devicons"]
 	path = .vim/pack/plugins/start/devicons
 	url = git@github.com:ryanoasis/vim-devicons.git
@@ -93,6 +97,10 @@
 [submodule ".vim/pack/plugins/start/lsp-settings"]
 	path = .vim/pack/plugins/start/lsp-settings
 	url = git@github.com:mattn/vim-lsp-settings.git
+	branch = master
+[submodule ".vim/pack/plugins/start/test"]
+	path = .vim/pack/plugins/start/test
+	url = git@github.com:vim-test/vim-test.git
 	branch = master
 [submodule ".vim/pack/syntax/opt/shutup"]
 	path = .vim/pack/syntax/opt/shutup

@@ -45,16 +45,15 @@ nnoremap <Up> gk
 "" :<->;
 noremap ; :
 noremap : ;
-
 ""Move window
 nnoremap <C-j> :<C-w>j
 nnoremap <C-k> :<C-k>j
 nnoremap <C-l> :<C-l>j
 nnoremap <C-h> :<C-h>j
 ""Buffer
-map <F2> <ESC>:bp<CR>
-map <F3> <ESC>:bn<CR>
-map <F4> <ESC>:bw<CR>
+noremap <F2> <ESC>:bp<CR>
+noremap <F3> <ESC>:bn<CR>
+noremap <F4> <ESC>:bw<CR>
 
 "Mouse
 if has("mouse")
@@ -220,10 +219,13 @@ let g:ale_set_loclist = 1
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
+nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
 
 ""asyncomplete
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <CR>    pumvisible() ? asyncomplete#close_popup() : "\<CR>"
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_popup_delay = 200
 
@@ -233,7 +235,6 @@ nnoremap <silent> :: :CtrlP<CR>
 if executable('ag')
   set grepprg=ag\ --vimgrep\ $*
   set grepformat^=%f:%l:%c:%m
-
   let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
   let g:ctrlp_use_caching = 0
 endif
@@ -249,22 +250,26 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
 ""LSP
+let g:lsp_signs_enabled = 1
+let g:lsp_signs_error = {'text': '✗'}
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_settings_filetype_ruby = ['solargraph', 'steep']
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   setlocal signcolumn=yes
   if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-  nmap <buffer> gd <plug>(lsp-definition)
-  nmap <buffer> gs <plug>(lsp-document-symbol-search)
-  nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
-  nmap <buffer> gr <plug>(lsp-references)
-  nmap <buffer> gi <plug>(lsp-implementation)
-  nmap <buffer> gt <plug>(lsp-type-definition)
-  nmap <buffer> <leader>rn <plug>(lsp-rename)
-  nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-  nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-  nmap <buffer> K <plug>(lsp-hover)
-  "nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
-  "nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+  nnoremap <buffer> gd <plug>(lsp-definition)
+  nnoremap <buffer> gs <plug>(lsp-document-symbol-search)
+  nnoremap <buffer> gS <plug>(lsp-workspace-symbol-search)
+  nnoremap <buffer> gr <plug>(lsp-references)
+  nnoremap <buffer> gi <plug>(lsp-implementation)
+  nnoremap <buffer> gt <plug>(lsp-type-definition)
+  nnoremap <buffer> <leader>rn <plug>(lsp-rename)
+  nnoremap <buffer> [g <plug>(lsp-previous-diagnostic)
+  nnoremap <buffer> ]g <plug>(lsp-next-diagnostic)
+  nnoremap <buffer> K <plug>(lsp-hover)
+  nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+  nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 
   let g:lsp_format_sync_timeout = 1000
   autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
@@ -276,6 +281,15 @@ augroup lsp_install
   " call s:on_lsp_buffer_enabled only for languages that has the server registered.
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+""Test
+nnoremap <silent> <leader>t :TestNearest<CR>
+nnoremap <silent> <leader>T :TestFile<CR>
+nnoremap <silent> <leader>a :TestSuite<CR>
+nnoremap <silent> <leader>l :TestLast<CR>
+nnoremap <silent> <leader>g :TestVisit<CR>
+let test#strategy = "dispatch"
+let test#vim#term_position = "belowright"
 
 ""Shutup
 function s:ale_eslint_format(...)
@@ -298,13 +312,25 @@ function s:ale_py_format(...)
   return printf('  # noqa: %s', a:000[0])
 endfunction
 
-let g:shutup_patterns = {
-\ '[eslint].*(\zs.*\ze)': function('s:ale_eslint_format'),
-\ '(\zs.*\ze)': function('s:ale_py_format'),
-\ }
+function! s:load_shutup()
+  let g:shutup_patterns = {
+  \ '[eslint].*(\zs.*\ze)': function('s:ale_eslint_format'),
+  \ '(\zs.*\ze)': function('s:ale_py_format'),
+  \ }
+  packadd shutup
+endfunction
 
-""Terraform
-let g:terraform_fmt_on_save = 1
+""Terraform - lazy load
+function! s:load_terraform()
+  let g:terraform_fmt_on_save = 1
+  packadd terraform
+endfunction
+
+augroup lazy-load
+  autocmd!
+  autocmd FileType terraform call s:load_terraform()
+  autocmd FileType javascript,python,typescript call s:load_shutup()
+augroup END
 
 "Colors
 ""solarized8
