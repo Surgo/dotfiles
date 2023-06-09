@@ -45,15 +45,19 @@ nnoremap <Up> gk
 "" :<->;
 noremap ; :
 noremap : ;
-""Move window
+""Better window navigation
+nnoremap <C-h> :<C-h>h
 nnoremap <C-j> :<C-w>j
-nnoremap <C-k> :<C-k>j
-nnoremap <C-l> :<C-l>j
-nnoremap <C-h> :<C-h>j
-""Buffer
-noremap <F2> <ESC>:bp<CR>
-noremap <F3> <ESC>:bn<CR>
-noremap <F4> <ESC>:bw<CR>
+nnoremap <C-k> :<C-k>k
+nnoremap <C-l> :<C-l>l
+""Navigate buffers
+noremap <S-h> <ESC>:bprevious<CR>
+noremap <S-l> <ESC>:bnext<CR>
+noremap <F2> <ESC>:bprevious<CR>
+noremap <F3> <ESC>:bnext<CR>
+noremap <F4> <ESC>:bwipeout<CR>
+""Spacing after commma
+inoremap , ,<Space>
 
 "Mouse
 if has("mouse")
@@ -114,8 +118,6 @@ set wildmode=list:full
 set history=1000
 set complete+=k
 
-""Spacing after commma
-inoremap , ,<Space>
 "" Remove blank when close.
 autocmd BufWritePre * :%s/\s\+$//ge
 
@@ -168,7 +170,6 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#ale#enabled = 1
 ""Theme: solarized
 if has('mac')
   let g:airline_theme = 'solarized'
@@ -229,6 +230,11 @@ inoremap <expr> <CR>    pumvisible() ? asyncomplete#close_popup() : "\<CR>"
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_popup_delay = 200
 
+""Copilot
+let g:copilot_filetypes = {}
+let g:copilot_filetypes['gitcommit'] = v:true
+let g:copilot_filetypes['markdown'] = v:true
+let g:copilot_filetypes['yaml'] = v:true
 ""CtrlP
 nnoremap <silent> ;; :CtrlPBuffer<CR>
 nnoremap <silent> :: :CtrlP<CR>
@@ -237,11 +243,6 @@ if executable('ag')
   set grepformat^=%f:%l:%c:%m
   let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
   let g:ctrlp_use_caching = 0
-endif
-
-""gitgutter
-if has('mac')
-  let g:gitgutter_override_sign_column_highlight = 0
 endif
 
 ""indent-guides
@@ -268,8 +269,8 @@ function! s:on_lsp_buffer_enabled() abort
   nnoremap <buffer> [g <plug>(lsp-previous-diagnostic)
   nnoremap <buffer> ]g <plug>(lsp-next-diagnostic)
   nnoremap <buffer> K <plug>(lsp-hover)
-  nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
-  nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+  "nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+  "nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 
   let g:lsp_format_sync_timeout = 1000
   autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
@@ -281,6 +282,13 @@ augroup lsp_install
   " call s:on_lsp_buffer_enabled only for languages that has the server registered.
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+""Signify
+nnoremap <leader>sd :SignifyDiff<cr>
+nnoremap <leader>sp :SignifyHunkDiff<cr>
+nnoremap <leader>su :SignifyHunkUndo<cr>
+noremap <leader>sj <plug>(signify-next-hunk)
+noremap <leader>sk <plug>(signify-prev-hunk)
 
 ""Test
 nnoremap <silent> <leader>t :TestNearest<CR>
