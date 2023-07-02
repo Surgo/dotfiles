@@ -1,7 +1,10 @@
 # Setup path
-if [ -f ~/.sh_path ]; then
-  . ~/.sh_path
-fi
+# brew --prefix is too slow
+# https://github.com/Homebrew/brew/issues/3327
+export HOMEBREW_PREFIX="$(dirname $(dirname $(which brew)))"
+# *env
+export RBENV_ROOT="${HOMEBREW_PREFIX}/opt/rbenv"
+export NODENV_ROOT="${HOMEBREW_PREFIX}/opt/nodenv"
 
 LANG=ja_JP.UTF-8
 
@@ -31,8 +34,8 @@ plugins=($plugins redis-cli) # For maint servers
 plugins=($plugins git gitfast tig) # For Git
 plugins=($plugins mercurial) # For Mercurial
 plugins=($plugins autopep8 pep8 pip python virtualenv) # For Python
-plugins=($plugins bundler gem rake ruby) # For Ruby
-plugins=($plugins node npm yarn) # For JavaScript
+plugins=($plugins bundler gem rake rbenv ruby) # For Ruby
+plugins=($plugins node nodenv npm yarn) # For JavaScript
 plugins=($plugins golang) # For Go
 
 # Load "Oh-My-ZSH!"
@@ -40,7 +43,7 @@ source ${ZSH}/oh-my-zsh.sh
 
 # Completion files
 if type brew &>/dev/null; then
-  FPATH=${BREW_PREFIX}/share/zsh-completions:${FPATH}
+  FPATH=${HOMEBREW_PREFIX}/share/zsh-completions:${FPATH}
 
   autoload -Uz compinit
   compinit
@@ -48,12 +51,16 @@ fi
 
 # Help files
 if type brew &>/dev/null; then
-  HELPDIR=${BREW_PREFIX}/share/zsh/helpfiles
+  HELPDIR=${HOMEBREW_PREFIX}/share/zsh/helpfiles
 fi
 
 # Override robbyrussell PROMPT
 PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
+# Path
+if [ -f ~/.sh_path ]; then
+  . ~/.sh_path
+fi
 # My configurations.
 if [ -f ~/.sh_mine ]; then
   . ~/.sh_mine
