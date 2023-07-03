@@ -35,7 +35,7 @@ brew "zsh"
 brew "zsh-completions"
 
 tap "homebrew/cask-fonts"
-cask "font-hack-nerd-font"
+cask "font-meslo-lg-nerd-font"
 
 # App Store applications
 mas "Witch", id: 412485838
