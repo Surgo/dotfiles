@@ -1,3 +1,5 @@
+export LANG=ja_JP.UTF-8
+
 # Setup path
 # brew --prefix is too slow
 # https://github.com/Homebrew/brew/issues/3327
@@ -5,8 +7,6 @@ export HOMEBREW_PREFIX="$(dirname $(dirname $(which brew)))"
 # *env
 export RBENV_ROOT="${HOMEBREW_PREFIX}/opt/rbenv"
 export NODENV_ROOT="${HOMEBREW_PREFIX}/opt/nodenv"
-
-LANG=ja_JP.UTF-8
 
 ZSH=${HOME}/.ohmyzsh
 ZSH_THEME="robbyrussell"
