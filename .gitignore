@@ -32,8 +32,4 @@
 # Black list
 /.vim/.vim
 /.vim/.netrwhist
-/.vim/autoload/pathogen.vim
-/.vim/init.vim
 /.vim/sessions
-doc/tags
-doc/tags-ja
