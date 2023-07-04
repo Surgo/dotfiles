@@ -169,7 +169,13 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#tabline#enabled = 1
+""Hack ambiguous-width bug :(
+let g:airline_left_sep = nr2char(0xe0c0)
+let g:airline_left_alt_sep = nr2char(0xe0c1)
+let g:airline_right_sep = nr2char(0xe0c2)
+let g:airline_right_alt_sep = nr2char(0xe0c3)
 ""Theme: solarized
 if has('mac')
   let g:airline_theme = 'solarized'
