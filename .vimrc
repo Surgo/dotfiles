@@ -4,15 +4,9 @@ set nobackup
 set noswapfile
 set autoread
 set hidden
-
 filetype off
 syntax off
 scriptencoding 'utf-8'
-
-if &encoding !=# 'utf-8'
-  set encoding=japan
-  set fileencoding=japan
-endif
 
 ""Windows
 if has('win32') || has('win64')
@@ -133,10 +127,11 @@ set imsearch=0
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
 "Multi bytes
+set encoding=utf-8
 set fileencodings=utf-8,cp932,euc-jp,default,latin
 set fileformats=unix,dos,mac
 if exists('&ambiwidth')
-  set ambiwidth=double
+  set ambiwidth=single
 endif
 set formatoptions=lmoq
 if has('syntax')
@@ -172,10 +167,10 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#tabline#enabled = 1
 ""Hack ambiguous-width bug :(
-let g:airline_left_sep = nr2char(0xe0c0)
-let g:airline_left_alt_sep = nr2char(0xe0c1)
-let g:airline_right_sep = nr2char(0xe0c2)
-let g:airline_right_alt_sep = nr2char(0xe0c3)
+"let g:airline_left_sep = nr2char(0xe0c0)
+"let g:airline_left_alt_sep = nr2char(0xe0c1)
+"let g:airline_right_sep = nr2char(0xe0c2)
+"let g:airline_right_alt_sep = nr2char(0xe0c3)
 ""Theme: solarized
 if has('mac')
   let g:airline_theme = 'solarized'
