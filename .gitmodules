@@ -122,3 +122,6 @@
 	path = .vim/pack/syntax/opt/yats
 	url = git@github.com:HerringtonDarkholme/yats.vim.git
 	branch = master
+[submodule ".config/zim"]
+	path = .config/zim
+	url = git@github.com:zimfw/zimfw.git
