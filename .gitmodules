@@ -70,21 +70,41 @@
 	path = .vim/pack/plugins/start/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
 	branch = master
-[submodule ".vim/pack/plugins/start/dispatch"]
-	path = .vim/pack/plugins/start/dispatch
-	url = git@github.com:tpope/vim-dispatch.git
-	branch = master
 [submodule ".vim/pack/plugins/start/devicons"]
 	path = .vim/pack/plugins/start/devicons
 	url = git@github.com:ryanoasis/vim-devicons.git
+	branch = master
+[submodule ".vim/pack/plugins/start/dispatch"]
+	path = .vim/pack/plugins/start/dispatch
+	url = git@github.com:tpope/vim-dispatch.git
 	branch = master
 [submodule ".vim/pack/plugins/start/editorconfig"]
 	path = .vim/pack/plugins/start/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
 	branch = master
+[submodule ".vim/pack/plugins/start/fern"]
+	path = .vim/pack/plugins/start/fern
+	url = git@github.com:lambdalisue/fern.vim.git
+	branch = master
+[submodule ".vim/pack/plugins/start/fern-git-status"]
+	path = .vim/pack/plugins/start/fern-git-status
+	url = git@github.com:lambdalisue/fern-git-status.vim.git
+	branch = master
+[submodule ".vim/pack/plugins/start/fern-mapping-search-ctrlp"]
+	path = .vim/pack/plugins/start/fern-mapping-search-ctrlp
+	url = git@github.com:MeF0504/fern-mapping-search-ctrlp.vim.git
+	branch = master
+[submodule ".vim/pack/plugins/start/fern-renderer-nerdfont"]
+	path = .vim/pack/plugins/start/fern-renderer-nerdfont
+	url = git@github.com:lambdalisue/fern-renderer-nerdfont.vim.git
+	branch = master
 [submodule ".vim/pack/plugins/start/fugitive"]
 	path = .vim/pack/plugins/start/fugitive
 	url = git@github.com:tpope/vim-fugitive.git
+	branch = master
+[submodule ".vim/pack/plugins/start/glyph-palette"]
+	path = .vim/pack/plugins/start/glyph-palette
+	url = git@github.com:lambdalisue/glyph-palette.vim.git
 	branch = master
 [submodule ".vim/pack/plugins/start/indent-guides"]
 	path = .vim/pack/plugins/start/indent-guides
@@ -101,6 +121,10 @@
 [submodule ".vim/pack/plugins/start/lsp-settings"]
 	path = .vim/pack/plugins/start/lsp-settings
 	url = git@github.com:mattn/vim-lsp-settings.git
+	branch = master
+[submodule ".vim/pack/plugins/start/nerdfont"]
+	path = .vim/pack/plugins/start/nerdfont
+	url = git@github.com:lambdalisue/nerdfont.vim.git
 	branch = master
 [submodule ".vim/pack/plugins/start/signify"]
 	path = .vim/pack/plugins/start/signify
@@ -122,6 +146,3 @@
 	path = .vim/pack/syntax/opt/yats
 	url = git@github.com:HerringtonDarkholme/yats.vim.git
 	branch = master
-[submodule ".config/zim"]
-	path = .config/zim
-	url = git@github.com:zimfw/zimfw.git

@@ -166,16 +166,12 @@ endif
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#tabline#enabled = 1
-""Hack ambiguous-width bug :(
-"let g:airline_left_sep = nr2char(0xe0c0)
-"let g:airline_left_alt_sep = nr2char(0xe0c1)
-"let g:airline_right_sep = nr2char(0xe0c2)
-"let g:airline_right_alt_sep = nr2char(0xe0c3)
-""Theme: solarized
 if has('mac')
+  "Theme: solarized
   let g:airline_theme = 'solarized'
   let g:airline_solarized_bg = 'dark'
 endif
+
 ""ALE
 let g:ale_completion_enabled = 1
 let g:ale_python_flake8_change_directory = 'file'
@@ -236,6 +232,7 @@ let g:copilot_filetypes = {}
 let g:copilot_filetypes['gitcommit'] = v:true
 let g:copilot_filetypes['markdown'] = v:true
 let g:copilot_filetypes['yaml'] = v:true
+
 ""CtrlP
 nnoremap <silent> ;; :CtrlPBuffer<CR>
 nnoremap <silent> :: :CtrlP<CR>
@@ -245,6 +242,74 @@ if executable('ag')
   let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
   let g:ctrlp_use_caching = 0
 endif
+
+""Fern
+let g:fern#disable_default_mappings = 1
+let g:fern#renderer = 'nerdfont'
+
+augroup my-fern-startup
+  "Start fern.vim on Vim startup with a particular directory
+  autocmd! *
+  autocmd VimEnter * ++nested if !argc() | Fern . -drawer -reveal=% -width=40 -toggle | endif
+augroup END
+
+nnoremap <C-g> :<C-u>Fern . -drawer -reveal=% -width=40 -toggle<CR>
+
+function! s:init_fern() abort
+  "Perform open or collapse directory
+  nmap <buffer><expr>
+      \ <Plug>(fern-my-open-or-expand-collapse)
+      \ fern#smart#leaf(
+      \   "\<Plug>(fern-action-open)",
+      \   "\<Plug>(fern-action-expand)",
+      \   "\<Plug>(fern-action-collapse)",
+      \ )
+  nmap <buffer><nowait> o <Plug>(fern-my-open-or-expand-collapse)
+
+  "Perform expand or collapse directory
+  nmap <buffer><expr>
+      \ <Plug>(fern-my-expand-or-collapse)
+      \ fern#smart#leaf(
+      \   "\<Plug>(fern-action-collapse)",
+      \   "\<Plug>(fern-action-expand)",
+      \   "\<Plug>(fern-action-collapse)",
+      \ )
+  nmap <buffer><nowait> l <Plug>(fern-my-expand-or-collapse)
+
+  "Define NERDTree like mappings
+  "nmap <buffer> o <Plug>(fern-action-open:edit)
+  nmap <buffer> go <Plug>(fern-action-open:edit)<C-w>p
+  nmap <buffer> t <Plug>(fern-action-open:tabedit)
+  nmap <buffer> T <Plug>(fern-action-open:tabedit)gT
+  nmap <buffer> i <Plug>(fern-action-open:split)
+  nmap <buffer> gi <Plug>(fern-action-open:split)<C-w>p
+  nmap <buffer> s <Plug>(fern-action-open:vsplit)
+  nmap <buffer> gs <Plug>(fern-action-open:vsplit)<C-w>p
+  nmap <buffer> ma <Plug>(fern-action-new-path)
+  nmap <buffer> P gg
+
+  nmap <buffer> C <Plug>(fern-action-enter)
+  nmap <buffer> u <Plug>(fern-action-collapse)
+  nmap <buffer> r <Plug>(fern-action-reload)
+  nmap <buffer> R gg<Plug>(fern-action-reload)<C-o>
+  nmap <buffer> cd <Plug>(fern-action-cd)
+  nmap <buffer> CD gg<Plug>(fern-action-cd)<C-o>
+
+  nmap <buffer> I <Plug>(fern-action-hidden-toggle)
+
+  nmap <buffer> q :<C-u>quit<CR>
+endfunction
+
+augroup my-fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
+
+""glyph-palette
+augroup glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+augroup END
 
 ""indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
