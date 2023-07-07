@@ -1,67 +1,42 @@
 [user]
-    name = Kosei Kitahara
-    email = surgo.jp@gmail.com
-    signingkey = D18883191F02241B
+  name = Kosei Kitahara
+  email = surgo.jp@gmail.com
+  signingkey = D18883191F02241B
 [core]
-    autocrlf = input
-    safecrlf = warn
-    editor = vim
-    trustctime = false
-    precomposeunicode = true
-[color]
-    ui = auto
-[color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
-[color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-[color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
-[branch]
-    autosetuprebase = always
-[merge]
-    tool = vimdiff
-    log = true
-    ff = false
-[pull]
-    rebase = true
-[push]
-    default = current
+  autocrlf = input
+  safecrlf = warn
+  editor = vim
+  trustctime = false
+  precomposeunicode = true
 [credential]
-    helper = osxkeychain
-[alias]
-    cleanup = !"git branch --merged | grep -v \\* | xargs -I % git branch -d %"
-    cl = !"git cleanup"
-    # log
-    l = log --pretty=oneline -n 20 --graph --abbrev-commit
-    wc = whatchanged
-    graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
-    lg = !git graph
-    # diff
-    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-    di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-    # pull
-    p = !"git pull; git submodule foreach 'git checkout master; git pull origin master'"
-    # verbose
-    tags = tag -l
-    branches = branch -a
-    remotes = remote -v
-    # find
-    fb = "!f() { git branch -a --contains $1; }; f"
-    ft = "!f() { git describe --always --contains $1; }; f"
-    fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
-    fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
-[filter "lfs"]
-    clean = git lfs clean %f
-    smudge = git lfs smudge %f
-    required = true
+  helper = osxkeychain
+[diff]
+   tool = vimdiff
+[branch]
+  autosetuprebase = always
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  grep = auto
+  ui = auto
 [commit]
-    gpgsign = true
+  gpgsign = true
+[fetch]
+  prune = true
+[merge]
+  tool = vimdiff
+  log = true
+  ff = false
+[pull]
+  rebase = true
+[push]
+  default = current
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge --skip -- %f
+  process = git-lfs filter-process --skip
+  required = true
 [gpg]
-    program = gpg
+  program = gpg
