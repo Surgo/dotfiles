@@ -9,6 +9,11 @@
 !/.bin
 !/.config/gh
 !/.config/git
+!/.config/zsh/.p10k.zsh
+!/.config/zsh/.zshenv
+!/.config/zsh/.zshrc
+!/.config/zsh/plugins
+!/.config/zsh/themes
 !/.gitignore
 !/.gitmodules
 !/.gvimrc
@@ -24,8 +29,7 @@
 !/.tmux.conf.d
 !/.vim
 !/.vimrc
-!/.zshrc
-!/.zsh_completion
+!/.zshenv
 !/README.md
 !/Brewfile
 

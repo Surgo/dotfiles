@@ -33,13 +33,10 @@ if [ -d /usr/texbin ]; then
 fi
 
 # Go
+export GOPATH="${HOME}/.go"
 if [ -x "$(command -v go)" ]; then
-  export GOPATH="${HOME}/.go"
   export GOBIN="$(go env GOPATH)/bin"
   export PATH="$(go env GOROOT)/bin:$(go env GOPATH)/bin:${PATH}"
-fi
-if ! [ -d "${GOBIN}" ]; then
-  mkdir -p "${GOBIN}"
 fi
 
 # Python
@@ -60,11 +57,3 @@ fi
 if [ -d "${HOME}/.rd/bin" ]; then
   export PATH="${HOME}/.rd/bin:$PATH"
 fi
-
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/kosei/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/kosei/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

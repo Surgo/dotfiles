@@ -1,7 +1,3 @@
-# Vim THE editor!
-export VISUAL=vim
-export EDITOR=vim
-
 # For Python (virtualenv and pip
 export PYTHONDONTWRITEBYTECODE=1
 export PIP_REQUIRE_VIRTUALENV=true

@@ -11,15 +11,10 @@
 [credential]
   helper = osxkeychain
 [diff]
-   tool = vimdiff
+  tool = vimdiff
 [branch]
   autosetuprebase = always
 [color]
-  status = auto
-  diff = auto
-  branch = auto
-  interactive = auto
-  grep = auto
   ui = auto
 [commit]
   gpgsign = true

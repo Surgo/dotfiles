@@ -166,6 +166,7 @@ endif
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 if has('mac')
   "Theme: solarized
   let g:airline_theme = 'solarized'
@@ -174,7 +175,6 @@ endif
 
 ""ALE
 let g:ale_completion_enabled = 1
-let g:ale_python_flake8_change_directory = 'file'
 let g:ale_sign_error = '**'
 let g:ale_sign_warning = '!!'
 let g:ale_echo_msg_error_str = 'E'
@@ -182,6 +182,8 @@ let g:ale_echo_msg_info_str = 'I'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %s (%code%)'
 let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_python_flake8_change_directory = 'file'
+let g:ale_ruby_rubocop_executable = 'bundle'
 """ https://github.com/w0rp/ale/issues/925
 let g:ale_linters = {}
 let g:ale_linters['bash'] = ['shellcheck']
