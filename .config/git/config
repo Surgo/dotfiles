@@ -8,6 +8,7 @@
   editor = vim
   trustctime = false
   precomposeunicode = true
+  quotepath = false
 [credential]
   helper = osxkeychain
 [diff]
