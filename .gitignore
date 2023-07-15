@@ -1,5 +1,4 @@
-/*
-/.*
+*
 
 # White list
 !/.bashrc
@@ -11,15 +10,13 @@
 !/.config/git
 !/.config/zsh/.p10k.zsh
 !/.config/zsh/.zshenv
-!/.config/zsh/.zshenv
 !/.config/zsh/.zshrc
-!/.config/zsh/plugins
-!/.config/zsh/themes
+!/.config/zsh/plugins/*
+!/.config/zsh/themes/*
 !/.gitignore
 !/.gitmodules
 !/.gvimrc
 !/.iterm2.conf.d
-!/.ohmyzsh
 !/.sh_local.template
 !/.sh_mine
 !/.sh_path
@@ -35,11 +32,6 @@
 !/Brewfile
 
 # Black list
-/.config/gcloud/logs/
-/.config/zsh/.zcompcache
-/.config/zsh/.zcompdump*
-/.config/zsh/.zsh_history
-/.config/zsh/.zsh_sessions
 /.vim/.vim
 /.vim/.netrwhist
 /.vim/sessions
