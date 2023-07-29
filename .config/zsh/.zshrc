@@ -24,7 +24,7 @@ case "${OSTYPE}" in
   ;;
 esac
 ## Utilities
-plugins+=(ag colorize command-not-found sudo tmux)
+plugins+=(ag colorize command-not-found per-directory-history sudo tmux)
 ## Devtools
 plugins+=(docker docker-compose)
 plugins+=(git gitfast gitignore tig)
