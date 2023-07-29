@@ -1,54 +1,54 @@
 [user]
-  name = Kosei Kitahara
-  email = surgo.jp@gmail.com
-  signingkey = D18883191F02241B
+	name = Kosei Kitahara
+	email = surgo.jp@gmail.com
+	signingkey = D18883191F02241B
 [core]
-  autocrlf = input
-  safecrlf = warn
-  editor = vim
-  trustctime = false
-  precomposeunicode = true
-  quotepath = false
+	autocrlf = input
+	safecrlf = warn
+	editor = vim
+	trustctime = false
+	precomposeunicode = true
+	quotepath = false
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 [diff]
-  tool = vimdiff
-  compactionHeuristic = true
+	tool = vimdiff
+	compactionHeuristic = true
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
 [color]
-  ui = auto
+	ui = auto
 [commit]
-  gpgsign = true
+	gpgsign = true
 [fetch]
-  prune = true
+	prune = true
 [merge]
-  tool = vimdiff
-  log = true
-  ff = false
+	tool = vimdiff
+	log = true
+	ff = false
 [pull]
-  rebase = true
+	rebase = true
 [push]
-  default = current
+	default = current
 [pager]
-  diff = ${HOMEBREW_PREFIX}/share/git-core/contrib/diff-highlight/diff-highlight | less
+	diff = ${HOMEBREW_PREFIX}/share/git-core/contrib/diff-highlight/diff-highlight | less
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge --skip -- %f
-  process = git-lfs filter-process --skip
-  required = true
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 [gpg]
-  program = gpg
+	program = gpg
