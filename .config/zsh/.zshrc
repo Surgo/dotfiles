@@ -24,13 +24,16 @@ case "${OSTYPE}" in
   ;;
 esac
 ## Utilities
-plugins+=(ag colorize command-not-found per-directory-history sudo tmux)
+plugins+=(aliases command-not-found per-directory-history sudo vi-mode)
+## Colorize
+plugins+=(colored-man-pages colorize)
 ## Devtools
+plugins+=(ag tmux vscode)
 plugins+=(docker docker-compose)
 plugins+=(git gitfast gitignore tig)
 plugins+=(mercurial)
 plugins+=(ansible aws gcloud terraform)
-plugins+=(autopep8 pep8 pip python virtualenv)
+plugins+=(autopep8 pep8 pip poetry python virtualenv)
 plugins+=(bundler gem rails rake rbenv ruby)
 plugins+=(node nodenv npm yarn)
 plugins+=(golang)
