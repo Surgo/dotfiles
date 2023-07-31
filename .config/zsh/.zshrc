@@ -24,7 +24,7 @@ case "${OSTYPE}" in
   ;;
 esac
 ## Utilities
-plugins+=(aliases command-not-found per-directory-history sudo vi-mode)
+plugins+=(aliases command-not-found per-directory-history sudo)
 ## Colorize
 plugins+=(colored-man-pages colorize)
 ## Devtools
