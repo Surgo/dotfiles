@@ -29,14 +29,14 @@
 
 ## Usage
 
-1. Update or regenerate
+1. Update or regenerate dependencies
 
     ```console
-    ./.bin/update.sh
+    ~/.bin/update.sh
     ```
 
-## Vim plugins
-### directory strucutre
+### Vim plugins
+#### directory strucutre
 
 ```console
 $ tree ~/.vim/pack -d -L 2
@@ -47,4 +47,16 @@ $ tree ~/.vim/pack -d -L 2
 │   └── start
 └── syntax
     └── opt
+```
+
+### Zzh plugins
+#### directory strucutre
+
+- [Oh My Zsh](https://ohmyz.sh/) based.
+
+```console
+$ tree ~/.config/zsh/custom -d -L 1
+"${HOME}"/.config/zsh/custom
+├── plugins
+└── themes
 ```
