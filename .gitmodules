@@ -1,3 +1,31 @@
+[submodule ".config/tmux/plugins/tmux-battery"]
+	path = .config/tmux/plugins/tmux-battery
+	url = git@github.com:tmux-plugins/tmux-battery.git
+	branch = master
+[submodule ".config/tmux/plugins/tmux-cpu"]
+	path = .config/tmux/plugins/tmux-cpu
+	url = git@github.com:tmux-plugins/tmux-cpu.git
+	branch = master
+[submodule ".config/tmux/plugins/tmux-pain-control"]
+	path = .config/tmux/plugins/tmux-pain-control
+	url = git@github.com:tmux-plugins/tmux-pain-control.git
+	branch = master
+[submodule ".config/tmux/plugins/tmux-sensible"]
+	path = .config/tmux/plugins/tmux-sensible
+	url = git@github.com:tmux-plugins/tmux-sensible.git
+	branch = master
+[submodule ".config/tmux/plugins/tmux-sessionist"]
+	path = .config/tmux/plugins/tmux-sessionist
+	url = git@github.com:tmux-plugins/tmux-sessionist.git
+	branch = master
+[submodule ".config/tmux/plugins/tmux-yank"]
+	path = .config/tmux/plugins/tmux-yank
+	url = git@github.com:tmux-plugins/tmux-yank.git
+	branch = master
+[submodule ".config/tmux/plugins/tpm"]
+	path = .config/tmux/plugins/tpm
+	url = git@github.com:tmux-plugins/tpm.git
+	branch = master
 [submodule ".config/zsh/custom/plugins/zsh-autosuggestions"]
 	path = .config/zsh/custom/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
@@ -17,34 +45,6 @@
 [submodule ".config/zsh/ohmyzsh"]
 	path = .config/zsh/ohmyzsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
-	branch = master
-[submodule ".tmux/plugins/tmux-battery"]
-	path = .config/tmux/plugins/tmux-battery
-	url = git@github.com:tmux-plugins/tmux-battery.git
-	branch = master
-[submodule ".tmux/plugins/tmux-cpu"]
-	path = .config/tmux/plugins/tmux-cpu
-	url = git@github.com:tmux-plugins/tmux-cpu.git
-	branch = master
-[submodule ".tmux/plugins/tmux-pain-control"]
-	path = .config/tmux/plugins/tmux-pain-control
-	url = git@github.com:tmux-plugins/tmux-pain-control.git
-	branch = master
-[submodule ".tmux/plugins/tmux-sensible"]
-	path = .config/tmux/plugins/tmux-sensible
-	url = git@github.com:tmux-plugins/tmux-sensible.git
-	branch = master
-[submodule ".tmux/plugins/tmux-sessionist"]
-	path = .config/tmux/plugins/tmux-sessionist
-	url = git@github.com:tmux-plugins/tmux-sessionist.git
-	branch = master
-[submodule ".tmux/plugins/tmux-yank"]
-	path = .config/tmux/plugins/tmux-yank
-	url = git@github.com:tmux-plugins/tmux-yank.git
-	branch = master
-[submodule ".tmux/plugins/tpm"]
-	path = .config/tmux/plugins/tpm
-	url = git@github.com:tmux-plugins/tpm.git
 	branch = master
 [submodule ".vim/pack/colors/start/solarized8"]
 	path = .vim/pack/colors/start/solarized8
