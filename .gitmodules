@@ -19,36 +19,32 @@
 	url = git@github.com:ohmyzsh/ohmyzsh.git
 	branch = master
 [submodule ".tmux/plugins/tmux-battery"]
-	path = .tmux/plugins/tmux-battery
+	path = .config/tmux/plugins/tmux-battery
 	url = git@github.com:tmux-plugins/tmux-battery.git
 	branch = master
 [submodule ".tmux/plugins/tmux-cpu"]
-	path = .tmux/plugins/tmux-cpu
+	path = .config/tmux/plugins/tmux-cpu
 	url = git@github.com:tmux-plugins/tmux-cpu.git
 	branch = master
 [submodule ".tmux/plugins/tmux-pain-control"]
-	path = .tmux/plugins/tmux-pain-control
+	path = .config/tmux/plugins/tmux-pain-control
 	url = git@github.com:tmux-plugins/tmux-pain-control.git
 	branch = master
 [submodule ".tmux/plugins/tmux-sensible"]
-	path = .tmux/plugins/tmux-sensible
+	path = .config/tmux/plugins/tmux-sensible
 	url = git@github.com:tmux-plugins/tmux-sensible.git
 	branch = master
 [submodule ".tmux/plugins/tmux-sessionist"]
-	path = .tmux/plugins/tmux-sessionist
+	path = .config/tmux/plugins/tmux-sessionist
 	url = git@github.com:tmux-plugins/tmux-sessionist.git
 	branch = master
 [submodule ".tmux/plugins/tmux-yank"]
-	path = .tmux/plugins/tmux-yank
+	path = .config/tmux/plugins/tmux-yank
 	url = git@github.com:tmux-plugins/tmux-yank.git
 	branch = master
 [submodule ".tmux/plugins/tpm"]
-	path = .tmux/plugins/tpm
+	path = .config/tmux/plugins/tpm
 	url = git@github.com:tmux-plugins/tpm.git
-	branch = master
-[submodule ".tmux/themes/colors-solarized"]
-	path = .tmux/themes/colors-solarized
-	url = git@github.com:seebi/tmux-colors-solarized.git
 	branch = master
 [submodule ".vim/pack/colors/start/solarized8"]
 	path = .vim/pack/colors/start/solarized8
