@@ -11,6 +11,9 @@
 !.config/gh/**
 !.config/git
 !.config/git/**
+!.config/iterm2
+!.config/iterm2/themes
+!.config/iterm2/themes/**
 !.config/nvim
 !.config/nvim/**
 !.config/tmux
@@ -26,7 +29,6 @@
 !.gitignore
 !.gitmodules
 !.gvimrc
-!.iterm2.conf.d
 !.sh_local.template
 !.sh_mine
 !.sh_path
