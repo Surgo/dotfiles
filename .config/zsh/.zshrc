@@ -9,6 +9,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 ## Oh My Zsh
 DISABLE_AUTO_UPDATE=true
 ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_FIXTERM=true
+ZSH_TMUX_CONFIG="${HOME}/.config/tmux/tmux.conf"
+ZSH_TMUX_UNICODE=true
+
 ## zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=black,bg=blue,bold,underline"
 
