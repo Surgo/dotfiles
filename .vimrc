@@ -164,14 +164,10 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'dracula'
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
-if has('mac')
-  "Theme: solarized
-  let g:airline_theme = 'solarized'
-  let g:airline_solarized_bg = 'dark'
-endif
 
 ""ALE
 let g:ale_completion_enabled = 1
@@ -414,9 +410,8 @@ augroup END
 
 "Colors
 ""solarized8
-if has('mac')
-  set background=dark
-  colorscheme solarized8
-endif
+set background=dark
+colorscheme dracula
+
 syntax on
 filetype plugin indent on

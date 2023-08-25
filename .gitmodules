@@ -46,6 +46,10 @@
 	path = .config/zsh/ohmyzsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
 	branch = master
+[submodule ".vim/pack/colors/start/dracula"]
+	path = .vim/pack/colors/start/dracula
+	url = git@github.com:dracula/vim.git
+	branch = master
 [submodule ".vim/pack/colors/start/solarized8"]
 	path = .vim/pack/colors/start/solarized8
 	url = git@github.com:lifepillar/vim-solarized8.git
