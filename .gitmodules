@@ -1,10 +1,6 @@
-[submodule ".config/tmux/plugins/tmux-battery"]
-	path = .config/tmux/plugins/tmux-battery
-	url = git@github.com:tmux-plugins/tmux-battery.git
-	branch = master
-[submodule ".config/tmux/plugins/tmux-cpu"]
-	path = .config/tmux/plugins/tmux-cpu
-	url = git@github.com:tmux-plugins/tmux-cpu.git
+[submodule ".config/tmux/plugins/tmux"]
+	path = .config/tmux/plugins/tmux
+	url = git@github.com:dracula/tmux.git
 	branch = master
 [submodule ".config/tmux/plugins/tmux-pain-control"]
 	path = .config/tmux/plugins/tmux-pain-control
