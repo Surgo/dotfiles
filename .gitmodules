@@ -1,3 +1,7 @@
+[submodule ".config/iterm2/themes/dracula"]
+	path = .config/iterm2/themes/dracula
+	url = git@github.com:dracula/iterm.git
+	branch = master
 [submodule ".config/tmux/plugins/tmux"]
 	path = .config/tmux/plugins/tmux
 	url = git@github.com:dracula/tmux.git
