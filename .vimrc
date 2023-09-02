@@ -165,10 +165,13 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dracula'
+let g:airline_left_sep = "\ue0b4"
+let g:airline_right_sep = "\ue0b6"
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
-
+let g:airline#extensions#tabline#left_sep = "\ue0b4"
+let g:airline#extensions#tabline#left_alt_sep = "\ue0b4"
 ""ALE
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
