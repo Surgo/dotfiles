@@ -36,7 +36,6 @@
     ```
 
 ### Vim plugins
-#### directory strucutre
 
 ```console
 $ tree ~/.vim/pack -d -L 2
@@ -49,8 +48,7 @@ $ tree ~/.vim/pack -d -L 2
     └── opt
 ```
 
-### Zzh plugins
-#### directory strucutre
+### Zsh plugins
 
 - [Oh My Zsh](https://ohmyz.sh/) based.
 
