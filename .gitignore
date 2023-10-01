@@ -31,7 +31,6 @@
 !.config/zsh/custom/**
 !.gitignore
 !.gitmodules
-!.gvimrc
 !.profile
 !.vim
 !.vim/pack
