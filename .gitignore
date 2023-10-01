@@ -16,6 +16,11 @@
 !.config/iterm2/themes/**
 !.config/nvim
 !.config/nvim/**
+!.config/sh
+!.config/sh/aliases
+!.config/sh/functions
+!.config/sh/local.template
+!.config/sh/profile
 !.config/tmux
 !.config/tmux/tmux.conf
 !.config/tmux/plugins

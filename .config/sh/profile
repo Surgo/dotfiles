@@ -1,3 +1,6 @@
+# GPG
+export GPG_TTY="$(tty)"
+
 # Curl
 if [ -d "${HOMEBREW_PREFIX}/opt/curl/bin" ]; then
   export PATH="${HOMEBREW_PREFIX}/opt/curl/bin:${PATH}"
@@ -32,6 +35,11 @@ if [ -d /usr/texbin ]; then
   export PATH="/usr/texbin:${PATH}"
 fi
 
+# Rancher Desktop
+if [ -d "${HOME}/.rd/bin" ]; then
+  export PATH="${HOME}/.rd/bin:$PATH"
+fi
+
 # Go
 export GOPATH="${HOME}/.go"
 if [ -x "$(command -v go)" ]; then
@@ -41,6 +49,16 @@ fi
 
 # Python
 export PATH="./.venv/.bin:${PATH}"
+export PYTHONDONTWRITEBYTECODE=1
+export PIP_REQUIRE_VIRTUALENV=true
+export PIP_RESPECT_VIRTUALENV=true
+
+if [ -d "${HOMEBREW_PREFIX}/opt/openssl/bin" ]; then
+  # https://github.com/pycurl/pycurl/issues/526
+  export PYCURL_SSL_LIBRARY=openssl
+  # https://gist.github.com/andrisasuke/91eccace11366e626d14c5c249054e20
+  export SWIG_FEATURES="-cpperraswarn -includeall -I${HOMEBREW_PREFIX}/opt/openssl/include"
+fi
 
 # Node.js
 if [ -d "${HOMEBREW_PREFIX}/lib/node_modules" ]; then
@@ -51,9 +69,4 @@ export PATH="./node_modules/.bin:${PATH}"
 # Java
 if [ -d "${HOMEBREW_PREFIX}/opt/openjdk/bin" ]; then
   export PATH="${HOMEBREW_PREFIX}/opt/openjdk/bin:$PATH"
-fi
-
-# Rancher Desktop
-if [ -d "${HOME}/.rd/bin" ]; then
-  export PATH="${HOME}/.rd/bin:$PATH"
 fi

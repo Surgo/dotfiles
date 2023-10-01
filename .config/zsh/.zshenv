@@ -4,6 +4,7 @@ export LANG=ja_JP.UTF-8
 export VISUAL=vim
 export EDITOR=vim
 
+# Homebrew
 if type brew &>/dev/null; then
   # Setup path
   # brew --prefix is too slow
@@ -11,15 +12,16 @@ if type brew &>/dev/null; then
   export HOMEBREW_PREFIX="$(dirname $(dirname $(which brew)))"
 fi
 
-# Path
-if [ -f "${HOME}/.sh_path" ]; then
-  source "${HOME}/.sh_path"
+# Load additional files
+if [ -f "${XDG_CONFIG_HOME:-$HOME}/sh/profile" ]; then
+  source "${XDG_CONFIG_HOME:-$HOME}/sh/profile"
 fi
-# My configurations.
-if [ -f "${HOME}/.sh_mine" ]; then
-  source "${HOME}/.sh_mine"
+if [ -f "${XDG_CONFIG_HOME:-$HOME}/sh/functions" ]; then
+  source "${XDG_CONFIG_HOME:-$HOME}/sh/functions"
 fi
-# Local settings
-if [ -f "${HOME}/.sh_local" ]; then
-  source "${HOME}/.sh_local"
+if [ -f "${XDG_CONFIG_HOME:-$HOME}/sh/aliases" ]; then
+  source "${XDG_CONFIG_HOME:-$HOME}/sh/aliases"
+fi
+if [ -f "${XDG_CONFIG_HOME:-$HOME}/sh/local" ]; then
+  source "${XDG_CONFIG_HOME:-$HOME}/sh/local"
 fi
