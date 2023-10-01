@@ -1,10 +1,6 @@
 *
 
 # White list
-!.bashrc
-!.bash_aliases
-!.bash_completion
-!.bash_profile
 !.bin
 !.config
 !.config/gh
@@ -21,6 +17,8 @@
 !.config/sh/functions
 !.config/sh/local.template
 !.config/sh/profile
+!.config/tig
+!.config/tig/config
 !.config/tmux
 !.config/tmux/tmux.conf
 !.config/tmux/plugins
@@ -35,10 +33,6 @@
 !.gitmodules
 !.gvimrc
 !.profile
-!.sh_local.template
-!.sh_mine
-!.sh_path
-!.tigrc
 !.vim
 !.vim/pack
 !.vim/pack/**
@@ -51,7 +45,7 @@
 .vim/.vim
 .vim/.netrwhist
 .vim/sessions
-.zsh/.zcompcache
-.zsh/.zcompdump*
-.zsh/.zsh_history
-.zsh/.zsh_sessions
+.config/zsh/.zcompcache
+.config/zsh/.zcompdump*
+.config/zsh/.zsh_history
+.config/zsh/.zsh_sessions
