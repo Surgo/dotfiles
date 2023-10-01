@@ -1,6 +1,6 @@
 *
 
-# White list
+# Allow list
 !.bin
 !.config
 !.config/gh
@@ -41,7 +41,7 @@
 !README.md
 !Brewfile
 
-# Black list
+# Deny list
 .vim/.vim
 .vim/.netrwhist
 .vim/sessions
