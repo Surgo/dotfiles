@@ -35,7 +35,7 @@
 !.vim
 !.vim/pack
 !.vim/pack/**
-!.vimrc
+!.vim/vimrc
 !.zshenv
 !README.md
 !Brewfile
