@@ -16,8 +16,6 @@
 !.config/iterm2/themes/**
 !.config/nvim
 !.config/nvim/**
-!.config/sh
-!.config/sh/env
 !.config/tmux
 !.config/tmux/tmux.conf
 !.config/tmux/plugins
@@ -31,6 +29,7 @@
 !.gitignore
 !.gitmodules
 !.gvimrc
+!.profile
 !.sh_local.template
 !.sh_mine
 !.sh_path
