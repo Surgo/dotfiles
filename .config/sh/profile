@@ -30,6 +30,17 @@ if [ -d "${HOMEBREW_PREFIX}/opt/mysql-client/include" ]; then
   export CPPFLAGS="-I${HOMEBREW_PREFIX}/opt/mysql-client/include ${CPPFLAGS}"
 fi
 
+# PostgreSQL client
+if [ -d "${HOMEBREW_PREFIX}/opt/libpq/bin" ]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/libpq/bin:${PATH}"
+fi
+if [ -d "${HOMEBREW_PREFIX}/opt/libpq/lib" ]; then
+  export LDFLAGS="-L${HOMEBREW_PREFIX}/opt/libpq/lib ${LDFLAGS}"
+fi
+if [ -d "${HOMEBREW_PREFIX}/opt/libpq/include" ]; then
+  export CPPFLAGS="-I${HOMEBREW_PREFIX}/opt/libpq/include ${CPPFLAGS}"
+fi
+
 # MacTex
 if [ -d /usr/texbin ]; then
   export PATH="/usr/texbin:${PATH}"
