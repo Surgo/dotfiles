@@ -13,6 +13,7 @@ cask "iterm2"
 cask "keybase"
 cask "slack"
 cask "visual-studio-code"
+cask "witch"
 
 tap "homebrew/core"
 brew "curl"
@@ -26,7 +27,7 @@ brew "mas"
 brew "neofetch"
 brew "openssl"
 brew "pinentry-mac"  # For enter passphrase
-brew "pygmentize"
+brew "pygments"
 brew "sl"
 brew "the_silver_searcher"
 brew "tig"
@@ -41,4 +42,3 @@ tap "homebrew/cask-fonts"
 cask "font-meslo-lg-nerd-font"
 
 # App Store applications
-mas "Witch", id: 412485838
