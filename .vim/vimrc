@@ -415,6 +415,7 @@ augroup END
 ""solarized8
 set background=dark
 colorscheme dracula
+let g:dracula_colorterm = 0
 
 syntax on
 filetype plugin indent on
