@@ -2,6 +2,7 @@
 
 # Allow list
 !.bin
+!.bin/**
 !.config
 !.config/gh
 !.config/gh/**
