@@ -3,7 +3,11 @@ name: Lint
 
 on:
   push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   lint:
@@ -24,4 +28,5 @@ jobs:
       - name: Super-linter
         uses: super-linter/super-linter@v6.0.0
         env:
+          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
