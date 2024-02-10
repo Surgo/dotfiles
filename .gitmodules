@@ -1,10 +1,18 @@
-[submodule ".config/iterm2/themes/dracula"]
-	path = .config/iterm2/themes/dracula
-	url = git@github.com:dracula/iterm.git
-	branch = master
+[submodule ".config/iterm2/themes/catppuccin"]
+	path = .config/iterm2/themes/catppuccin
+	url = git@github.com:catppuccin/iterm.git
+	branch = main
 [submodule ".config/tmux/plugins/tmux"]
 	path = .config/tmux/plugins/tmux
-	url = git@github.com:dracula/tmux.git
+	url = git@github.com:catppuccin/tmux.git
+	branch = main
+[submodule ".config/tmux/plugins/tmux-battery"]
+	path = .config/tmux/plugins/tmux-battery
+	url = git@github.com:tmux-plugins/tmux-battery.git
+	branch = master
+[submodule ".config/tmux/plugins/tmux-cpu"]
+	path = .config/tmux/plugins/tmux-cpu
+	url = git@github.com:tmux-plugins/tmux-cpu.git
 	branch = master
 [submodule ".config/tmux/plugins/tmux-pain-control"]
 	path = .config/tmux/plugins/tmux-pain-control
@@ -46,14 +54,10 @@
 	path = .config/zsh/ohmyzsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
 	branch = master
-[submodule ".vim/pack/colors/start/dracula"]
-	path = .vim/pack/colors/start/dracula
-	url = git@github.com:dracula/vim.git
-	branch = master
-[submodule ".vim/pack/colors/start/solarized8"]
-	path = .vim/pack/colors/start/solarized8
-	url = git@github.com:lifepillar/vim-solarized8.git
-	branch = master
+[submodule ".vim/pack/colors/start/catppuccin"]
+	path = .vim/pack/colors/start/catppuccin
+	url = git@github.com:catppuccin/vim.git
+	branch = main
 [submodule ".vim/pack/plugins/start/airline"]
 	path = .vim/pack/plugins/start/airline
 	url = git@github.com:vim-airline/vim-airline.git

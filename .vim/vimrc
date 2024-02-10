@@ -164,7 +164,7 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'dracula'
+let g:airline_theme = 'catppuccin_mocha'
 let g:airline_left_sep = "\ue0b4"
 let g:airline_right_sep = "\ue0b6"
 let g:airline#extensions#hunks#non_zero_only = 1
@@ -414,7 +414,7 @@ augroup END
 "Colors
 ""solarized8
 set background=dark
-colorscheme dracula
+colorscheme catppuccin_mocha
 let g:dracula_colorterm = 0
 
 syntax on
