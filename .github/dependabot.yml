@@ -1,7 +1,17 @@
 ---
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
       interval: "daily"
+    time: '08:00'
+    timezone: Asia/Tokyo
+    open-pull-requests-limit: 10
+  - package-ecosystem: gitsubmodule
+    directory: /
+    schedule:
+      interval: "daily"
+    time: '08:00'
+    timezone: Asia/Tokyo
+    open-pull-requests-limit: 10
