@@ -95,6 +95,15 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "highlight DiffDelete ctermfg=4 ctermbg=none
 "highlight DiffText   ctermfg=8 ctermbg=none
 
+augroup TransparentBackGround
+  autocmd!
+  autocmd Colorscheme * highlight Normal ctermbg=NONE guibg=NONE
+  autocmd Colorscheme * highlight NonText ctermbg=NONE guibg=NONE
+  autocmd Colorscheme * highlight LineNr ctermbg=NONE guibg=NONE
+  autocmd Colorscheme * highlight Folded ctermbg=NONE guibg=NONE
+  autocmd Colorscheme * highlight EndOfBuffer ctermbg=NONE guibg=NONE
+augroup END
+
 "Indent
 set autoindent
 set smartindent
@@ -136,13 +145,13 @@ endif
 set formatoptions=lmoq
 if has('syntax')
   syntax enable
-  function! ZenkakuSpace()
-    highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
-    silent! match ZenkakuSpace /　/
+  function! HighlightZenkakuSpace()
+    highlight HighlightZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
+    silent! match HighlightZenkakuSpace /　/
   endfunction
-  augroup ZenkakuSpace
+  augroup HighlightZenkakuSpace
     autocmd!
-    autocmd VimEnter,BufEnter * call ZenkakuSpace()
+    autocmd VimEnter,BufEnter * call HighlightZenkakuSpace()
   augroup END
 endif
 ""IME off
@@ -152,7 +161,7 @@ set iminsert=0
 set imsearch=0
 inoremap :set iminsert=0
 "Disable IME in normal mode
-augroup InsModeAu
+augroup DisableImeInNormalMode
   autocmd!
   autocmd InsertEnter,CmdwinEnter * set noimdisable
   autocmd InsertLeave,CmdwinLeave * set imdisable
