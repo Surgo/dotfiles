@@ -30,6 +30,8 @@
 !.config/zsh/.zshrc
 !.config/zsh/custom
 !.config/zsh/custom/**
+!.github
+!.github/**
 !.gitignore
 !.gitmodules
 !.profile
