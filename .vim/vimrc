@@ -412,10 +412,8 @@ augroup lazy-load
 augroup END
 
 "Colors
-""solarized8
 set background=dark
 colorscheme catppuccin_mocha
-let g:dracula_colorterm = 0
 
 syntax on
 filetype plugin indent on
