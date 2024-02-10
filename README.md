@@ -1,7 +1,7 @@
 # Lazy dotfiles
 ## Install
 
-1. Install command line tools for Xcode
+1. Install command-line tools for Xcode
 
     ```console
     xcode-select --install
