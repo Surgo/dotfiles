@@ -1,4 +1,7 @@
-# Lazy dotfiles
+# Lazy dotfiles 🐾
+
+[![Lint](https://github.com/Surgo/dotfiles/actions/workflows/lint_commit.yml/badge.svg)](https://github.com/Surgo/dotfiles/actions/workflows/lint_commit.yml)
+
 ## Install
 
 1. Install command-line tools for Xcode
