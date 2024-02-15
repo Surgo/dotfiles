@@ -87,13 +87,6 @@ augroup END
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"highlight clear CursorLine
-"highlight CursorLine gui=underline
-"highlight CursorLine ctermbg=black guibg=black
-"highlight DiffAdd    ctermfg=1 ctermbg=none
-"highlight DiffChange ctermfg=3 ctermbg=none
-"highlight DiffDelete ctermfg=4 ctermbg=none
-"highlight DiffText   ctermfg=8 ctermbg=none
 
 augroup TransparentBackGround
   autocmd!
@@ -146,7 +139,7 @@ set formatoptions=lmoq
 if has('syntax')
   syntax enable
   function! HighlightZenkakuSpace()
-    highlight HighlightZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
+    highlight HighlightZenkakuSpace cterm=underline ctermfg=DarkGray gui=underline guifg=DarkGray
     silent! match HighlightZenkakuSpace /　/
   endfunction
   augroup HighlightZenkakuSpace
