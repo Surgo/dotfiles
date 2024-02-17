@@ -41,4 +41,6 @@ brew "zsh"
 tap "homebrew/cask-fonts"
 cask "font-meslo-lg-nerd-font"
 
+tap homebrew/autoupdate
+
 # App Store applications

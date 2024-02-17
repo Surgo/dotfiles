@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 gibo update && gibo dump \
 	Ansible \
@@ -14,4 +14,4 @@ gibo update && gibo dump \
 	Vim \
 	VisualStudioCode \
 	Windows \
-	Xcode >~/.config/git/ignore
+	Xcode > ~/.config/git/ignore
