@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 sudo -i bash <<EOF
 echo "/opt/homebrew/bin/zsh" >> /etc/shells

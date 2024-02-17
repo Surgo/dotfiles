@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 "$(dirname "$0")/install_brew.sh"
 "$(dirname "$0")/configure_mac.sh"

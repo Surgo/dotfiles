@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
-"$(dirname "$0")/update_brew_bottles.sh"
-"$(dirname "$0")/update_submodules.sh"
 "$(dirname "$0")/update_gitignore_global.sh"
+"$(dirname "$0")/update_mac.sh"
