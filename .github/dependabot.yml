@@ -15,3 +15,16 @@ updates:
       time: '08:00'
       timezone: Asia/Tokyo
     open-pull-requests-limit: 10
+    groups:
+      iterm2-plugins:
+        patterns:
+          - ".config/iterm2/*"
+      tmux-plugins:
+        patterns:
+          - ".config/tmux/plugins/*"
+      zsh-plugins:
+        patterns:
+          - ".config/zsh/*"
+      vim-plugins:
+        patterns:
+          - ".vim/pack/*"
