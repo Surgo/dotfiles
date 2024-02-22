@@ -16,7 +16,7 @@
     [syntax](https://github.com/Surgo/dotfiles/tree/main/.vim/pack/syntax/opt),
     and [colors](https://github.com/Surgo/dotfiles/tree/main/.vim/pack/colors/start)
 - [Catppuccin](https://catppuccin.com/) theme for each tools
-- And many more [CLI tools](https://github.com/Surgo/dotfiles/blob/main/.Brewfile)
+- And many more [Command-line tools](https://github.com/Surgo/dotfiles/blob/main/.Brewfile)
 
 ## Install
 
