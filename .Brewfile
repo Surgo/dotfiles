@@ -1,25 +1,9 @@
-# Tap repositories and install packages
-tap "homebrew/cask"
-cask "1password"
-cask "appcleaner"
-cask "caffeine"
-cask "cheatsheet"
-cask "discord"
-cask "divvy"
-cask "docker"
-cask "github"
-cask "google-japanese-ime"
-cask "iterm2"
-cask "keybase"
-cask "slack"
-cask "visual-studio-code"
-cask "witch"
-
-tap "homebrew/core"
 brew "curl"
 brew "editorconfig"
+brew "gh"
 brew "gibo"
 brew "git"
+brew "git-lfs"
 brew "gnupg"
 brew "lazygit"
 brew "m-cli"
@@ -36,11 +20,24 @@ brew "tree"
 brew "vim"
 brew "wget"
 brew "xz"
+brew "ykpers"  # Yubikey Personalization
 brew "zsh"
+
+# tap "homebrew/cask"  # Implemented as part of Homebrew
+cask "1password"
+cask "appcleaner"
+cask "caffeine"
+cask "cheatsheet"
+cask "discord"
+cask "divvy"
+cask "docker"
+cask "github"
+cask "google-japanese-ime"
+cask "iterm2"
+cask "keybase"
+cask "kindle"
+cask "visual-studio-code"
+cask "witch"
 
 tap "homebrew/cask-fonts"
 cask "font-meslo-lg-nerd-font"
-
-tap homebrew/autoupdate
-
-# App Store applications
