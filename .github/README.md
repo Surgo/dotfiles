@@ -2,62 +2,54 @@
 
 [![Lint](https://github.com/Surgo/dotfiles/actions/workflows/lint_commit.yml/badge.svg)](https://github.com/Surgo/dotfiles/actions/workflows/lint_commit.yml)
 
+## The tools I use
+
+- [iTerm2](https://iterm2.com/) terminal emulator
+- [tmux](https://tmux.github.io/) terminal multiplexer
+  - Awesome [plugins](https://github.com/Surgo/dotfiles/tree/main/.config/tmux/plugins)
+- [Zsh](https://www.zsh.org/) shell
+  - [Oh My Zsh](https://ohmyz.sh/) framework
+  - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme
+  - Awesome [plugins](https://github.com/Surgo/dotfiles/tree/main/.config/zsh/custom/plugins)
+- [Vim](https://www.vim.org/) the editor
+  - Awesome [plugins](https://github.com/Surgo/dotfiles/tree/main/.vim/pack/plugins/start),
+    [syntax](https://github.com/Surgo/dotfiles/tree/main/.vim/pack/syntax/opt),
+    and [colors](https://github.com/Surgo/dotfiles/tree/main/.vim/pack/colors/start)
+- [Catppuccin](https://catppuccin.com/) theme for each tools
+- And many more [Command-line tools](https://github.com/Surgo/dotfiles/blob/main/.Brewfile)
+
 ## Install
 
 1. Install command-line tools for Xcode
 
-    ```console
-    xcode-select --install
-    ```
+  ```sh
+  xcode-select --install
+  ```
 
 1. Clone a repository
 
-    ```console
-    git init
-    git remote add origin git@github.com:Surgo/dotfiles.git
-    git pull origin main
-    ```
+  ```sh
+  git init
+  git remote add origin git@github.com:Surgo/dotfiles.git
+  git pull origin main
+  ```
 
 1. Install submodules
 
-    ```console
-    git submodule update --init
-    ```
+  ```sh
+  git submodule update --init
+  ```
 
 1. Bootstrap
 
-    ```console
-    ./.bin/init.sh
-    ```
+  ```sh
+  ./.bin/init.sh
+  ```
 
 ## Usage
 
 1. Update or regenerate dependencies
 
-    ```console
-    ~/.bin/update.sh
-    ```
-
-### Vim plugins
-
-```console
-$ tree ~/.vim/pack -d -L 2
-"${HOME}"/.vim/pack
-├── colors
-│   └── start
-├── plugins
-│   └── start
-└── syntax
-    └── opt
-```
-
-### Zsh plugins
-
-- [Oh My Zsh](https://ohmyz.sh/) based.
-
-```console
-$ tree ~/.config/zsh/custom -d -L 1
-"${HOME}"/.config/zsh/custom
-├── plugins
-└── themes
-```
+  ```sh
+  ~/.bin/update.sh
+  ```
