@@ -16,6 +16,10 @@ ZSH_TMUX_UNICODE=true
 ## zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=black,bg=blue,bold,underline"
 
+## python
+PYTHON_AUTO_VRUN=true
+PYTHON_VENV_NAME=".venv"
+
 # Plugins
 plugins=()
 ## OS specific
@@ -37,10 +41,12 @@ plugins+=(docker docker-compose)
 plugins+=(git gitfast gitignore tig)
 plugins+=(mercurial)
 plugins+=(ansible aws gcloud terraform)
-plugins+=(autopep8 pep8 pip poetry python virtualenv)
+plugins+=(autopep8 pep8 pip poetry python)
 plugins+=(bundler gem rails rake rbenv ruby)
-plugins+=(node nodenv npm yarn)
+plugins+=(bun deno node nodenv npm yarn)
 plugins+=(golang)
+## Apps
+plugins+=(1password)
 ## External
 plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
 ### https://github.com/zsh-users/zsh-completions/issues/603
