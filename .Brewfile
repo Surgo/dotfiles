@@ -9,6 +9,7 @@ brew "lazygit"
 brew "m-cli"
 brew "mas"
 brew "neofetch"
+brew "neovim"
 brew "openssl"
 brew "pinentry-mac"  # For enter passphrase
 brew "pygments"
