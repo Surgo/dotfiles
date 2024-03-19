@@ -2,6 +2,10 @@
 	path = .config/iterm2/themes/catppuccin
 	url = git@github.com:catppuccin/iterm.git
 	branch = main
+[submodule ".config/nvim/pack/plugins/start/copilot.vim"]
+	path = .config/nvim/pack/plugins/start/copilot.vim
+	url = git@github.com:github/copilot.vim.git
+	branch = release
 [submodule ".config/tmux/plugins/tmux"]
 	path = .config/tmux/plugins/tmux
 	url = git@github.com:catppuccin/tmux.git
