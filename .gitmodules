@@ -178,3 +178,6 @@
 	path = .vim/pack/syntax/opt/yats
 	url = git@github.com:HerringtonDarkholme/yats.vim.git
 	branch = master
+[submodule ".config/nvim/pack/plugins/start/telescope-file-browser"]
+	path = .config/nvim/pack/plugins/start/telescope-file-browser
+	url = git@github.com:nvim-telescope/telescope-file-browser.nvim.git
