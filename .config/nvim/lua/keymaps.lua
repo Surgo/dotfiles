@@ -1,6 +1,13 @@
+-- Set the leader key
+vim.g.mapleader = ','
+
 -- : <=> ;
 vim.keymap.set('n', ';', ':')
 vim.keymap.set('n', ':', ';')
+
+-- Spacing after punctuation
+vim.keymap.set('n', ',', ',<Space>')
+-- vim.keymap.set('n', '.', '.<Space>')
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')

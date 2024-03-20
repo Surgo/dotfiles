@@ -14,6 +14,14 @@
 	path = .config/nvim/pack/plugins/start/telescope
 	url = git@github.com:nvim-telescope/telescope.nvim.git
 	branch = master
+[submodule ".config/nvim/pack/plugins/start/telescope-file-browser"]
+	path = .config/nvim/pack/plugins/start/telescope-file-browser
+	url = git@github.com:nvim-telescope/telescope-file-browser.nvim.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/web-devicons"]
+	path = .config/nvim/pack/plugins/start/web-devicons
+	url = git@github.com:nvim-tree/nvim-web-devicons.git
+	branch = master
 [submodule ".config/tmux/plugins/tmux"]
 	path = .config/tmux/plugins/tmux
 	url = git@github.com:catppuccin/tmux.git
@@ -178,6 +186,9 @@
 	path = .vim/pack/syntax/opt/yats
 	url = git@github.com:HerringtonDarkholme/yats.vim.git
 	branch = master
-[submodule ".config/nvim/pack/plugins/start/telescope-file-browser"]
-	path = .config/nvim/pack/plugins/start/telescope-file-browser
-	url = git@github.com:nvim-telescope/telescope-file-browser.nvim.git
+[submodule ".config/nvim/pack/plugins/start/telescope-fzf-native"]
+	path = .config/nvim/pack/plugins/start/telescope-fzf-native
+	url = git@github.com:nvim-telescope/telescope-fzf-native.nvim.git
+[submodule ".config/nvim/pack/plugins/start/telescope-ui-select"]
+	path = .config/nvim/pack/plugins/start/telescope-ui-select
+	url = git@github.com:nvim-telescope/telescope-ui-select.nvim.git
