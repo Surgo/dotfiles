@@ -2,10 +2,18 @@
 	path = .config/iterm2/themes/catppuccin
 	url = git@github.com:catppuccin/iterm.git
 	branch = main
-[submodule ".config/nvim/pack/plugins/start/copilot.vim"]
-	path = .config/nvim/pack/plugins/start/copilot.vim
+[submodule ".config/nvim/pack/plugins/start/copilot"]
+	path = .config/nvim/pack/plugins/start/copilot
 	url = git@github.com:github/copilot.vim.git
 	branch = release
+[submodule ".config/nvim/pack/plugins/start/plenary"]
+	path = .config/nvim/pack/plugins/start/plenary
+	url = https://github.com/nvim-lua/plenary.nvim
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/telescope"]
+	path = .config/nvim/pack/plugins/start/telescope
+	url = git@github.com:nvim-telescope/telescope.nvim.git
+	branch = master
 [submodule ".config/tmux/plugins/tmux"]
 	path = .config/tmux/plugins/tmux
 	url = git@github.com:catppuccin/tmux.git
