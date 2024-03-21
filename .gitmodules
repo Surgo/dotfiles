@@ -6,6 +6,10 @@
 	path = .config/nvim/pack/plugins/start/copilot
 	url = git@github.com:github/copilot.vim.git
 	branch = release
+[submodule ".config/nvim/pack/plugins/start/lualine"]
+	path = .config/nvim/pack/plugins/start/lualine
+	url = git@github.com:nvim-lualine/lualine.nvim.git
+	branch = master
 [submodule ".config/nvim/pack/plugins/start/plenary"]
 	path = .config/nvim/pack/plugins/start/plenary
 	url = https://github.com/nvim-lua/plenary.nvim
@@ -17,6 +21,14 @@
 [submodule ".config/nvim/pack/plugins/start/telescope-file-browser"]
 	path = .config/nvim/pack/plugins/start/telescope-file-browser
 	url = git@github.com:nvim-telescope/telescope-file-browser.nvim.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/telescope-fzf-native"]
+	path = .config/nvim/pack/plugins/start/telescope-fzf-native
+	url = git@github.com:nvim-telescope/telescope-fzf-native.nvim.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/telescope-ui-select"]
+	path = .config/nvim/pack/plugins/start/telescope-ui-select
+	url = git@github.com:nvim-telescope/telescope-ui-select.nvim.git
 	branch = master
 [submodule ".config/nvim/pack/plugins/start/web-devicons"]
 	path = .config/nvim/pack/plugins/start/web-devicons
@@ -186,9 +198,3 @@
 	path = .vim/pack/syntax/opt/yats
 	url = git@github.com:HerringtonDarkholme/yats.vim.git
 	branch = master
-[submodule ".config/nvim/pack/plugins/start/telescope-fzf-native"]
-	path = .config/nvim/pack/plugins/start/telescope-fzf-native
-	url = git@github.com:nvim-telescope/telescope-fzf-native.nvim.git
-[submodule ".config/nvim/pack/plugins/start/telescope-ui-select"]
-	path = .config/nvim/pack/plugins/start/telescope-ui-select
-	url = git@github.com:nvim-telescope/telescope-ui-select.nvim.git
