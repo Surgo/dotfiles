@@ -90,6 +90,10 @@
 	path = .config/nvim/pack/plugins/start/trim
 	url = git@github.com:cappyzawa/trim.nvim.git
 	branch = master
+[submodule ".config/nvim/pack/plugins/start/tree"]
+	path = .config/nvim/pack/plugins/start/tree
+	url = git@github.com:nvim-tree/nvim-tree.lua.git
+	branch = master
 [submodule ".config/nvim/pack/plugins/start/trouble"]
 	path = .config/nvim/pack/plugins/start/trouble
 	url = git@github.com:folke/trouble.nvim.git
