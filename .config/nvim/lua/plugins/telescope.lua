@@ -1,10 +1,14 @@
 -- telescope.nvim
 local actions = require("telescope.actions")
+local trouble = require("trouble.providers.telescope")
+
 require('telescope').setup({
   defaults = {
     mappings = {
       i = { ["<esc>"] = actions.close },
       n = { ["q"] = actions.close },
+      i = { ["<c-t>"] = trouble.open_with_trouble },
+      n = { ["<c-t>"] = trouble.open_with_trouble },
     },
     vimgrep_arguments = {
       "ag",

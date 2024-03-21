@@ -34,6 +34,14 @@
 	path = .config/nvim/pack/plugins/start/mason-tool-installer
 	url = git@github.com:WhoIsSethDaniel/mason-tool-installer.nvim.git
 	branch = main
+[submodule ".config/nvim/pack/plugins/start/mason-null-ls"]
+	path = .config/nvim/pack/plugins/start/mason-null-ls
+	url = git@github.com:jay-babu/mason-null-ls.nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/none-ls"]
+	path = .config/nvim/pack/plugins/start/none-ls
+	url = git@github.com:nvimtools/none-ls.nvim.git
+	branch = main
 [submodule ".config/nvim/pack/plugins/start/plenary"]
 	path = .config/nvim/pack/plugins/start/plenary
 	url = https://github.com/nvim-lua/plenary.nvim
@@ -54,6 +62,14 @@
 	path = .config/nvim/pack/plugins/start/telescope-ui-select
 	url = git@github.com:nvim-telescope/telescope-ui-select.nvim.git
 	branch = master
+[submodule ".config/nvim/pack/plugins/start/trim"]
+	path = .config/nvim/pack/plugins/start/trim
+	url = git@github.com:cappyzawa/trim.nvim.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/trouble"]
+	path = .config/nvim/pack/plugins/start/trouble
+	url = git@github.com:folke/trouble.nvim.git
+	branch = main
 [submodule ".config/nvim/pack/plugins/start/web-devicons"]
 	path = .config/nvim/pack/plugins/start/web-devicons
 	url = git@github.com:nvim-tree/nvim-web-devicons.git
