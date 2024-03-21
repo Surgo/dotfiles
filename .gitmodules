@@ -6,6 +6,26 @@
 	path = .config/nvim/pack/colorscheme/start/catppuccin
 	url = git@github.com:catppuccin/nvim.git
 	branch = main
+[submodule ".config/nvim/pack/plugins/start/cmp"]
+	path = .config/nvim/pack/plugins/start/cmp
+	url = git@github.com:hrsh7th/nvim-cmp.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/cmp-buffer"]
+	path = .config/nvim/pack/plugins/start/cmp-buffer
+	url = git@github.com:hrsh7th/cmp-buffer.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/cmp-cmdline"]
+	path = .config/nvim/pack/plugins/start/cmp-cmdline
+	url = git@github.com:hrsh7th/cmp-cmdline.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/cmp-nvim-lsp"]
+	path = .config/nvim/pack/plugins/start/cmp-nvim-lsp
+	url = git@github.com:hrsh7th/cmp-nvim-lsp.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/cmp-path"]
+	path = .config/nvim/pack/plugins/start/cmp-path
+	url = git@github.com:hrsh7th/cmp-path.git
+	branch = main
 [submodule ".config/nvim/pack/plugins/start/copilot"]
 	path = .config/nvim/pack/plugins/start/copilot
 	url = git@github.com:github/copilot.vim.git
