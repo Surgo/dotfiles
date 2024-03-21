@@ -34,6 +34,10 @@
 	path = .config/nvim/pack/plugins/start/fidget
 	url = git@github.com:j-hui/fidget.nvim.git
 	branch = main
+[submodule ".config/nvim/pack/plugins/start/gitsigns"]
+	path = .config/nvim/pack/plugins/start/gitsigns
+	url = git@github.com:lewis6991/gitsigns.nvim.git
+	branch = main
 [submodule ".config/nvim/pack/plugins/start/lualine"]
 	path = .config/nvim/pack/plugins/start/lualine
 	url = git@github.com:nvim-lualine/lualine.nvim.git
