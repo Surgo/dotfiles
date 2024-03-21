@@ -10,10 +10,30 @@
 	path = .config/nvim/pack/plugins/start/copilot
 	url = git@github.com:github/copilot.vim.git
 	branch = release
+[submodule ".config/nvim/pack/plugins/start/fidget"]
+	path = .config/nvim/pack/plugins/start/fidget
+	url = git@github.com:j-hui/fidget.nvim.git
+	branch = main
 [submodule ".config/nvim/pack/plugins/start/lualine"]
 	path = .config/nvim/pack/plugins/start/lualine
 	url = git@github.com:nvim-lualine/lualine.nvim.git
 	branch = master
+[submodule ".config/nvim/pack/plugins/start/lspconfig"]
+	path = .config/nvim/pack/plugins/start/lspconfig
+	url = git@github.com:neovim/nvim-lspconfig.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/mason"]
+	path = .config/nvim/pack/plugins/start/mason
+	url = git@github.com:williamboman/mason.nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/mason-lspconfig"]
+	path = .config/nvim/pack/plugins/start/mason-lspconfig
+	url = git@github.com:williamboman/mason-lspconfig.nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/mason-tool-installer"]
+	path = .config/nvim/pack/plugins/start/mason-tool-installer
+	url = git@github.com:WhoIsSethDaniel/mason-tool-installer.nvim.git
+	branch = main
 [submodule ".config/nvim/pack/plugins/start/plenary"]
 	path = .config/nvim/pack/plugins/start/plenary
 	url = https://github.com/nvim-lua/plenary.nvim
@@ -33,10 +53,6 @@
 [submodule ".config/nvim/pack/plugins/start/telescope-ui-select"]
 	path = .config/nvim/pack/plugins/start/telescope-ui-select
 	url = git@github.com:nvim-telescope/telescope-ui-select.nvim.git
-	branch = master
-[submodule ".config/nvim/pack/plugins/start/treesitter"]
-	path = .config/nvim/pack/plugins/start/treesitter
-	url = git@github.com:nvim-treesitter/nvim-treesitter.git
 	branch = master
 [submodule ".config/nvim/pack/plugins/start/web-devicons"]
 	path = .config/nvim/pack/plugins/start/web-devicons
