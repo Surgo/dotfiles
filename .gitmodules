@@ -34,6 +34,10 @@
 	path = .config/nvim/pack/plugins/start/telescope-ui-select
 	url = git@github.com:nvim-telescope/telescope-ui-select.nvim.git
 	branch = master
+[submodule ".config/nvim/pack/plugins/start/treesitter"]
+	path = .config/nvim/pack/plugins/start/treesitter
+	url = git@github.com:nvim-treesitter/nvim-treesitter.git
+	branch = master
 [submodule ".config/nvim/pack/plugins/start/web-devicons"]
 	path = .config/nvim/pack/plugins/start/web-devicons
 	url = git@github.com:nvim-tree/nvim-web-devicons.git
