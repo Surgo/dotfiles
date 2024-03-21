@@ -6,6 +6,8 @@ require("options")
 require("keymaps")
 require("autocmds")
 require("colorscheme")
+-- Start plugins
 require("plugins.web-devicons")
+require("plugins.copilot")
 require("plugins.lualine")
 require("plugins.telescope")
