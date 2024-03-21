@@ -2,6 +2,10 @@
 	path = .config/iterm2/themes/catppuccin
 	url = git@github.com:catppuccin/iterm.git
 	branch = main
+[submodule ".config/nvim/pack/colorscheme/start/catppuccin"]
+	path = .config/nvim/pack/colorscheme/start/catppuccin
+	url = git@github.com:catppuccin/nvim.git
+	branch = main
 [submodule ".config/nvim/pack/plugins/start/copilot"]
 	path = .config/nvim/pack/plugins/start/copilot
 	url = git@github.com:github/copilot.vim.git

@@ -1,6 +1,6 @@
 -- telescope.nvim
 local actions = require("telescope.actions")
-require('telescope').setup {
+require('telescope').setup({
   defaults = {
     mappings = {
       i = { ["<esc>"] = actions.close },
@@ -22,7 +22,7 @@ require('telescope').setup {
       require("telescope.themes").get_dropdown {}
     }
   },
-}
+})
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', ';;', builtin.buffers, {})
 vim.keymap.set('n', '::', builtin.live_grep, {})
