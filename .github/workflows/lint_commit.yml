@@ -3,7 +3,7 @@ name: Lint
 
 permissions: {}
 
-on:
+'on':
   push:
     branches:
       - main
@@ -39,6 +39,7 @@ jobs:
           VALIDATE_GITHUB_ACTIONS: true
           VALIDATE_GITLEAKS: true
           VALIDATE_JSON: true
+          VALIDATE_LUA: true
           VALIDATE_MARKDOWN: true
           VALIDATE_NATURAL_LANGUAGE: true
           VALIDATE_SHELL_SHFMT: true
