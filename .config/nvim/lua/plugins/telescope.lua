@@ -5,10 +5,14 @@ local trouble = require("trouble.providers.telescope")
 require('telescope').setup({
   defaults = {
     mappings = {
-      i = { ["<esc>"] = actions.close },
-      n = { ["q"] = actions.close },
-      i = { ["<c-t>"] = trouble.open_with_trouble },
-      n = { ["<c-t>"] = trouble.open_with_trouble },
+      i = {
+        ["<esc>"] = actions.close,
+        ["<c-t>"] = trouble.open_with_trouble
+      },
+      n = {
+        ["q"] = actions.close,
+        ["<c-t>"] = trouble.open_with_trouble,
+      },
     },
     vimgrep_arguments = {
       "ag",
@@ -41,7 +45,7 @@ vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' }
 vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 -- https://github.com/nvim-telescope/telescope-fzf-native.nvim?tab=readme-ov-file#installation
--- > To get fzf-native working, you need to build it with either cmake or make. 
+-- > To get fzf-native working, you need to build it with either cmake or make.
 -- As of now, we do not ship binaries. Both install methods will be supported going forward.
 -- require("telescope").load_extension "fzf"
 require("telescope").load_extension "ui-select"
