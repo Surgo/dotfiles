@@ -3,7 +3,7 @@ name: Lint
 
 permissions: {}
 
-on:
+'on':
   push:
     branches:
       - main
@@ -28,7 +28,7 @@ jobs:
           fetch-depth: 0
 
       - name: Super-linter
-        uses: super-linter/super-linter@v6.3.0
+        uses: super-linter/super-linter/slim@v6.3.0
         env:
           DEFAULT_BRANCH: main
           VALIDATE_BASH: true
@@ -39,6 +39,7 @@ jobs:
           VALIDATE_GITHUB_ACTIONS: true
           VALIDATE_GITLEAKS: true
           VALIDATE_JSON: true
+          VALIDATE_LUA: true
           VALIDATE_MARKDOWN: true
           VALIDATE_NATURAL_LANGUAGE: true
           VALIDATE_SHELL_SHFMT: true

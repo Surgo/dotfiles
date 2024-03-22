@@ -2,6 +2,106 @@
 	path = .config/iterm2/themes/catppuccin
 	url = git@github.com:catppuccin/iterm.git
 	branch = main
+[submodule ".config/nvim/pack/colorscheme/start/catppuccin"]
+	path = .config/nvim/pack/colorscheme/start/catppuccin
+	url = git@github.com:catppuccin/nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/cmp"]
+	path = .config/nvim/pack/plugins/start/cmp
+	url = git@github.com:hrsh7th/nvim-cmp.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/cmp-buffer"]
+	path = .config/nvim/pack/plugins/start/cmp-buffer
+	url = git@github.com:hrsh7th/cmp-buffer.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/cmp-cmdline"]
+	path = .config/nvim/pack/plugins/start/cmp-cmdline
+	url = git@github.com:hrsh7th/cmp-cmdline.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/cmp-nvim-lsp"]
+	path = .config/nvim/pack/plugins/start/cmp-nvim-lsp
+	url = git@github.com:hrsh7th/cmp-nvim-lsp.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/cmp-path"]
+	path = .config/nvim/pack/plugins/start/cmp-path
+	url = git@github.com:hrsh7th/cmp-path.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/copilot"]
+	path = .config/nvim/pack/plugins/start/copilot
+	url = git@github.com:github/copilot.vim.git
+	branch = release
+[submodule ".config/nvim/pack/plugins/start/fidget"]
+	path = .config/nvim/pack/plugins/start/fidget
+	url = git@github.com:j-hui/fidget.nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/gitsigns"]
+	path = .config/nvim/pack/plugins/start/gitsigns
+	url = git@github.com:lewis6991/gitsigns.nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/lualine"]
+	path = .config/nvim/pack/plugins/start/lualine
+	url = git@github.com:nvim-lualine/lualine.nvim.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/lspconfig"]
+	path = .config/nvim/pack/plugins/start/lspconfig
+	url = git@github.com:neovim/nvim-lspconfig.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/mason"]
+	path = .config/nvim/pack/plugins/start/mason
+	url = git@github.com:williamboman/mason.nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/mason-lspconfig"]
+	path = .config/nvim/pack/plugins/start/mason-lspconfig
+	url = git@github.com:williamboman/mason-lspconfig.nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/mason-tool-installer"]
+	path = .config/nvim/pack/plugins/start/mason-tool-installer
+	url = git@github.com:WhoIsSethDaniel/mason-tool-installer.nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/mason-null-ls"]
+	path = .config/nvim/pack/plugins/start/mason-null-ls
+	url = git@github.com:jay-babu/mason-null-ls.nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/none-ls"]
+	path = .config/nvim/pack/plugins/start/none-ls
+	url = git@github.com:nvimtools/none-ls.nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/plenary"]
+	path = .config/nvim/pack/plugins/start/plenary
+	url = https://github.com/nvim-lua/plenary.nvim
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/telescope"]
+	path = .config/nvim/pack/plugins/start/telescope
+	url = git@github.com:nvim-telescope/telescope.nvim.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/telescope-file-browser"]
+	path = .config/nvim/pack/plugins/start/telescope-file-browser
+	url = git@github.com:nvim-telescope/telescope-file-browser.nvim.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/telescope-fzf-native"]
+	path = .config/nvim/pack/plugins/start/telescope-fzf-native
+	url = git@github.com:nvim-telescope/telescope-fzf-native.nvim.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/telescope-ui-select"]
+	path = .config/nvim/pack/plugins/start/telescope-ui-select
+	url = git@github.com:nvim-telescope/telescope-ui-select.nvim.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/trim"]
+	path = .config/nvim/pack/plugins/start/trim
+	url = git@github.com:cappyzawa/trim.nvim.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/tree"]
+	path = .config/nvim/pack/plugins/start/tree
+	url = git@github.com:nvim-tree/nvim-tree.lua.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/trouble"]
+	path = .config/nvim/pack/plugins/start/trouble
+	url = git@github.com:folke/trouble.nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/web-devicons"]
+	path = .config/nvim/pack/plugins/start/web-devicons
+	url = git@github.com:nvim-tree/nvim-web-devicons.git
+	branch = master
 [submodule ".config/tmux/plugins/tmux"]
 	path = .config/tmux/plugins/tmux
 	url = git@github.com:catppuccin/tmux.git

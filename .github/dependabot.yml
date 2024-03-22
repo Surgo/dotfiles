@@ -19,6 +19,9 @@ updates:
       iterm2-plugins:
         patterns:
           - ".config/iterm2/*"
+      neovim-plugins:
+        patterns:
+          - ".config/nvim/pack/*"
       tmux-plugins:
         patterns:
           - ".config/tmux/plugins/*"
