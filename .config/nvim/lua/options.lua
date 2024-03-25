@@ -2,14 +2,20 @@
 vim.opt.number = true
 -- vim.opt.relativenumber = true
 
+-- Set the width of the number column
+vim.opt.numberwidth = 4
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
+
+-- Set pop up menu height
+vim.opt.pumheight = 10
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard:append("unnamedplus")
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -25,7 +31,7 @@ vim.opt.undofile = true
 vim.opt.signcolumn = "yes"
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 100
 
 -- Decrease mapped sequence wait time
 vim.opt.timeoutlen = 300
@@ -34,13 +40,16 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
--- Sets how neovim will display certain whitespace characters in the editor.
+-- Sets how neovim will display certain white-space characters in the editor.
 vim.opt.list = true
 vim.opt.listchars = {
-	tab = "» ",
-	trail = "·",
-	nbsp = "␣",
+  tab = "» ",
+  trail = "·",
+  nbsp = "␣",
 }
+
+-- Display lines as one long line
+vim.opt.wrap = false
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -49,7 +58,21 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 
 -- Set highlight on search
 vim.opt.hlsearch = true
+
+-- Convert tabs to spaces
+vim.opt.expandtab = true
+
+-- The number of spaces inserted for each indentation
+vim.opt.shiftwidth = 2
+
+-- Insert 2 spaces for a tab
+vim.opt.tabstop = 2
+
+-- Enable spell checking
+vim.opt.spell = true
+vim.opt.spelllang:append("en")
