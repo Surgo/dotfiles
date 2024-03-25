@@ -29,11 +29,11 @@ cmp.setup({
     -- { name = 'snippy' }, -- For snippy users.
     { name = 'buffer', group_index = 2 },
     { name = 'path', group_index = 2 },
-    {
-      name = 'cmdline',
-      option = {
-        ignore_cmds = { 'Man', '!' }
-      }
-    },
+    -- {
+    --   name = 'cmdline',
+    --   option = {
+    --     ignore_cmds = { 'Man', '!' }
+    --   }
+    -- },
   })
 })
