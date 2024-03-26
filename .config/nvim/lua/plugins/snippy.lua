@@ -1,0 +1,1 @@
+require('snippy').setup({})
