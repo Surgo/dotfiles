@@ -34,6 +34,10 @@
 	path = .config/nvim/pack/plugins/start/fidget
 	url = git@github.com:j-hui/fidget.nvim.git
 	branch = main
+[submodule ".config/nvim/pack/plugins/start/FixCursorHold"]
+	path = .config/nvim/pack/plugins/start/FixCursorHold
+	url = git@github.com:antoinemadec/FixCursorHold.nvim.git
+	branch = master
 [submodule ".config/nvim/pack/plugins/start/gitsigns"]
 	path = .config/nvim/pack/plugins/start/gitsigns
 	url = git@github.com:lewis6991/gitsigns.nvim.git
@@ -62,13 +66,29 @@
 	path = .config/nvim/pack/plugins/start/mason-null-ls
 	url = git@github.com:jay-babu/mason-null-ls.nvim.git
 	branch = main
+[submodule ".config/nvim/pack/plugins/start/neotest"]
+	path = .config/nvim/pack/plugins/start/neotest
+	url = git@github.com:nvim-neotest/neotest.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/neotest-playwright"]
+	path = .config/nvim/pack/plugins/start/neotest-playwright
+	url = git@github.com:thenbe/neotest-playwright.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/neotest-python"]
+	path = .config/nvim/pack/plugins/start/neotest-python
+	url = git@github.com:nvim-neotest/neotest-python.git
+	branch = master
 [submodule ".config/nvim/pack/plugins/start/none-ls"]
 	path = .config/nvim/pack/plugins/start/none-ls
 	url = git@github.com:nvimtools/none-ls.nvim.git
 	branch = main
+[submodule ".config/nvim/pack/plugins/start/nio"]
+	path = .config/nvim/pack/plugins/start/nio
+	url = git@github.com:nvim-neotest/nvim-nio.git
+	branch = master
 [submodule ".config/nvim/pack/plugins/start/plenary"]
 	path = .config/nvim/pack/plugins/start/plenary
-	url = https://github.com/nvim-lua/plenary.nvim
+	url = git@github.com:nvim-lua/plenary.nvim
 	branch = master
 [submodule ".config/nvim/pack/plugins/start/snippy"]
 	path = .config/nvim/pack/plugins/start/snippy
@@ -97,6 +117,10 @@
 [submodule ".config/nvim/pack/plugins/start/tree"]
 	path = .config/nvim/pack/plugins/start/tree
 	url = git@github.com:nvim-tree/nvim-tree.lua.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/treesitter"]
+	path = .config/nvim/pack/plugins/start/treesitter
+	url = git@github.com:nvim-treesitter/nvim-treesitter.git
 	branch = master
 [submodule ".config/nvim/pack/plugins/start/trouble"]
 	path = .config/nvim/pack/plugins/start/trouble
