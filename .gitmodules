@@ -34,6 +34,10 @@
 	path = .config/nvim/pack/plugins/start/fidget
 	url = git@github.com:j-hui/fidget.nvim.git
 	branch = main
+[submodule ".config/nvim/pack/plugins/start/FixCursorHold"]
+	path = .config/nvim/pack/plugins/start/FixCursorHold
+	url = git@github.com:antoinemadec/FixCursorHold.nvim.git
+	branch = master
 [submodule ".config/nvim/pack/plugins/start/gitsigns"]
 	path = .config/nvim/pack/plugins/start/gitsigns
 	url = git@github.com:lewis6991/gitsigns.nvim.git
@@ -78,9 +82,13 @@
 	path = .config/nvim/pack/plugins/start/none-ls
 	url = git@github.com:nvimtools/none-ls.nvim.git
 	branch = main
+[submodule ".config/nvim/pack/plugins/start/nio"]
+	path = .config/nvim/pack/plugins/start/nio
+	url = git@github.com:nvim-neotest/nvim-nio.git
+	branch = master
 [submodule ".config/nvim/pack/plugins/start/plenary"]
 	path = .config/nvim/pack/plugins/start/plenary
-	url = https://github.com/nvim-lua/plenary.nvim
+	url = git@github.com:nvim-lua/plenary.nvim
 	branch = master
 [submodule ".config/nvim/pack/plugins/start/snippy"]
 	path = .config/nvim/pack/plugins/start/snippy
