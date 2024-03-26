@@ -7,10 +7,15 @@ require("catppuccin").setup({
   transparent_background = true,
   show_end_of_buffer = true,
   integrations = {
+    cmp = true,
+    gitsigns = true,
+    lsp_trouble = false,
+    nvimtree = true,
     telescope = {
       enabled = true,
       -- style = "nvchad"
-    }
+    },
+    treesitter = true,
   },
 })
 
