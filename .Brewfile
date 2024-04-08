@@ -1,3 +1,4 @@
+brew "bat"
 brew "curl"
 brew "editorconfig"
 brew "gh"

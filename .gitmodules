@@ -1,3 +1,7 @@
+[submodule ".config/bat/vendor/catppuccin"]
+	path = .config/bat/vendor/catppuccin
+	url = git@github.com:catppuccin/bat.git
+	branch = main
 [submodule ".config/iterm2/themes/catppuccin"]
 	path = .config/iterm2/themes/catppuccin
 	url = git@github.com:catppuccin/iterm.git

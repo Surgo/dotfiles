@@ -4,6 +4,8 @@
 !.bin
 !.bin/**
 !.config
+!.config/bat
+!.config/bat/**
 !.config/gh
 !.config/gh/**
 !.config/git
