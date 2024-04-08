@@ -16,6 +16,9 @@ updates:
       timezone: Asia/Tokyo
     open-pull-requests-limit: 10
     groups:
+      bat-plugins:
+        patterns:
+          - ".config/bat/*"
       iterm2-plugins:
         patterns:
           - ".config/iterm2/*"
