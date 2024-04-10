@@ -40,6 +40,7 @@ cask "iterm2"
 cask "jordanbaird-ice"
 cask "keybase"
 cask "kindle"
+cask "obsidian"
 cask "visual-studio-code"
 
 tap "homebrew/cask-fonts"
