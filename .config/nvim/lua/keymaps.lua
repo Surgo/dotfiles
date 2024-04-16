@@ -12,6 +12,9 @@ vim.keymap.set('i', ',', ',<Space>')
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Disable IME if exit insert mode.
+vim.keymap.set('i', '<Esc>', '<Esc>:set iminsert=0<CR>', { silent = true })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
