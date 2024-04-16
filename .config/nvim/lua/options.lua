@@ -24,8 +24,8 @@ vim.opt.breakindent = true
 vim.opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
--- vim.opt.ignorecase = true
--- vim.opt.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = "yes"
@@ -49,7 +49,7 @@ vim.opt.listchars = {
 }
 
 -- Display lines as one long line
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -63,6 +63,11 @@ vim.opt.sidescrolloff = 8
 
 -- Set highlight on search
 vim.opt.hlsearch = true
+vim.opt.incsearch = true
+
+-- Input Method (IM) is to be used in Insert mode.
+vim.opt.iminsert = 0
+vim.opt.imsearch = 0
 
 -- Convert tabs to spaces
 vim.opt.expandtab = true

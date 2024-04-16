@@ -9,12 +9,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  desc = "Format on save",
-  group = vim.api.nvim_create_augroup("lsp_format_on_save", {}),
+vim.api.nvim_create_autocmd('BufWritePre', {
+  desc = 'Format on save',
+  group = vim.api.nvim_create_augroup('lsp_format_on_save', {}),
   pattern = {
-    "*.tf",
-    "*.tfvars",
+    '*.tf',
+    '*.tfvars',
   },
   callback = function()
     vim.lsp.buf.format()
