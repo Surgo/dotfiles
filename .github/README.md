@@ -12,9 +12,9 @@
   - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme
   - Awesome [plugins](https://github.com/Surgo/dotfiles/tree/main/.config/zsh/custom/plugins)
 - [Vim](https://www.vim.org/) the editor
-  - Awesome [plugins](https://github.com/Surgo/dotfiles/tree/main/.vim/pack/plugins/start),
-    [syntax](https://github.com/Surgo/dotfiles/tree/main/.vim/pack/syntax/opt),
-    and [colors](https://github.com/Surgo/dotfiles/tree/main/.vim/pack/colors/start)
+  - Awesome [plugins](https://github.com/Surgo/dotfiles/tree/main/.config/vim/pack/plugins/start),
+    [syntax](https://github.com/Surgo/dotfiles/tree/main/.config/vim/pack/syntax/opt),
+    and [colors](https://github.com/Surgo/dotfiles/tree/main/.config/vim/pack/colors/start)
 - [NeoVim](https://neovim.io/)
   - Awesome [plugins](https://github.com/Surgo/dotfiles/tree/main/.config/nvim/pack/plugins/start/), and [colorscheme](https://github.com/Surgo/dotfiles/tree/main/.config/nvim/pack/colorscheme/start/)
 - [Catppuccin](https://catppuccin.com/) theme for each tools
