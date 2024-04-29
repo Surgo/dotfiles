@@ -15,6 +15,10 @@
 !.config/iterm2/themes/**
 !.config/nvim
 !.config/nvim/**
+!.config/vim
+!.config/vim/pack
+!.config/vim/pack/**
+!.config/vim/vimrc
 !.config/sh
 !.config/sh/aliases
 !.config/sh/functions
@@ -37,18 +41,11 @@
 !.gitignore
 !.gitmodules
 !.profile
-!.vim
-!.vim/pack
-!.vim/pack/**
-!.vim/vimrc
 !.zshenv
 !README.md
 !Brewfile
 
 # Deny list
-.vim/.vim
-.vim/.netrwhist
-.vim/sessions
 .config/zsh/.zcompcache
 .config/zsh/.zcompdump*
 .config/zsh/.zsh_history
