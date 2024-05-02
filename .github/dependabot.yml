@@ -28,9 +28,9 @@ updates:
       tmux-plugins:
         patterns:
           - ".config/tmux/plugins/*"
+      vim-plugins:
+        patterns:
+          - ".config/vim/pack/*"
       zsh-plugins:
         patterns:
           - ".config/zsh/*"
-      vim-plugins:
-        patterns:
-          - ".vim/pack/*"
