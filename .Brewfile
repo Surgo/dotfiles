@@ -39,9 +39,10 @@ cask "google-japanese-ime"
 cask "iterm2"
 cask "jordanbaird-ice"
 cask "keybase"
-cask "kindle"
 cask "obsidian"
 cask "visual-studio-code"
 
 tap "homebrew/cask-fonts"
 cask "font-meslo-lg-nerd-font"
+
+tap "homebrew/autoupdate"
