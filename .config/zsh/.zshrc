@@ -43,7 +43,7 @@ plugins+=(mercurial)
 plugins+=(ansible aws gcloud terraform)
 plugins+=(autopep8 pep8 pip poetry python)
 plugins+=(bundler gem rails rake rbenv ruby)
-plugins+=(bun deno node nodenv npm yarn)
+plugins+=(bun deno node npm nvm yarn)
 plugins+=(golang)
 ## Apps
 plugins+=(1password)
