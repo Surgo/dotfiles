@@ -31,5 +31,6 @@ require("mason-null-ls").setup({
     "prettier",
     -- Zsh
     "beautysh",
-  }
+  },
+  handlers = {},
 })
