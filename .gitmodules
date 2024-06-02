@@ -298,3 +298,6 @@
 	path = .config/zsh/ohmyzsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
 	branch = master
+[submodule ".config/nvim/pack/plugins/start/lspsaga"]
+	path = .config/nvim/pack/plugins/start/lspsaga
+	url = git@github.com:nvimdev/lspsaga.nvim.git

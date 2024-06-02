@@ -9,5 +9,12 @@ require('lualine').setup({
       left = '',
       right = '',
     },
+    extensions = {
+      'fern',
+      'fugitive',
+      'mason',
+      'quickfix',
+      'trouble',
+    },
   }
 })
