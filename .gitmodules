@@ -34,6 +34,22 @@
 	path = .config/nvim/pack/plugins/start/copilot
 	url = git@github.com:github/copilot.vim.git
 	branch = release
+[submodule ".config/nvim/pack/plugins/start/dap"]
+	path = .config/nvim/pack/plugins/start/dap
+	url = git@github.com:mfussenegger/nvim-dap.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/dap-python"]
+	path = .config/nvim/pack/plugins/start/dap-python
+	url = git@github.com:mfussenegger/nvim-dap-python.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/dap-ui"]
+	path = .config/nvim/pack/plugins/start/dap-ui
+	url = git@github.com:rcarriga/nvim-dap-ui.git
+	branch = master
+[submodule ".config/nvim/pack/plugins/start/dap-virtual-text"]
+	path = .config/nvim/pack/plugins/start/dap-virtual-text
+	url = git@github.com:theHamsta/nvim-dap-virtual-text.git
+	branch = master
 [submodule ".config/nvim/pack/plugins/start/fidget"]
 	path = .config/nvim/pack/plugins/start/fidget
 	url = git@github.com:j-hui/fidget.nvim.git
@@ -54,6 +70,10 @@
 	path = .config/nvim/pack/plugins/start/lspconfig
 	url = git@github.com:neovim/nvim-lspconfig.git
 	branch = master
+[submodule ".config/nvim/pack/plugins/start/lspsaga"]
+	path = .config/nvim/pack/plugins/start/lspsaga
+	url = git@github.com:nvimdev/lspsaga.nvim.git
+	branch = main
 [submodule ".config/nvim/pack/plugins/start/mason"]
 	path = .config/nvim/pack/plugins/start/mason
 	url = git@github.com:williamboman/mason.nvim.git
@@ -69,6 +89,10 @@
 [submodule ".config/nvim/pack/plugins/start/mason-null-ls"]
 	path = .config/nvim/pack/plugins/start/mason-null-ls
 	url = git@github.com:jay-babu/mason-null-ls.nvim.git
+	branch = main
+[submodule ".config/nvim/pack/plugins/start/mason-nvim-dap"]
+	path = .config/nvim/pack/plugins/start/mason-nvim-dap
+	url = git@github.com:jay-babu/mason-nvim-dap.nvim.git
 	branch = main
 [submodule ".config/nvim/pack/plugins/start/neotest"]
 	path = .config/nvim/pack/plugins/start/neotest
@@ -298,6 +322,3 @@
 	path = .config/zsh/ohmyzsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
 	branch = master
-[submodule ".config/nvim/pack/plugins/start/lspsaga"]
-	path = .config/nvim/pack/plugins/start/lspsaga
-	url = git@github.com:nvimdev/lspsaga.nvim.git
