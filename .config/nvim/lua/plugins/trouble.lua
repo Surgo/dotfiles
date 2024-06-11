@@ -1,5 +1,7 @@
 require'trouble'.setup({
-  auto_open=true,
+  modes = {
+    diagnostics = { auto_open = true },
+  }
 })
 
 vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
