@@ -16,7 +16,6 @@ mason_lspconfig.setup({
     -- Lua
     "lua_ls",
     -- Python
-    "debugpy",
     "pylsp",
     "ruff_lsp",
     -- SQL

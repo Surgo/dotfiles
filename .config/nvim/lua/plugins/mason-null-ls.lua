@@ -16,6 +16,7 @@ require("mason-null-ls").setup({
     -- Python
     "autoflake",
     "autopep8",
+    "debugpy",
     "flake8",
     "mypy",
     -- Shell
