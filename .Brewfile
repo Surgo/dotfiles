@@ -1,5 +1,7 @@
 brew "bat"
 brew "curl"
+brew "direnv"
+brew "dotenv"
 brew "editorconfig"
 brew "gh"
 brew "gibo"
