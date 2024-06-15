@@ -32,7 +32,7 @@ case "${OSTYPE}" in
   ;;
 esac
 ## Utilities
-plugins+=(aliases command-not-found per-directory-history sudo)
+plugins+=(aliases command-not-found direnv dotenv per-directory-history sudo)
 ## Colorize
 plugins+=(colored-man-pages colorize)
 ## Devtools
