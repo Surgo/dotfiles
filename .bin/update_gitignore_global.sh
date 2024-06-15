@@ -2,9 +2,9 @@
 
 gibo update && gibo dump \
 	Ansible \
+	Archives \
 	Backup \
 	Diff \
-	Dropbox \
 	GPG \
 	Linux \
 	macOS \
