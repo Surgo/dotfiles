@@ -1,7 +1,6 @@
 brew "bat"
 brew "curl"
 brew "direnv"
-brew "dotenv"
 brew "editorconfig"
 brew "gh"
 brew "gibo"
@@ -43,8 +42,6 @@ cask "jordanbaird-ice"
 cask "keybase"
 cask "obsidian"
 cask "visual-studio-code"
-
-tap "homebrew/cask-fonts"
 cask "font-meslo-lg-nerd-font"
 
 tap "homebrew/autoupdate"
