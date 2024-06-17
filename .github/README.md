@@ -28,7 +28,7 @@
   xcode-select --install
   ```
 
-1. Clone a repository
+2. Clone a repository
 
   ```sh
   git init
@@ -36,13 +36,13 @@
   git pull origin main
   ```
 
-1. Install submodules
+2. Install submodules
 
   ```sh
   git submodule update --init
   ```
 
-1. Bootstrap
+3. Bootstrap
 
   ```sh
   ./.bin/init.sh
@@ -50,7 +50,7 @@
 
 ## Usage
 
-1. Update or regenerate dependencies
+- Update or regenerate dependencies
 
   ```sh
   ~/.bin/update.sh
