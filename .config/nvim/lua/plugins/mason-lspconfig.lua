@@ -28,11 +28,24 @@ mason_lspconfig.setup({
     "eslint",
   }
 })
+local default_capabilities = require('cmp_nvim_lsp').default_capabilities()
 mason_lspconfig.setup_handlers({
   function(server)
-    local opt = {
-      capabilities = require('cmp_nvim_lsp').default_capabilities()
+    require('lspconfig')[server].setup({
+      capabilities=default_capabilities,
+    })
+  end,
+  ["lua_ls"] = function ()
+    local lspconfig = require("lspconfig")
+    lspconfig.lua_ls.setup {
+      capabilities=default_capabilities,
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { "vim" }
+          }
+        }
+      }
     }
-    require('lspconfig')[server].setup(opt)
-  end
+  end,
 })
