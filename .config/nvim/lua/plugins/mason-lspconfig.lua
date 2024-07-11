@@ -42,8 +42,17 @@ mason_lspconfig.setup_handlers({
       settings = {
         Lua = {
           diagnostics = {
-            globals = { "vim" }
-          }
+            globals = { "vim" },
+            disable = { 'missing-fields' },
+          },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+            ignoreDir = {
+              "pack/plugins/start",
+              "pack/colorscheme/start",
+            },
+            checkThirdParty = "Disable",
+          },
         }
       }
     }
