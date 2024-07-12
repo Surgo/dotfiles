@@ -1,4 +1,5 @@
 require'trouble'.setup({
+  auto_close = true,
   modes = {
     diagnostics = { auto_open = true },
   }

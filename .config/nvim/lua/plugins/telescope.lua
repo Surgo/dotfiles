@@ -30,6 +30,10 @@ require('telescope').setup({
       require("telescope.themes").get_dropdown {}
     }
   },
+  file_ignore_patterns = {
+    "**/nvim/pack/plugins/**",
+    "**/nvim/pack/colorscheme/**",
+  },
 })
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', ';;', builtin.buffers, {})
