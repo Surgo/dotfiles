@@ -133,7 +133,7 @@
 [submodule ".config/nvim/pack/plugins/start/telescope-fzf-native"]
 	path = .config/nvim/pack/plugins/start/telescope-fzf-native
 	url = git@github.com:nvim-telescope/telescope-fzf-native.nvim.git
-	branch = master
+	branch = main
 [submodule ".config/nvim/pack/plugins/start/telescope-ui-select"]
 	path = .config/nvim/pack/plugins/start/telescope-ui-select
 	url = git@github.com:nvim-telescope/telescope-ui-select.nvim.git
