@@ -36,7 +36,7 @@ plugins+=(aliases command-not-found direnv dotenv per-directory-history sudo)
 ## Colorize
 plugins+=(colored-man-pages colorize)
 ## Devtools
-plugins+=(ag tmux vscode)
+plugins+=(tmux vscode)
 plugins+=(docker docker-compose)
 plugins+=(git gitfast gitignore tig)
 plugins+=(mercurial)
