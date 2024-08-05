@@ -13,6 +13,8 @@
 !.config/iterm2
 !.config/iterm2/themes
 !.config/iterm2/themes/**
+!.config/lsp
+!.config/lsp/*.template
 !.config/nvim
 !.config/nvim/**
 !.config/vim
@@ -22,7 +24,7 @@
 !.config/sh
 !.config/sh/aliases
 !.config/sh/functions
-!.config/sh/local.template
+!.config/sh/*.template
 !.config/sh/profile
 !.config/tig
 !.config/tig/config
