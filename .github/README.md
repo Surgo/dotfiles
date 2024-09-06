@@ -36,13 +36,13 @@
   git pull origin main
   ```
 
-2. Install submodules
+3. Install submodules
 
   ```sh
   git submodule update --init
   ```
 
-3. Bootstrap
+4. Bootstrap
 
   ```sh
   ./.bin/init.sh
@@ -55,3 +55,8 @@
   ```sh
   ~/.bin/update.sh
   ```
+
+## Configure
+
+- `GITHUB_TOKENS`: `~/.config/sh/local.template`
+- LSP: `~/.config/lsp/*.template`
