@@ -1,3 +1,4 @@
+brew "1password-cli"
 brew "bat"
 brew "curl"
 brew "direnv"
@@ -24,7 +25,7 @@ brew "tree"
 brew "vim"
 brew "wget"
 brew "xz"
-brew "ykpers"  # Yubikey Personalization
+brew "ykman"  # YubiKey Manager CLI
 brew "zsh"
 
 # tap "homebrew/cask"  # Implemented as part of Homebrew
@@ -42,6 +43,7 @@ cask "iterm2"
 cask "jordanbaird-ice"
 cask "keybase"
 cask "obsidian"
+cask "yubico-yubikey-manager"
 cask "visual-studio-code"
 cask "font-meslo-lg-nerd-font"
 
