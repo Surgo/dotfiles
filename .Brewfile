@@ -43,6 +43,7 @@ cask "iterm2"
 cask "jordanbaird-ice"
 cask "keybase"
 cask "obsidian"
+cask "yubico-yubikey-manager"
 cask "visual-studio-code"
 cask "font-meslo-lg-nerd-font"
 
