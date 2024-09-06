@@ -25,7 +25,7 @@ brew "tree"
 brew "vim"
 brew "wget"
 brew "xz"
-brew "ykpers"  # Yubikey Personalization
+brew "ykman"  # YubiKey Manager CLI
 brew "zsh"
 
 # tap "homebrew/cask"  # Implemented as part of Homebrew
