@@ -13,6 +13,8 @@ ZSH_TMUX_FIXTERM=true
 ZSH_TMUX_CONFIG="${HOME}/.config/tmux/tmux.conf"
 ZSH_TMUX_UNICODE=true
 
+HISTORY_BASE="${XDG_CACHE_HOME}/directory_history"
+
 ## zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=black,bg=blue,bold,underline"
 
