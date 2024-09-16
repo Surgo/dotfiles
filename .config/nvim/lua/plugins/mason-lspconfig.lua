@@ -24,7 +24,7 @@ mason_lspconfig.setup({
     "terraformls",
     "tflint",
     -- TypeScript / JavaScript
-    "tsserver",  -- TODO Rename to ts_ls
+    "ts_ls",
     "eslint",
   }
 })
@@ -34,11 +34,6 @@ local lsp_config_dir = vim.fs.joinpath(config_dir, "lsp")
 
 mason_lspconfig.setup_handlers({
   function(server)
-    -- TODO Remove after support tl_ls
-    -- https://github.com/neovim/nvim-lspconfig/pull/3232
-    if server == "tsserver" then
-      server = "ts_ls"
-    end
     require('lspconfig')[server].setup({
       capabilities=default_capabilities,
     })
