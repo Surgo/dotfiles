@@ -34,7 +34,8 @@ local lsp_config_dir = vim.fs.joinpath(config_dir, "lsp")
 
 mason_lspconfig.setup_handlers({
   function(server)
-    require('lspconfig')[server].setup({
+    local lsp_config = require("lspconfig")
+    lsp_config[server].setup({
       capabilities=default_capabilities,
     })
   end,

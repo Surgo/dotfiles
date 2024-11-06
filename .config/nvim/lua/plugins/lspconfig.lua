@@ -67,5 +67,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
         callback = vim.lsp.buf.clear_references,
       })
     end
+    local lsp_format_on_save = vim.api.nvim_create_augroup('LspFormatOnSave', {})
+    if client and client.supports_method('textDocument/formatting') then
+      vim.api.nvim_clear_autocmds({
+        group = lsp_format_on_save,
+        buffer = event.bufnr,
+      })
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        desc = 'Format on save',
+        group = lsp_format_on_save,
+        buffer = event.bufnr,
+        callback = function()
+          vim.lsp.buf.format()
+        end,
+      })
+      vim.api.nvim_create_user_command('Format', function()
+        vim.lsp.buf.format()
+      end, {})
+    end
   end,
 })

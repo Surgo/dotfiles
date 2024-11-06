@@ -7,21 +7,21 @@ require("mason-null-ls").setup({
   ensure_installed = {
     -- CSS
     "stylelint",
+    "prettier",
     -- Docker
     "hadolint",
     -- Markdown
     "markdownlint",
     -- "vale",  # Not tested yet
     -- JSON
+    "jsonlint",
     "jq",
     -- Lua
     "luacheck",
     "stylua",
     -- Python
-    "autoflake",
     "autopep8",
     "black",
-    "debugpy",
     "isort",
     "flake8",
     "mypy",
@@ -36,6 +36,10 @@ require("mason-null-ls").setup({
     -- TypeScript / JavaScript
     "eslint_d",
     "prettier",
+    -- YAML
+    "actionlint",
+    "yamllint",
+    "yamlfmt",
     -- Zsh
     "beautysh",
   },
