@@ -1,6 +1,6 @@
 local null_ls = require("null-ls")
 local diagnostics = null_ls.builtins.diagnostics
-local null_ls_format_on_save = vim.api.nvim_create_augroup('NullLsFormatOnSave', {})
+local null_ls_format_on_save = vim.api.nvim_create_augroup("NullLsFormatOnSave", {})
 
 null_ls.setup({
   on_attach = function(client, bufnr)

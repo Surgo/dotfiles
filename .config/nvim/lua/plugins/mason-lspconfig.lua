@@ -26,9 +26,9 @@ mason_lspconfig.setup({
     -- TypeScript / JavaScript
     "ts_ls",
     "eslint",
-  }
+  },
 })
-local default_capabilities = require('cmp_nvim_lsp').default_capabilities()
+local default_capabilities = require("cmp_nvim_lsp").default_capabilities()
 local config_dir = os.getenv("XDG_CONFIG_HOME") or vim.fs.dirname(tostring(vim.fn.stdpath("config"))) or "~/.config"
 local lsp_config_dir = vim.fs.joinpath(config_dir, "lsp")
 
@@ -36,24 +36,24 @@ mason_lspconfig.setup_handlers({
   function(server)
     local lsp_config = require("lspconfig")
     lsp_config[server].setup({
-      capabilities=default_capabilities,
+      capabilities = default_capabilities,
     })
   end,
-  ["typos_lsp"] = function ()
-    require("lspconfig").typos_lsp.setup {
+  ["typos_lsp"] = function()
+    require("lspconfig").typos_lsp.setup({
       init_options = {
         config = vim.fs.joinpath(lsp_config_dir, "typos.toml"),
-      }
-    }
+      },
+    })
   end,
-  ["lua_ls"] = function ()
-    require("lspconfig").lua_ls.setup {
-      capabilities=default_capabilities,
+  ["lua_ls"] = function()
+    require("lspconfig").lua_ls.setup({
+      capabilities = default_capabilities,
       settings = {
         Lua = {
           diagnostics = {
             globals = { "vim" },
-            disable = { 'missing-fields' },
+            disable = { "missing-fields" },
           },
           workspace = {
             library = vim.api.nvim_get_runtime_file("", true),
@@ -63,8 +63,8 @@ mason_lspconfig.setup_handlers({
             },
             checkThirdParty = "Disable",
           },
-        }
-      }
-    }
+        },
+      },
+    })
   end,
 })
