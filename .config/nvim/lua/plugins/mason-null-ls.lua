@@ -2,7 +2,7 @@ require("mason-null-ls").setup({
   automatic_installation = {
     exclude = {
       "sqlfluff",
-    }
+    },
   },
   ensure_installed = {
     -- CSS
@@ -17,11 +17,12 @@ require("mason-null-ls").setup({
     "jsonlint",
     "jq",
     -- Lua
-    "luacheck",
     "stylua",
     -- Python
+    "autoflake",
     "autopep8",
     "black",
+    "debugpy",
     "isort",
     "flake8",
     "mypy",
