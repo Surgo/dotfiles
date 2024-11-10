@@ -2,20 +2,21 @@ require("mason-null-ls").setup({
   automatic_installation = {
     exclude = {
       "sqlfluff",
-    }
+    },
   },
   ensure_installed = {
     -- CSS
     "stylelint",
+    "prettier",
     -- Docker
     "hadolint",
     -- Markdown
     "markdownlint",
     -- "vale",  # Not tested yet
     -- JSON
+    "jsonlint",
     "jq",
     -- Lua
-    "luacheck",
     "stylua",
     -- Python
     "autoflake",
@@ -36,6 +37,10 @@ require("mason-null-ls").setup({
     -- TypeScript / JavaScript
     "eslint_d",
     "prettier",
+    -- YAML
+    "actionlint",
+    "yamllint",
+    "yamlfmt",
     -- Zsh
     "beautysh",
   },

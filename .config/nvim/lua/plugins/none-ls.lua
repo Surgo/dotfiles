@@ -1,24 +1,25 @@
 local null_ls = require("null-ls")
+local diagnostics = null_ls.builtins.diagnostics
+local null_ls_format_on_save = vim.api.nvim_create_augroup("NullLsFormatOnSave", {})
 
 null_ls.setup({
   on_attach = function(client, bufnr)
-    if client.supports_method("textDocument/formatting") then
-      vim.api.nvim_clear_autocmds({
-        group = "lsp_format_on_save",
-        buffer = bufnr,
-      })
+    if client.supports_method("textDocument/formatting") and client.name == "null-ls" then
+      print(string.format("[null-ls] [%s] Enable auto-format on save", client.name))
+      vim.api.nvim_clear_autocmds({ group = null_ls_format_on_save, buffer = bufnr })
       vim.api.nvim_create_autocmd("BufWritePre", {
-        group = "lsp_format_on_save",
+        group = null_ls_format_on_save,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format()
+          print(string.format("[null-ls] formatted", client.name))
+          vim.lsp.buf.format({ async = false })
         end,
       })
     end
   end,
   diagnostics_format = "[#{m}] #{s} (#{c})",
   sources = {
-    null_ls.builtins.diagnostics.sqlfluff.with({
+    diagnostics.sqlfluff.with({
       extra_args = { "--dialect", "postgres" },
     }),
   },
