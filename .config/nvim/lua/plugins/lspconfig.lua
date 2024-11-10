@@ -67,18 +67,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
         callback = vim.lsp.buf.clear_references,
       })
     end
-    local lsp_format_on_save = vim.api.nvim_create_augroup('LspFormatOnSave', {})
-    if client and client.supports_method('textDocument/formatting') then
+    if client and client.supports_method('textDocument/formatting') and client.name ~= "null-ls" then
+      print(string.format("[LSP] [%s] Enable auto-format on save", client.name))
+      local lsp_format_on_save = vim.api.nvim_create_augroup('LspFormatOnSave', {})
       vim.api.nvim_clear_autocmds({
         group = lsp_format_on_save,
-        buffer = event.bufnr,
+        buffer = event.buf,
       })
       vim.api.nvim_create_autocmd('BufWritePre', {
         desc = 'Format on save',
         group = lsp_format_on_save,
-        buffer = event.bufnr,
+        buffer = event.buf,
         callback = function()
-          vim.lsp.buf.format()
+          print(string.format("[LSP] [%s] formatted", client.name))
+          vim.lsp.buf.format({ async = false })
         end,
       })
       vim.api.nvim_create_user_command('Format', function()
