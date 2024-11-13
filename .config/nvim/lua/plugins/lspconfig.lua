@@ -68,7 +68,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
       })
     end
     if client and client.supports_method("textDocument/formatting") and client.name ~= "null-ls" then
-      print(string.format("[LSP] [%s] Enable auto-format on save", client.name))
+      local fidget = require("fidget")
+      fidget.notify(string.format("[LSP] [%s] Enable auto-format on save", client.name))
       local lsp_format_on_save = vim.api.nvim_create_augroup("LspFormatOnSave", {})
       vim.api.nvim_clear_autocmds({
         group = lsp_format_on_save,
@@ -79,8 +80,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
         group = lsp_format_on_save,
         buffer = event.buf,
         callback = function()
-          print(string.format("[LSP] [%s] formatted", client.name))
-          vim.lsp.buf.format({ async = false })
+          fidget.notify(string.format("[LSP] [%s] formatted", client.name))
+          local allow_format = function(servers)
+            return function(filter_client)
+              return vim.tbl_contains(servers, filter_client.name)
+            end
+          end
+          vim.lsp.buf.format({
+            filter = allow_format({
+              "lua_ls",
+              "terraformls",
+            }),
+            async = false,
+          })
         end,
       })
       vim.api.nvim_create_user_command("Format", function()

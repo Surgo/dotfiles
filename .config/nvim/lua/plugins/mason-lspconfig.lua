@@ -34,6 +34,13 @@ local lsp_config_dir = vim.fs.joinpath(config_dir, "lsp")
 
 mason_lspconfig.setup_handlers({
   function(server)
+    local lsp_mapping = {
+      -- TODO Remove after support ruff
+      ruff_lsp = "ruff",
+    }
+    if lsp_mapping[server] then
+      server = lsp_mapping[server]
+    end
     local lsp_config = require("lspconfig")
     lsp_config[server].setup({
       capabilities = default_capabilities,
