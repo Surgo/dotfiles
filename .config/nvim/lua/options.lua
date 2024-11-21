@@ -43,9 +43,9 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain white-space characters in the editor.
 vim.opt.list = true
 vim.opt.listchars = {
-  tab = "» ",
-  trail = "·",
-  nbsp = "␣",
+	tab = "» ",
+	trail = "·",
+	nbsp = "␣",
 }
 
 -- Display lines as one long line
