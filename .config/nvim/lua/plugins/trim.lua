@@ -1,1 +1,1 @@
-require('trim').setup({})
+require("trim").setup({})

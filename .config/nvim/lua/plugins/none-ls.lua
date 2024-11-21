@@ -25,7 +25,7 @@ null_ls.setup({
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				group = null_ls_format_on_save,
 				buffer = bufnr,
-				callback = function(c)
+				callback = function()
 					if not vim.g.null_ls_formatters_enabled then
 						fidget.notify("[null-ls] Skip formatting")
 						return

@@ -1,1 +1,1 @@
-require('snippy').setup({})
+require("snippy").setup({})
