@@ -1,7 +1,3 @@
--- Referred from:
--- * https://github.com/nvim-lua/kickstart.nvim
--- * https://github.com/LunarVim/LunarVim
-
 require("base")
 require("options")
 require("keymaps")

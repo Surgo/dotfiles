@@ -1,2 +1,5 @@
 [default.extend-words]
 iterm = "iterm"
+
+[type.ignore]
+extend-ignore-words-re = ["^[a-zA-Z]{1,3}$"]
