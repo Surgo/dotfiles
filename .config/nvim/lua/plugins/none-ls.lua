@@ -1,55 +1,49 @@
-local fidget = require("fidget")
 local null_ls = require("null-ls")
 local diagnostics = null_ls.builtins.diagnostics
-local null_ls_format_on_save = vim.api.nvim_create_augroup("NullLsFormatOnSave", {})
 
-vim.g.null_ls_formatters_enabled = true
+local sources = {
+	diagnostics.sqlfluff.with({
+		extra_args = { "--dialect", "postgres" },
+	}),
+}
 
-local toggle_formatters = function()
-	vim.g.null_ls_formatters_enabled = not vim.g.null_ls_formatters_enabled
-	if vim.g.null_ls_formatters_enabled then
-		fidget.notify("[null-ls] Auto-format on save ENABLED")
-		print("[null-ls] Auto-format on save ENABLED")
-	else
-		fidget.notify("[null-ls] Auto-format on save DISABLED")
-		print("[null-ls] Auto-format on save DISABLED")
+local function null_ls_format_on_save(fidget)
+	if not vim.g.format_on_save_enabled then
+		fidget.notify("[null-ls] Skip formatting")
+		return
+	end
+
+	-- fidget.notify("[null-ls] Formatted")
+	vim.lsp.buf.format({
+		filter = function(client)
+			return client.name == "null-ls"
+		end,
+		async = false,
+	})
+end
+
+local null_ls_format_on_save_group = vim.api.nvim_create_augroup("NullLsFormatOnSave", {})
+local setup_null_ls_format_on_save = function(client, bufnr)
+	local fidget = require("fidget")
+
+	if client.supports_method("textDocument/formatting") and client.name == "null-ls" then
+		fidget.notify(string.format("[%s] Enable auto-format on save", client.name))
+		vim.api.nvim_clear_autocmds({
+			group = null_ls_format_on_save_group,
+			buffer = bufnr,
+		})
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = null_ls_format_on_save_group,
+			buffer = bufnr,
+			callback = function()
+				null_ls_format_on_save(fidget)
+			end,
+		})
 	end
 end
-vim.api.nvim_create_user_command("ToggleFormatters", toggle_formatters, {})
 
 null_ls.setup({
-	on_attach = function(client, bufnr)
-		if client.supports_method("textDocument/formatting") and client.name == "null-ls" then
-			fidget.notify(string.format("[null-ls] [%s] Enable auto-format on save", client.name))
-			vim.api.nvim_clear_autocmds({ group = null_ls_format_on_save, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = null_ls_format_on_save,
-				buffer = bufnr,
-				callback = function()
-					if not vim.g.null_ls_formatters_enabled then
-						fidget.notify("[null-ls] Skip formatting")
-						return
-					end
-					fidget.notify("[null-ls] formatted")
-					local allow_format = function(servers)
-						return function(filter_client)
-							return vim.tbl_contains(servers, filter_client.name)
-						end
-					end
-					vim.lsp.buf.format({
-						filter = allow_format({
-							"null-ls",
-						}),
-						async = false,
-					})
-				end,
-			})
-		end
-	end,
+	on_attach = setup_null_ls_format_on_save,
 	diagnostics_format = "[#{m}] #{s} (#{c})",
-	sources = {
-		diagnostics.sqlfluff.with({
-			extra_args = { "--dialect", "postgres" },
-		}),
-	},
+	sources = sources,
 })
