@@ -1,2 +1,2 @@
-export GITHUB_TOKEN=sometoken
-export HOMEBREW_GITHUB_API_TOKEN=${GITHUB_TOKEN}
+export GITHUB_TOKEN="<sometoken>"
+export HOMEBREW_GITHUB_API_TOKEN="${GITHUB_TOKEN}"
