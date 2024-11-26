@@ -1,5 +1,6 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
+echo "## Update global .gitignore file"
 gibo update && gibo dump \
 	Ansible \
 	Archives \
@@ -14,4 +15,4 @@ gibo update && gibo dump \
 	Vim \
 	VisualStudioCode \
 	Windows \
-	Xcode > ~/.config/git/ignore
+	Xcode >~/.config/git/ignore

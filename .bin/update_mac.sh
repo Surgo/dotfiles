@@ -1,3 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
+echo "## Update macOS software"
 m update install all
