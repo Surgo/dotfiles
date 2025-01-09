@@ -8,6 +8,7 @@ mason_lspconfig.setup({
 		"typos_lsp",
 		-- CSS
 		"stylelint_lsp",
+		"tailwindcss",
 		-- Docker
 		"dockerls",
 		"docker_compose_language_service",
@@ -17,13 +18,16 @@ mason_lspconfig.setup({
 		"lua_ls",
 		-- Python
 		"pylsp",
-		"ruff_lsp",
+		"ruff",
 		-- SQL
 		"sqlls",
 		-- Terraform
 		"terraformls",
 		"tflint",
+		-- HTML
+		"html",
 		-- TypeScript / JavaScript
+		"astro",
 		"ts_ls",
 		"eslint",
 	},
@@ -35,8 +39,7 @@ local lsp_config_dir = vim.fs.joinpath(config_dir, "lsp")
 mason_lspconfig.setup_handlers({
 	function(server)
 		local lsp_mapping = {
-			-- TODO Remove after support ruff
-			ruff_lsp = "ruff",
+			-- old_name = "new_name",
 		}
 		if lsp_mapping[server] then
 			server = lsp_mapping[server]
@@ -44,13 +47,6 @@ mason_lspconfig.setup_handlers({
 		local lsp_config = require("lspconfig")
 		lsp_config[server].setup({
 			capabilities = default_capabilities,
-		})
-	end,
-	["typos_lsp"] = function()
-		require("lspconfig").typos_lsp.setup({
-			init_options = {
-				config = vim.fs.joinpath(lsp_config_dir, "typos.toml"),
-			},
 		})
 	end,
 	["lua_ls"] = function()
@@ -71,6 +67,13 @@ mason_lspconfig.setup_handlers({
 						checkThirdParty = "Disable",
 					},
 				},
+			},
+		})
+	end,
+	["typos_lsp"] = function()
+		require("lspconfig").typos_lsp.setup({
+			init_options = {
+				config = vim.fs.joinpath(lsp_config_dir, "typos.toml"),
 			},
 		})
 	end,
