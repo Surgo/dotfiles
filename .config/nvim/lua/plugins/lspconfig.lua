@@ -17,6 +17,10 @@ local setup_user_lsp_config = function(event)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.bo[event.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
+	vim.lsp.handlers["textDocument/codeAction"] = vim.lsp.with(vim.lsp.handlers.codeAction, {
+		border = "rounded",
+	})
+
 	-- Buffer local mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local map = function(keys, func, desc)
