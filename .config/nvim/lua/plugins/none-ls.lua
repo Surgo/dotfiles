@@ -3,9 +3,6 @@ local diagnostics = null_ls.builtins.diagnostics
 local formatting = null_ls.builtins.formatting
 
 local sources = {
-	diagnostics.sqlfluff.with({
-		extra_args = { "--dialect", "postgres" },
-	}),
 	formatting.prettier.with({
 		prefer_local = true,
 	}),
