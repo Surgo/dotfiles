@@ -1,5 +1,4 @@
 local null_ls = require("null-ls")
-local diagnostics = null_ls.builtins.diagnostics
 local formatting = null_ls.builtins.formatting
 
 local sources = {
@@ -14,7 +13,6 @@ local function null_ls_format_on_save(fidget)
 		return
 	end
 
-	-- fidget.notify("[null-ls] Formatted")
 	vim.lsp.buf.format({
 		filter = function(client)
 			return client.name == "null-ls"
