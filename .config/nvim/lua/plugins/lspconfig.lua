@@ -17,10 +17,6 @@ local setup_user_lsp_config = function(event)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.bo[event.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
-	vim.lsp.handlers["textDocument/codeAction"] = vim.lsp.with(vim.lsp.handlers.codeAction, {
-		border = "rounded",
-	})
-
 	-- Buffer local mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local map = function(keys, func, desc)
@@ -84,7 +80,11 @@ local setup_user_lsp_config = function(event)
 			callback = vim.lsp.buf.clear_references,
 		})
 	end
-	if client and client.supports_method("textDocument/formatting") and client.name ~= "null-ls" then
+	if
+		client
+		and client.name ~= "null-ls"
+		and client.supports_method(vim.lsp.protocol.Methods.textDocument_formatting)
+	then
 		local fidget = require("fidget")
 		local lsp_format_on_save_group = vim.api.nvim_create_augroup("LspFormatOnSave", {})
 		fidget.notify(string.format("[LSP] [%s] Enable auto-format on save", client.name))
