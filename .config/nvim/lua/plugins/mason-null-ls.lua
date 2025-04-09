@@ -20,12 +20,12 @@ require("mason-null-ls").setup({
 		"stylua",
 		-- Python
 		"autoflake",
-		"autopep8",
 		"black",
 		"debugpy",
 		"isort",
 		"flake8",
 		"mypy",
+		"python-lsp-server",
 		-- Shell
 		"shellcheck",
 		"shfmt",
