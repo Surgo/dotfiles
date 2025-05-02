@@ -32,12 +32,14 @@
 !.config/tmux/tmux.conf
 !.config/tmux/plugins
 !.config/tmux/plugins/**
-!.config/zsh
+!.config/yamlfmt
+!.config/yamlfmt/**
 !.config/zsh/.p10k.zsh
 !.config/zsh/.zshenv
 !.config/zsh/.zshrc
 !.config/zsh/custom
 !.config/zsh/custom/**
+!.editorconfig
 !.github
 !.github/**
 !.gitignore
