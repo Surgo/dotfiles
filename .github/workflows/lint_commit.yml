@@ -45,3 +45,5 @@ jobs:
           VALIDATE_SHELL_SHFMT: true
           VALIDATE_YAML: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Ignore automatically generated files
+          FILTER_REGEX_EXCLUDE: (\.config/git/ignore|\.config/zsh/\.p10k\.zsh)
