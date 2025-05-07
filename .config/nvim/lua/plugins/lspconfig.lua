@@ -103,6 +103,46 @@ local setup_user_lsp_config = function(event)
 	end
 end
 
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+require("lspconfig").clangd.setup({
+	capabilities = capabilities,
+})
+
+vim.lsp.config("lua_ls", {
+	capabilities = capabilities,
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+			},
+			diagnostics = {
+				globals = {
+					"vim",
+					"require",
+				},
+				disable = {
+					"missing-fields",
+				},
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+				ignoreDir = {
+					"pack/plugins/start",
+					"pack/colorscheme/start",
+				},
+				checkThirdParty = "Disable",
+			},
+		},
+	},
+})
+
+vim.lsp.config("typos_lsp", {
+	capabilities = capabilities,
+	init_options = {
+		config = vim.fs.joinpath(vim.fn.stdpath("config"), "typos.toml"),
+	},
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 	callback = setup_user_lsp_config,
