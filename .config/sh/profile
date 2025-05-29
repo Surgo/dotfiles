@@ -7,8 +7,8 @@ if [ -d "${HOMEBREW_PREFIX}/opt/curl/bin" ]; then
   export PATH="${HOMEBREW_PREFIX}/opt/curl/bin:${PATH}"
 fi
 
-# Docker
-export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/docker"
+# Docker: Does not worked
+# export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/docker"
 
 # Go
 export GOPATH="${HOME}/.go"
