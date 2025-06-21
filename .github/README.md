@@ -22,20 +22,22 @@
 ```sh
 # Install Xcode command line tools
 xcode-select --install
+
 # Clone the repository
-git init
+cd "${HOME}"
+git init --initial-branch=main
 git remote add origin git@github.com:Surgo/dotfiles.git
 git pull origin main
-git submodule update --init
+git submodule update --init --recursive
+
 # Run the bootstrap script
-./.bin/init.sh
+~/.bin/init.sh
 ```
 
 ## Usage
 
-### Update or re-generate dependencies
-
 ```sh
+# Update or re-generate dependencies
 ~/.bin/update.sh
 ```
 
