@@ -1,56 +1,47 @@
-# Lazy dotfiles 🐾
+# 🐾 Lazy dotfiles 🛰️
 
 [![Lint](https://github.com/Surgo/dotfiles/actions/workflows/lint_commit.yml/badge.svg)](https://github.com/Surgo/dotfiles/actions/workflows/lint_commit.yml)
 
-## The tools I use
+<!-- https://badges.pages.dev/ -->
 
-- [iTerm2](https://iterm2.com/)
-- [tmux](https://tmux.github.io/): [plugins](https://github.com/Surgo/dotfiles/tree/main/.config/tmux/plugins)
-- [Zsh](https://www.zsh.org/): [plugins](https://github.com/Surgo/dotfiles/tree/main/.config/zsh/custom/plugins)
-  - [Oh My Zsh](https://ohmyz.sh/)
-  - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-- [Vim](https://www.vim.org/):
-  [plugins](https://github.com/Surgo/dotfiles/tree/main/.config/vim/pack/plugins/start),
-  [syntax](https://github.com/Surgo/dotfiles/tree/main/.config/vim/pack/syntax/opt),
-  [colors](https://github.com/Surgo/dotfiles/tree/main/.config/vim/pack/colors/start)
-- [NeoVim](https://neovim.io/):
-  [plugins](https://github.com/Surgo/dotfiles/tree/main/.config/nvim/pack/plugins/start/),
-  [colorscheme](https://github.com/Surgo/dotfiles/tree/main/.config/nvim/pack/colorscheme/start/)
-- [Catppuccin](https://catppuccin.com/) theme for each tools
-- And many [more](https://github.com/Surgo/dotfiles/blob/main/.Brewfile)
+![bat](https://img.shields.io/badge/bat-31369E?logo=bat&logoColor=fff&style=flat)
+![Debian](https://img.shields.io/badge/Debian-A81D33?logo=debian&logoColor=fff&style=flat)
+![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=flat)
+![Homebrew](https://img.shields.io/badge/Homebrew-FBB040?logo=homebrew&logoColor=fff&style=flat)
+![iTerm2](https://img.shields.io/badge/iTerm2-000?logo=iterm2&logoColor=fff&style=flat)
+![macOS](https://img.shields.io/badge/macOS-000?logo=macos&logoColor=fff&style=flat)
+![Neovim](https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff&style=flat)
+![tmux](https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff&style=flat)
+![Vim](https://img.shields.io/badge/Vim-019733?logo=vim&logoColor=fff&style=flat)
+![Zsh](https://img.shields.io/badge/Zsh-F15A24?logo=zsh&logoColor=fff&style=flat)
 
 ## Install
 
-1. Install command-line tools for Xcode
+### MacOS
 
-   ```sh
-   xcode-select --install
-   ```
+```sh
+# Install Xcode command line tools
+xcode-select --install
 
-2. Clone a repository
+# Clone the repository
+cd "${HOME}"
+git init --initial-branch=main
+git remote add origin git@github.com:Surgo/dotfiles.git
+git pull origin main
+git submodule update --init --recursive
 
-   ```sh
-   git init
-   git remote add origin git@github.com:Surgo/dotfiles.git
-   git pull origin main
-   git submodule update --init
-   ```
-
-3. Bootstrap
-
-   ```sh
-   ./.bin/init.sh
-   ```
+# Run the bootstrap script
+~/.bin/init.sh
+```
 
 ## Usage
+
+```sh
+# Update or re-generate dependencies
+~/.bin/update.sh
+```
 
 ### Configure
 
 - Environment variables: `~/.config/sh/local.template`
-- LSP: `~/.config/lsp/*.template`
-
-### Update or re-generate dependencies
-
-```sh
-~/.bin/update.sh
-```
+- LSP: `~/.config/nvim/*.template`
