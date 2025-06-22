@@ -17,31 +17,37 @@
 
 ## Install
 
-### MacOS
+- <details>
+  <summary>MacOS</summary>
 
-```sh
-# Install Xcode command line tools
-xcode-select --install
+  ```sh
+  # Install Xcode command line tools
+  xcode-select --install
 
-# Clone the repository
-cd "${HOME}"
-git init --initial-branch=main
-git remote add origin git@github.com:Surgo/dotfiles.git
-git pull origin main
-git submodule update --init --recursive
+  # Clone the repository
+  cd "${HOME}"
+  git init --initial-branch=main
+  git remote add origin git@github.com:Surgo/dotfiles.git
+  git pull origin main
+  git submodule update --init --recursive
 
-# Run the bootstrap script
-~/.bin/init.sh
-```
+  # Run the bootstrap script
+  ~/.bin/init.sh
+  ```
+
+  </details>
 
 ## Usage
 
-```sh
-# Update or re-generate dependencies
-~/.bin/update.sh
-```
+- <details>
+  <summary>Update or re-generate dependencies</summary>
+
+  ```sh
+  ~/.bin/update.sh
+  ```
+
+  </details>
 
 ### Configure
 
-- Environment variables: `~/.config/sh/local.template`
-- LSP: `~/.config/nvim/*.template`
+- Edit [`\*.template`](https://github.com/search?q=repo%3ASurgo%2Fdotfiles+path%3A*.template&type=code) files
