@@ -81,9 +81,9 @@ local setup_user_lsp_config = function(event)
 		})
 	end
 	if
-		client
-		and client.name ~= "null-ls"
-		and client.supports_method(vim.lsp.protocol.Methods.textDocument_formatting)
+			client
+			and client.name ~= "null-ls"
+			and client:supports_method(vim.lsp.protocol.Methods.textDocument_formatting)
 	then
 		local fidget = require("fidget")
 		local lsp_format_on_save_group = vim.api.nvim_create_augroup("LspFormatOnSave", {})
@@ -104,10 +104,8 @@ local setup_user_lsp_config = function(event)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-require("lspconfig").clangd.setup({
-	capabilities = capabilities,
-})
 
+vim.lsp.config("*", { capabilities = capabilities })
 vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
 	settings = {
@@ -136,10 +134,13 @@ vim.lsp.config("lua_ls", {
 	},
 })
 
+local typos_config_path = vim.fs.joinpath(vim.fn.stdpath("config"), "typos.toml")
 vim.lsp.config("typos_lsp", {
+	single_file_support = false,
 	capabilities = capabilities,
 	init_options = {
-		config = vim.fs.joinpath(vim.fn.stdpath("config"), "typos.toml"),
+		config = typos_config_path,
+		diagnosticSeverity = "Hint",
 	},
 })
 
