@@ -1,5 +1,11 @@
+[files]
+ignore-hidden = false
+ignore-dot = false
+
+[default]
+extend-ignore-words-re = [
+  "^[a-zA-Z]{1,2}$",
+]
+
 [default.extend-words]
 iterm = "iterm"
-
-[type.ignore]
-extend-ignore-words-re = ["^[a-zA-Z]{1,3}$"]

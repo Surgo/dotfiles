@@ -12,6 +12,9 @@ local sources = {
 	diagnostics.mypy.with({
 		extra_args = { "--python-executable", python_exec_path },
 	}),
+	diagnostics.sqlfluff.with({
+		extra_args = { "--dialect", "postgres" },
+	}),
 }
 
 local function null_ls_format_on_save(fidget)

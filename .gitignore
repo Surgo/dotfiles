@@ -16,7 +16,10 @@
 !.config/lsp
 !.config/lsp/*.template
 !.config/nvim
-!.config/nvim/**
+!.config/nvim/*.lua
+!.config/nvim/*.template
+!.config/nvim/lua
+!.config/nvim/lua/**
 !.config/vim
 !.config/vim/pack
 !.config/vim/pack/**
@@ -54,3 +57,4 @@
 .config/zsh/.zcompdump*
 .config/zsh/.zsh_history
 .config/zsh/.zsh_sessions
+.config/nvim/typos.toml
