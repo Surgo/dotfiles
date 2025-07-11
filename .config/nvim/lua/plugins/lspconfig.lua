@@ -106,34 +106,46 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 vim.lsp.config("*", { capabilities = capabilities })
+
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
 vim.lsp.config("lua_ls", {
-	capabilities = capabilities,
-	settings = {
-		Lua = {
+	on_init = function(client)
+		if client.workspace_folders then
+			local path = client.workspace_folders[1].name
+			if
+					path ~= vim.fn.stdpath("config")
+					and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
+			then
+				return
+			end
+		end
+
+		client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
 			runtime = {
 				version = "LuaJIT",
-			},
-			diagnostics = {
-				globals = {
-					"vim",
-					"require",
-				},
-				disable = {
-					"missing-fields",
+				path = {
+					"lua/?.lua",
+					"lua/?/init.lua",
 				},
 			},
 			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
+				library = {
+					vim.env.VIMRUNTIME,
+					"${3rd}/luv/library",
+					"${3rd}/busted/library",
+				},
 				ignoreDir = {
 					"pack/plugins/start",
 					"pack/colorscheme/start",
 				},
 				checkThirdParty = "Disable",
 			},
-		},
+		})
+	end,
+	settings = {
+		Lua = {},
 	},
 })
-
 local typos_config_path = vim.fs.joinpath(vim.fn.stdpath("config"), "typos.toml")
 vim.lsp.config("typos_lsp", {
 	single_file_support = false,
