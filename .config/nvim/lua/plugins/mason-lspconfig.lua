@@ -18,6 +18,8 @@ mason_lspconfig.setup({
 		"lua_ls",
 		-- Python
 		"pylsp",
+		-- Rust
+		"rust_analyzer",
 		-- SQL
 		"sqlls",
 		-- Terraform

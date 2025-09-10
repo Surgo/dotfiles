@@ -3,7 +3,7 @@ export HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/bash/history"
 export LESSHISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/less/history"
 
 # Curl
-if [ -d "${HOMEBREW_PREFIX}/opt/curl/bin" ]; then
+if [ -d "${HOMEBREW_PREFIX}/opt/curl" ]; then
   export PATH="${HOMEBREW_PREFIX}/opt/curl/bin:${PATH}"
 fi
 
@@ -21,8 +21,15 @@ fi
 export GPG_TTY="$(tty)"
 
 # Java
-if [ -d "${HOMEBREW_PREFIX}/opt/openjdk/bin" ]; then
+if [ -d "${HOMEBREW_PREFIX}/opt/openjdk" ]; then
   export PATH="${HOMEBREW_PREFIX}/opt/openjdk/bin:$PATH"
+fi
+
+# LLVM
+if [ -d "${HOMEBREW_PREFIX}/opt/llvm" ]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/llvm/bin:${PATH}"
+  export LDFLAGS="-L${HOMEBREW_PREFIX}/opt/llvm/lib ${LDFLAGS}"
+  export CPPFLAGS="-I${HOMEBREW_PREFIX}/opt/llvm/include ${CPPFLAGS}"
 fi
 
 # MacTex
@@ -31,13 +38,9 @@ if [ -d /usr/texbin ]; then
 fi
 
 # MySQL client
-if [ -d "${HOMEBREW_PREFIX}/opt/mysql-client/bin" ]; then
+if [ -d "${HOMEBREW_PREFIX}/opt/mysql-client" ]; then
   export PATH="${HOMEBREW_PREFIX}/opt/mysql-client/bin:${PATH}"
-fi
-if [ -d "${HOMEBREW_PREFIX}/opt/mysql-client/lib" ]; then
   export LDFLAGS="-L${HOMEBREW_PREFIX}/opt/mysql-client/lib ${LDFLAGS}"
-fi
-if [ -d "${HOMEBREW_PREFIX}/opt/mysql-client/include" ]; then
   export CFLAGS="-I${HOMEBREW_PREFIX}/opt/mysql-client/include ${CFLAGS}"
   export CPPFLAGS="-I${HOMEBREW_PREFIX}/opt/mysql-client/include ${CPPFLAGS}"
 fi
@@ -66,13 +69,9 @@ fi
 export PATH="./node_modules/.bin:${PATH}"
 
 # PostgreSQL client
-if [ -d "${HOMEBREW_PREFIX}/opt/libpq/bin" ]; then
+if [ -d "${HOMEBREW_PREFIX}/opt/libpq" ]; then
   export PATH="${HOMEBREW_PREFIX}/opt/libpq/bin:${PATH}"
-fi
-if [ -d "${HOMEBREW_PREFIX}/opt/libpq/lib" ]; then
   export LDFLAGS="-L${HOMEBREW_PREFIX}/opt/libpq/lib ${LDFLAGS}"
-fi
-if [ -d "${HOMEBREW_PREFIX}/opt/libpq/include" ]; then
   export CPPFLAGS="-I${HOMEBREW_PREFIX}/opt/libpq/include ${CPPFLAGS}"
 fi
 
@@ -89,7 +88,7 @@ export PYTHONDONTWRITEBYTECODE=1
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
 
-if [ -d "${HOMEBREW_PREFIX}/opt/openssl/bin" ]; then
+if [ -d "${HOMEBREW_PREFIX}/opt/openssl" ]; then
   # https://github.com/pycurl/pycurl/issues/526
   export PYCURL_SSL_LIBRARY=openssl
   # https://gist.github.com/andrisasuke/91eccace11366e626d14c5c249054e20
@@ -104,11 +103,21 @@ fi
 # Ruby
 export BUNDLE_USER_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/bundle"
 
+# Rust
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
+export CARGO_TARGET_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/cargo/target"
+export PATH="${CARGO_HOME}/bin:${PATH}"
+
+if [ -d "${HOMEBREW_PREFIX}/opt/rustup" ]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/rustup/bin:${PATH}"
+fi
+
 # Terraform
 export TF_PLUGIN_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/terraform/plugin-cache"
 
 # The Software Development Kit Manager
-if [ -d "${HOMEBREW_PREFIX}/opt/sdkman-cli/libexec" ]; then
+if [ -d "${HOMEBREW_PREFIX}/opt/sdkman-cli" ]; then
   export SDKMAN_DIR="$(brew --prefix sdkman-cli)/libexec"
   [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 fi
