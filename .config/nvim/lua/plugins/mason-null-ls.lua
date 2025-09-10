@@ -26,6 +26,8 @@ require("mason-null-ls").setup({
 		"flake8",
 		"mypy",
 		"python-lsp-server",
+		-- Rust
+		"codelldb",
 		-- Shell
 		"shellcheck",
 		"shfmt",
