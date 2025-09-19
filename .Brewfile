@@ -1,5 +1,6 @@
 brew "1password-cli"
 brew "bat"
+brew "codex"
 brew "curl"
 brew "direnv"
 brew "editorconfig"
