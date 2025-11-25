@@ -4,12 +4,11 @@ local utils = require("utils")
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local python_exec_path = utils.get_python_exec_path()
+local mypy_path = utils.get_mypy_exec_path()
 
 local sources = {
-	formatting.prettier.with({
-		prefer_local = true,
-	}),
 	diagnostics.mypy.with({
+		command = mypy_path,
 		extra_args = { "--python-executable", python_exec_path },
 	}),
 	diagnostics.sqlfluff.with({

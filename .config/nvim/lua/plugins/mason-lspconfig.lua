@@ -17,7 +17,7 @@ mason_lspconfig.setup({
 		-- Lua
 		"lua_ls",
 		-- Python
-		"pylsp",
+		"ruff",
 		-- Rust
 		"rust_analyzer",
 		-- SQL

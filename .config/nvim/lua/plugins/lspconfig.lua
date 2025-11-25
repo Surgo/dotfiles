@@ -4,10 +4,26 @@ local lsp_format_on_save = function(fidget)
 		return
 	end
 
-	-- fidget.notify(string.format("[LSP] [%s] Formatted", client.name))
+	if vim.bo.filetype == "python" then
+		fidget.notify("[LSP] [ruff] Starting organize imports")
+		vim.lsp.buf.code_action({
+			context = { only = { "source.organizeImports.ruff" } },
+			apply = true,
+		})
+		fidget.notify("[LSP] [ruff] Starting fix all")
+		vim.lsp.buf.code_action({
+			context = { only = { "source.fixAll.ruff" } },
+			apply = true,
+		})
+	end
+
 	vim.lsp.buf.format({
 		filter = function(filter_client)
-			return filter_client.name ~= "null-ls"
+			local should_format = filter_client.name ~= "null-ls"
+			if should_format then
+				fidget.notify(string.format("[LSP] [%s] Formatting", filter_client.name))
+			end
+			return should_format
 		end,
 		async = false,
 	})
@@ -81,9 +97,9 @@ local setup_user_lsp_config = function(event)
 		})
 	end
 	if
-			client
-			and client.name ~= "null-ls"
-			and client:supports_method(vim.lsp.protocol.Methods.textDocument_formatting)
+		client
+		and client.name ~= "null-ls"
+		and client:supports_method(vim.lsp.protocol.Methods.textDocument_formatting)
 	then
 		local fidget = require("fidget")
 		local lsp_format_on_save_group = vim.api.nvim_create_augroup("LspFormatOnSave", {})
@@ -113,8 +129,8 @@ vim.lsp.config("lua_ls", {
 		if client.workspace_folders then
 			local path = client.workspace_folders[1].name
 			if
-					path ~= vim.fn.stdpath("config")
-					and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
+				path ~= vim.fn.stdpath("config")
+				and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
 			then
 				return
 			end
