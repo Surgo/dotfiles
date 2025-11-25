@@ -2,12 +2,10 @@ require("mason-null-ls").setup({
 	automatic_installation = {
 		exclude = {
 			"sqlfluff",
+			"ruff",
 		},
 	},
 	ensure_installed = {
-		-- CSS
-		"stylelint",
-		"prettier",
 		-- Docker
 		"hadolint",
 		-- Markdown
@@ -19,13 +17,7 @@ require("mason-null-ls").setup({
 		-- Lua
 		"stylua",
 		-- Python
-		"autoflake",
-		"black",
 		"debugpy",
-		"isort",
-		"flake8",
-		"mypy",
-		"python-lsp-server",
 		-- Rust
 		"codelldb",
 		-- Shell
@@ -34,11 +26,6 @@ require("mason-null-ls").setup({
 		-- SQL
 		"sql_formatter",
 		"sqlfluff",
-		-- Terraform
-		"terraform_fmt",
-		-- TypeScript / JavaScript
-		"eslint_d",
-		"prettier",
 		-- YAML
 		"actionlint",
 		"yamllint",

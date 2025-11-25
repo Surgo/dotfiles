@@ -1,13 +1,54 @@
-local lsp_format_on_save = function(fidget)
+local utils = require("utils")
+
+local lsp_format_on_save = function(fidget, bufnr)
 	if not vim.g.format_on_save_enabled then
 		fidget.notify("[LSP] Skip formatting")
 		return
 	end
 
-	-- fidget.notify(string.format("[LSP] [%s] Formatted", client.name))
+	local ft = vim.bo[bufnr].filetype
+	local preferred = nil
+	if ft == "python" then
+		preferred = utils.has_tool_in_venv("ruff") and "ruff" or "pylsp"
+	end
+
+	if ft == "python" and preferred == "ruff" then
+		fidget.notify("[LSP] [ruff] Starting organize imports")
+		vim.lsp.buf.code_action({
+			context = {
+				only = { "source.organizeImports" },
+				diagnostics = {},
+			},
+			apply = true,
+		})
+		fidget.notify("[LSP] [ruff] Starting fix all")
+		vim.lsp.buf.code_action({
+			context = {
+				only = { "source.fixAll" },
+				diagnostics = {},
+			},
+			apply = true,
+		})
+	end
+
 	vim.lsp.buf.format({
+		bufnr = bufnr,
 		filter = function(filter_client)
-			return filter_client.name ~= "null-ls"
+			if filter_client.name == "null-ls" then
+				return false
+			end
+			if preferred then
+				local should_format = filter_client.name == preferred
+				if should_format then
+					fidget.notify(string.format("[LSP] [%s] Formatting", filter_client.name))
+				end
+				return should_format
+			end
+			local should_format = filter_client.name ~= "null-ls"
+			if should_format then
+				fidget.notify(string.format("[LSP] [%s] Formatting", filter_client.name))
+			end
+			return should_format
 		end,
 		async = false,
 	})
@@ -81,13 +122,20 @@ local setup_user_lsp_config = function(event)
 		})
 	end
 	if
-			client
-			and client.name ~= "null-ls"
-			and client:supports_method(vim.lsp.protocol.Methods.textDocument_formatting)
+		client
+		and client.name ~= "null-ls"
+		and client:supports_method(vim.lsp.protocol.Methods.textDocument_formatting)
 	then
 		local fidget = require("fidget")
 		local lsp_format_on_save_group = vim.api.nvim_create_augroup("LspFormatOnSave", {})
 		fidget.notify(string.format("[LSP] [%s] Enable auto-format on save", client.name))
+
+		-- Only set once per-buffer to avoid duplicated BufWritePre
+		if vim.b[event.buf].lsp_format_on_save_set then
+			return
+		end
+		vim.b[event.buf].lsp_format_on_save_set = true
+
 		vim.api.nvim_clear_autocmds({
 			group = lsp_format_on_save_group,
 			buffer = event.buf,
@@ -97,7 +145,7 @@ local setup_user_lsp_config = function(event)
 			group = lsp_format_on_save_group,
 			buffer = event.buf,
 			callback = function()
-				lsp_format_on_save(fidget)
+				lsp_format_on_save(fidget, event.buf)
 			end,
 		})
 	end
@@ -113,8 +161,8 @@ vim.lsp.config("lua_ls", {
 		if client.workspace_folders then
 			local path = client.workspace_folders[1].name
 			if
-					path ~= vim.fn.stdpath("config")
-					and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
+				path ~= vim.fn.stdpath("config")
+				and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
 			then
 				return
 			end
@@ -146,6 +194,7 @@ vim.lsp.config("lua_ls", {
 		Lua = {},
 	},
 })
+
 local typos_config_path = vim.fs.joinpath(vim.fn.stdpath("config"), "typos.toml")
 vim.lsp.config("typos_lsp", {
 	single_file_support = false,
@@ -154,6 +203,73 @@ vim.lsp.config("typos_lsp", {
 		config = typos_config_path,
 		diagnosticSeverity = "Hint",
 	},
+})
+
+vim.lsp.config("pylsp", {
+	on_init = function(client)
+		local has_autopep8 = utils.has_tool_in_venv("autopep8")
+		local has_black = utils.has_tool_in_venv("black")
+		local has_isort = utils.has_tool_in_venv("isort")
+		local has_yapf = utils.has_tool_in_venv("yapf")
+		local has_ruff = utils.has_tool_in_venv("ruff")
+		local has_mypy = utils.has_tool_in_venv("mypy")
+		local has_pylint = utils.has_tool_in_venv("pylint")
+
+		if has_ruff then
+			client.stop()
+			return false
+		end
+
+		client.config.settings = {
+			pylsp = {
+				plugins = {
+					-- Formatters: only enable one
+					autopep8 = { enabled = has_autopep8 and not has_black and not has_yapf },
+					black = { enabled = has_black },
+					yapf = { enabled = has_yapf and not has_black },
+					isort = { enabled = has_isort },
+					-- Linters: only enable one
+					pyflakes = { enabled = not has_mypy and not has_ruff },
+					pycodestyle = { enabled = not has_black and not has_yapf and not has_autopep8 },
+					mccabe = { enabled = false },
+					pylint = { enabled = has_pylint },
+				},
+			},
+		}
+
+		client.notify("workspace/didChangeConfiguration", {
+			settings = client.config.settings,
+		})
+	end,
+})
+
+-- Disable autostart for python servers until we decide the winner
+vim.lsp.enable({ "ruff", "pylsp" }, false)
+
+local function refresh_python_ls()
+	local has_ruff = utils.has_tool_in_venv("ruff")
+	local winner = has_ruff and "ruff" or "pylsp"
+	local loser = has_ruff and "pylsp" or "ruff"
+
+	vim.lsp.enable("ruff", has_ruff)
+	vim.lsp.enable("pylsp", not has_ruff)
+
+	for _, c in ipairs(vim.lsp.get_clients({ name = loser })) do
+		c.stop(true)
+	end
+
+	for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+		if vim.bo[bufnr].filetype == "python" then
+			vim.api.nvim_buf_call(bufnr, function()
+				vim.cmd("silent! LspStart " .. winner)
+			end)
+		end
+	end
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter", "DirChanged" }, {
+	group = vim.api.nvim_create_augroup("PythonLsGate", { clear = true }),
+	callback = refresh_python_ls,
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
