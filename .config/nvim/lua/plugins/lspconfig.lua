@@ -113,7 +113,17 @@ local setup_user_lsp_config = function(event)
 	if client and client.server_capabilities.documentHighlightProvider then
 		vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 			buffer = event.buf,
-			callback = vim.lsp.buf.document_highlight,
+			callback = function()
+				for _, c in ipairs(vim.lsp.get_clients({ bufnr = event.buf })) do
+					if
+						c.server_capabilities.documentHighlightProvider
+						and c:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight)
+					then
+						vim.lsp.buf.document_highlight()
+						return
+					end
+				end
+			end,
 		})
 
 		vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
@@ -152,7 +162,8 @@ local setup_user_lsp_config = function(event)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
+capabilities.general = capabilities.general or {}
+capabilities.general.positionEncodings = { "utf-16" }
 vim.lsp.config("*", { capabilities = capabilities })
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
