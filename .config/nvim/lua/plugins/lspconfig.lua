@@ -132,17 +132,17 @@ local setup_user_lsp_config = function(event)
 		and client:supports_method(vim.lsp.protocol.Methods.textDocument_formatting)
 	then
 		local fidget = require("fidget")
-		local lsp_format_on_save_group = vim.api.nvim_create_augroup("LspFormatOnSave", {})
+		local lsp_formatting_group = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
 		fidget.notify(string.format("[LSP] [%s] Enable auto-format on save", client.name))
 
-		if vim.b[event.buf].lsp_format_on_save_set then
-			return
-		end
-		vim.b[event.buf].lsp_format_on_save_set = true
+		vim.api.nvim_clear_autocmds({
+			group = "LspFormatting",
+			buffer = event.buf,
+		})
 
 		vim.api.nvim_create_autocmd("BufWritePre", {
-			desc = "Format on save",
-			group = lsp_format_on_save_group,
+			desc = "LSP formatting",
+			group = lsp_formatting_group,
 			buffer = event.buf,
 			callback = function()
 				lsp_format_on_save(fidget, event.buf)
@@ -255,8 +255,8 @@ local function refresh_python_ls()
 	vim.lsp.enable("ruff", has_ruff)
 	vim.lsp.enable("pylsp", not has_ruff)
 
-	for _, c in ipairs(vim.lsp.get_clients({ name = loser })) do
-		c.stop(true)
+	for _, client in ipairs(vim.lsp.get_clients({ name = loser })) do
+		client.stop(true)
 	end
 
 	for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
