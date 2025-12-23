@@ -13,14 +13,6 @@ local lsp_format_on_save = function(fidget, bufnr)
 	end
 
 	if ft == "python" and preferred == "ruff" then
-		fidget.notify("[LSP] [ruff] Starting organize imports")
-		vim.lsp.buf.code_action({
-			context = {
-				only = { "source.organizeImports" },
-				diagnostics = {},
-			},
-			apply = true,
-		})
 		fidget.notify("[LSP] [ruff] Starting fix all")
 		vim.lsp.buf.code_action({
 			context = {
@@ -31,27 +23,29 @@ local lsp_format_on_save = function(fidget, bufnr)
 		})
 	end
 
-	vim.lsp.buf.format({
-		bufnr = bufnr,
-		filter = function(filter_client)
-			if filter_client.name == "null-ls" then
-				return false
-			end
-			if preferred then
-				local should_format = filter_client.name == preferred
+	vim.defer_fn(function()
+		vim.lsp.buf.format({
+			bufnr = bufnr,
+			filter = function(filter_client)
+				if filter_client.name == "null-ls" then
+					return false
+				end
+				if preferred then
+					local should_format = filter_client.name == preferred
+					if should_format then
+						fidget.notify(string.format("[LSP] [%s] Formatting", filter_client.name))
+					end
+					return should_format
+				end
+				local should_format = filter_client.name ~= "null-ls"
 				if should_format then
 					fidget.notify(string.format("[LSP] [%s] Formatting", filter_client.name))
 				end
 				return should_format
-			end
-			local should_format = filter_client.name ~= "null-ls"
-			if should_format then
-				fidget.notify(string.format("[LSP] [%s] Formatting", filter_client.name))
-			end
-			return should_format
-		end,
-		async = false,
-	})
+			end,
+			async = false,
+		})
+	end, 200)
 end
 
 local setup_user_lsp_config = function(event)
@@ -131,6 +125,7 @@ local setup_user_lsp_config = function(event)
 			callback = vim.lsp.buf.clear_references,
 		})
 	end
+
 	if
 		client
 		and client.name ~= "null-ls"
@@ -140,16 +135,11 @@ local setup_user_lsp_config = function(event)
 		local lsp_format_on_save_group = vim.api.nvim_create_augroup("LspFormatOnSave", {})
 		fidget.notify(string.format("[LSP] [%s] Enable auto-format on save", client.name))
 
-		-- Only set once per-buffer to avoid duplicated BufWritePre
 		if vim.b[event.buf].lsp_format_on_save_set then
 			return
 		end
 		vim.b[event.buf].lsp_format_on_save_set = true
 
-		vim.api.nvim_clear_autocmds({
-			group = lsp_format_on_save_group,
-			buffer = event.buf,
-		})
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			desc = "Format on save",
 			group = lsp_format_on_save_group,
@@ -271,6 +261,8 @@ local function refresh_python_ls()
 
 	for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
 		if vim.bo[bufnr].filetype == "python" then
+			vim.b[bufnr].lsp_format_on_save_set = nil
+
 			vim.api.nvim_buf_call(bufnr, function()
 				vim.cmd("silent! LspStart " .. winner)
 			end)
@@ -287,3 +279,24 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 	callback = setup_user_lsp_config,
 })
+
+vim.g.format_on_save_enabled = true
+
+local toggle_format_on_save = function()
+	local fidget = require("fidget")
+
+	vim.g.format_on_save_enabled = not vim.g.format_on_save_enabled
+	if vim.g.format_on_save_enabled then
+		fidget.notify("[null-ls] Auto-format on save ENABLED")
+	else
+		fidget.notify("[null-ls] Auto-format on save DISABLED")
+	end
+end
+vim.api.nvim_create_user_command("ToggleFormatOnSave", toggle_format_on_save, {})
+
+local format = function()
+	local bufnr = vim.api.nvim_get_current_buf()
+	local fidget = require("fidget")
+	lsp_format_on_save(fidget, bufnr)
+end
+vim.api.nvim_create_user_command("Format", format, {})
