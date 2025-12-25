@@ -29,6 +29,7 @@
 !.config/sh/functions
 !.config/sh/*.template
 !.config/sh/profile
+!.config/shellcheckrc
 !.config/tig
 !.config/tig/config
 !.config/tmux
