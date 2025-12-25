@@ -3,7 +3,7 @@ name: Lint
 
 permissions: {}
 
-'on':
+"on":
   push:
     branches:
       - main
@@ -45,5 +45,6 @@ jobs:
           VALIDATE_SHELL_SHFMT: true
           VALIDATE_YAML: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASH_FILE_NAME: ".config/shellcheckrc"
           # Ignore automatically generated files
           FILTER_REGEX_EXCLUDE: (\.config/git/ignore|\.config/zsh/\.p10k\.zsh)
