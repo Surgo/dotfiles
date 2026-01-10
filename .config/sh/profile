@@ -95,6 +95,11 @@ if [ -d "${HOMEBREW_PREFIX}/opt/openssl" ]; then
   export SWIG_FEATURES="-cpperraswarn -includeall -I${HOMEBREW_PREFIX}/opt/openssl/include"
 fi
 
+# Raspberry Pi Imager
+if [ -d "/Applications/Raspberry Pi Imager.app/Contents/MacOS" ]; then
+  export PATH="/Applications/Raspberry Pi Imager.app/Contents/MacOS:${PATH}"
+fi
+
 # Rancher Desktop
 if [ -d "${HOME}/.rd/bin" ]; then
   export PATH="${HOME}/.rd/bin:$PATH"
