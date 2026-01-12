@@ -1,6 +1,6 @@
 # 🐾 Lazy dotfiles 🛰️
 
-[![Lint](https://github.com/Surgo/dotfiles/actions/workflows/lint_commit.yml/badge.svg)](https://github.com/Surgo/dotfiles/actions/workflows/lint_commit.yml)
+[![Lint](https://github.com/Surgo/dotfiles/actions/workflows/lint.yml/badge.svg)](https://github.com/Surgo/dotfiles/actions/workflows/lint.yml)
 
 <!-- https://badges.pages.dev/ -->
 
