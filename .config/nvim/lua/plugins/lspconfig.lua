@@ -217,7 +217,7 @@ vim.lsp.config("pylsp", {
 		local has_pylint = utils.has_tool_in_venv("pylint")
 
 		if has_ruff then
-			client.stop()
+			client:stop()
 			return false
 		end
 
@@ -238,7 +238,7 @@ vim.lsp.config("pylsp", {
 			},
 		}
 
-		client.notify("workspace/didChangeConfiguration", {
+		client:notify("workspace/didChangeConfiguration", {
 			settings = client.config.settings,
 		})
 	end,
@@ -256,7 +256,7 @@ local function refresh_python_ls()
 	vim.lsp.enable("pylsp", not has_ruff)
 
 	for _, client in ipairs(vim.lsp.get_clients({ name = loser })) do
-		client.stop(true)
+		client:stop(true)
 	end
 
 	for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
