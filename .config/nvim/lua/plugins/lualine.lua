@@ -1,6 +1,6 @@
 require("lualine").setup({
 	options = {
-		theme = "catppuccin",
+		theme = "catppuccin-nvim",
 		component_separators = {
 			left = "",
 			right = "",

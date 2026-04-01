@@ -32,7 +32,7 @@ local null_ls_format_on_save_group = vim.api.nvim_create_augroup("NullLsFormatOn
 local setup_null_ls_format_on_save = function(client, bufnr)
 	local fidget = require("fidget")
 
-	if client.supports_method("textDocument/formatting") and client.name == "null-ls" then
+	if client:supports_method("textDocument/formatting") and client.name == "null-ls" then
 		fidget.notify(string.format("[%s] Enable auto-format on save", client.name))
 		vim.api.nvim_clear_autocmds({
 			group = null_ls_format_on_save_group,
