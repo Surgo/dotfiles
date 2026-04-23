@@ -145,7 +145,7 @@
 [submodule ".config/nvim/pack/plugins/start/treesitter"]
 	path = .config/nvim/pack/plugins/start/treesitter
 	url = git@github.com:nvim-treesitter/nvim-treesitter.git
-	branch = master
+	branch = main
 [submodule ".config/nvim/pack/plugins/start/trouble"]
 	path = .config/nvim/pack/plugins/start/trouble
 	url = git@github.com:folke/trouble.nvim.git
