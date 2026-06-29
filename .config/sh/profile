@@ -1,6 +1,6 @@
 # Bash/Zsh
-export HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/bash/history"
-export LESSHISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/less/history"
+export HISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/bash/history"
+export LESSHISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/less/history"
 
 # Curl
 if [ -d "${HOMEBREW_PREFIX}/opt/curl" ]; then
@@ -8,7 +8,7 @@ if [ -d "${HOMEBREW_PREFIX}/opt/curl" ]; then
 fi
 
 # Docker: Does not worked
-# export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/docker"
+# export DOCKER_CONFIG="${XDG_CONFIG_HOME:-${HOME}/.config}/docker"
 
 # Go
 export GOPATH="${HOME}/.go"
@@ -24,6 +24,10 @@ export GPG_TTY="$(tty)"
 if [ -d "${HOMEBREW_PREFIX}/opt/openjdk" ]; then
   export PATH="${HOMEBREW_PREFIX}/opt/openjdk/bin:$PATH"
 fi
+
+# Kubernetes
+export KUBECONFIG="${XDG_CONFIG_HOME:-${HOME}/.config}/kube/config"
+export KUBECACHEDIR="${XDG_CACHE_HOME:-${HOME}/.cache}/kube"
 
 # LLVM
 if [ -d "${HOMEBREW_PREFIX}/opt/llvm" ]; then
@@ -46,7 +50,7 @@ if [ -d "${HOMEBREW_PREFIX}/opt/mysql-client" ]; then
 fi
 
 # Node.js
-export NVM_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/nvm"
+export NVM_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}/nvm"
 if [ -s "${HOMEBREW_PREFIX}/opt/nvm/nvm.sh" ]; then
   \. "${HOMEBREW_PREFIX}/opt/nvm/nvm.sh"
 fi
@@ -54,16 +58,17 @@ if [ -s "${HOMEBREW_PREFIX}/opt/nvm/etc/bash_completion.d/nvm" ]; then
   \. "${HOMEBREW_PREFIX}/opt/nvm/etc/bash_completion.d/nvm"
 fi
 
-export NODE_REPL_HISTORY="${XDG_STATE_HOME:-$HOME/.local/state}/node/repl_history"
+export NODE_REPL_HISTORY="${XDG_STATE_HOME:-${HOME}/.local/state}/node/repl_history"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-${HOME}/.config}/npm/npmrc"
+export NPM_CONFIG_CACHE="${XDG_CACHE_HOME:-${HOME}/.cache}/npm"
 
 if [ -d "${HOMEBREW_PREFIX}/lib/node_modules" ]; then
   export NODE_PATH="${HOMEBREW_PREFIX}/lib/node_modules"
 fi
 
-if [ ! -d "$NVM_DIR" ] || [ ! -s "$NVM_DIR/nvm.sh" ]; then
-  export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
-  export NPM_CONFIG_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/npm"
-  export NPM_CONFIG_PREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/npm"
+if [ ! -d "${NVM_DIR}" ] || [ ! -s "${NVM_DIR}/nvm.sh" ]; then
+  # NVM doesn't support XDG
+  export NPM_CONFIG_PREFIX="${XDG_DATA_HOME:-${HOME}/.local/share}/npm"
   export PATH="${NPM_CONFIG_PREFIX}/bin:${PATH}"
 fi
 export PATH="./node_modules/.bin:${PATH}"
@@ -76,12 +81,12 @@ if [ -d "${HOMEBREW_PREFIX}/opt/libpq" ]; then
 fi
 
 # Python
-export PYTHONHISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/python/history"
-export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME:-$HOME/.cache}/python"
-export MYPY_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/mypy"
-export PIP_CONFIG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/pip/pip.conf"
-export PIP_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/pip"
-export PIPENV_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/pipenv"
+export PYTHONHISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/python/history"
+export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME:-${HOME}/.cache}/python"
+export MYPY_CACHE_DIR="${XDG_CACHE_HOME:-${HOME}/.cache}/mypy"
+export PIP_CONFIG_FILE="${XDG_CONFIG_HOME:-${HOME}/.config}/pip/pip.conf"
+export PIP_CACHE_DIR="${XDG_CACHE_HOME:-${HOME}/.cache}/pip"
+export PIPENV_CACHE_DIR="${XDG_CACHE_HOME:-${HOME}/.cache}/pipenv"
 
 export PATH="./.venv/.bin:${PATH}"
 export PYTHONDONTWRITEBYTECODE=1
@@ -106,12 +111,12 @@ if [ -d "${HOME}/.rd/bin" ]; then
 fi
 
 # Ruby
-export BUNDLE_USER_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/bundle"
+export BUNDLE_USER_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/bundle"
 
 # Rust
-export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
-export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
-export CARGO_TARGET_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/cargo/target"
+export CARGO_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/cargo"
+export RUSTUP_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/rustup"
+export CARGO_TARGET_DIR="${XDG_CACHE_HOME:-${HOME}/.cache}/cargo/target"
 export PATH="${CARGO_HOME}/bin:${PATH}"
 
 if [ -d "${HOMEBREW_PREFIX}/opt/rustup" ]; then
@@ -119,7 +124,7 @@ if [ -d "${HOMEBREW_PREFIX}/opt/rustup" ]; then
 fi
 
 # Terraform
-export TF_PLUGIN_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/terraform/plugin-cache"
+export TF_PLUGIN_CACHE_DIR="${XDG_CACHE_HOME:-${HOME}/.cache}/terraform/plugin-cache"
 
 # The Software Development Kit Manager
 if [ -d "${HOMEBREW_PREFIX}/opt/sdkman-cli" ]; then
@@ -133,11 +138,9 @@ if [ -d "${HOME}/Library/Application Support/Code" ]; then
 else
   export VSCODE_PORTABLE="${XDG_DATA_HOME}/Code"
 fi
+export VSCODE_EXTENSIONS="${XDG_DATA_HOME:-${HOME}/.local/share}/Code/extensions"
+export VSCODE_APPDATA="${XDG_DATA_HOME:-${HOME}/.local/share}/Code"
+export VSCODE_LOGS="${XDG_CACHE_HOME:-${HOME}/.cache}/Code/logs"
 
-if [ -d "${HOME}/Library/Application Support/Code/extensions" ]; then
-  export VSCODE_EXTENSIONS="${HOME}/Library/Application Support/Code/extensions"
-else
-  export VSCODE_EXTENSIONS="${XDG_DATA_HOME}/Code/extensions"
-fi
-export VSCODE_APPDATA="${XDG_DATA_HOME:-$HOME/.local/share}/Code"
-export VSCODE_LOGS="${XDG_CACHE_HOME:-$HOME/.cache}/Code/logs"
+# Yarn
+export YARN_GLOBAL_FOLDER="${XDG_DATA_HOME:-${HOME}/.local/share}/yarn"
