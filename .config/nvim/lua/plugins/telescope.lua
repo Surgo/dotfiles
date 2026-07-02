@@ -15,24 +15,29 @@ require("telescope").setup({
 			},
 		},
 		vimgrep_arguments = {
-			"ag",
-			"--nocolor",
-			"--noheading",
-			"--numbers",
+			"rg",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
 			"--column",
 			"--smart-case",
-			"--silent",
-			"--vimgrep",
+		},
+		file_ignore_patterns = {
+			"**/bat/vendor/",
+			"**/iterm2/themes/",
+			"**/nvim/pack/plugins/",
+			"**/nvim/pack/colorscheme/",
+			"**/vim/pack/plugins/",
+			"**/vim/pack/colors/",
+			"**/vim/pack/syntax/",
+			"**/tmux/plugins/",
 		},
 	},
 	extensions = {
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({}),
 		},
-	},
-	file_ignore_patterns = {
-		"**/nvim/pack/plugins/**",
-		"**/nvim/pack/colorscheme/**",
 	},
 })
 local builtin = require("telescope.builtin")
