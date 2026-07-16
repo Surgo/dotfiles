@@ -2,6 +2,7 @@
 
 echo "## Update global .gitignore file"
 gibo update && gibo dump \
+	Agents \
 	Ansible \
 	Archives \
 	Backup \
