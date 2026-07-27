@@ -34,7 +34,6 @@ require("nvim-treesitter").install({
 	"ssh_config",
 	"svelte",
 	"terraform",
-	"tmux",
 	"toml",
 	"typescript",
 	"vim",
