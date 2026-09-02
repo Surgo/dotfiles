@@ -6,6 +6,8 @@
 !.config
 !.config/bat
 !.config/bat/**
+!.config/claude/
+!.config/claude/settings.json
 !.config/gh
 !.config/gh/**
 !.config/git
@@ -43,8 +45,6 @@
 !.config/zsh/.zshrc
 !.config/zsh/custom
 !.config/zsh/custom/**
-!.claude/
-!.claude/settings.json
 !.editorconfig
 !.github
 !.github/**

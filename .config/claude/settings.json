@@ -1,23 +1,17 @@
 {
-  "model": "opus[1m]",
-  "enabledPlugins": {
-    "rust-analyzer-lsp@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "claude-md-management@claude-plugins-official": true,
-    "claude-security@claude-plugins-official": true
-  },
   "cleanupPeriodDays": 90,
-  "skillOverrides": {
-    "claude-api": "off",
-    "loop": "user-invocable-only",
-    "keybindings-help": "user-invocable-only",
-    "fewer-permission-prompts": "user-invocable-only"
-  },
   "permissions": {
-    "defaultMode": "auto",
-    "additionalDirectories": [
-      "~/Repos/obsidian-vault"
+    "allow": [
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git grep*)",
+      "Bash(gh pr view*)",
+      "Bash(gh pr diff*)",
+      "Bash(gh issue view*)",
+      "Bash(rg *)",
+      "Bash(ls *)"
     ],
     "deny": [
       "Read(~/Repos/obsidian-vault/Diary/**)",
@@ -69,17 +63,24 @@
       "Bash(git tag *)",
       "Bash(git stash *)"
     ],
-    "allow": [
-      "Bash(git status*)",
-      "Bash(git log*)",
-      "Bash(git diff*)",
-      "Bash(git show*)",
-      "Bash(git grep*)",
-      "Bash(gh pr view*)",
-      "Bash(gh pr diff*)",
-      "Bash(gh issue view*)",
-      "Bash(rg *)",
-      "Bash(ls *)"
+    "defaultMode": "auto",
+    "additionalDirectories": [
+      "~/Repos/obsidian-vault"
     ]
-  }
+  },
+  "model": "opus[1m]",
+  "skillOverrides": {
+    "claude-api": "off",
+    "loop": "user-invocable-only",
+    "keybindings-help": "user-invocable-only",
+    "fewer-permission-prompts": "user-invocable-only"
+  },
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "claude-security@claude-plugins-official": true
+  },
+  "tui": "fullscreen"
 }
