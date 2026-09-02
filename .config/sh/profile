@@ -2,6 +2,9 @@
 export HISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/bash/history"
 export LESSHISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/less/history"
 
+# Claude Code
+export CLAUDE_CONFIG_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}/claude"
+
 # Curl
 if [ -d "${HOMEBREW_PREFIX}/opt/curl" ]; then
   export PATH="${HOMEBREW_PREFIX}/opt/curl/bin:${PATH}"
