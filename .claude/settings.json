@@ -1,0 +1,84 @@
+{
+  "model": "opus[1m]",
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "claude-security@claude-plugins-official": true
+  },
+  "cleanupPeriodDays": 90,
+  "skillOverrides": {
+    "claude-api": "off",
+    "loop": "user-invocable-only",
+    "keybindings-help": "user-invocable-only",
+    "fewer-permission-prompts": "user-invocable-only"
+  },
+  "permissions": {
+    "additionalDirectories": [
+      "~/Repos/obsidian-vault"
+    ],
+    "deny": [
+      "Read(~/Repos/obsidian-vault/Diary/**)",
+      "Read(//**/.env*)",
+      "Edit(//**/.env*)",
+      "Write(//**/.env*)",
+      "Read(//**/credentials*)",
+      "Read(//**/*.pem)",
+      "Read(//**/.ssh/**)",
+      "Read(//**/.aws/**)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git merge *)",
+      "Bash(git rebase *)",
+      "Bash(git reset *)",
+      "Bash(git revert *)",
+      "Bash(gh pr create *)",
+      "Bash(gh pr comment *)",
+      "Bash(gh pr review *)",
+      "Bash(gh pr merge *)",
+      "Bash(gh issue create *)",
+      "Bash(gh issue comment *)",
+      "Bash(gh issue close *)",
+      "Bash(gh release *)",
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "mcp__*__apply_*",
+      "mcp__*__copy_*",
+      "mcp__*__create_*",
+      "mcp__*__delete_*",
+      "mcp__*__label_*",
+      "mcp__*__mark_*",
+      "mcp__*__respond_*",
+      "mcp__*__share_*",
+      "mcp__*__trash_*",
+      "mcp__*__unlabel_*",
+      "mcp__*__unmark_*",
+      "mcp__*__untrash_*",
+      "mcp__*__update_*",
+      "mcp__*__slack_add_*",
+      "mcp__*__slack_create_*",
+      "mcp__*__slack_schedule_*",
+      "mcp__*__slack_send_*",
+      "mcp__*__slack_update_*"
+    ],
+    "ask": [
+      "Bash(rm *)",
+      "Bash(git branch *)",
+      "Bash(git tag *)",
+      "Bash(git stash *)"
+    ],
+    "allow": [
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git grep*)",
+      "Bash(gh pr view*)",
+      "Bash(gh pr diff*)",
+      "Bash(gh issue view*)",
+      "Bash(rg *)",
+      "Bash(ls *)"
+    ]
+  }
+}

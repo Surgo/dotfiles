@@ -43,6 +43,8 @@
 !.config/zsh/.zshrc
 !.config/zsh/custom
 !.config/zsh/custom/**
+!.claude/
+!.claude/settings.json
 !.editorconfig
 !.github
 !.github/**
