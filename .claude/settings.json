@@ -15,6 +15,7 @@
     "fewer-permission-prompts": "user-invocable-only"
   },
   "permissions": {
+    "defaultMode": "auto",
     "additionalDirectories": [
       "~/Repos/obsidian-vault"
     ],
