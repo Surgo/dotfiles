@@ -83,5 +83,9 @@
     "claude-md-management@claude-plugins-official": true,
     "claude-security@claude-plugins-official": true
   },
-  "tui": "fullscreen"
+  "tui": "default",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.config/claude/statusline.sh"
+  }
 }
