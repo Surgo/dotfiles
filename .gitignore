@@ -8,6 +8,7 @@
 !.config/bat/**
 !.config/claude/
 !.config/claude/settings.json
+!.config/claude/statusline.sh
 !.config/gh
 !.config/gh/**
 !.config/git
