@@ -86,6 +86,6 @@
   "tui": "default",
   "statusLine": {
     "type": "command",
-    "command": "./.config/claude/statusline.sh"
+    "command": "~/.config/claude/statusline.sh"
   }
 }
