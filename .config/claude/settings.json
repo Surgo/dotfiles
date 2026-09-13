@@ -67,7 +67,9 @@
       "Bash(git stash *)"
     ],
     "defaultMode": "auto",
-    "additionalDirectories": ["~/Repos/obsidian-vault"]
+    "additionalDirectories": [
+      "~/Repos/obsidian-vault"
+    ]
   },
   "model": "opus[1m]",
   "skillOverrides": {
@@ -75,6 +77,10 @@
     "loop": "user-invocable-only",
     "keybindings-help": "user-invocable-only",
     "fewer-permission-prompts": "user-invocable-only"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.config/claude/statusline.sh"
   },
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true,
@@ -84,8 +90,5 @@
     "claude-security@claude-plugins-official": true
   },
   "tui": "default",
-  "statusLine": {
-    "type": "command",
-    "command": "~/.config/claude/statusline.sh"
-  }
+  "theme": "auto"
 }
