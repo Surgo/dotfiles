@@ -5,4 +5,6 @@ echo "## Install Homebrew"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 brew bundle --global
+
+brew trust domt4/autoupdate
 brew autoupdate start 86400 --upgrade --cleanup --immediate --sudo
