@@ -1,12 +1,8 @@
 "System
-set nocompatible
-set nobackup
 set noswapfile
 set autoread
 set hidden
-filetype off
-syntax off
-scriptencoding 'utf-8'
+scriptencoding utf-8
 
 ""Windows
 if has('win32') || has('win64')
@@ -15,15 +11,11 @@ if has('win32') || has('win64')
   set runtimepath+=$HOME/.vim
 endif
 
-"Terminal
-set ttyfast
-
 "Clipboard
 set clipboard+=unnamed
 set clipboard+=unnamedplus
 
 "Keyboards
-set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,]
 ""leader keys
 if has('mac')
@@ -40,10 +32,10 @@ nnoremap <Up> gk
 noremap ; :
 noremap : ;
 ""Better window navigation
-nnoremap <C-h> :<C-h>h
-nnoremap <C-j> :<C-w>j
-nnoremap <C-k> :<C-k>k
-nnoremap <C-l> :<C-l>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 ""Navigate buffers
 noremap <S-h> <ESC>:bprevious<CR>
 noremap <S-l> <ESC>:bnext<CR>
@@ -58,19 +50,15 @@ if has("mouse")
   set mouse=a
 endif
 if !has("nvim")
-  set ttymouse=xterm2
+  set ttymouse=sgr
 endif
 set guioptions+=a
 
 "Status
-set showcmd
-set showmode
 set laststatus=2
 set modelines=0
-set cmdheight=1
 "Display
 set number
-set ruler
 set showmatch " ()
 set lazyredraw
 "" Show undisplay chars
@@ -108,8 +96,6 @@ set softtabstop=4
 set shiftwidth=4
 
 "Completion
-set wildmenu
-set wildchar=<Tab>
 set wildmode=list:full
 set history=1000
 set complete+=k
@@ -118,13 +104,10 @@ set complete+=k
 autocmd BufWritePre * :%s/\s\+$//ge
 
 "Search
-set wrapscan
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-set iminsert=0
-set imsearch=0
 ""Cancelling highlight
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
@@ -132,9 +115,6 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 set encoding=utf-8
 set fileencodings=utf-8,cp932,euc-jp,default,latin
 set fileformats=unix,dos,mac
-if exists('&ambiwidth')
-  set ambiwidth=single
-endif
 set formatoptions=lmoq
 if has('syntax')
   syntax enable
@@ -148,11 +128,7 @@ if has('syntax')
   augroup END
 endif
 ""IME off
-set noimdisable
-set noimcmdline
-set iminsert=0
 set imsearch=0
-inoremap :set iminsert=0
 "Disable IME in normal mode
 augroup DisableImeInNormalMode
   autocmd!
@@ -224,8 +200,8 @@ let g:ale_fixers['sql'] = ['sqlfmt']
 let g:ale_fixers['typescript'] = ['prettier', 'eslint']
 let g:ale_fixers['terraform'] = ['terraform']
 let g:ale_fixers['yaml'] = ['actionlint', 'yamlfmt']
-nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
-nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> [d <Plug>(ale_previous_wrap)
+nmap <silent> ]d <Plug>(ale_next_wrap)
 
 ""asyncomplete
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"

@@ -49,9 +49,6 @@ local lsp_format_on_save = function(fidget, bufnr)
 end
 
 local setup_user_lsp_config = function(event)
-	-- Enable completion triggered by <c-x><c-o>
-	vim.bo[event.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-
 	-- Buffer local mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local map = function(keys, func, desc)
@@ -81,18 +78,6 @@ local setup_user_lsp_config = function(event)
 	-- Fuzzy find all the symbols in your current workspace.
 	--  Similar to document symbols, except searches over your entire project.
 	map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-
-	-- Rename the variable under your cursor.
-	--  Most Language Servers support renaming across files, etc.
-	map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-
-	-- Execute a code action, usually your cursor needs to be on top of an error
-	-- or a suggestion from your LSP for this to activate.
-	map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-
-	-- Opens a popup that displays documentation about the word under your cursor
-	--  See `:help K` for why this keymap.
-	map("K", vim.lsp.buf.hover, "Hover Documentation")
 
 	-- WARN: This is not Goto Definition, this is Goto Declaration.
 	--  For example, in C this would take you to the header.
