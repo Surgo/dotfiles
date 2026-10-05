@@ -1,5 +1,6 @@
--- Set the leader key
+-- Set the leader keys
 vim.g.mapleader = ","
+vim.g.maplocalleader = " "
 
 -- : <=> ;
 vim.keymap.set("n", ";", ":")
@@ -20,7 +21,7 @@ vim.keymap.set("n", "[d", function()
 	vim.diagnostic.jump({ count = -1 })
 end, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", function()
-	vim.diagnostic.jump({ count = -1 })
+	vim.diagnostic.jump({ count = 1 })
 end, { desc = "Go to next [D]iagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
