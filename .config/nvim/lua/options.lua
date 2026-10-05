@@ -11,6 +11,9 @@ vim.opt.mouse = "a"
 -- Set pop up menu height
 vim.opt.pumheight = 10
 
+-- Default border style for floating windows
+vim.opt.winborder = "rounded"
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 

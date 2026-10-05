@@ -8,10 +8,6 @@ cmp.setup({
 			-- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
 		end,
 	},
-	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		["<C-k>"] = cmp.mapping.select_prev_item(),
