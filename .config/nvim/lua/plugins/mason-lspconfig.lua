@@ -7,6 +7,7 @@ mason_lspconfig.setup({
 	ensure_installed = {
 		-- https://github.com/mason-org/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
 		-- All
+		"copilot",
 		"typos_lsp",
 		-- CSS
 		"stylelint_lsp",

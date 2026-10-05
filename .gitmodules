@@ -10,10 +10,6 @@
 	path = .config/nvim/pack/colorscheme/start/catppuccin
 	url = git@github.com:catppuccin/nvim.git
 	branch = main
-[submodule ".config/nvim/pack/plugins/start/copilot"]
-	path = .config/nvim/pack/plugins/start/copilot
-	url = git@github.com:github/copilot.vim.git
-	branch = release
 [submodule ".config/nvim/pack/plugins/start/dap"]
 	path = .config/nvim/pack/plugins/start/dap
 	url = git@github.com:mfussenegger/nvim-dap.git
@@ -181,14 +177,6 @@
 [submodule ".config/vim/pack/plugins/start/ale"]
 	path = .config/vim/pack/plugins/start/ale
 	url = git@github.com:dense-analysis/ale.git
-	branch = master
-[submodule ".config/vim/pack/plugins/start/asyncomplete"]
-	path = .config/vim/pack/plugins/start/asyncomplete
-	url = git@github.com:prabirshrestha/asyncomplete.vim.git
-	branch = master
-[submodule ".config/vim/pack/plugins/start/asyncomplete-lsp"]
-	path = .config/vim/pack/plugins/start/asyncomplete-lsp
-	url = git@github.com:prabirshrestha/asyncomplete-lsp.vim.git
 	branch = master
 [submodule ".config/vim/pack/plugins/start/clrzr"]
 	path = .config/vim/pack/plugins/start/clrzr

@@ -120,6 +120,21 @@ local setup_user_lsp_config = function(event)
 		})
 	end
 
+	if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlineCompletion, event.buf) then
+		vim.lsp.inline_completion.enable(true, { bufnr = event.buf })
+
+		local map = function(keys, func, desc)
+			vim.keymap.set("i", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+		end
+		map("<M-l>", vim.lsp.inline_completion.get, "Accept inline completion")
+		map("<M-]>", function()
+			vim.lsp.inline_completion.select({ count = 1 })
+		end, "Next inline completion")
+		map("<M-[>", function()
+			vim.lsp.inline_completion.select({ count = -1 })
+		end, "Previous inline completion")
+	end
+
 	if client and client.server_capabilities.documentHighlightProvider then
 		vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 			buffer = event.buf,
