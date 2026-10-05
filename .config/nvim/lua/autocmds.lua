@@ -8,3 +8,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.hl.on_yank()
 	end,
 })
+
+vim.api.nvim_create_autocmd("CmdlineChanged", {
+	desc = "Trigger command-line completion",
+	group = vim.api.nvim_create_augroup("CmdlineAutocomplete", { clear = true }),
+	pattern = { ":", "/", "?" },
+	callback = function()
+		vim.fn.wildtrigger()
+	end,
+})

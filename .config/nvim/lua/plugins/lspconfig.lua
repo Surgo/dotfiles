@@ -1,5 +1,26 @@
 local utils = require("utils")
 
+local completion_kind_hl = {
+	Class = "@type",
+	Constant = "@constant",
+	Constructor = "@constructor",
+	Enum = "@type",
+	EnumMember = "@constant",
+	Field = "@variable.member",
+	File = "@string.special.path",
+	Folder = "@string.special.path",
+	Function = "@function",
+	Interface = "@type",
+	Keyword = "@keyword",
+	Method = "@function.method",
+	Module = "@module",
+	Property = "@property",
+	Snippet = "@keyword",
+	Struct = "@type",
+	Text = "@string",
+	Variable = "@variable",
+}
+
 local lsp_format_on_save = function(fidget, bufnr)
 	if not vim.g.format_on_save_enabled then
 		fidget.notify("[LSP] Skip formatting")
@@ -89,6 +110,16 @@ local setup_user_lsp_config = function(event)
 	--
 	-- When you move your cursor, the highlights will be cleared (the second autocommand).
 	local client = vim.lsp.get_client_by_id(event.data.client_id)
+	if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
+		vim.lsp.completion.enable(true, client.id, event.buf, {
+			autotrigger = true,
+			convert = function(item)
+				local kind = vim.lsp.protocol.CompletionItemKind[item.kind]
+				return { kind_hlgroup = kind and completion_kind_hl[kind] or nil }
+			end,
+		})
+	end
+
 	if client and client.server_capabilities.documentHighlightProvider then
 		vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 			buffer = event.buf,
@@ -136,7 +167,7 @@ local setup_user_lsp_config = function(event)
 	end
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.general = capabilities.general or {}
 capabilities.general.positionEncodings = { "utf-16" }
 vim.lsp.config("*", { capabilities = capabilities })
