@@ -365,11 +365,11 @@ noremap <leader>sj <plug>(signify-next-hunk)
 noremap <leader>sk <plug>(signify-prev-hunk)
 
 ""Test
-nnoremap <silent> <leader>t :TestNearest<CR>
-nnoremap <silent> <leader>T :TestFile<CR>
-nnoremap <silent> <leader>a :TestSuite<CR>
-nnoremap <silent> <leader>l :TestLast<CR>
-nnoremap <silent> <leader>g :TestVisit<CR>
+nnoremap <silent> <leader>tr :TestNearest<CR>
+nnoremap <silent> <leader>tt :TestFile<CR>
+nnoremap <silent> <leader>tT :TestSuite<CR>
+nnoremap <silent> <leader>tl :TestLast<CR>
+nnoremap <silent> <leader>tv :TestVisit<CR>
 let test#strategy = "dispatch"
 let test#vim#term_position = "belowright"
 
