@@ -72,11 +72,11 @@
 	branch = master
 [submodule ".config/nvim/pack/plugins/start/mason"]
 	path = .config/nvim/pack/plugins/start/mason
-	url = git@github.com:williamboman/mason.nvim.git
+	url = git@github.com:mason-org/mason.nvim.git
 	branch = main
 [submodule ".config/nvim/pack/plugins/start/mason-lspconfig"]
 	path = .config/nvim/pack/plugins/start/mason-lspconfig
-	url = git@github.com:williamboman/mason-lspconfig.nvim.git
+	url = git@github.com:mason-org/mason-lspconfig.nvim.git
 	branch = main
 [submodule ".config/nvim/pack/plugins/start/mason-tool-installer"]
 	path = .config/nvim/pack/plugins/start/mason-tool-installer
@@ -93,10 +93,6 @@
 [submodule ".config/nvim/pack/plugins/start/neotest"]
 	path = .config/nvim/pack/plugins/start/neotest
 	url = git@github.com:nvim-neotest/neotest.git
-	branch = master
-[submodule ".config/nvim/pack/plugins/start/neotest-playwright"]
-	path = .config/nvim/pack/plugins/start/neotest-playwright
-	url = git@github.com:thenbe/neotest-playwright.git
 	branch = master
 [submodule ".config/nvim/pack/plugins/start/neotest-python"]
 	path = .config/nvim/pack/plugins/start/neotest-python
@@ -240,11 +236,11 @@
 	branch = master
 [submodule ".config/vim/pack/plugins/start/fern"]
 	path = .config/vim/pack/plugins/start/fern
-	url = git@github.com:lambdalisue/fern.vim.git
+	url = git@github.com:lambdalisue/vim-fern.git
 	branch = main
 [submodule ".config/vim/pack/plugins/start/fern-git-status"]
 	path = .config/vim/pack/plugins/start/fern-git-status
-	url = git@github.com:lambdalisue/fern-git-status.vim.git
+	url = git@github.com:lambdalisue/vim-fern-git-status.git
 	branch = master
 [submodule ".config/vim/pack/plugins/start/fern-mapping-search-ctrlp"]
 	path = .config/vim/pack/plugins/start/fern-mapping-search-ctrlp
@@ -252,7 +248,7 @@
 	branch = main
 [submodule ".config/vim/pack/plugins/start/fern-renderer-nerdfont"]
 	path = .config/vim/pack/plugins/start/fern-renderer-nerdfont
-	url = git@github.com:lambdalisue/fern-renderer-nerdfont.vim.git
+	url = git@github.com:lambdalisue/vim-fern-renderer-nerdfont.git
 	branch = master
 [submodule ".config/vim/pack/plugins/start/fugitive"]
 	path = .config/vim/pack/plugins/start/fugitive
@@ -260,7 +256,7 @@
 	branch = master
 [submodule ".config/vim/pack/plugins/start/glyph-palette"]
 	path = .config/vim/pack/plugins/start/glyph-palette
-	url = git@github.com:lambdalisue/glyph-palette.vim.git
+	url = git@github.com:lambdalisue/vim-glyph-palette.git
 	branch = master
 [submodule ".config/vim/pack/plugins/start/indent-guides"]
 	path = .config/vim/pack/plugins/start/indent-guides
@@ -280,7 +276,7 @@
 	branch = master
 [submodule ".config/vim/pack/plugins/start/nerdfont"]
 	path = .config/vim/pack/plugins/start/nerdfont
-	url = git@github.com:lambdalisue/nerdfont.vim.git
+	url = git@github.com:lambdalisue/vim-nerdfont.git
 	branch = master
 [submodule ".config/vim/pack/plugins/start/signify"]
 	path = .config/vim/pack/plugins/start/signify

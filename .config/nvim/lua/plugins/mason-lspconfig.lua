@@ -5,7 +5,7 @@ mason_lspconfig.setup({
 	-- Python servers are gated by refresh_python_ls() in plugins/lspconfig.lua
 	automatic_enable = { exclude = { "pylsp", "ruff" } },
 	ensure_installed = {
-		-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
+		-- https://github.com/mason-org/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
 		-- All
 		"typos_lsp",
 		-- CSS
