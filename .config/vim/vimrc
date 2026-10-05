@@ -242,7 +242,7 @@ let g:copilot_filetypes['yaml'] = v:true
 
 ""CtrlP
 nnoremap <silent> ;; :CtrlPBuffer<CR>
-nnoremap <silent> :: :CtrlP<CR>
+nnoremap <silent> ;: :CtrlP<CR>
 if executable('rg')
   set grepprg=rg\ --color=never
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
