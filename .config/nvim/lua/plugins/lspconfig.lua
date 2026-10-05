@@ -63,7 +63,7 @@ local setup_user_lsp_config = function(event)
 	map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 
 	-- Find references for the word under your cursor.
-	map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+	map("grr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 
 	-- Jump to the implementation of the word under your cursor.
 	--  Useful when your language has ways of declaring types without an actual implementation.
@@ -206,67 +206,53 @@ vim.lsp.config("typos_lsp", {
 	},
 })
 
-vim.lsp.config("pylsp", {
-	on_init = function(client)
-		local has_autopep8 = utils.has_tool_in_venv("autopep8")
-		local has_black = utils.has_tool_in_venv("black")
-		local has_isort = utils.has_tool_in_venv("isort")
-		local has_yapf = utils.has_tool_in_venv("yapf")
-		local has_ruff = utils.has_tool_in_venv("ruff")
-		local has_mypy = utils.has_tool_in_venv("mypy")
-		local has_pylint = utils.has_tool_in_venv("pylint")
+-- ruff supersedes pylsp's linters and formatters where the project provides it
+local pylsp_settings = function()
+	local has_autopep8 = utils.has_tool_in_venv("autopep8")
+	local has_black = utils.has_tool_in_venv("black")
+	local has_isort = utils.has_tool_in_venv("isort")
+	local has_yapf = utils.has_tool_in_venv("yapf")
+	local has_ruff = utils.has_tool_in_venv("ruff")
+	local has_mypy = utils.has_tool_in_venv("mypy")
+	local has_pylint = utils.has_tool_in_venv("pylint")
 
-		if has_ruff then
-			client:stop()
-			return false
-		end
-
-		client.config.settings = {
-			pylsp = {
-				plugins = {
-					-- Formatters: only enable one
-					autopep8 = { enabled = has_autopep8 and not has_black and not has_yapf },
-					black = { enabled = has_black },
-					yapf = { enabled = has_yapf and not has_black },
-					isort = { enabled = has_isort },
-					-- Linters: only enable one
-					pyflakes = { enabled = not has_mypy and not has_ruff },
-					pycodestyle = { enabled = not has_black and not has_yapf and not has_autopep8 },
-					mccabe = { enabled = false },
-					pylint = { enabled = has_pylint },
-				},
+	return {
+		pylsp = {
+			plugins = {
+				-- Formatters: only enable one
+				autopep8 = { enabled = not has_ruff and has_autopep8 and not has_black and not has_yapf },
+				black = { enabled = not has_ruff and has_black },
+				yapf = { enabled = not has_ruff and has_yapf and not has_black },
+				isort = { enabled = not has_ruff and has_isort },
+				-- Linters: only enable one
+				pyflakes = { enabled = not has_ruff and not has_mypy },
+				pycodestyle = { enabled = not has_ruff and not has_black and not has_yapf and not has_autopep8 },
+				mccabe = { enabled = false },
+				pylint = { enabled = not has_ruff and has_pylint },
 			},
-		}
+		},
+	}
+end
 
-		client:notify("workspace/didChangeConfiguration", {
-			settings = client.config.settings,
-		})
-	end,
+local push_pylsp_settings = function(client)
+	client.config.settings = pylsp_settings()
+	client:notify("workspace/didChangeConfiguration", {
+		settings = client.config.settings,
+	})
+end
+
+vim.lsp.config("pylsp", {
+	on_init = push_pylsp_settings,
 })
 
--- Disable autostart for python servers until we decide the winner
-vim.lsp.enable({ "ruff", "pylsp" }, false)
+-- pylsp always answers navigation; ruff starts only where the project has it
+vim.lsp.enable("pylsp")
 
 local function refresh_python_ls()
-	local has_ruff = utils.has_tool_in_venv("ruff")
-	local winner = has_ruff and "ruff" or "pylsp"
-	local loser = has_ruff and "pylsp" or "ruff"
+	vim.lsp.enable("ruff", utils.has_tool_in_venv("ruff"))
 
-	vim.lsp.enable("ruff", has_ruff)
-	vim.lsp.enable("pylsp", not has_ruff)
-
-	for _, client in ipairs(vim.lsp.get_clients({ name = loser })) do
-		client:stop(true)
-	end
-
-	for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
-		if vim.bo[bufnr].filetype == "python" then
-			vim.b[bufnr].lsp_format_on_save_set = nil
-
-			vim.api.nvim_buf_call(bufnr, function()
-				vim.cmd("silent! LspStart " .. winner)
-			end)
-		end
+	for _, client in ipairs(vim.lsp.get_clients({ name = "pylsp" })) do
+		push_pylsp_settings(client)
 	end
 end
 
