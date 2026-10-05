@@ -198,7 +198,7 @@ vim.lsp.config("lua_ls", {
 
 local typos_config_path = vim.fs.joinpath(vim.fn.stdpath("config"), "typos.toml")
 vim.lsp.config("typos_lsp", {
-	single_file_support = false,
+	workspace_required = true,
 	capabilities = capabilities,
 	init_options = {
 		config = typos_config_path,
