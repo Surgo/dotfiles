@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+set -eu
+
 echo "## Update global .gitignore file"
 gibo update && gibo dump \
 	Agents \

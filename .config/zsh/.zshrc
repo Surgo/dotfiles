@@ -49,8 +49,6 @@ plugins+=(autopep8 pep8 pip python uv)
 plugins+=(bundler gem rails rake rbenv ruby)
 plugins+=(bun deno node npm nvm yarn)
 plugins+=(golang)
-## Apps
-plugins+=(1password)
 ## External
 plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
 ### https://github.com/zsh-users/zsh-completions/issues/603

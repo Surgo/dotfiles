@@ -2,11 +2,8 @@
 
 set -eu
 
-echo "## Build zsh completions"
+echo "## Rebuild zsh completions"
 
-rm -f "${ZDOTDIR:-$HOME}/.zcompdump"
+rm -f "${ZDOTDIR:-$HOME}"/.zcompdump*
 
-zsh -fc '
-autoload -Uz compinit
-compinit
-'
+zsh -i -c exit
