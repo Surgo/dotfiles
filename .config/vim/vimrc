@@ -159,6 +159,27 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#left_sep = "\ue0b4"
 let g:airline#extensions#tabline#left_alt_sep = "\ue0b4"
+""" airline already renders a filetype icon; devicons would add a second one
+let g:webdevicons_enable_airline_statusline = 0
+""" Show attached language servers, like lualine's lsp_status on the nvim side
+function! AirlineLspServers() abort
+  if !exists('*lsp#get_allowed_servers')
+    return ''
+  endif
+  let l:running = filter(
+    \ copy(lsp#get_allowed_servers()),
+    \ 'lsp#get_server_status(v:val) ==# "running"')
+  return empty(l:running) ? '' : ' ' . join(l:running, ',')
+endfunction
+function! AirlineInit() abort
+  call airline#parts#define_function('lsp_servers', 'AirlineLspServers')
+  let g:airline_section_x = airline#section#create_right([
+    \ 'coc_current_function', 'bookmark', 'scrollbar', 'tagbar', 'taglist',
+    \ 'vista', 'gutentags', 'gen_tags', 'omnisharp', 'grepper', 'codeium',
+    \ 'lsp_servers', 'filetype'])
+endfunction
+autocmd User AirlineAfterInit call AirlineInit()
+
 ""ALE
 let g:ale_sign_column_always = 1
 let g:ale_linters_explicit = 1
