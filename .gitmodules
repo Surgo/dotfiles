@@ -234,10 +234,6 @@
 	path = .config/vim/pack/syntax/opt/terraform
 	url = git@github.com:hashivim/vim-terraform.git
 	branch = master
-[submodule ".config/vim/pack/syntax/opt/yats"]
-	path = .config/vim/pack/syntax/opt/yats
-	url = git@github.com:HerringtonDarkholme/yats.vim.git
-	branch = master
 [submodule ".config/zsh/custom/plugins/zsh-completions"]
 	path = .config/zsh/custom/plugins/zsh-completions
 	url = git@github.com:zsh-users/zsh-completions.git
