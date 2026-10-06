@@ -41,6 +41,7 @@
 !.config/tmux/plugins/**
 !.config/yamlfmt
 !.config/yamlfmt/**
+!.config/zsh
 !.config/zsh/.p10k.zsh
 !.config/zsh/.zshenv
 !.config/zsh/.zshrc
