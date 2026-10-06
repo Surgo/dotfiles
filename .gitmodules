@@ -26,10 +26,6 @@
 	path = .config/nvim/pack/plugins/start/dap-virtual-text
 	url = git@github.com:theHamsta/nvim-dap-virtual-text.git
 	branch = master
-[submodule ".config/nvim/pack/plugins/start/FixCursorHold"]
-	path = .config/nvim/pack/plugins/start/FixCursorHold
-	url = git@github.com:antoinemadec/FixCursorHold.nvim.git
-	branch = master
 [submodule ".config/nvim/pack/plugins/start/gitsigns"]
 	path = .config/nvim/pack/plugins/start/gitsigns
 	url = git@github.com:lewis6991/gitsigns.nvim.git
