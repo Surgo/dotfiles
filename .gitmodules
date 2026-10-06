@@ -202,10 +202,6 @@
 	path = .config/vim/pack/plugins/start/glyph-palette
 	url = git@github.com:lambdalisue/vim-glyph-palette.git
 	branch = master
-[submodule ".config/vim/pack/plugins/start/indent-guides"]
-	path = .config/vim/pack/plugins/start/indent-guides
-	url = git@github.com:preservim/vim-indent-guides.git
-	branch = master
 [submodule ".config/vim/pack/plugins/start/lsp"]
 	path = .config/vim/pack/plugins/start/lsp
 	url = git@github.com:prabirshrestha/vim-lsp.git

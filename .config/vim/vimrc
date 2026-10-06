@@ -97,6 +97,9 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+"" A bar every 'shiftwidth' columns of leading indent
+let &listchars .= ',leadmultispace:|' . repeat(' ', &shiftwidth - 1)
+
 "Completion
 set history=1000
 set autocomplete
@@ -317,11 +320,6 @@ augroup glyph-palette
   autocmd! *
   autocmd FileType fern call glyph_palette#apply()
 augroup END
-
-""indent-guides
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
 
 ""LSP
 let g:lsp_signs_enabled = 1
