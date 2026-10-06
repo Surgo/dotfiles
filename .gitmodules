@@ -198,10 +198,6 @@
 	path = .config/vim/pack/plugins/start/dispatch
 	url = git@github.com:tpope/vim-dispatch.git
 	branch = master
-[submodule ".config/vim/pack/plugins/start/editorconfig"]
-	path = .config/vim/pack/plugins/start/editorconfig
-	url = git@github.com:editorconfig/editorconfig-vim.git
-	branch = master
 [submodule ".config/vim/pack/plugins/start/fern"]
 	path = .config/vim/pack/plugins/start/fern
 	url = git@github.com:lambdalisue/vim-fern.git

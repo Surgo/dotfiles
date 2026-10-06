@@ -142,6 +142,9 @@ augroup DisableImeInNormalMode
   autocmd InsertLeave,CmdwinLeave * set imdisable
 augroup END
 
+"Bundled packages
+packadd! editorconfig
+
 "Plugin settings
 ""Airline
 if !exists('g:airline_symbols')
