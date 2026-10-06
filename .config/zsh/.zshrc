@@ -1,3 +1,8 @@
+# Powerlevel10k instant prompt; keep this at the top
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Paths for Oh My Zsh
 ZSH="${ZDOTDIR:-$HOME}/ohmyzsh"
 ZSH_CUSTOM="${ZDOTDIR:-$ZSH}/custom"
@@ -24,6 +29,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=black,bg=blue,bold,underline"
 PYTHON_AUTO_VRUN=true
 PYTHON_VENV_NAME=".venv"
 
+
 # Plugins
 plugins=()
 ## OS specific
@@ -43,12 +49,12 @@ plugins+=(colored-man-pages colorize)
 plugins+=(tmux vscode)
 plugins+=(docker docker-compose)
 plugins+=(git gitfast gitignore gh tig)
-plugins+=(mercurial)
-plugins+=(aws gcloud terraform)
-plugins+=(autopep8 pep8 pip python uv)
-plugins+=(bundler gem rails rake rbenv ruby)
-plugins+=(bun deno node npm nvm yarn)
-plugins+=(golang)
+plugins+=(aws terraform)
+plugins+=(pip python uv)
+# plugins+=(bundler gem rails rake ruby)
+plugins+=(fnm node npm yarn)
+plugins+=(rust)
+# plugins+=(golang)
 ## External
 plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
 ### https://github.com/zsh-users/zsh-completions/issues/603

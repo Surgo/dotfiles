@@ -122,26 +122,6 @@
 	path = .config/tmux/plugins/tmux-cpu
 	url = git@github.com:tmux-plugins/tmux-cpu.git
 	branch = master
-[submodule ".config/tmux/plugins/tmux-pain-control"]
-	path = .config/tmux/plugins/tmux-pain-control
-	url = git@github.com:tmux-plugins/tmux-pain-control.git
-	branch = master
-[submodule ".config/tmux/plugins/tmux-sensible"]
-	path = .config/tmux/plugins/tmux-sensible
-	url = git@github.com:tmux-plugins/tmux-sensible.git
-	branch = master
-[submodule ".config/tmux/plugins/tmux-sessionist"]
-	path = .config/tmux/plugins/tmux-sessionist
-	url = git@github.com:tmux-plugins/tmux-sessionist.git
-	branch = master
-[submodule ".config/tmux/plugins/tmux-yank"]
-	path = .config/tmux/plugins/tmux-yank
-	url = git@github.com:tmux-plugins/tmux-yank.git
-	branch = master
-[submodule ".config/tmux/plugins/tpm"]
-	path = .config/tmux/plugins/tpm
-	url = git@github.com:tmux-plugins/tpm.git
-	branch = master
 [submodule ".config/zsh/custom/plugins/zsh-autosuggestions"]
 	path = .config/zsh/custom/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
@@ -233,10 +213,6 @@
 [submodule ".config/vim/pack/syntax/opt/terraform"]
 	path = .config/vim/pack/syntax/opt/terraform
 	url = git@github.com:hashivim/vim-terraform.git
-	branch = master
-[submodule ".config/vim/pack/syntax/opt/yats"]
-	path = .config/vim/pack/syntax/opt/yats
-	url = git@github.com:HerringtonDarkholme/yats.vim.git
 	branch = master
 [submodule ".config/zsh/custom/plugins/zsh-completions"]
 	path = .config/zsh/custom/plugins/zsh-completions
