@@ -84,17 +84,16 @@ if [ -d "${HOMEBREW_PREFIX}/opt/libpq" ]; then
 fi
 
 # Python
-export PYTHONHISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/python/history"
+export PYTHON_HISTORY="${XDG_STATE_HOME:-${HOME}/.local/state}/python/history"
 export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME:-${HOME}/.cache}/python"
 export MYPY_CACHE_DIR="${XDG_CACHE_HOME:-${HOME}/.cache}/mypy"
 export PIP_CONFIG_FILE="${XDG_CONFIG_HOME:-${HOME}/.config}/pip/pip.conf"
 export PIP_CACHE_DIR="${XDG_CACHE_HOME:-${HOME}/.cache}/pip"
 export PIPENV_CACHE_DIR="${XDG_CACHE_HOME:-${HOME}/.cache}/pipenv"
 
-export PATH="./.venv/.bin:${PATH}"
+export PATH="./.venv/bin:${PATH}"
 export PYTHONDONTWRITEBYTECODE=1
 export PIP_REQUIRE_VIRTUALENV=true
-export PIP_RESPECT_VIRTUALENV=true
 
 if [ -d "${HOMEBREW_PREFIX}/opt/openssl" ]; then
   # https://github.com/pycurl/pycurl/issues/526

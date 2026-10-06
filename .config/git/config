@@ -26,21 +26,38 @@
 	helper = osxkeychain
 [diff]
 	tool = vimdiff
-	compactionHeuristic = true
+	algorithm = histogram
+	colorMoved = default
+	colorMovedWS = allow-indentation-change
 [branch]
 	autosetuprebase = always
+	sort = -committerdate
+[tag]
+	sort = -version:refname
 [color]
 	ui = auto
 [commit]
 	gpgsign = true
 [fetch]
 	prune = true
+	pruneTags = true
 [merge]
 	tool = vimdiff
 	log = true
 	ff = false
+	conflictStyle = zdiff3
 [pull]
 	rebase = true
+[rebase]
+	autoStash = true
+	updateRefs = true
+[rerere]
+	enabled = true
+	autoUpdate = true
+[init]
+	defaultBranch = main
+[column]
+	ui = auto
 [push]
 	default = current
 [pager]

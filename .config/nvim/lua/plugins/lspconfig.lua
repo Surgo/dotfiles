@@ -1,8 +1,28 @@
 local utils = require("utils")
 
-local lsp_format_on_save = function(fidget, bufnr)
+local completion_kind_hl = {
+	Class = "@type",
+	Constant = "@constant",
+	Constructor = "@constructor",
+	Enum = "@type",
+	EnumMember = "@constant",
+	Field = "@variable.member",
+	File = "@string.special.path",
+	Folder = "@string.special.path",
+	Function = "@function",
+	Interface = "@type",
+	Keyword = "@keyword",
+	Method = "@function.method",
+	Module = "@module",
+	Property = "@property",
+	Snippet = "@keyword",
+	Struct = "@type",
+	Text = "@string",
+	Variable = "@variable",
+}
+
+local lsp_format_on_save = function(bufnr)
 	if not vim.g.format_on_save_enabled then
-		fidget.notify("[LSP] Skip formatting")
 		return
 	end
 
@@ -13,7 +33,6 @@ local lsp_format_on_save = function(fidget, bufnr)
 	end
 
 	if ft == "python" and preferred == "ruff" then
-		fidget.notify("[LSP] [ruff] Starting fix all")
 		vim.lsp.buf.code_action({
 			context = {
 				only = { "source.fixAll" },
@@ -31,17 +50,9 @@ local lsp_format_on_save = function(fidget, bufnr)
 					return false
 				end
 				if preferred then
-					local should_format = filter_client.name == preferred
-					if should_format then
-						fidget.notify(string.format("[LSP] [%s] Formatting", filter_client.name))
-					end
-					return should_format
+					return filter_client.name == preferred
 				end
-				local should_format = filter_client.name ~= "null-ls"
-				if should_format then
-					fidget.notify(string.format("[LSP] [%s] Formatting", filter_client.name))
-				end
-				return should_format
+				return filter_client.name ~= "null-ls"
 			end,
 			async = false,
 		})
@@ -49,9 +60,6 @@ local lsp_format_on_save = function(fidget, bufnr)
 end
 
 local setup_user_lsp_config = function(event)
-	-- Enable completion triggered by <c-x><c-o>
-	vim.bo[event.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-
 	-- Buffer local mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local map = function(keys, func, desc)
@@ -63,7 +71,7 @@ local setup_user_lsp_config = function(event)
 	map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 
 	-- Find references for the word under your cursor.
-	map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+	map("grr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 
 	-- Jump to the implementation of the word under your cursor.
 	--  Useful when your language has ways of declaring types without an actual implementation.
@@ -82,18 +90,6 @@ local setup_user_lsp_config = function(event)
 	--  Similar to document symbols, except searches over your entire project.
 	map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
-	-- Rename the variable under your cursor.
-	--  Most Language Servers support renaming across files, etc.
-	map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-
-	-- Execute a code action, usually your cursor needs to be on top of an error
-	-- or a suggestion from your LSP for this to activate.
-	map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-
-	-- Opens a popup that displays documentation about the word under your cursor
-	--  See `:help K` for why this keymap.
-	map("K", vim.lsp.buf.hover, "Hover Documentation")
-
 	-- WARN: This is not Goto Definition, this is Goto Declaration.
 	--  For example, in C this would take you to the header.
 	map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
@@ -104,6 +100,31 @@ local setup_user_lsp_config = function(event)
 	--
 	-- When you move your cursor, the highlights will be cleared (the second autocommand).
 	local client = vim.lsp.get_client_by_id(event.data.client_id)
+	if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
+		vim.lsp.completion.enable(true, client.id, event.buf, {
+			autotrigger = true,
+			convert = function(item)
+				local kind = vim.lsp.protocol.CompletionItemKind[item.kind]
+				return { kind_hlgroup = kind and completion_kind_hl[kind] or nil }
+			end,
+		})
+	end
+
+	if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlineCompletion, event.buf) then
+		vim.lsp.inline_completion.enable(true, { bufnr = event.buf })
+
+		local imap = function(keys, func, desc)
+			vim.keymap.set("i", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+		end
+		imap("<M-l>", vim.lsp.inline_completion.get, "Accept inline completion")
+		imap("<M-]>", function()
+			vim.lsp.inline_completion.select({ count = 1 })
+		end, "Next inline completion")
+		imap("<M-[>", function()
+			vim.lsp.inline_completion.select({ count = -1 })
+		end, "Previous inline completion")
+	end
+
 	if client and client.server_capabilities.documentHighlightProvider then
 		vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 			buffer = event.buf,
@@ -131,9 +152,7 @@ local setup_user_lsp_config = function(event)
 		and client.name ~= "null-ls"
 		and client:supports_method(vim.lsp.protocol.Methods.textDocument_formatting)
 	then
-		local fidget = require("fidget")
 		local lsp_formatting_group = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
-		fidget.notify(string.format("[LSP] [%s] Enable auto-format on save", client.name))
 
 		vim.api.nvim_clear_autocmds({
 			group = "LspFormatting",
@@ -145,13 +164,13 @@ local setup_user_lsp_config = function(event)
 			group = lsp_formatting_group,
 			buffer = event.buf,
 			callback = function()
-				lsp_format_on_save(fidget, event.buf)
+				lsp_format_on_save(event.buf)
 			end,
 		})
 	end
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.general = capabilities.general or {}
 capabilities.general.positionEncodings = { "utf-16" }
 vim.lsp.config("*", { capabilities = capabilities })
@@ -198,7 +217,7 @@ vim.lsp.config("lua_ls", {
 
 local typos_config_path = vim.fs.joinpath(vim.fn.stdpath("config"), "typos.toml")
 vim.lsp.config("typos_lsp", {
-	single_file_support = false,
+	workspace_required = true,
 	capabilities = capabilities,
 	init_options = {
 		config = typos_config_path,
@@ -206,67 +225,53 @@ vim.lsp.config("typos_lsp", {
 	},
 })
 
-vim.lsp.config("pylsp", {
-	on_init = function(client)
-		local has_autopep8 = utils.has_tool_in_venv("autopep8")
-		local has_black = utils.has_tool_in_venv("black")
-		local has_isort = utils.has_tool_in_venv("isort")
-		local has_yapf = utils.has_tool_in_venv("yapf")
-		local has_ruff = utils.has_tool_in_venv("ruff")
-		local has_mypy = utils.has_tool_in_venv("mypy")
-		local has_pylint = utils.has_tool_in_venv("pylint")
+-- ruff supersedes pylsp's linters and formatters where the project provides it
+local pylsp_settings = function()
+	local has_autopep8 = utils.has_tool_in_venv("autopep8")
+	local has_black = utils.has_tool_in_venv("black")
+	local has_isort = utils.has_tool_in_venv("isort")
+	local has_yapf = utils.has_tool_in_venv("yapf")
+	local has_ruff = utils.has_tool_in_venv("ruff")
+	local has_mypy = utils.has_tool_in_venv("mypy")
+	local has_pylint = utils.has_tool_in_venv("pylint")
 
-		if has_ruff then
-			client:stop()
-			return false
-		end
-
-		client.config.settings = {
-			pylsp = {
-				plugins = {
-					-- Formatters: only enable one
-					autopep8 = { enabled = has_autopep8 and not has_black and not has_yapf },
-					black = { enabled = has_black },
-					yapf = { enabled = has_yapf and not has_black },
-					isort = { enabled = has_isort },
-					-- Linters: only enable one
-					pyflakes = { enabled = not has_mypy and not has_ruff },
-					pycodestyle = { enabled = not has_black and not has_yapf and not has_autopep8 },
-					mccabe = { enabled = false },
-					pylint = { enabled = has_pylint },
-				},
+	return {
+		pylsp = {
+			plugins = {
+				-- Formatters: only enable one
+				autopep8 = { enabled = not has_ruff and has_autopep8 and not has_black and not has_yapf },
+				black = { enabled = not has_ruff and has_black },
+				yapf = { enabled = not has_ruff and has_yapf and not has_black },
+				isort = { enabled = not has_ruff and has_isort },
+				-- Linters: only enable one
+				pyflakes = { enabled = not has_ruff and not has_mypy },
+				pycodestyle = { enabled = not has_ruff and not has_black and not has_yapf and not has_autopep8 },
+				mccabe = { enabled = false },
+				pylint = { enabled = not has_ruff and has_pylint },
 			},
-		}
+		},
+	}
+end
 
-		client:notify("workspace/didChangeConfiguration", {
-			settings = client.config.settings,
-		})
-	end,
+local push_pylsp_settings = function(client)
+	client.config.settings = pylsp_settings()
+	client:notify("workspace/didChangeConfiguration", {
+		settings = client.config.settings,
+	})
+end
+
+vim.lsp.config("pylsp", {
+	on_init = push_pylsp_settings,
 })
 
--- Disable autostart for python servers until we decide the winner
-vim.lsp.enable({ "ruff", "pylsp" }, false)
+-- pylsp always answers navigation; ruff starts only where the project has it
+vim.lsp.enable("pylsp")
 
 local function refresh_python_ls()
-	local has_ruff = utils.has_tool_in_venv("ruff")
-	local winner = has_ruff and "ruff" or "pylsp"
-	local loser = has_ruff and "pylsp" or "ruff"
+	vim.lsp.enable("ruff", utils.has_tool_in_venv("ruff"))
 
-	vim.lsp.enable("ruff", has_ruff)
-	vim.lsp.enable("pylsp", not has_ruff)
-
-	for _, client in ipairs(vim.lsp.get_clients({ name = loser })) do
-		client:stop(true)
-	end
-
-	for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
-		if vim.bo[bufnr].filetype == "python" then
-			vim.b[bufnr].lsp_format_on_save_set = nil
-
-			vim.api.nvim_buf_call(bufnr, function()
-				vim.cmd("silent! LspStart " .. winner)
-			end)
-		end
+	for _, client in ipairs(vim.lsp.get_clients({ name = "pylsp" })) do
+		push_pylsp_settings(client)
 	end
 end
 
@@ -283,20 +288,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.g.format_on_save_enabled = true
 
 local toggle_format_on_save = function()
-	local fidget = require("fidget")
-
 	vim.g.format_on_save_enabled = not vim.g.format_on_save_enabled
 	if vim.g.format_on_save_enabled then
-		fidget.notify("[null-ls] Auto-format on save ENABLED")
+		vim.notify("[null-ls] Auto-format on save ENABLED")
 	else
-		fidget.notify("[null-ls] Auto-format on save DISABLED")
+		vim.notify("[null-ls] Auto-format on save DISABLED")
 	end
 end
 vim.api.nvim_create_user_command("ToggleFormatOnSave", toggle_format_on_save, {})
 
 local format = function()
 	local bufnr = vim.api.nvim_get_current_buf()
-	local fidget = require("fidget")
-	lsp_format_on_save(fidget, bufnr)
+	lsp_format_on_save(bufnr)
 end
 vim.api.nvim_create_user_command("Format", format, {})

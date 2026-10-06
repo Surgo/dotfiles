@@ -11,6 +11,15 @@ vim.opt.mouse = "a"
 -- Set pop up menu height
 vim.opt.pumheight = 10
 
+vim.opt.autocomplete = true
+vim.opt.complete = { "o", ".^5", "w^5", "b^5", "u^5" }
+vim.opt.completeopt = { "menuone", "noselect", "popup" }
+vim.opt.wildmode = "noselect:lastused,full"
+vim.opt.wildoptions = { "pum", "fuzzy" }
+
+vim.opt.winborder = "rounded"
+vim.opt.pumborder = "rounded"
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
@@ -22,6 +31,9 @@ vim.opt.breakindent = true
 
 -- Save undo history
 vim.opt.undofile = true
+
+-- No swap file
+vim.opt.swapfile = false
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true

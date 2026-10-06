@@ -10,30 +10,6 @@
 	path = .config/nvim/pack/colorscheme/start/catppuccin
 	url = git@github.com:catppuccin/nvim.git
 	branch = main
-[submodule ".config/nvim/pack/plugins/start/cmp"]
-	path = .config/nvim/pack/plugins/start/cmp
-	url = git@github.com:hrsh7th/nvim-cmp.git
-	branch = main
-[submodule ".config/nvim/pack/plugins/start/cmp-buffer"]
-	path = .config/nvim/pack/plugins/start/cmp-buffer
-	url = git@github.com:hrsh7th/cmp-buffer.git
-	branch = main
-[submodule ".config/nvim/pack/plugins/start/cmp-cmdline"]
-	path = .config/nvim/pack/plugins/start/cmp-cmdline
-	url = git@github.com:hrsh7th/cmp-cmdline.git
-	branch = main
-[submodule ".config/nvim/pack/plugins/start/cmp-nvim-lsp"]
-	path = .config/nvim/pack/plugins/start/cmp-nvim-lsp
-	url = git@github.com:hrsh7th/cmp-nvim-lsp.git
-	branch = main
-[submodule ".config/nvim/pack/plugins/start/cmp-path"]
-	path = .config/nvim/pack/plugins/start/cmp-path
-	url = git@github.com:hrsh7th/cmp-path.git
-	branch = main
-[submodule ".config/nvim/pack/plugins/start/copilot"]
-	path = .config/nvim/pack/plugins/start/copilot
-	url = git@github.com:github/copilot.vim.git
-	branch = release
 [submodule ".config/nvim/pack/plugins/start/dap"]
 	path = .config/nvim/pack/plugins/start/dap
 	url = git@github.com:mfussenegger/nvim-dap.git
@@ -50,14 +26,6 @@
 	path = .config/nvim/pack/plugins/start/dap-virtual-text
 	url = git@github.com:theHamsta/nvim-dap-virtual-text.git
 	branch = master
-[submodule ".config/nvim/pack/plugins/start/fidget"]
-	path = .config/nvim/pack/plugins/start/fidget
-	url = git@github.com:j-hui/fidget.nvim.git
-	branch = main
-[submodule ".config/nvim/pack/plugins/start/FixCursorHold"]
-	path = .config/nvim/pack/plugins/start/FixCursorHold
-	url = git@github.com:antoinemadec/FixCursorHold.nvim.git
-	branch = master
 [submodule ".config/nvim/pack/plugins/start/gitsigns"]
 	path = .config/nvim/pack/plugins/start/gitsigns
 	url = git@github.com:lewis6991/gitsigns.nvim.git
@@ -72,11 +40,11 @@
 	branch = master
 [submodule ".config/nvim/pack/plugins/start/mason"]
 	path = .config/nvim/pack/plugins/start/mason
-	url = git@github.com:williamboman/mason.nvim.git
+	url = git@github.com:mason-org/mason.nvim.git
 	branch = main
 [submodule ".config/nvim/pack/plugins/start/mason-lspconfig"]
 	path = .config/nvim/pack/plugins/start/mason-lspconfig
-	url = git@github.com:williamboman/mason-lspconfig.nvim.git
+	url = git@github.com:mason-org/mason-lspconfig.nvim.git
 	branch = main
 [submodule ".config/nvim/pack/plugins/start/mason-tool-installer"]
 	path = .config/nvim/pack/plugins/start/mason-tool-installer
@@ -94,10 +62,6 @@
 	path = .config/nvim/pack/plugins/start/neotest
 	url = git@github.com:nvim-neotest/neotest.git
 	branch = master
-[submodule ".config/nvim/pack/plugins/start/neotest-playwright"]
-	path = .config/nvim/pack/plugins/start/neotest-playwright
-	url = git@github.com:thenbe/neotest-playwright.git
-	branch = master
 [submodule ".config/nvim/pack/plugins/start/neotest-python"]
 	path = .config/nvim/pack/plugins/start/neotest-python
 	url = git@github.com:nvim-neotest/neotest-python.git
@@ -114,10 +78,6 @@
 	path = .config/nvim/pack/plugins/start/plenary
 	url = git@github.com:nvim-lua/plenary.nvim
 	branch = master
-[submodule ".config/nvim/pack/plugins/start/snippy"]
-	path = .config/nvim/pack/plugins/start/snippy
-	url = git@github.com:dcampos/nvim-snippy.git
-	branch = master
 [submodule ".config/nvim/pack/plugins/start/telescope"]
 	path = .config/nvim/pack/plugins/start/telescope
 	url = git@github.com:nvim-telescope/telescope.nvim.git
@@ -133,10 +93,6 @@
 [submodule ".config/nvim/pack/plugins/start/telescope-ui-select"]
 	path = .config/nvim/pack/plugins/start/telescope-ui-select
 	url = git@github.com:nvim-telescope/telescope-ui-select.nvim.git
-	branch = master
-[submodule ".config/nvim/pack/plugins/start/trim"]
-	path = .config/nvim/pack/plugins/start/trim
-	url = git@github.com:cappyzawa/trim.nvim.git
 	branch = master
 [submodule ".config/nvim/pack/plugins/start/tree"]
 	path = .config/nvim/pack/plugins/start/tree
@@ -206,14 +162,6 @@
 	path = .config/vim/pack/plugins/start/ale
 	url = git@github.com:dense-analysis/ale.git
 	branch = master
-[submodule ".config/vim/pack/plugins/start/asyncomplete"]
-	path = .config/vim/pack/plugins/start/asyncomplete
-	url = git@github.com:prabirshrestha/asyncomplete.vim.git
-	branch = master
-[submodule ".config/vim/pack/plugins/start/asyncomplete-lsp"]
-	path = .config/vim/pack/plugins/start/asyncomplete-lsp
-	url = git@github.com:prabirshrestha/asyncomplete-lsp.vim.git
-	branch = master
 [submodule ".config/vim/pack/plugins/start/clrzr"]
 	path = .config/vim/pack/plugins/start/clrzr
 	url = git@github.com:BourgeoisBear/clrzr.git
@@ -234,25 +182,17 @@
 	path = .config/vim/pack/plugins/start/dispatch
 	url = git@github.com:tpope/vim-dispatch.git
 	branch = master
-[submodule ".config/vim/pack/plugins/start/editorconfig"]
-	path = .config/vim/pack/plugins/start/editorconfig
-	url = git@github.com:editorconfig/editorconfig-vim.git
-	branch = master
 [submodule ".config/vim/pack/plugins/start/fern"]
 	path = .config/vim/pack/plugins/start/fern
-	url = git@github.com:lambdalisue/fern.vim.git
+	url = git@github.com:lambdalisue/vim-fern.git
 	branch = main
 [submodule ".config/vim/pack/plugins/start/fern-git-status"]
 	path = .config/vim/pack/plugins/start/fern-git-status
-	url = git@github.com:lambdalisue/fern-git-status.vim.git
+	url = git@github.com:lambdalisue/vim-fern-git-status.git
 	branch = master
-[submodule ".config/vim/pack/plugins/start/fern-mapping-search-ctrlp"]
-	path = .config/vim/pack/plugins/start/fern-mapping-search-ctrlp
-	url = git@github.com:MeF0504/fern-mapping-search-ctrlp.vim.git
-	branch = main
 [submodule ".config/vim/pack/plugins/start/fern-renderer-nerdfont"]
 	path = .config/vim/pack/plugins/start/fern-renderer-nerdfont
-	url = git@github.com:lambdalisue/fern-renderer-nerdfont.vim.git
+	url = git@github.com:lambdalisue/vim-fern-renderer-nerdfont.git
 	branch = master
 [submodule ".config/vim/pack/plugins/start/fugitive"]
 	path = .config/vim/pack/plugins/start/fugitive
@@ -260,11 +200,7 @@
 	branch = master
 [submodule ".config/vim/pack/plugins/start/glyph-palette"]
 	path = .config/vim/pack/plugins/start/glyph-palette
-	url = git@github.com:lambdalisue/glyph-palette.vim.git
-	branch = master
-[submodule ".config/vim/pack/plugins/start/indent-guides"]
-	path = .config/vim/pack/plugins/start/indent-guides
-	url = git@github.com:preservim/vim-indent-guides.git
+	url = git@github.com:lambdalisue/vim-glyph-palette.git
 	branch = master
 [submodule ".config/vim/pack/plugins/start/lsp"]
 	path = .config/vim/pack/plugins/start/lsp
@@ -280,7 +216,7 @@
 	branch = master
 [submodule ".config/vim/pack/plugins/start/nerdfont"]
 	path = .config/vim/pack/plugins/start/nerdfont
-	url = git@github.com:lambdalisue/nerdfont.vim.git
+	url = git@github.com:lambdalisue/vim-nerdfont.git
 	branch = master
 [submodule ".config/vim/pack/plugins/start/signify"]
 	path = .config/vim/pack/plugins/start/signify

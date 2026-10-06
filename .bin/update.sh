@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+set -eu
+
 echo "# Update"
 "$(dirname "$0")/update_mac.sh"
 "$(dirname "$0")/update_gitignore_global.sh"

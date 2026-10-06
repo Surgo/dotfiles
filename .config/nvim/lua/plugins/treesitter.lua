@@ -13,10 +13,14 @@ require("nvim-treesitter").install({
 	"gitattributes",
 	"gitcommit",
 	"gitignore",
+	"graphql",
+	"hcl",
 	"html",
 	"htmldjango",
+	"ini",
 	"java",
 	"javascript",
+	"jinja",
 	"jq",
 	"jsdoc",
 	"json",
@@ -38,6 +42,14 @@ require("nvim-treesitter").install({
 	"typescript",
 	"vim",
 	"vimdoc",
+	"xml",
 	"yaml",
 	"zsh",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("TreesitterHighlight", { clear = true }),
+	callback = function(event)
+		pcall(vim.treesitter.start, event.buf)
+	end,
 })

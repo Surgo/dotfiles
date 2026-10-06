@@ -9,12 +9,20 @@ require("lualine").setup({
 			left = "",
 			right = "",
 		},
-		extensions = {
-			"fern",
-			"fugitive",
-			"mason",
-			"quickfix",
-			"trouble",
+	},
+	sections = {
+		lualine_x = {
+			"lsp_status",
+			"encoding",
+			"fileformat",
+			"filetype",
 		},
+	},
+	extensions = {
+		"fern",
+		"fugitive",
+		"mason",
+		"quickfix",
+		"trouble",
 	},
 })
