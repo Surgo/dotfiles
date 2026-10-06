@@ -210,6 +210,8 @@ nmap <silent> [d <Plug>(ale_previous_wrap)
 nmap <silent> ]d <Plug>(ale_next_wrap)
 
 ""Copilot
+"" <M-x> is an 8-bit byte that collides with UTF-8, so bind the terminal sequence
+execute "set <M-l>=\<Esc>l"
 let g:copilot_no_tab_map = v:true
 imap <silent><script><expr> <M-l> copilot#Accept("\<CR>")
 
