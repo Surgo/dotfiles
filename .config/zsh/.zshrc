@@ -29,8 +29,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=black,bg=blue,bold,underline"
 PYTHON_AUTO_VRUN=true
 PYTHON_VENV_NAME=".venv"
 
-## fnm
-zstyle ':omz:plugins:fnm' autostart yes
 
 # Plugins
 plugins=()
