@@ -190,10 +190,6 @@
 	path = .config/vim/pack/plugins/start/fern-git-status
 	url = git@github.com:lambdalisue/vim-fern-git-status.git
 	branch = master
-[submodule ".config/vim/pack/plugins/start/fern-mapping-search-ctrlp"]
-	path = .config/vim/pack/plugins/start/fern-mapping-search-ctrlp
-	url = git@github.com:MeF0504/fern-mapping-search-ctrlp.vim.git
-	branch = main
 [submodule ".config/vim/pack/plugins/start/fern-renderer-nerdfont"]
 	path = .config/vim/pack/plugins/start/fern-renderer-nerdfont
 	url = git@github.com:lambdalisue/vim-fern-renderer-nerdfont.git
