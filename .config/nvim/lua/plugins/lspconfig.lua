@@ -21,9 +21,8 @@ local completion_kind_hl = {
 	Variable = "@variable",
 }
 
-local lsp_format_on_save = function(fidget, bufnr)
+local lsp_format_on_save = function(bufnr)
 	if not vim.g.format_on_save_enabled then
-		fidget.notify("[LSP] Skip formatting")
 		return
 	end
 
@@ -34,7 +33,6 @@ local lsp_format_on_save = function(fidget, bufnr)
 	end
 
 	if ft == "python" and preferred == "ruff" then
-		fidget.notify("[LSP] [ruff] Starting fix all")
 		vim.lsp.buf.code_action({
 			context = {
 				only = { "source.fixAll" },
@@ -52,17 +50,9 @@ local lsp_format_on_save = function(fidget, bufnr)
 					return false
 				end
 				if preferred then
-					local should_format = filter_client.name == preferred
-					if should_format then
-						fidget.notify(string.format("[LSP] [%s] Formatting", filter_client.name))
-					end
-					return should_format
+					return filter_client.name == preferred
 				end
-				local should_format = filter_client.name ~= "null-ls"
-				if should_format then
-					fidget.notify(string.format("[LSP] [%s] Formatting", filter_client.name))
-				end
-				return should_format
+				return filter_client.name ~= "null-ls"
 			end,
 			async = false,
 		})
@@ -162,9 +152,7 @@ local setup_user_lsp_config = function(event)
 		and client.name ~= "null-ls"
 		and client:supports_method(vim.lsp.protocol.Methods.textDocument_formatting)
 	then
-		local fidget = require("fidget")
 		local lsp_formatting_group = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
-		fidget.notify(string.format("[LSP] [%s] Enable auto-format on save", client.name))
 
 		vim.api.nvim_clear_autocmds({
 			group = "LspFormatting",
@@ -176,7 +164,7 @@ local setup_user_lsp_config = function(event)
 			group = lsp_formatting_group,
 			buffer = event.buf,
 			callback = function()
-				lsp_format_on_save(fidget, event.buf)
+				lsp_format_on_save(event.buf)
 			end,
 		})
 	end
@@ -300,20 +288,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.g.format_on_save_enabled = true
 
 local toggle_format_on_save = function()
-	local fidget = require("fidget")
-
 	vim.g.format_on_save_enabled = not vim.g.format_on_save_enabled
 	if vim.g.format_on_save_enabled then
-		fidget.notify("[null-ls] Auto-format on save ENABLED")
+		vim.notify("[null-ls] Auto-format on save ENABLED")
 	else
-		fidget.notify("[null-ls] Auto-format on save DISABLED")
+		vim.notify("[null-ls] Auto-format on save DISABLED")
 	end
 end
 vim.api.nvim_create_user_command("ToggleFormatOnSave", toggle_format_on_save, {})
 
 local format = function()
 	local bufnr = vim.api.nvim_get_current_buf()
-	local fidget = require("fidget")
-	lsp_format_on_save(fidget, bufnr)
+	lsp_format_on_save(bufnr)
 end
 vim.api.nvim_create_user_command("Format", format, {})

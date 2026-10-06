@@ -10,6 +10,14 @@ require("lualine").setup({
 			right = "",
 		},
 	},
+	sections = {
+		lualine_x = {
+			"lsp_status",
+			"encoding",
+			"fileformat",
+			"filetype",
+		},
+	},
 	extensions = {
 		"fern",
 		"fugitive",
