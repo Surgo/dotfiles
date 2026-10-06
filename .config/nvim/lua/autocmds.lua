@@ -42,3 +42,43 @@ vim.api.nvim_create_autocmd("CmdlineChanged", {
 		vim.fn.wildtrigger()
 	end,
 })
+
+local side_panes = {
+	["NvimTree"] = true,
+	["trouble"] = true,
+	["dap-repl"] = true,
+	["dapui_breakpoints"] = true,
+	["dapui_console"] = true,
+	["dapui_scopes"] = true,
+	["dapui_stacks"] = true,
+	["dapui_watches"] = true,
+	["neotest-output-panel"] = true,
+	["neotest-summary"] = true,
+	["qf"] = true,
+}
+
+local function is_side_pane(win)
+	if vim.api.nvim_win_get_config(win).relative ~= "" then
+		return false
+	end
+	return side_panes[vim.bo[vim.api.nvim_win_get_buf(win)].filetype] == true
+end
+
+vim.api.nvim_create_autocmd("QuitPre", {
+	desc = "Close side panes along with the last editing window",
+	group = vim.api.nvim_create_augroup("CloseSidePanes", { clear = true }),
+	callback = function()
+		local wins = vim.api.nvim_tabpage_list_wins(0)
+		local editing = vim.tbl_filter(function(win)
+			return not is_side_pane(win) and vim.api.nvim_win_get_config(win).relative == ""
+		end, wins)
+		if #editing ~= 1 then
+			return
+		end
+		for _, win in ipairs(wins) do
+			if is_side_pane(win) then
+				pcall(vim.api.nvim_win_close, win, true)
+			end
+		end
+	end,
+})
