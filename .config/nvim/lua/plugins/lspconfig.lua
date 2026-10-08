@@ -117,6 +117,15 @@ local setup_user_lsp_config = function(event)
 			vim.keymap.set("i", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 		end
 		imap("<M-l>", vim.lsp.inline_completion.get, "Accept inline completion")
+		vim.keymap.set("i", "<Tab>", function()
+			if vim.snippet.active({ direction = 1 }) then
+				return "<Cmd>lua vim.snippet.jump(1)<CR>"
+			end
+			if vim.lsp.inline_completion.get() then
+				return ""
+			end
+			return "<Tab>"
+		end, { buffer = event.buf, expr = true, desc = "LSP: Accept inline completion" })
 		imap("<M-]>", function()
 			vim.lsp.inline_completion.select({ count = 1 })
 		end, "Next inline completion")

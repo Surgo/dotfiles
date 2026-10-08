@@ -1,7 +1,7 @@
 local M = {}
 
 M.get_python_env_path = function()
-	return vim.env.VIRTUAL_ENV or vim.env.HOMEBREW_PREFIX or "/usr/bin"
+	return vim.env.VIRTUAL_ENV or vim.env.HOMEBREW_PREFIX or "/usr"
 end
 
 M.get_python_exec_path = function()
@@ -13,6 +13,23 @@ M.has_tool_in_venv = function(tool_name)
 	local python_env = M.get_python_env_path()
 	local tool_path = vim.fs.joinpath(python_env, "bin", tool_name)
 	return vim.fn.executable(tool_path) == 1
+end
+
+-- For debugpy
+M.get_debugpy_exec_path = function()
+	if vim.env.VIRTUAL_ENV then
+		local venv = vim.fs.joinpath(vim.env.VIRTUAL_ENV, "bin", "python")
+		if vim.fn.executable(venv) == 1 then
+			return venv
+		end
+	end
+
+	local mason = vim.fs.joinpath(vim.fn.stdpath("data"), "mason", "packages", "debugpy", "venv", "bin", "python")
+	if vim.fn.executable(mason) == 1 then
+		return mason
+	end
+
+	return vim.fn.exepath("python3")
 end
 
 M.get_tool_path = function(tool_name)
