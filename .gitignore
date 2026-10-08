@@ -23,6 +23,7 @@
 !.config/nvim/*.template
 !.config/nvim/lua
 !.config/nvim/lua/**
+!.config/nvim/stylua.toml
 !.config/vim
 !.config/vim/pack
 !.config/vim/pack/**
