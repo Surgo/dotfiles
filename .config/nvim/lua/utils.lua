@@ -15,7 +15,7 @@ M.has_tool_in_venv = function(tool_name)
 	return vim.fn.executable(tool_path) == 1
 end
 
--- debugpy ships its own venv under mason, so it needs a separate lookup
+-- For debugpy
 M.get_debugpy_exec_path = function()
 	if vim.env.VIRTUAL_ENV then
 		local venv = vim.fs.joinpath(vim.env.VIRTUAL_ENV, "bin", "python")
