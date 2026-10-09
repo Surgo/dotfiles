@@ -19,6 +19,8 @@ ZSH_TMUX_FIXTERM=true
 ZSH_TMUX_CONFIG="${XDG_CONFIG_HOME:-$HOME}/tmux/tmux.conf"
 ZSH_TMUX_UNICODE=true
 
+HISTFILE="${XDG_STATE_HOME}/zsh/history"
+[[ -d "${HISTFILE:h}" ]] || mkdir -p "${HISTFILE:h}"
 HISTORY_BASE="${XDG_CACHE_HOME}/directory_history"
 
 ## zsh-autosuggestions
@@ -60,6 +62,9 @@ plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
 ### https://github.com/zsh-users/zsh-completions/issues/603
 fpath=("${ZSH_CUSTOM}/plugins/zsh-completions/src" $fpath)
 source "${ZSH}/oh-my-zsh.sh"
+
+setopt no_share_history
+setopt inc_append_history
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f "${ZDOTDIR:-$HOME}/.p10k.zsh" ]] || source "${ZDOTDIR:-$HOME}/.p10k.zsh"

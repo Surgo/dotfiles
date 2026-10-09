@@ -1,5 +1,4 @@
 # Bash/Zsh
-export HISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/bash/history"
 export LESSHISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/less/history"
 
 # Claude Code
