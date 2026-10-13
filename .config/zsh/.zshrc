@@ -66,5 +66,9 @@ source "${ZSH}/oh-my-zsh.sh"
 setopt no_share_history
 setopt inc_append_history
 
+if [ -x "$(command -v fnm)" ]; then
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f "${ZDOTDIR:-$HOME}/.p10k.zsh" ]] || source "${ZDOTDIR:-$HOME}/.p10k.zsh"
