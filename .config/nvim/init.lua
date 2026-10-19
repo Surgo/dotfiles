@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 require("base")
 require("options")
 require("keymaps")

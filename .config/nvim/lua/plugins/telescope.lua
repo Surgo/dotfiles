@@ -55,4 +55,3 @@ vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Fi
 vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("ui-select")
-require("telescope").load_extension("file_browser")
