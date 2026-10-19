@@ -149,6 +149,7 @@
   },
   "sandbox": {
     "excludedCommands": [
+      "gh api *",
       "gh pr view *",
       "gh pr list *",
       "gh pr diff *",
