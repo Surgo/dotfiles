@@ -47,5 +47,6 @@ end
 null_ls.setup({
 	on_attach = setup_null_ls_format_on_save,
 	diagnostics_format = "[#{m}] #{s} (#{c})",
+	temp_dir = vim.fn.stdpath("run"),
 	sources = sources,
 })
