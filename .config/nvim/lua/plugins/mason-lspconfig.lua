@@ -1,39 +1,40 @@
-require("mason").setup({})
+vim.schedule(function()
+	require("mason").setup({})
 
-local mason_lspconfig = require("mason-lspconfig")
-mason_lspconfig.setup({
-	-- Python servers are gated by refresh_python_ls() in plugins/lspconfig.lua
-	automatic_enable = { exclude = { "pylsp", "ruff" } },
-	ensure_installed = {
-		-- https://github.com/mason-org/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
-		-- All
-		"copilot",
-		"typos_lsp",
-		-- CSS
-		"stylelint_lsp",
-		"tailwindcss",
-		-- Docker
-		"dockerls",
-		"docker_compose_language_service",
-		-- JSON
-		"jsonls",
-		-- Lua
-		"lua_ls",
-		-- Python
-		"pylsp",
-		"ruff",
-		-- Rust
-		"rust_analyzer",
-		-- SQL
-		"sqlls",
-		-- Terraform
-		"terraformls",
-		"tflint",
-		-- HTML
-		"html",
-		-- TypeScript / JavaScript
-		"astro",
-		"ts_ls",
-		"eslint",
-	},
-})
+	require("mason-lspconfig").setup({
+		-- Python servers are gated by refresh_python_ls() in plugins/lspconfig.lua
+		automatic_enable = { exclude = { "pylsp", "ruff" } },
+		ensure_installed = {
+			-- https://github.com/mason-org/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
+			-- All
+			"copilot",
+			"typos_lsp",
+			-- CSS
+			"stylelint_lsp",
+			"tailwindcss",
+			-- Docker
+			"dockerls",
+			"docker_compose_language_service",
+			-- JSON
+			"jsonls",
+			-- Lua
+			"lua_ls",
+			-- Python
+			"pylsp",
+			"ruff",
+			-- Rust
+			"rust_analyzer",
+			-- SQL
+			"sqlls",
+			-- Terraform
+			"terraformls",
+			"tflint",
+			-- HTML
+			"html",
+			-- TypeScript / JavaScript
+			"astro",
+			"ts_ls",
+			"eslint",
+		},
+	})
+end)

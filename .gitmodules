@@ -73,6 +73,10 @@
 [submodule ".config/nvim/pack/plugins/start/nio"]
 	path = .config/nvim/pack/plugins/start/nio
 	url = git@github.com:nvim-neotest/nvim-nio.git
+  branch = master
+[submodule ".config/nvim/pack/plugins/start/octo"]
+	path = .config/nvim/pack/plugins/start/octo
+	url = git@github.com:pwntester/octo.nvim.git
 	branch = master
 [submodule ".config/nvim/pack/plugins/start/plenary"]
 	path = .config/nvim/pack/plugins/start/plenary
@@ -81,10 +85,6 @@
 [submodule ".config/nvim/pack/plugins/start/telescope"]
 	path = .config/nvim/pack/plugins/start/telescope
 	url = git@github.com:nvim-telescope/telescope.nvim.git
-	branch = master
-[submodule ".config/nvim/pack/plugins/start/telescope-file-browser"]
-	path = .config/nvim/pack/plugins/start/telescope-file-browser
-	url = git@github.com:nvim-telescope/telescope-file-browser.nvim.git
 	branch = master
 [submodule ".config/nvim/pack/plugins/start/telescope-fzf-native"]
 	path = .config/nvim/pack/plugins/start/telescope-fzf-native
