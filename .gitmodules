@@ -73,6 +73,10 @@
 [submodule ".config/nvim/pack/plugins/start/nio"]
 	path = .config/nvim/pack/plugins/start/nio
 	url = git@github.com:nvim-neotest/nvim-nio.git
+  branch = master
+[submodule ".config/nvim/pack/plugins/start/octo"]
+	path = .config/nvim/pack/plugins/start/octo
+	url = git@github.com:pwntester/octo.nvim.git
 	branch = master
 [submodule ".config/nvim/pack/plugins/start/plenary"]
 	path = .config/nvim/pack/plugins/start/plenary
