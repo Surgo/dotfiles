@@ -25,7 +25,7 @@ vim.schedule(function()
 			-- Rust
 			"rust_analyzer",
 			-- SQL
-			"sqlls",
+			"sqruff",
 			-- Terraform
 			"terraformls",
 			"tflint",

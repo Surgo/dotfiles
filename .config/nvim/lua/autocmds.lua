@@ -82,3 +82,12 @@ vim.api.nvim_create_autocmd("QuitPre", {
 		end
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	desc = "Drop the runtime SQL omnifunc so 'complete' does not call it",
+	group = vim.api.nvim_create_augroup("SqlOmnifunc", { clear = true }),
+	pattern = "sql",
+	callback = function(event)
+		vim.bo[event.buf].omnifunc = ""
+	end,
+})
