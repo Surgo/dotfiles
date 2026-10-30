@@ -36,6 +36,8 @@
 !.config/sh/*.template
 !.config/sh/profile
 !.config/shellcheckrc
+!.config/sqruff
+!.config/sqruff/.sqruff
 !.config/tig
 !.config/tig/config
 !.config/tmux

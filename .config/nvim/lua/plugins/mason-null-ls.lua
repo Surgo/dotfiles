@@ -2,7 +2,6 @@ vim.schedule(function()
 	require("mason-null-ls").setup({
 		automatic_installation = {
 			exclude = {
-				"sqlfluff",
 				"ruff",
 			},
 		},
@@ -26,7 +25,6 @@ vim.schedule(function()
 			"shfmt",
 			-- SQL
 			"sql_formatter",
-			"sqlfluff",
 			-- YAML
 			"actionlint",
 			"yamllint",

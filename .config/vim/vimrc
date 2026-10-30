@@ -418,3 +418,5 @@ colorscheme catppuccin_mocha
 
 syntax on
 filetype plugin indent on
+
+autocmd FileType sql setlocal omnifunc=

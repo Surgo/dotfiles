@@ -1,0 +1,5 @@
+[sqlfluff]
+dialect = postgres
+exclude_rules = LT02
+max_line_length = 120
+large_file_skip_byte_limit = 200000
