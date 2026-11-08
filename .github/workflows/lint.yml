@@ -30,10 +30,9 @@ jobs:
       - name: Super-linter
         uses: super-linter/super-linter/slim@2da136927bd4a73596db63044b504547c62cb854 # v9.0.0
         env:
-          BASH_FILE_NAME: .config/shellcheckrc
+          BASH_FILE_NAME: shellcheckrc
           DEFAULT_BRANCH: main
-          LINTER_RULES_PATH: .
-          LUA_FILE_NAME: .config/luacheckrc
+          LINTER_RULES_PATH: .config
           VALIDATE_BASH: true
           VALIDATE_BASH_EXEC: true
           VALIDATE_CHECKOV: true
@@ -49,4 +48,4 @@ jobs:
           VALIDATE_YAML: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Ignore automatically generated files
-          FILTER_REGEX_EXCLUDE: (\.config/git/ignore|\.config/zsh/\.p10k\.zsh)
+          FILTER_REGEX_EXCLUDE: (\.config/claude/statusline\.sh|\.config/git/ignore|\.config/zsh/\.p10k\.zsh)
