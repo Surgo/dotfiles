@@ -1,8 +1,5 @@
 local utils = require("utils")
 
--- Neovim never rotates the LSP log, so drop it before any client opens it.
--- The level stays at the default WARN: servers can still flood it through
--- window/logMessage, which no level short of "off" would silence.
 local lsp_log_max_size = 10 * 1024 * 1024
 local lsp_log_stat = vim.uv.fs_stat(vim.lsp.log.get_filename())
 if lsp_log_stat and lsp_log_stat.size > lsp_log_max_size then
