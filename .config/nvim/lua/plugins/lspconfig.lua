@@ -1,5 +1,11 @@
 local utils = require("utils")
 
+local lsp_log_max_size = 10 * 1024 * 1024
+local lsp_log_stat = vim.uv.fs_stat(vim.lsp.log.get_filename())
+if lsp_log_stat and lsp_log_stat.size > lsp_log_max_size then
+	vim.uv.fs_unlink(vim.lsp.log.get_filename())
+end
+
 local completion_kind_hl = {
 	Class = "@type",
 	Constant = "@constant",
