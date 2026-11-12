@@ -147,19 +147,6 @@
     "defaultMode": "auto",
     "additionalDirectories": ["~/Repos/obsidian-vault"]
   },
-  "sandbox": {
-    "excludedCommands": [
-      "gh api *",
-      "gh pr view *",
-      "gh pr list *",
-      "gh pr diff *",
-      "gh issue view *",
-      "gh issue list *",
-      "gh run view *",
-      "gh run list *"
-    ]
-  },
-  "model": "claude-opus-5[1m]",
   "skillOverrides": {
     "claude-api": "off",
     "loop": "user-invocable-only",
@@ -176,6 +163,18 @@
     "typescript-lsp@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
     "claude-security@claude-plugins-official": true
+  },
+  "sandbox": {
+    "excludedCommands": [
+      "gh api *",
+      "gh pr view *",
+      "gh pr list *",
+      "gh pr diff *",
+      "gh issue view *",
+      "gh issue list *",
+      "gh run view *",
+      "gh run list *"
+    ]
   },
   "tui": "default",
   "theme": "auto"
