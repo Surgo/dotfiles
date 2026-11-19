@@ -68,4 +68,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [gpg]
-	program = gpg
+  program = gpg
+[url "git@github.com:"]
+	insteadOf = https://github.com/
