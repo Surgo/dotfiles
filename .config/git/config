@@ -22,22 +22,18 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-[credential]
-	helper = osxkeychain
 [diff]
 	tool = vimdiff
 	algorithm = histogram
 	colorMoved = default
 	colorMovedWS = allow-indentation-change
 [branch]
-	autosetuprebase = always
 	sort = -committerdate
 [tag]
 	sort = -version:refname
-[color]
-	ui = auto
 [commit]
 	gpgsign = true
+	verbose = true
 [fetch]
 	prune = true
 	pruneTags = true
@@ -50,6 +46,7 @@
 	rebase = true
 [rebase]
 	autoStash = true
+	autoSquash = true
 	updateRefs = true
 [rerere]
 	enabled = true
@@ -60,12 +57,19 @@
 	ui = auto
 [push]
 	default = current
+	autoSetupRemote = true
+[help]
+	autocorrect = prompt
 [pager]
 	diff = ${HOMEBREW_PREFIX}/share/git-core/contrib/diff-highlight/diff-highlight | less
+	show = ${HOMEBREW_PREFIX}/share/git-core/contrib/diff-highlight/diff-highlight | less
+	log = ${HOMEBREW_PREFIX}/share/git-core/contrib/diff-highlight/diff-highlight | less
+[interactive]
+	diffFilter = ${HOMEBREW_PREFIX}/share/git-core/contrib/diff-highlight/diff-highlight
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-[gpg]
-	program = gpg
+[url "git@github.com:"]
+	insteadOf = https://github.com/
